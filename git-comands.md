@@ -264,7 +264,7 @@ git commit --amend -m "New commit message"
 git push --force
 ```
 
-## 13. Скасуванн6я коміту
+## 13. Скасування коміту
 
 ```bash
 git revert HEAD
