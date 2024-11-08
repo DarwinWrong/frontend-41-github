@@ -5,7 +5,7 @@
   <figcaption>ctrl+~</figcaption>
 </figure>
     <br>
-git r    <hr>
+    <hr>
 <figure style="text-align: center">
   <img src="images/image-2.png" alt="new terminal" />
   <figcaption>new terminal</figcaption>
