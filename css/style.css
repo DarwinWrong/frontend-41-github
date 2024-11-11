@@ -5,7 +5,7 @@
 }
 div{
     border: 1px solid black;
-    
+    margin: 10px 0;
 }
 
 
@@ -18,4 +18,12 @@ div{
 .flex div, .inline-flex div{
     padding: 10px;
         margin: 5px 0;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.column{
+    display: flex;
+    flex-direction: column;
 }
