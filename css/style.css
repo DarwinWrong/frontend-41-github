@@ -49,3 +49,31 @@ div {
 .justify-around {
     justify-content: space-around;
 }
+
+.align-items-start {
+    height: 300px;
+    align-items: flex-start;
+}
+
+.align-items-end {
+    height: 300px;
+    align-items: flex-end;
+}
+
+.align-items-center {
+    height: 300px;
+    align-items: center;
+}
+
+.align-items-stretch {
+    height: 300px;
+    align-items: stretch;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-nowrap {
+    flex-wrap: nowrap;
+}
