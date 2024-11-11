@@ -27,3 +27,11 @@ div{
     display: flex;
     flex-direction: column;
 }
+.justify-content1{
+    display: flex;
+    justify-content: center;
+}
+.justify-content2{
+    display: flex;
+    justify-content: space-around;
+}
