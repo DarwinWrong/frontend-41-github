@@ -21,4 +21,13 @@ div {
 .flex div,
 .inline-flex div {
     padding: 10px;
+    height: 25px;
+    width: 25px;
+    background-color: aqua;
+}
+
+hr {
+    margin: 20px 0;
+    height: 5px;
+    background-color: darkred;
 }
