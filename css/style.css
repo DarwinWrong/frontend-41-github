@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div {
+    border: 1px solid #000;
+}
+
+.flex {
+    display: flex;
+    margin: 10px;
+}
+
+.inline-flex {
+    display: inline-flex;
+    margin: 10px;
+}
+
+.flex div,
+.inline-flex div {
+    padding: 10px;
+}
