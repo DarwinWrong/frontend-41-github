@@ -45,3 +45,11 @@ div{
     align-items: stretch;
     height: 150px;
 }
+.flex_wrap1{
+    display: flex;
+    flex-wrap: wrap;
+}
+.flex_wrap2{
+    display: flex;
+    flex-wrap: nowrap;
+}
