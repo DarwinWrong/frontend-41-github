@@ -423,6 +423,7 @@ git restore file.tmp
       git cm "message"  # Замість git commit -m "message"
       git lg            # Виконує git log --graph --oneline --decorate --all
       git new alias.cm "commit -m"
+      git cma "update"
     </code>
   </li>
   <li>
