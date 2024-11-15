@@ -82,3 +82,42 @@ div {
 .flex-nowrap {
     flex-wrap: nowrap;
 }
+
+/* ============================= */
+.flex-wrapper .flex-wrap {
+    min-height: 200px;
+}
+
+.align-content-start {
+    align-content: flex-start;
+}
+
+.align-content-end {
+    align-content: flex-end;
+}
+
+.align-content-center {
+    align-content: center;
+}
+
+.align-content-stretch {
+    align-content: stretch;
+}
+
+.align-content-between {
+    align-content: space-between;
+}
+
+.align-content-around {
+    align-content: space-around;
+}
+
+/* ============================= */
+.orders .order:nth-last-of-type(1) {
+    order: 2;
+    border: 2px solid red;
+}
+
+.orders .order:nth-last-of-type(2) {
+    border: 2px solid black;
+}
