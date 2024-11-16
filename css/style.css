@@ -121,3 +121,46 @@ div {
 .orders .order:nth-last-of-type(2) {
     border: 2px solid black;
 }
+
+/* ============================= */
+.flex-flow {
+    flex-flow: column wrap;
+}
+
+/* ============================= */
+.flex-basis div:first-of-type {
+    flex-basis: 100px;
+}
+
+.flex-basis div:nth-of-type(2) {
+    flex-basis: 200px;
+}
+
+.flex-basis div:nth-of-type(3) {
+    flex-basis: 10%;
+}
+
+.flex-basis div:last-of-type {
+    flex-basis: 15%;
+}
+
+/* ============================= */
+.flex-grow div {
+    flex-basis: 200px;
+}
+
+.flex-grow div:first-of-type {
+    flex-grow: 0;
+}
+
+.flex-grow div:nth-of-type(2) {
+    flex-grow: 1;
+}
+
+.flex-grow div:nth-of-type(3) {
+    flex-grow: 1;
+}
+
+.flex-grow div:last-of-type {
+    flex-grow: 1;
+}
