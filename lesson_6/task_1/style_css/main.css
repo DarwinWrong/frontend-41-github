@@ -1,0 +1,113 @@
+/* Загальний стиль */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.text-content {
+    flex: 1 1 100%;
+    padding: 10px;
+    order: 1;
+}
+
+.image-content {
+    flex: 1 1 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px;
+    order: 2;
+}
+
+.image-content figure {
+    margin: 0;
+    flex: 1 1 calc(50% - 20px);
+    text-align: center;
+}
+
+.image-content img {
+    width: 400px;
+    height: auto;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+/* Адаптивність */
+@media (max-width: 600px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .image-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .image-content figure {
+        flex: 1 1 100%;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 800px) {
+    .text-content {
+        flex: 1 1 100%;
+        order: 2;
+    }
+
+    .image-content {
+        flex: 1 1 100%;
+        order: 1;
+    }
+
+    .image-content figure {
+        flex: 1 1 50%;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (min-width: 800px) {
+    .text-content {
+        flex: 1 1 60%;
+        order: 1;
+    }
+
+    .image-content {
+        flex: 1 1 40%;
+        order: 2;
+        flex-direction: column;
+    }
+
+    .image-content figure {
+        flex: 1 1 100%;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
