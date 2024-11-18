@@ -503,8 +503,8 @@ git checkout <branch_or_commit> -- <filename>
       git br            # Замість git branch
       git cm "message"  # Замість git commit -m "message"
       git lg            # Виконує git log --graph --oneline --decorate --all
-      git new alias.cm "commit -m"
-      git cma "update"
+      git new alias.cm "commit -m" # Замість git config --global alias.cm
+      git cma "update" # Замість git commit -a -m "update"
     </code>
   </li>
   <li>
