@@ -509,9 +509,11 @@ git checkout <branch_or_commit> -- <filename>
   </li>
   <li>
     Перевірити всі створені псевдоніми можна так:
-    <code>
-      git config --get-regexp alias
-    </code>
+
+```bash
+git config --get-regexp alias
+```
+
   </li>
 </ol>
 
