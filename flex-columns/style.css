@@ -1,0 +1,67 @@
+div {
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    margin: 10px 0;
+}
+
+.container {
+    display: flex;
+    width: 1000px;
+}
+
+.column:first-of-type, .column:nth-of-type(2), .column:nth-of-type(3), .column:last-of-type {
+    flex-basis: 200px;
+}
+
+.column:first-of-type, .column:nth-of-type(2), .column:nth-of-type(3) {
+    flex-grow: 1;
+}
+
+.column:last-of-type {
+    flex-grow: 2;
+}
+
+.column-2:first-of-type, .column-2:nth-of-type(2), .column-2:nth-of-type(3), .column-2:nth-of-type(4), .column-2:last-of-type {
+    flex-basis: 250px;
+}
+
+.column-2:first-of-type, .column-2:nth-of-type(2), .column-2:nth-of-type(3), .column-2:nth-of-type(4) {
+    flex-shrink: 1;
+}
+
+.column-2:last-of-type {
+    flex-shrink: 0;
+}
+
+.column-3:first-of-type, .column-3:nth-of-type(2), .column-3:nth-of-type(3), .column-3:nth-of-type(4), .column-3:last-of-type {
+    flex-basis: 250px;
+}
+
+.column-3:first-of-type, .column-3:nth-of-type(2), .column-3:nth-of-type(3), .column-3:nth-of-type(4) {
+    flex-shrink: 1;
+}
+
+.column-3:last-of-type {
+    flex-shrink: 2;
+}
+
+.flex:first-of-type{
+    background-color: rgba(255,153,0,255);
+}
+
+.flex:nth-of-type(2){
+    background-color: rgba(255,255,0,255);
+}
+
+.flex:nth-of-type(3){
+    background-color: rgba(153,255,153,255);
+}
+
+.flex:nth-of-type(4){
+    background-color: rgba(0,170,170,255);
+}
+
+.flex:nth-of-type(5){
+    background-color: rgba(221,255,153,255);
+}
+
