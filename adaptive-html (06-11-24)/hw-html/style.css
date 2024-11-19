@@ -1,0 +1,144 @@
+@import url(clear.css);
+
+body {
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: rgba(245,245,245,255);
+}
+
+.bold {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+p {
+    padding-bottom: 25px;
+    color: black;
+}
+
+figcaption {
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: right;
+    background-color: rgba(55,81,108,255);
+    color: white;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom: none;
+}
+
+.wrapper-3 {
+    margin-top: 20px;
+}
+
+figure {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+img {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+@media (max-width: 599px) {
+    .wrapper-1, .wrapper-3 {
+        display: block;
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    .wrapper-2 {
+        margin: 0 auto;
+        width: 90%;
+        display: block;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 800px) {
+    .wrapper-1, .wrapper-3 {
+        display: block;
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    .wrapper-2 {
+        justify-content: center;
+        margin: 0 auto;
+        width: 90%;
+        display: flex;
+    }
+
+    .img-1 {
+        width: 50em;
+    }
+
+    figure {
+        margin-left: 20px;
+    }
+}
+
+@media (min-width: 801px) {
+    .wrapper-1, .wrapper-3 {
+        float: left;
+        display: block;
+        margin: 0 10px;
+        width: 55%;
+    }
+
+    .wrapper-2 {
+        float: right;
+        justify-content: center;
+        width: 40%;
+        display: block;
+        margin-top: 20px;
+    }
+
+    figure {
+        margin-left: 20px;
+    }
+}
+
+@media (min-width: 2100px) {
+    .wrapper-1, .wrapper-3 {
+        float: left;
+        display: block;
+        margin: 0 10px;
+        width: 55%;
+    }
+
+    .wrapper-2 {
+        float: right;
+        justify-content: center;
+        width: 25%;
+        display: block;
+        margin-top: 20px;
+    }
+
+    figure {
+        margin-left: 20px;
+    }
+}
+
+@media (min-width: 3300px) {
+    .wrapper-1, .wrapper-3 {
+        float: left;
+        display: block;
+        margin: 0 10px;
+        width: 55%;
+    }
+
+    .wrapper-2 {
+        float: right;
+        justify-content: center;
+        width: 20%;
+        display: block;
+        margin-top: 20px;
+    }
+
+    figure {
+        margin-left: 20px;
+    }
+}
