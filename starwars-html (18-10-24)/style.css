@@ -1,0 +1,59 @@
+body {
+    background-color: black;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font: bold 2.5em/1.5 Arial, sans-serif;
+}
+
+h2 {
+    color: yellow;
+    text-align: center;
+    font: bold 1.5em/1.5 Arial, sans-serif;
+    padding: 30px;
+}
+
+
+p {
+    color: white;
+    text-align: left;
+    font: bold 1.2em/1.5 Arial, sans-serif;
+}
+
+blockquote {
+    color: lightgrey;
+    text-align: left;
+    font: italic 1.0em/1.5 Arial, serif;
+    border-left: 5px solid yellow;
+    padding-left: 10px;
+    margin-left: 648px;
+}
+
+figcaption {
+    color: white;
+    text-align: center;
+    font: 1.0em/1.5 Arial, sans-serif;
+    padding-top: 5px;
+}
+
+footer{
+    color: grey;
+    text-align: center;
+    font: 0.9em/1.5 Arial, sans-serif;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 50%;
+    height: auto;
+}
+
+.cap {
+    color: white;
+    text-align: left;
+    font: bold 1.2em/1.5 Arial, sans-serif;
+    margin-left: 610px;
+}
