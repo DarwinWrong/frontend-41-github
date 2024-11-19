@@ -1,0 +1,32 @@
+.red{
+    color: red;
+}
+
+.black{
+    color: black;
+}
+
+.card{
+    padding: 5px;
+    margin: 2px;
+    display: inline-block;
+    background-color: rgba(211, 211, 211, 0.5);
+    font: 600 2.5em/1.0em 'Segoe UI Symbol';
+    text-align: center;
+    box-sizing: border-box;
+    width: 85px;
+    height: 57px;
+    overflow: hidden;
+}
+
+.symbol{
+    font-size: 45px;
+    font-family: 'Segoe UI symbol';
+    font-weight: normal;
+    vertical-align: -2px;
+}
+
+h2{
+    text-align: left;
+    font: 600 1.5em/1.0em 'Segoe UI Symbol';
+}
