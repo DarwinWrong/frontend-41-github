@@ -1,0 +1,116 @@
+body {
+    overflow: hidden;
+}
+
+.aside-1, .aside-2, .aside-3, .main {
+    background-color: rgba(182,92,130,255);
+}
+
+.header, .menu, .aside-1, .aside-2, .main, .section-1, .section-2, .footer {
+    float: left;
+    clear: left;
+}
+
+.header, .aside-1, .aside-2, .aside-3 {
+    margin: 10px;
+    padding: 20px;
+}
+
+.aside-1, .aside-2 {
+    width: 200px;
+}
+
+.section-1, .section-2 {
+    background-color: rgba(219,146,175,255);
+    width: 680px;
+    padding: 40px;
+}
+
+.footer, .menu {
+    background-color: rgba(110,18,55,255);
+}
+
+footer, .span-menu {
+    font: bold 16px/1.0em "Arial", sans-serif;
+}
+
+p, span {
+    color: white;
+    font: bold 16px/2.0em "Arial", sans-serif;
+    padding: 0;
+    text-align: left;
+}
+
+.aside-3, .main, .section-1, .section-2, .span-main, .footer {
+    position: relative;
+}
+
+.header {
+    background-color: rgba(146,48,89,255);
+    width: 1252px;
+}
+
+.menu {
+    margin: 10px;
+    width: 1292px;
+}
+
+.aside-2 {
+    padding-bottom: 80px;
+}
+
+.aside-3 {
+    width: 110px;
+    top: 171px;
+    right: 160px;
+    padding-bottom: 60px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+
+.main {
+    margin: 270px;
+    width: 660px;
+    padding: 100px;
+    padding-bottom: 0px;
+    bottom: 505px;
+}
+
+.section-1 {
+    bottom: 75px;
+    right: 65px;
+}
+
+.section-2 {
+    bottom: 60px;
+    right: 65px;
+}
+
+span {
+    margin: 0 25px;
+}
+
+.span-menu {
+    margin: 0 7px;
+}
+
+.span-main {
+    bottom: 80px;
+    right: 90px;
+}
+
+.footer {
+    margin: 10px;
+    width: 1275px;
+    padding: 10px;
+    bottom: 767px;
+}
+
+p {
+    margin: 0 35px;
+    letter-spacing: 5px;
+}
+
+footer {
+    margin: 0 14px;
+}
