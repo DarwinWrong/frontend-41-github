@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    margin: 0 auto;
+    height: 90vh;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    width: 1000px;
+}
+
+th {
+    color: white;
+}
+
+th, td {
+    border: 2px solid black; 
+    padding: 15px;
+    text-align: center;
+}
+
+tfoot td {
+    height: 60px;
+    border: none;
+    border-bottom: 2px black solid;
+}
+
+.done, .not-done {
+    padding: 10px;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.not-done {
+    color: red;
+}
+
+.done {
+    color: green;
+}
+
+span {
+    color: white;
+    font-weight: bold;
+}
+
+.button-1, .button-2, .button-3 {
+    padding: 10px;
+}
+
+.button-1 {
+    background-color: rgba(255,87,34,255);
+}
+
+.button-2 {
+    background-color: rgba(33,150,243,255);
+}
+
+.button-3 {
+    background-color: rgba(0,77,64,255);
+}
+
+tfoot td:nth-child(1) {
+    border-left: 2px black solid;
+}
+
+tfoot td:nth-child(4) {
+    border-right: 2px black solid;
+}
+
+.head th:nth-child(2) {
+    background-color: rgba(255,87,34,255);
+}
+
+.head th:nth-child(3) {
+    background-color: rgba(33,150,243,255);
+}
+
+.head th:nth-child(4) {
+    background-color: rgba(0,77,64,255);
+}

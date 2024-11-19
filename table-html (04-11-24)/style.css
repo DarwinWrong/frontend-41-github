@@ -1,0 +1,145 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    height: 50vh;
+    margin: 0 auto;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+th, td {
+    padding: 10px;
+    color: white;
+}
+
+td {
+    padding-left: 25px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+
+    background-color: rgba(255,165,0,255);
+    border-bottom: 3px solid #ddd;
+}
+
+.title {
+    background-color: rgba(0,100,0,255);
+    padding-left: 12px;
+}
+
+
+.row1 td:nth-child(2) {
+    background-color: rgba(209,179,198,255);
+}
+
+.row1 td:nth-child(3) {
+    background-color: rgba(153,89,130,255);
+}
+
+.row1 td:nth-child(4) {
+    background-color: rgba(207,177,196,255);
+}
+
+.row1 td:nth-child(5) {
+    background-color: rgba(220,199,213,255);
+}
+
+.row1 td:nth-child(6) {
+    background-color: rgba(183,138,167,255);
+}
+
+.row1 td:nth-child(7) {
+    background-color: rgba(216,192,207,255);
+}
+
+
+
+
+.row2 td:nth-child(2) {
+    background-color: rgba(191,150,176,255);
+}
+
+.row2 td:nth-child(3) {
+    background-color: rgba(136,60,108,255);
+}
+
+.row2 td:nth-child(4) {
+    background-color: rgba(189,148,174,255);
+}
+
+.row2 td:nth-child(5) {
+    background-color: rgba(159,99,138,255);
+}
+
+.row2 td:nth-child(6) {
+    background-color: rgba(194,155,180,255);
+}
+
+.row2 td:nth-child(7) {
+    background-color: rgba(180,133,163,255);
+}
+
+
+
+
+
+.row3 td:nth-child(2) {
+    background-color: rgba(228,211,222,255);
+}
+
+.row3 td:nth-child(3) {
+    background-color: rgba(173,121,154,255);
+}
+
+.row3 td:nth-child(4) {
+    background-color: rgba(183,138,167,255);
+}
+
+.row3 td:nth-child(5) {
+    background-color: rgba(177,128,159,255);
+}
+
+.row3 td:nth-child(6) {
+    background-color: rgba(207,177,196,255);
+}
+
+.row3 td:nth-child(7) {
+    background-color: rgba(224,204,216,255);
+}
+
+
+
+
+
+.row4 td:nth-child(2) {
+    background-color: rgba(209,179,198,255);
+}
+
+.row4 td:nth-child(3) {
+    background-color: rgba(165,109,146,255);
+}
+
+.row4 td:nth-child(4) {
+    background-color: rgba(201,167,189,255);
+}
+
+.row4 td:nth-child(5) {
+    background-color: rgba(215,189,205,255);
+}
+
+.row4 td:nth-child(6) {
+    background-color: rgba(170,116,150,255);
+}
+
+.row4 td:nth-child(7) {
+    background-color: rgba(186,143,170,255);
+}
