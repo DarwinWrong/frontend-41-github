@@ -1,0 +1,57 @@
+h1 {
+    font: bold 1.3em/1.5em Arial, sans-serif;
+    padding-left: 40px;
+}
+
+li {
+    color: black;
+    list-style-type: none;
+    width: 17%;
+    padding-left: 30px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    font: 1.0em/1.5em Arial, sans-serif;
+}
+
+li::after{
+    content: "x";
+    font: bold 1.0em/1.5em Arial, sans-serif;
+    color: red;
+    padding-left: 20px;
+}
+
+.notdone-darkblue {
+    background-color: rgba(160,203,219,255);
+}
+
+.notdone-darkblue::before {
+    content: "☐";
+    font: bold 1.2em/1.5em Arial, sans-serif;
+    padding-right: 10px;
+}
+
+.done {
+    background-color: rgba(225,225,225,255);
+    text-decoration: none;
+}
+
+.done span {
+    text-decoration: line-through;
+}
+
+.done::before {
+    content: "☑";
+    font: bold 1.2em/1.5em Arial, sans-serif;
+    padding-right: 5px;
+    text-decoration: none;
+}
+
+.notdone-lightblue {
+    background-color: rgba(166,217,231,255);
+}
+
+.notdone-lightblue::before {
+    content: "☐";
+    font: bold 1.2em/1.5em Arial, sans-serif;
+    padding-right: 10px;
+}
