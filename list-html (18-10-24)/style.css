@@ -1,0 +1,38 @@
+.backgroundl {
+    background-color: lightpink;
+    padding: 20px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 13%;
+}
+
+li {
+    font: 1em/1.5em Arial, sans-serif;
+    color: white;
+    background-color: rgba(198,99,119,255);
+    list-style-type: none;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+li::before {
+    content: counter(list-item) ". ";
+    position: relative;
+    top: 6px;
+}
+
+ol {
+    counter-reset: list-item;
+}
+span {
+    background-color: rgba(159,53,75,255);
+    width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 8px;
+    padding-top: 9px;
+    position: relative;
+    top: 6px;
+}
