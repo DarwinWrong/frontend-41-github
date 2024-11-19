@@ -1,0 +1,92 @@
+.background {
+    background-color: rgba(43,79,111,255);
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    color: white;
+}
+
+footer {
+    position: relative;
+    top: 1000px;
+}
+
+.list-1, .list-2, li {
+    color: white;
+    font: 16px/2.0em "Arial", sans-serif;
+    margin: 0 25px;
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+}
+
+
+.social-media {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.social-media a.youtube:hover {
+    background-image: url('img/1298778_youtube_play_video_icon.png');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+}
+
+.social-media a.youtube:hover img {
+    display: none;
+}
+
+.social-media a.facebook:hover {
+    background-image: url('img/1233013_facebook_icon.png');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+}
+
+.social-media a.facebook:hover img {
+    display: none;
+}
+
+.social-media a.instagram:hover {
+    background-image: url('img/instagram-logo-8869.png');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+}
+
+.social-media a.instagram:hover img {
+    display: none;
+}
+
+.social-media a img {
+    margin: 0;
+    width: 50px;
+    height: auto;
+}
+
+.line {
+    border: none;
+    border-top: 1px solid white;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 20px;
+    opacity: 0.5;
+}
+
+p {
+    color: white;
+    font: 12px/1.5em "Arial", sans-serif;
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+
