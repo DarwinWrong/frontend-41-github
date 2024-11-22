@@ -54,6 +54,9 @@ ls -a
 
 - Перегляд файлів mac, linux
 
+<hr style="height: 5px; background: lawngreen" />
+<hr style="height: 5px; background: lawngreen" />
+
 ## 2. Клонування репозиторію
 
 ```bash
@@ -69,6 +72,9 @@ git remote rename origin my-remote
 ```
 
 - Після цього ваш віддалений репозиторій буде називатися my-remote.
+
+<hr style="height: 5px; background: lawngreen" />
+<hr style="height: 5px; background: lawngreen" />
 
 ## 3. Оновлення репозиторію
 
@@ -104,6 +110,9 @@ git pull origin гілка_ім'я
 
 - Оновлювати свої гілки перед кожними новими змінами. Виконує git fetch, а потім об’єднує зміни з локальною гілкою.
 
+<hr style="height: 5px; background: lawngreen" />
+<hr style="height: 5px; background: lawngreen" />
+
 ## 4. Ініціалізація локального репозиторію
 
 ```bash
@@ -111,6 +120,9 @@ git init
 ```
 
 - Ініціалізує новий локальний Git-репозиторій у поточній папці. Викликати у випадку якщо ви не клонували віддалений репозиторій.
+
+<hr style="height: 5px; background: lawngreen" />
+<hr style="height: 5px; background: lawngreen" />
 
 ## 5. Налаштування користувача Git
 
@@ -120,6 +132,9 @@ git config user.email "user@itstep.academy"
 ```
 
 - Задає ім'я користувача та електронну пошту для комітів у цьому репозиторії.
+
+<hr style="height: 5px; background: lawngreen" />
+<hr style="height: 5px; background: lawngreen" />
 
 ## 6. Ігнорування файлів ,gitignore
 
@@ -179,6 +194,9 @@ git commit -m "Add .gitignore file"
 
 - Додайте .gitignore та застосуйте зміни.
 
+<hr style="height: 5px; background: lawngreen" />
+<hr style="height: 5px; background: lawngreen" />
+
 ## 7. Перегляд статусу та історії комітів
 
 ### Перевірка статусу файлів
@@ -221,6 +239,9 @@ git show 9688247
 
 - Показує зміни та метадані коміту з ID `9688247`.
 
+<hr style="height: 5px; background: lawngreen" />
+<hr style="height: 5px; background: lawngreen" />
+
 ## 8. Перелік відстежуваних файлів
 
 ```bash
@@ -228,6 +249,9 @@ git ls-files
 ```
 
 - Виводить список усіх файлів, які відстежує Git у поточному репозиторії.
+
+<hr style="height: 5px; background: lawngreen" />
+<hr style="height: 5px; background: lawngreen" />
 
 ## 9. Робота з гілками
 
@@ -328,6 +352,9 @@ git push --set-upstream origin нова_назва
 
 - Запускає гілку `нова_назва` на віддаленому репозиторії та налаштовує відстеження.
 
+<hr style="height: 5px; background: lawngreen" />
+<hr style="height: 5px; background: lawngreen" />
+
 ## 10. Додавання файлів до коміту
 
 ### Додавання окремого файлу
@@ -354,6 +381,9 @@ git add .
 
 - Додає всі змінені файли до коміту.
 
+<hr style="height: 5px; background: lawngreen" />
+<hr style="height: 5px; background: lawngreen" />
+
 ## 11. Створення коміту
 
 ```bash
@@ -370,6 +400,9 @@ git commit -a -m "Name of commit"
 
 - Додає усі змінені файли до коміту та Зберігає їх з повідомленням коміту `"Name of commit"`.
 
+<hr style="height: 5px; background: lawngreen" />
+<hr style="height: 5px; background: lawngreen" />
+
 ## 12. Зміна поточного коміту
 
 ```bash
@@ -378,11 +411,14 @@ git commit --amend -m "New commit message"
 
 - Виконайте команду для зміни повідомлення останнього коміту.
 
-  Якщо коміт уже було відправлено на віддалений репозиторій, потрібно форсувати(перезаписати) оновлення, щоб зміни відобразилися:
-
 ```bash
 git push --force
 ```
+
+- Якщо коміт уже було відправлено на віддалений репозиторій, потрібно форсувати(перезаписати) оновлення, щоб зміни відобразилися.
+
+<hr style="height: 5px; background: lawngreen" />
+<hr style="height: 5px; background: lawngreen" />
 
 ## 13. Скасування коміту
 
@@ -429,6 +465,9 @@ git checkout <commit-hash>
 
 - Ви можете переглянути конкретний коміт перейшовши на нього, але не вносити зміни в історію гілки. Ви можете створите нову гілку з обраного коміту і вносити зміни.
 
+<hr style="height: 5px; background: lawngreen" />
+<hr style="height: 5px; background: lawngreen" />
+
 ## 14. Злиття гілок
 
 ```bash
@@ -437,6 +476,9 @@ git merge імя_гілки_2
 ```
 
 - Об'єднує гілку "імя*гілки_2" з гілкою "імя*гілки_1".
+
+<hr style="height: 5px; background: lawngreen" />
+<hr style="height: 5px; background: lawngreen" />
 
 ## 15. Відправка змін на віддалений репозиторій
 
@@ -452,6 +494,9 @@ git push --force origin ivanenko
 
 - Відправляє зміни з поточної гілки на віддалений репозиторій у гілку `ivanenko` з перезаписом (перетирання) усіх файлів.
 
+<hr style="height: 5px; background: lawngreen" />
+<hr style="height: 5px; background: lawngreen" />
+
 ## 16. Видалення файлів з індексу (збереження локально)
 
 ```bash
@@ -459,6 +504,9 @@ git rm --cached file.tmp
 ```
 
 - Видаляє файл `file.tmp` з індексу (не видаляючи з локальної файлової системи).
+
+<hr style="height: 5px; background: lawngreen" />
+<hr style="height: 5px; background: lawngreen" />
 
 ## 17. Відновлення змін
 
@@ -499,6 +547,9 @@ git checkout <branch_or_commit> -- <filename>
 ```
 
 - Стара версія команди. Замінить файл <filename> на його версію з гілки або коміту <branch_or_commit>, але не перемикатиме вас на саму гілку.
+
+<hr style="height: 5px; background: lawngreen" />
+<hr style="height: 5px; background: lawngreen" />
 
 ## 18. Як створити Git Alias
 
@@ -565,3 +616,6 @@ notepad %USERPROFILE%\.gitconfig
 new = config --global alias
 
 - Видаліть попередні конфігурації аліасу new.
+
+<hr style="height: 5px; background: lawngreen" />
+<hr style="height: 5px; background: lawngreen" />
