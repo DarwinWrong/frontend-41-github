@@ -129,7 +129,11 @@ git config user.email "user@itstep.academy"
 touch .gitignore
 ```
 
-- Створює файл .gitignore у кореневому каталозі вашого репозиторію.
+```bash
+New-Item -ItemType File .gitignore
+```
+
+- Створює файл .gitignore у кореневому каталозі вашого репозиторію. Linux,Mac -> touch, Windows -> New-Item.
 
 <ol>
 <h4>Чого не повинно бути в репозиторії. Ігнорування файлів</h4>
