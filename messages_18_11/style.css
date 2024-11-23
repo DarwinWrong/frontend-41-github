@@ -40,3 +40,22 @@ main {
     align-items: center;
     margin: 0 10px;
 }
+
+.message.user1 {
+    align-self: flex-start;
+}
+
+.message.user2 {
+    align-self: flex-end;
+}
+
+.message.user1 .message-content {
+     background-color: #05755c;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
