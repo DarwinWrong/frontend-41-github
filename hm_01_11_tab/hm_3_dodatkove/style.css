@@ -1,0 +1,83 @@
+/* Загальні стилі таблиці */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 0.9em;
+    margin: 20px auto;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  caption {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+  
+  thead th {
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  /* Заголовки для кожного аспекту */
+  .aspect, .meaning {
+    background-color: #FFD966;
+  }
+  
+  .simple {
+    background-color: #B6D7A8;
+  }
+  
+  .progressive {
+    background-color: #D9EAD3;
+  }
+  
+  .perfect {
+    background-color: #C9DAF8;
+  }
+  
+  .perfect-progressive {
+    background-color: #EAD1DC;
+  }
+  
+  .time-category {
+    background-color: #FFD966;
+    font-weight: bold;
+  }
+  
+  /* Кольорові стилі для колонок */
+  tbody td:nth-child(3), thead th:nth-child(3),
+  tbody td:nth-child(4), thead th:nth-child(4) {
+    background-color: #FFF2CC;
+  }
+  
+  tbody td:nth-child(5), thead th:nth-child(5),
+  tbody td:nth-child(6), thead th:nth-child(6) {
+    background-color: #F4CCCC;
+  }
+  
+  tbody td:nth-child(7), thead th:nth-child(7),
+  tbody td:nth-child(8), thead th:nth-child(8) {
+    background-color: #D9EAD3;
+  }
+  
+  tbody td:nth-child(9), thead th:nth-child(9),
+  tbody td:nth-child(10), thead th:nth-child(10) {
+    background-color: #CFE2F3;
+  }
+  
+  /* Стиль для комірок з N/A */
+  .na {
+    background-color: #f9f9f9;
+    color: #888;
+    font-style: italic;
+  }
+  

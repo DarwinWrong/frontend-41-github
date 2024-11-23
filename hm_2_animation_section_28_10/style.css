@@ -1,0 +1,54 @@
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.block1 {
+    position: absolute;
+    left: -150px; 
+    background-color: green;
+    color: white;
+    padding: 20px;
+    font-size: 20px;
+    animation: moveToBlueBlock 3s forwards;
+}
+
+
+.block2 {
+    position: absolute;
+    left: 50px; 
+    background-color: blue;
+    color: white;
+    padding: 20px;
+    font-size: 20px;
+    animation: moveOut 3s 3s forwards; 
+}
+
+
+@keyframes moveToBlueBlock {
+    0% {
+        left: -150px;
+    }
+    100% {
+        left: 200px; 
+        color: red; 
+        transform: scale(1.5); 
+    }
+}
+
+
+@keyframes moveOut {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100vw); 
+    }
+}

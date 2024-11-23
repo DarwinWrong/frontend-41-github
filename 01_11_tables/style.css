@@ -1,0 +1,34 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.accordion {
+    width: 300px;
+    margin: 20px auto;
+}
+
+.accordion-toggle {
+    display: none; 
+}
+
+.accordion-header {
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    display: block;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease; 
+    background-color: #f1f1f1;
+    padding: 0 10px; 
+}
+
+
+.accordion-toggle:checked + .accordion-header + .accordion-content {
+    max-height: 200px; 
+    padding: 10px;  
+}

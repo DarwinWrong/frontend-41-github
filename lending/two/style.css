@@ -1,0 +1,231 @@
+/* General styles */
+body {
+    margin: 0;
+    font-family: 'Crimson Pro', serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+#home {
+    background-image: url('img/ticket.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 10vw 0;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(240, 180, 118, 0.9);
+    color: #fff;
+    padding: 1vw 3vw;
+    box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1);
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo img {
+    height: 3vw;
+    margin-right: 1vw;
+}
+
+.brand-name {
+    font-family: 'Fraunces', serif;
+    font-size: 1.8vw;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 2vw;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2vw;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #298f77;
+}
+
+/* Sections */
+.section {
+    padding: 5vw 10vw;
+    background-color: #fff;
+}
+
+.section h1 {
+    font-family: 'Fraunces', serif;
+    font-size: 2.8vw;
+    margin-bottom: 2vw;
+}
+
+.section p {
+    font-size: 1.4vw;
+    color: #555;
+}
+
+/* About Us section */
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5vw 10vw;
+}
+
+.about-image {
+    flex: 1;
+    margin-right: 5vw;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 1vw;
+    box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1);
+}
+
+.about-content {
+    flex: 2;
+}
+
+/* Coupons */
+.coupon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2vw;
+    justify-items: center;
+}
+
+.coupon {
+    background: #FBF7BF;
+    padding: 2vw;
+    border-radius: 1vw;
+    box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.coupon:hover {
+    transform: translateY(-0.5vw);
+}
+
+.coupon-icon {
+    font-size: 5vw;
+    color: #4a90e2;
+    margin-bottom: 1vw;
+}
+
+.coupon-title {
+    font-family: 'Syne Mono', monospace;
+    font-size: 1.8vw;
+    margin: 1vw 0;
+    color: #333;
+}
+
+.coupon-rating {
+    font-size: 1.4vw;
+    margin-bottom: 1vw;
+    color: #777;
+}
+
+.coupon-discount {
+    font-size: 2vw;
+    font-weight: bold;
+    margin-bottom: 2vw;
+    color: #555;
+}
+
+button {
+    font-size: 1.4vw;
+    padding: 0.5vw 2vw;
+    border: none;
+    background-color: #4a90e2;
+    color: white;
+    border-radius: 0.5vw;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #357ab8;
+}
+
+/* Footer */
+footer {
+    background-image: url('img/ticket.jpg');
+    color: white;
+    padding: 5vw;
+    text-align: center;
+}
+
+.footer-content {
+    margin-bottom: 2vw;
+}
+
+.footer-content h3 {
+    font-size: 2.5vw;
+    margin-bottom: 1vw;
+    color: #fff;
+}
+
+.footer-content form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-content form label {
+    font-size: 1.5vw;
+    margin-top: 1vw;
+    color: #fff;
+}
+
+.footer-content form input,
+.footer-content form textarea {
+    font-size: 1.5vw;
+    padding: 0.5vw;
+    width: 80vw;
+    margin-top: 1vw;
+    border: 1px solid #ccc;
+    border-radius: 0.5vw;
+}
+
+.footer-content form textarea {
+    resize: vertical;
+    min-height: 5vw;
+}
+
+.footer-content form button {
+    font-size: 1.5vw;
+    padding: 1vw 2vw;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 0.5vw;
+    margin-top: 2vw;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.footer-content form button:hover {
+    background-color: #77b300;
+}
+
+.footer-bottom {
+    font-size: 1.2vw;
+    color: #ccc;
+}
