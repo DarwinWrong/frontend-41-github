@@ -22,3 +22,21 @@ main {
     overflow-y:auto;
     padding: 20px;
 }
+
+.message {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+}
