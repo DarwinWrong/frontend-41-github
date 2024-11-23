@@ -11,3 +11,14 @@ header, footer{
     padding: 10px;
     text-align: center;
 }
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-container {
+    flex: 1;
+    overflow-y:auto;
+    padding: 20px;
+}
