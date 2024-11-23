@@ -1,16 +1,18 @@
-body{
+body {
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
     height: 100vh;
     margin: 0;
 }
-header, footer{
-    background-color: #333;
+
+header, footer {
+    background-color: #0baf76;
     color: white;
-    padding: 10px;
     text-align: center;
+    padding: 10px;
 }
+
 main {
     flex: 1;
     display: flex;
@@ -19,7 +21,7 @@ main {
 
 .chat-container {
     flex: 1;
-    overflow-y:auto;
+    overflow-y: auto;
     padding: 20px;
 }
 
@@ -42,15 +44,19 @@ main {
 }
 
 .message.user1 {
-    align-self: flex-start;
+    align-items: flex-start;
 }
 
 .message.user2 {
-    align-self: flex-end;
+    align-items: flex-end;
 }
 
 .message.user1 .message-content {
-     background-color: #05755c;
+    background-color: #049288;
+}
+
+.message.user2 .message-content {
+    background-color: #0da2c0;
 }
 
 .avatar {
@@ -59,3 +65,44 @@ main {
     border-radius: 50%;
 }
 
+.message-content {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 5px;
+    align-self: stretch;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.timestamp {
+    font-size: 0.8em;
+    color: gray;
+}
+
+.input-container {
+    display: flex;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #088a67;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
