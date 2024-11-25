@@ -359,7 +359,7 @@ git push --set-upstream origin нова_назва
 <hr style="height: 5px; background: lawngreen" />
 <hr style="height: 5px; background: lawngreen" />
 
-## 10. Додавання файлів до коміту
+## 10. Додавання змінених файлів для коміту
 
 ### Додавання окремого файлу
 
@@ -384,6 +384,24 @@ git add .
 ```
 
 - Додає всі змінені файли до коміту.
+
+<hr style="height: 5px; background: lawngreen" />
+<hr style="height: 5px; background: lawngreen" />
+
+### Скасування змін в файлах
+
+```bash
+git checkout -- index.html
+git checkout HEAD -- <filename>
+```
+
+- Скасовує локальні зміни в зазначеному файлі та повертає його до стану останнього коміту на поточній гілці (не залежно від того, чи були зміни додані за допомогою git add). Термінал має бути відкритим в папці де файли до яких ви використовуєте скасавання.
+
+```bash
+git checkout HEAD -- .
+```
+
+- Скасовує всі локальні зміни у файлах у поточній директорії та повертає їх до стану останнього коміту.
 
 <hr style="height: 5px; background: lawngreen" />
 <hr style="height: 5px; background: lawngreen" />
@@ -456,21 +474,6 @@ git reset --hard HEAD^
 
 <hr style="height: 5px; background: lawngreen" />
 <hr style="height: 5px; background: lawngreen" />
-
-### Скасування змін в файлах
-
-```bash
-git checkout -- index.html
-git checkout HEAD -- <filename>
-```
-
-- Скасовує локальні зміни в зазначеному файлі та повертає його до стану останнього коміту на поточній гілці (не залежно від того, чи були зміни додані за допомогою git add). Термінал має бути відкритим в папці де файли до яких ви використовуєте скасавання.
-
-```bash
-git checkout HEAD -- .
-```
-
-- Скасовує всі локальні зміни у файлах у поточній директорії та повертає їх до стану останнього коміту.
 
 ### Перегляд будь-якого коміту за допомогою commit-hash
 
