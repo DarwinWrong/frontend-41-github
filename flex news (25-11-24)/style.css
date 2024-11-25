@@ -1,41 +1,47 @@
+/* Reset CSS */
 * {
-    margin: 10px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
 
+body {
+    margin: 0;
+}
+
 h3 {
-    margin-left: 0;
+    margin: 10px 0;
 }
 
 .container {
-    background-color: rgba(173, 217, 230, 255);
+    background-color: rgba(173, 217, 230, 1);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    width: 800px;
+    width: 100%;
+    max-width: 800px; /* Adjust as needed */
     margin: 0 auto;
 }
 
 .column {
-    width: 30%;
-    margin: 0;
+    flex: 1 1 33.333%;
+    max-width: 33.333%;
+    padding: 10px;
 }
 
 .top-column {
     display: flex;
     justify-content: center;
-    background-color: rgba(195,195,195,255);
-    margin-bottom: 0;
+    background-color: rgba(195, 195, 195, 1);
     padding: 20px;
 }
 
 .bottom-column {
-    margin-top: 0;
-    background-color: rgba(245,245,245,255);
+    background-color: rgba(245, 245, 245, 1);
     padding: 20px;
 }
-
 
 .first-top {
     padding: 40px;
@@ -44,7 +50,6 @@ h3 {
 .second-top {
     padding: 20px;
 }
-
 
 .third-top {
     padding: 20px;
@@ -58,32 +63,16 @@ h3 {
     padding: 60px;
 }
 
-.fifth {
-    margin-top: -80px;
-}
-
 .sixth-top {
     padding: 70px;
-}
-
-.sixth {
-    margin-top: -40px;
 }
 
 .seventh-top {
     padding: 20px;
 }
 
-.seventh {
-    margin-top: -90px;
-}
-
 .eighth-top {
     padding: 40px;
-}
-
-.eighth {
-    margin-top: -60px;
 }
 
 .ninth-top {
