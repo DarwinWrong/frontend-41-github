@@ -1,0 +1,23 @@
+#text {
+    max-width: 300px;
+    font-size: 18px;
+    color: green;
+    color: black;
+    margin: 10px;
+}
+
+div.text-1 {
+    color: green;
+}
+
+#text.text-1 {
+    color: blue;
+}
+
+.main-text {
+    color: yellow !important;
+}
+
+.text-3 {
+    color: brown;
+}

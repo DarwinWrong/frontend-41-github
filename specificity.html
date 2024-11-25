@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>selector’s specificity</title>
+    <link rel="stylesheet" href="specifity.css" />
+  </head>
+  <body>
+    <div id="text" class="text-1">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit cupiditate
+      pariatur alias repellendus, eligendi placeat animi inventore commodi odit,
+      eaque corrupti numquam nam voluptatum accusamus quidem sed quos
+      distinctio! Aperiam.
+    </div>
+
+    <div
+      class="text-2 main-text"
+      style="color: red; background: black"
+      id="text"
+    >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit cupiditate
+      pariatur alias repellendus, eligendi placeat animi inventore commodi odit,
+      eaque corrupti numquam nam voluptatum accusamus quidem sed quos
+      distinctio! Aperiam.
+    </div>
+
+    <div class="text-3" style="color: purple; background: black" id="text">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit cupiditate
+      pariatur alias repellendus, eligendi placeat animi inventore commodi odit,
+      eaque corrupti numquam nam voluptatum accusamus quidem sed quos
+      distinctio! Aperiam.
+    </div>
+  </body>
+</html>
