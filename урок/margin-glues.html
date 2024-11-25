@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Запобігання схлопуванню margin</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: #f4f4f4;
+        color: #333;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      h2 {
+        margin-bottom: 10px;
+      }
+
+      .example {
+        border: 1px solid black;
+        margin-bottom: 30px;
+      }
+
+      .container {
+        background: #e0e0e0;
+        padding: 10px;
+      }
+
+      .box {
+        background: #76c7c0;
+        margin: 20px 0;
+        padding: 10px;
+        text-align: center;
+        color: white;
+        font-size: 16px;
+        min-height: 40px;
+      }
+      /* =========================== */
+      /* =========================== */
+      /* 1. Використання проміжного елемента */
+      .spacer {
+        /* Проміжок, який руйнує схлопування */
+        height: 0.01px; /* в деяких браузерах може округлитись до 0 */
+        height: 1px;
+        visibility: hidden;
+        opacity: 0;
+        background: transparent;
+      }
+      /* =========================== */
+      /* =========================== */
+      /* 2. Використання display: flex */
+      .float {
+        /* display: inline-block; */
+        float: left;
+        clear: both;
+      }
+      /* =========================== */
+      /* =========================== */
+      /* 3. Додавання border */
+      .border-fix {
+        margin: 0;
+        /* Прозорий border для запобігання схлопуванню */
+        /* border: 1px solid transparent; */
+        border-top: 20px solid white;
+        border-bottom: 20px solid white;
+      }
+      /* =========================== */
+      /* =========================== */
+      .padding {
+        margin: 0;
+        background: none;
+        padding: 0;
+        padding-top: 20px;
+        margin-bottom: 20px;
+        min-height: initial;
+      }
+      .padding div {
+        background: #76c7c0;
+        min-height: 39px;
+        padding: 10px;
+        text-align: center;
+      }
+      /* =========================== */
+      /* =========================== */
+      /* 4. Використання display: flex */
+      .flex-fix {
+        display: flex;
+        flex-direction: column;
+        /* Використання gap замість margin */
+        /* gap: 1px; */
+      }
+      /* =========================== */
+      /* =========================== */
+      .inline-block {
+        display: inline-block;
+        /* display: inline-table; */
+      }
+      /* =========================== */
+      /* =========================== */
+      .position-absolute {
+        position: absolute;
+      }
+      /* =========================== */
+      /* =========================== */
+      .before::before {
+        content: "x";
+        position: relative;
+        top: -20px;
+        display: inline-block;
+        /* display: inline-block; */
+        border-top: 1px solid transparent;
+        height: 1px;
+      }
+      /* =========================== */
+      /* =========================== */
+      .glue {
+        /* 1 */
+        display: flex;
+        flex-direction: column;
+      }
+      .glue div:nth-of-type(1) {
+        /* 2 */
+        /* display: inline-block; */
+
+        /* 3 */
+        /* position: absolute;
+        bottom: 0; */
+
+        /* 4 */
+        /* float: left; */
+      }
+      .glue div:nth-of-type(2) {
+        /* 4 */
+        /* float: left;
+        clear: both; */
+      }
+    </style>
+    <link rel="stylesheet" href="glues.css" />
+  </head>
+  <body>
+    <h1>Запобігання схлопуванню margin</h1>
+
+    <section class="example">
+      <h2>1. Використання проміжного елемента</h2>
+      <div class="container">
+        <div class="box">Box 1</div>
+        <!-- Проміжний елемент -->
+        <div class="spacer"></div>
+        <div class="box">Box 2</div>
+      </div>
+    </section>
+
+    <section class="example">
+      <h2>2. Використання float замість margin</h2>
+      <div class="container">
+        <div class="box">Box 1</div>
+        <div class="box float">Box 2</div>
+      </div>
+    </section>
+
+    <section class="example">
+      <h2>3. Додавання border до дочірнього елемента</h2>
+      <div class="container">
+        <div class="box">Box 1</div>
+        <div class="box border-fix">Box 2</div>
+      </div>
+    </section>
+
+    <section class="example">
+      <h2>4. Додавання padding до дочірнього елемента</h2>
+      <div class="container">
+        <div class="box">Box 1</div>
+        <div class="box padding">
+          <div>Box 2</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="example">
+      <h2>5. Використання display: flex, або gap замість margin</h2>
+      <div class="container flex-fix">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+      </div>
+    </section>
+
+    <section class="example">
+      <h2>
+        6. Використання display:inline-block/table/inline-table/table-cell;
+      </h2>
+      <div class="container">
+        <div class="box">Box 1</div>
+        <div class="box inline-block">Box 2</div>
+      </div>
+    </section>
+
+    <section class="example">
+      <h2>7. Використання position: absolute;</h2>
+      <div class="container">
+        <div class="box">Box 1</div>
+        <div class="box position-absolute">Box 2</div>
+      </div>
+    </section>
+
+    <!-- <section class="example">
+      <h2>8. Використання before</h2>
+      <div class="container">
+        <div class="box">Box 1</div>
+        <div class="box before">Box 2</div>
+      </div>
+    </section> -->
+
+    <div class="glue">
+      <h3>Схлопування між сусідніми елементами</h3>
+      <div style="background-color: lightblue; margin-bottom: 30px">
+        Перший блок з margin-bottom: 30px;
+      </div>
+      <div style="background-color: lightcoral; margin-top: 20px">
+        Другий блок з margin-top: 20px;
+      </div>
+    </div>
+  </body>
+</html>

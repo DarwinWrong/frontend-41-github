@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hover non child</title>
+  </head>
+  <body>
+    <h4>Hover on h4 for non child element</h4>
+    <style id="float-clearfix">
+      h4 {
+        display: inline-block;
+        padding: 10px;
+      }
+      h4:hover {
+        cursor: pointer;
+      }
+      .block {
+        padding: 10px;
+      }
+      .block-1,
+      .block-2 {
+        background-color: lightblue;
+      }
+      .child-1,
+      .child-2 {
+        padding: 5px;
+      }
+      .child-1 {
+        background-color: lightcoral;
+      }
+      .child-2 {
+        background-color: lightgreen;
+      }
+
+      /* 
+        Селектор ~ дозволяє вибрати будь-який наступний елемент того ж рівня в DOM
+        ~ знаходить всі наступні елементи з класом .float-2 після h4:nth-of-type(2). 
+        */
+      .wrapper h4:nth-of-type(1):hover ~ .block-1 .child-1 {
+        background-color: brown;
+      }
+      .wrapper h4:nth-of-type(1):hover ~ .block-1 .child-2 {
+        background-color: yellow;
+      }
+      /* 
+        Селектор + шукає безпосередньо наступний елемент після вказаного.
+        Тобто буде працювати якщо наступний після <h4> елемент .float-1 .child-2
+        */
+      .wrapper h4:nth-of-type(2):hover + br + .block-1 + .block-2 .child-1 {
+        background-color: greenyellow;
+      }
+      .wrapper h4:nth-of-type(2):hover + br + .block-1 + .block-2 .child-2 {
+        background-color: rebeccapurple;
+      }
+      br {
+        visibility: hidden;
+      }
+    </style>
+
+    <div class="wrapper">
+      <h4>1) Change 1 block 2 element bg-color</h4>
+      <h4>2) Change 2 block bg-color</h4>
+      <br />
+      <div class="block block-1">
+        <div class="child-1">Дочірній елемент 1</div>
+        <div class="child-2">Дочірній елемент 2</div>
+      </div>
+      <!-- 2 -->
+      <div class="block block-2">
+        <div class="child-1">Дочірній елемент 1</div>
+        <div class="child-2">Дочірній елемент 2</div>
+      </div>
+    </div>
+  </body>
+</html>

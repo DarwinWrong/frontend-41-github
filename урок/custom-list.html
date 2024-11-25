@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Numbering</title>
+  </head>
+  <body>
+    <style>
+      /* Стилізація списку */
+      .custom-list {
+        list-style: none; /* Приховує стандартні маркери списку */
+        padding-left: 0; /* Вирівнює список по лівому краю */
+        font-family: Arial, sans-serif;
+      }
+
+      .custom-list li {
+        margin: 5px 0; /* Відступи між пунктами */
+      }
+
+      .custom-list .number {
+        font-weight: bold; /* Номери жирним шрифтом */
+        margin-right: 5px; /* Відступ між номером і текстом */
+      }
+    </style>
+    <ul class="custom-list">
+      <li><span class="number">18.1.8</span>Текст</li>
+      <li><span class="number">18.1.9</span>Текст</li>
+      <li><span class="number">18.2</span>Текст</li>
+      <li><span class="number">18.2.1</span>Текст</li>
+      <li><span class="number">18.2.2</span>Текст</li>
+    </ul>
+
+    <style>
+      ol {
+        /* Скидання лічильника для секцій */
+        /* counter-reset: section; 
+        padding-left: 20px; */
+      }
+
+      ol li {
+        /* Приховує стандартні маркери */
+        /* list-style: none;  */
+      }
+
+      ol.level-1 > li {
+        /* Скидає лічильник для підрозділів */
+        /* counter-reset: subsection;  */
+      }
+
+      ol.level-1 > li::before {
+        /* Збільшує головний лічильник */
+        /* counter-increment: section;  */
+        /* Формує номер для рівня 1 */
+        /* content: counter(section) ". "; 
+        font-weight: bold; */
+      }
+
+      ol.level-2 > li {
+        /* Скидає лічильник для третього рівня */
+        /* counter-reset: subsubsection;  */
+      }
+
+      ol.level-2 > li::before {
+        /* Збільшує другорядний лічильник */
+        /* counter-increment: subsection;  */
+        /* Формує номер 18.1 */
+        /* content: counter(section) "." counter(subsection) ". ";  */
+      }
+
+      ol.level-3 > li::before {
+        /* Збільшує третій лічильник */
+        /* counter-increment: subsubsection;  */
+        /* content: counter(section) "." counter(subsection) "." */
+        /* Формує номер 18.1.8 */
+        /* counter(subsubsection) ". ";  */
+      }
+    </style>
+    <!-- <ol class="level-1" start="18">
+      <li>
+        Текст 18.1
+        <ol class="level-2">
+          <li>
+            Текст 18.1.8
+            <ol class="level-3">
+              <li>Текст 18.1.9</li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+      <li>
+        Текст 18.2
+        <ol class="level-2">
+          <li>Текст 18.2.1</li>
+          <li>Текст 18.2.2</li>
+        </ol>
+      </li>
+    </ol> -->
+
+    <style>
+      ol {
+        /* Встановлюємо стартові значення */
+        counter-reset: level1 17 level2 0 level-18-1-1 1 level-18-2-1 2 level3 1;
+        /* Видаляємо стандартну стилізацію */
+        list-style: none;
+        padding-left: 20px;
+      }
+
+      li {
+        /* Відступ між елементами списку */
+        margin: 5px 0;
+      }
+
+      /* Перший рівень */
+      ol.level-1 > li::before {
+        /* Збільшуємо перший рівень */
+        counter-increment: level1;
+        /* Формуємо номер: 18., 19. і т.д. */
+        content: counter(level1) ". ";
+        font-weight: bold;
+      }
+
+      /* Другий рівень */
+      ol.level-2 > li::before {
+        /* Збільшуємо другий рівень */
+        counter-increment: level2;
+        /* Формуємо номер: 18.1, 18.2 */
+        content: "18." counter(level2) ". ";
+      }
+
+      /* Третій рівень */
+      ol.level-3 > li::before {
+        /* Збільшуємо третій рівень */
+        counter-increment: level3;
+        /* Формуємо номер: 18.1.8, 18.1.9 */
+        content: "18." counter(level-18-1-1) "." counter(level3) ". ";
+      }
+
+      /* Третій рівень */
+      ol.level-3-2 > li::before {
+        /* Збільшуємо третій рівень */
+        counter-increment: level3;
+        /* Формуємо номер: 18.1.8, 18.1.9 */
+        content: "18." counter(level-18-2-1) "." counter(level3) ". ";
+      }
+    </style>
+    <ol class="level-1">
+      <li>
+        Головний розділ
+        <ol class="level-2">
+          <li>
+            Текст 18.1
+            <ol class="level-3">
+              <li>Текст 18.1.8</li>
+              <li>Текст 18.1.9</li>
+            </ol>
+          </li>
+          <li>
+            Текст 18.2
+            <ol class="level-3-2">
+              <li>Текст 18.2.1</li>
+              <li>Текст 18.2.2</li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </body>
+</html>

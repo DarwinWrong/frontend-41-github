@@ -1,0 +1,170 @@
+@import url(/clear.css);
+
+div {
+    border: 1px solid black;
+    padding: 10px;
+    margin: 5px;
+}
+
+/* =========================== */
+.flex {
+    display: flex;
+}
+
+.inline-flex {
+    display: inline-flex;
+}
+
+/* =========================== */
+.row {
+    flex-direction: row;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.row-reverse {
+    flex-direction: row-reverse;
+}
+
+.column-reverse {
+    flex-direction: column-reverse;
+}
+
+/* =========================== */
+.justify-start {
+    justify-content: flex-start;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+/* =========================== */
+.align-items-start {
+    height: 150px;
+    align-items: flex-start;
+}
+
+.align-items-end {
+    height: 150px;
+    align-items: flex-end;
+}
+
+.align-items-center {
+    height: 150px;
+    align-items: center;
+}
+
+.align-items-stretch {
+    height: 150px;
+    align-items: stretch;
+}
+
+/* =========================== */
+.flex-wrap {
+    height: 150px;
+    flex-wrap: wrap;
+}
+
+.flex-nowrap {
+    height: 150px;
+    flex-wrap: nowrap;
+}
+
+.flex-wrapreverse {
+    height: 150px;
+    flex-wrap: wrap-reverse;
+}
+
+/* =========================== */
+.flex-flow {
+    flex-flow: row nowrap;
+}
+
+/* =========================== */
+.align-content-start {
+    height: 200px;
+    align-content: flex-start;
+}
+
+.align-content-end {
+    height: 200px;
+    align-content: flex-end;
+}
+
+.align-content-center {
+    height: 200px;
+    align-content: center;
+}
+
+.align-content-around {
+    height: 200px;
+    align-content: space-around;
+}
+
+.align-content-between {
+    height: 200px;
+    align-content: space-between;
+}
+
+.align-content-stretch {
+    height: 200px;
+    align-content: stretch;
+}
+
+/* =========================== */
+/* .basis div:nth-child(2) {
+    color: red;
+}
+
+.basis div:nth-of-type(2) {
+    color: red;
+} */
+.basis div {
+    /* flex-grow: 1;
+    flex-shrink: 0; */
+}
+
+.basis div:nth-of-type(1) {
+    flex-basis: 200px;
+}
+
+.basis div:nth-of-type(2) {
+    flex-basis: 10%;
+}
+
+.basis div:nth-of-type(3) {
+    flex-basis: 10%;
+    min-width: 300px;
+}
+
+.basis div:nth-of-type(4) {
+    flex-grow: 1;
+}
+
+/* =========================== */
+.flex-grow {
+    width: 200px;
+}
+
+.flex-grow:nth-of-type(1) {
+    flex-grow: 1;
+}
+
+.flex-grow:nth-of-type(2) {
+    flex-grow: 2;
+}

@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: #f4f4f4;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+.example {
+    border: 1px solid black;
+    margin-bottom: 30px;
+}
+
+.container {
+    background: #e0e0e0;
+    padding: 10px;
+}
+
+.box {
+    background: #76c7c0;
+    margin: 20px 0;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    min-height: 40px;
+}
+
+/* =========================== */
+/* 1. Використання проміжного елемента */
+/* =========================== */
+.spacer {
+    /* Проміжок, який руйнує схлопування */
+    height: 0.01px;
+    /* в деяких браузерах може округлитись до 0 */
+    height: 1px;
+    visibility: hidden;
+    opacity: 0;
+    background: transparent;
+}
+
+/* =========================== */
+/* 2. Використання display: flex */
+/* =========================== */
+.float {
+    /* display: inline-block; */
+    float: left;
+    clear: both;
+}
+
+/* =========================== */
+/* 3. Додавання border */
+/* =========================== */
+.border-fix {
+    margin: 0;
+    /* Прозорий border для запобігання схлопуванню */
+    /* border: 1px solid transparent; */
+    border-top: 20px solid white;
+    border-bottom: 20px solid white;
+}
+
+/* =========================== */
+/* 4. Додавання padding до дочірнього елемента */
+/* =========================== */
+.padding {
+    margin: 0;
+    padding: 0;
+    background: none;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    min-height: initial;
+}
+
+.padding div {
+    background: #76c7c0;
+    min-height: 39px;
+    padding: 10px;
+    text-align: center;
+}
+
+/* =========================== */
+/* 5. Використання display: flex */
+/* =========================== */
+.flex-fix {
+    display: flex;
+    flex-direction: column;
+    /* Використання gap замість margin */
+    /* gap: 1px; */
+}
+
+/* =========================== */
+/* 6. Використання display:inline-block/table/inline-table/table-cell */
+/* =========================== */
+.inline-block {
+    display: inline-block;
+    /* display: inline-table; */
+}
+
+/* =========================== */
+/* 7. Використання position: absolute */
+/* =========================== */
+.position-absolute {
+    position: absolute;
+}
+
+/* =========================== */
+/* =========================== */
+/* .before::before {
+    content: "x";
+    position: relative;
+    top: -20px;
+    display: inline-block;
+    border-top: 1px solid transparent;
+    height: 1px;
+} */
+
+/* =========================== */
+/* =========================== */
+.glue {
+    /* 1 */
+    display: flex;
+    flex-direction: column;
+}
+
+.glue div:nth-of-type(1) {
+    /* 2 */
+    /* display: inline-block; */
+
+    /* 3 */
+    /* position: absolute;
+    bottom: 0; */
+
+    /* 4 */
+    /* float: left; */
+}
+
+.glue div:nth-of-type(2) {
+    /* 4 */
+    /* float: left;
+    clear: both; */
+}

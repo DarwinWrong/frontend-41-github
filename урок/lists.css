@@ -1,0 +1,81 @@
+        /*****111111*****/
+        .block {
+            background-color: lightblue;
+            color: red;
+            padding: 20px; /* Внутрішній відступ */
+            margin: 15px;  /* Зовнішній відступ */
+        }
+
+        /*****222222*****/
+        .outer {
+            background-color: lightblue;
+            padding: 30px;
+            margin: 20px;
+        }
+
+        .inner {
+            background-color: lightgreen;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        /*****333333*****/
+        .heading {
+            font-size: 24px;
+            font-weight: bold;
+            position: relative;
+        }
+        .heading:before {
+                content: '🔷'; /* Додаємо іконку перед заголовком */
+                margin-right: 10px;
+        }
+        .heading:after {
+                content: '⚡'; /* Додаємо іконку після заголовка */
+                margin-left: 10px;
+        }
+
+        /*****4444444*****/
+        ol.numbered {
+            list-style-type: upper-roman; /* Римські цифри */
+        }
+
+        ul.markered {
+            list-style-image: url('marker.png'); /* Додаємо зображення як маркер */
+        }
+
+        /*****5555555*****/
+        ol.multi-level {
+            list-style-type: upper-roman; /* Римські цифри для основного списку */
+            /*list-style-type: upper-alpha;  !* Літери для основного списку *!*/
+            margin-left: 20px;
+        }
+
+        ul.multi-level {
+            list-style-type: disc; /* Кружечки для вкладеного списку */
+            margin-left: 40px; /* Збільшуємо відступ для вкладеного списку */
+            /*list-style-image: url('custom-marker.png'); !* Кастомний маркер для підсписку *!*/
+            /*margin-left: 50px;*/
+        }
+
+        /*****66666*****/
+        dl {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        /*dt:before {*/
+        /*    content: '📖'; !* Додаємо іконку перед терміном *!*/
+        /*    margin-right: 10px;*/
+        /*}*/
+        dt {
+            font-weight: bold;
+            color: darkblue;
+            /*position: relative;*/
+        }
+        dd {
+            margin-left: 20px;
+            color: gray;
+        }
+        /*dd:after {*/
+        /*    content: '✔️'; !* Додаємо іконку після визначення *!*/
+        /*    margin-left: 10px;*/
+        /*}*/

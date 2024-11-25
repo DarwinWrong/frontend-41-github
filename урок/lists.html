@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lists</title>
+    <link rel="stylesheet" href="lists.css" />
+    <style>
+      /*****111111*****/
+      .block {
+        background-color: lightblue;
+        padding: 20px; /* Внутрішній відступ */
+        margin: 15px; /* Зовнішній відступ */
+      }
+
+      /*****222222*****/
+      .outer {
+        background-color: lightblue;
+        padding: 30px;
+        margin: 20px;
+      }
+
+      .inner {
+        background-color: lightgreen;
+        padding: 20px;
+        margin: 10px;
+      }
+
+      /*****333333*****/
+      .heading {
+        font-size: 24px;
+        font-weight: bold;
+        position: relative;
+      }
+      .heading:before {
+        content: '🔷'; /* Додаємо іконку перед заголовком */
+        margin-right: 10px;
+      }
+      .heading:after {
+        content: '⚡'; /* Додаємо іконку після заголовка */
+        margin-left: 10px;
+      }
+
+      /*****4444444*****/
+      ol.numbered {
+        list-style-type: upper-roman; /* Римські цифри */
+      }
+
+      ul.markered {
+        list-style-image: url('marker.png'); /* Додаємо зображення як маркер */
+      }
+
+      /*****5555555*****/
+      ol.multi-level {
+        list-style-type: upper-roman; /* Римські цифри для основного списку */
+        /*list-style-type: upper-alpha;  !* Літери для основного списку *!*/
+        margin-left: 20px;
+      }
+
+      ul.multi-level {
+        list-style-type: disc; /* Кружечки для вкладеного списку */
+        margin-left: 40px; /* Збільшуємо відступ для вкладеного списку */
+        /*list-style-image: url('custom-marker.png'); !* Кастомний маркер для підсписку *!*/
+        /*margin-left: 50px;*/
+      }
+
+      /*****66666*****/
+      dl {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      /*dt:before {*/
+      /*    content: '📖'; !* Додаємо іконку перед терміном *!*/
+      /*    margin-right: 10px;*/
+      /*}*/
+      dt {
+        font-weight: bold;
+        color: darkblue;
+        /*position: relative;*/
+      }
+      dd {
+        margin-left: 20px;
+        color: gray;
+      }
+      /*dd:after {*/
+      /*    content: '✔️'; !* Додаємо іконку після визначення *!*/
+      /*    margin-left: 10px;*/
+      /*}*/
+    </style>
+  </head>
+  <body>
+    <!--*****111111-222222*****-->
+    <div id="blocks">
+      <h2>Внутрішні та зовнішні відступи</h2>
+      <div class="block">Перший блок з текстом</div>
+      <div class="block">Другий блок з текстом</div>
+      <div class="block">Третій блок з текстом</div>
+
+      <h1>Відступи для вкладених блоків</h1>
+      <div class="outer">
+        Зовнішній блок
+        <div class="inner">Внутрішній блок</div>
+      </div>
+    </div>
+
+    <!--*****333333*****-->
+    <div id="pseudo">
+      <h2 class="heading">Мій заголовок</h2>
+    </div>
+
+    <!--*****444444*****-->
+    <div id="numbered-list">
+      <h2>Нумерований список</h2>
+      <ol class="numbered">
+        <li>Елемент перший</li>
+        <li>Елемент другий</li>
+        <li>Елемент третій</li>
+      </ol>
+    </div>
+
+    <div id="markered-list">
+      <h2>Маркований список</h2>
+      <ul class="markered">
+        <li>Елемент один</li>
+        <li>Елемент два</li>
+        <li>Елемент три</li>
+      </ul>
+    </div>
+
+    <!--*****5555555*****-->
+    <div id="multi-level-list">
+      <h2>Багаторівневий список</h2>
+      <ol class="multi-level">
+        <li>
+          Пункт один
+          <ul>
+            <li>Підпункт 1.1</li>
+            <li>Підпункт 1.2</li>
+          </ul>
+        </li>
+        <li>
+          Пункт два
+          <ul class="multi-level">
+            <li>Підпункт 2.1</li>
+            <li>Підпункт 2.2</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+
+    <!--*****444444*****-->
+    <div id="list-definitions">
+      <h2>Словник термінів</h2>
+      <dl>
+        <dt>HTML</dt>
+        <dd>Мова розмітки гіпертексту для створення веб-сторінок.</dd>
+
+        <dt>CSS</dt>
+        <dd>Мова стилів для опису вигляду HTML-елементів на сторінці.</dd>
+
+        <dt>JavaScript</dt>
+        <dd>
+          Мова програмування для додавання інтерактивності до веб-сторінок.
+        </dd>
+      </dl>
+    </div>
+
+    <!--*****777777*****-->
+    <div id="drop-down-list">
+      <h2>Виберіть місто</h2>
+      <label for="cities">Оберіть місто:</label>
+      <input list="cities" id="city" name="city" />
+      <datalist id="cities">
+        <option value="Київ"></option>
+        <option value="Львів"></option>
+        <option value="Одеса"></option>
+        <option value="Харків"></option>
+      </datalist>
+
+      <h1>Оберіть улюблений фрукт</h1>
+      <label for="fruits">Фрукти:</label>
+      <select id="fruits" name="fruits">
+        <option value="яблуко">Яблуко</option>
+        <option value="банан">Банан</option>
+        <option value="апельсин">Апельсин</option>
+        <option value="виноград">Виноград</option>
+      </select>
+    </div>
+
+    <!--*****888888*****-->
+    <div id="multiline-text">
+      <h2>Ваш коментар</h2>
+      <label for="comment">Введіть коментар:</label>
+      <textarea id="comment" name="comment" rows="5" cols="40"></textarea>
+    </div>
+  </body>
+</html>

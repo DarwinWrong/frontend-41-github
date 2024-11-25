@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>:Pseudo</title>
+    <style>
+      .block {
+        display: inline-block;
+        width: 15%;
+        height: 150px;
+        line-height: 170%;
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+        margin: 2%;
+        border: 2px solid;
+      }
+      /* 1 */
+      .block:first-child {
+        background-color: green;
+      }
+
+      .block:nth-child(2) {
+        background-color: #32c132;
+      }
+
+      .block:nth-child(3) {
+        background-color: #aff062;
+      }
+
+      .block:last-child {
+        background-color: #dee863;
+      }
+      /* 2 */
+      /* .block:first-of-type {
+        background-color: green;
+      }
+
+      .block:nth-of-type(2) {
+        background-color: #32c132;
+      }
+
+      .block:nth-of-type(3) {
+        background-color: #aff062;
+      }
+
+      .block:last-of-type {
+        background-color: #dee863;
+      } */
+
+      /* selection */
+      ::selection {
+        background-color: #fcfc6b;
+      }
+      li::selection {
+        background-color: #025302;
+        color: #fff;
+      }
+
+      /* first letter */
+      .first-letter::first-letter {
+        display: inline-block;
+        color: green;
+        font-size: 2em;
+        font-weight: bold;
+        border: 1px solid #1ebc1e;
+        padding: 2px 8px;
+        margin-right: 10px;
+        margin-top: 7px;
+        float: left;
+      }
+
+      /* first line */
+      .first-line::first-line {
+        color: red;
+        text-shadow: 1px 1px1px #333;
+        font-family: "Segoe Script", cursive;
+      }
+
+      /* custom marker */
+      /* Прибираємо стандартні маркери списку */
+      ul {
+        list-style-type: none;
+        padding-left: 0;
+      }
+
+      li {
+        position: relative; /* Для точного позиціонування псевдоелемента */
+        padding-left: 20px; /* Відступ для маркера */
+      }
+
+      /* Додаємо кастомний маркер за допомогою ::before */
+      li::before {
+        content: "•"; /* Символ, який буде виступати як маркер */
+        color: #1ebc1e; /* Колір маркера */
+        font-size: 1.2em; /* Розмір маркера */
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: translateY(4px); /* Налаштування вертикального положення */
+      }
+    </style>
+  </head>
+  <body>
+    <h3>nth-child та nth-of-type</h3>
+    <div class="container">
+      <!-- <h2>Our blocks</h2> -->
+      <div class="block"><h2>Block 1</h2></div>
+      <div class="block"><h2>Block 2</h2></div>
+      <div class="block"><h2>Block 3</h2></div>
+      <div class="block"><h2>Block 4</h2></div>
+      <!-- <footer>&copy; nth-child blocks</footer> -->
+    </div>
+
+    <!-- <hr />
+    <h3>::selection</h3>
+    <ol>
+      <li>color</li>
+      <li>background-color</li>
+      <li>cursor</li>
+      <li>outline</li>
+      <li>text-decoration</li>
+      <li>text-shadow</li>
+    </ol> -->
+
+    <!-- <hr />
+    <h3>::first-letter</h3>
+    <ol>
+      <li>margin</li>
+      <li>padding</li>
+      <li>border</li>
+      <li>box-shadow</li>
+      <li>float</li>
+      <li>vertical-align (тільки якщо float дорівнює none)</li>
+    </ol>
+    <div class="first-letter">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident minima
+      esse, quos soluta atque eum exercitationem. Itaque magni, ea odio
+    </div> -->
+
+    <!-- <hr />
+    <h3>::first-line</h3>
+    <ol>
+      <li>
+        Властивості групи font (font-family, font-size, font-style, font-weight,
+        font-variant та ін.),
+      </li>
+      <li>color</li>
+      <li>word-spacing</li>
+      <li>letter-spacing</li>
+      <li>
+        text-decoration, text-decoration-color, text-decoration-line,
+        text-decoration-style
+      </li>
+      <li>vertical-align (тільки якщо float дорівнює none)</li>
+      <li>text-shadow</li>
+      <li>text-transform</li>
+      <li>line-height</li>
+    </ol>
+    <div class="first-line">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident minima
+      esse, quos soluta atque eum exercitationem. Itaque magni, ea odio nihil
+      molestias aperiam est unde ratione, assumenda ipsum eum veniam.
+    </div> -->
+  </body>
+</html>

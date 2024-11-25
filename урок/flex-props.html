@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FLex props</title>
+    <style>
+      tr,
+      td {
+        border-width: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <table
+      border="3"
+      style="border-collapse: collapse"
+      cellspacing="5"
+      cellpadding="10"
+    >
+      <colgroup>
+        <col style="background-color: greenyellow" />
+      </colgroup>
+      <thead style="background-color: aquamarine">
+        <tr>
+          <th>Властивість</th>
+          <th>Параметри</th>
+          <th>Опис параметрів</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>display</strong></td>
+          <td><code>flex</code>, <code>inline-flex</code></td>
+          <td>
+            - <code>flex</code>: створює блоковий flex-контейнер. <br />
+            - <code>inline-flex</code>: створює стрічковий (inline)
+            flex-контейнер.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>flex-direction</strong></td>
+          <td>
+            <code>row</code>, <code>row-reverse</code>, <code>column</code>,
+            <code>column-reverse</code>
+          </td>
+          <td>
+            - <code>row</code>: розміщує елементи зліва направо. <br />
+            - <code>row-reverse</code>: справа наліво. <br />
+            - <code>column</code>: зверху вниз. <br />
+            - <code>column-reverse</code>: знизу вгору.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>flex-wrap</strong></td>
+          <td>
+            <code>nowrap</code>, <code>wrap</code>, <code>wrap-reverse</code>
+          </td>
+          <td>
+            - <code>nowrap</code>: елементи розміщуються в один рядок без
+            перенесення. <br />
+            - <code>wrap</code>: дозволяє переносити елементи на новий рядок.
+            <br />
+            - <code>wrap-reverse</code>: перенос в зворотному напрямку.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>flex-flow</strong></td>
+          <td><code>&lt;flex-direction&gt; &lt;flex-wrap&gt;</code></td>
+          <td>
+            Поєднує <code>flex-direction</code> і <code>flex-wrap</code> для
+            одночасного налаштування напрямку та перенесення flex-контейнера.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>justify-content</strong></td>
+          <td>
+            <code>flex-start</code>, <code>flex-end</code>, <code>center</code>,
+            <code>space-between</code>, <code>space-around</code>,
+            <code>space-evenly</code>
+          </td>
+          <td>
+            - <code>flex-start</code>: вирівнює елементи на початку
+            контейнера.<br />
+            - <code>flex-end</code>: на кінці. <br />
+            - <code>center</code>: вирівнює по центру. <br />
+            - <code>space-between</code>: рівний простір між елементами. <br />
+            - <code>space-around</code>: рівний простір навколо кожного
+            елемента. <br />
+            - <code>space-evenly</code>: рівний простір між елементами та краями
+            контейнера.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>align-items</strong></td>
+          <td>
+            <code>flex-start</code>, <code>flex-end</code>, <code>center</code>,
+            <code>baseline</code>, <code>stretch</code>
+          </td>
+          <td>
+            - <code>flex-start</code>: вирівнює елементи на початку поперечної
+            осі. <br />
+            - <code>flex-end</code>: на кінці. <br />
+            - <code>center</code>: по центру. <br />
+            - <code>baseline</code>: вирівнює за базовою лінією тексту. <br />
+            - <code>stretch</code>: розтягує елементи на всю висоту контейнера.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>align-content</strong></td>
+          <td>
+            <code>flex-start</code>, <code>flex-end</code>, <code>center</code>,
+            <code>space-between</code>, <code>space-around</code>,
+            <code>stretch</code>
+          </td>
+          <td>
+            - <code>flex-start</code>: вирівнює всі рядки на початку контейнера.
+            <br />
+            - <code>flex-end</code>: на кінці. <br />
+            - <code>center</code>: по центру. <br />
+            - <code>space-between</code>: рівний простір між рядками. <br />
+            - <code>space-around</code>: рівний простір навколо кожного рядка.
+            <br />
+            - <code>stretch</code>: розтягує рядки на всю висоту контейнера.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>order</strong></td>
+          <td>Числове значення</td>
+          <td>
+            Встановлює порядок відображення елементів; менше значення
+            відображається раніше, більше — пізніше.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>flex-grow</strong></td>
+          <td>Числове значення (0 або більше)</td>
+          <td>
+            Вказує, наскільки елемент може збільшуватися відносно інших
+            елементів для заповнення доступного простору. Значення
+            <code>0</code> означає, що елемент не буде збільшуватися.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>flex-shrink</strong></td>
+          <td>Числове значення (0 або більше)</td>
+          <td>
+            Вказує, наскільки елемент може зменшуватися, якщо простору
+            недостатньо. Значення <code>0</code> означає, що елемент не буде
+            зменшуватися.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>flex-basis</strong></td>
+          <td>
+            <code>auto</code>, <code>content</code>, <code>&lt;розмір&gt;</code>
+          </td>
+          <td>
+            Визначає базовий розмір елемента до застосування властивостей
+            <code>flex-grow</code> і <code>flex-shrink</code>. <br />
+            - <code>auto</code>: розмір визначається вмістом. <br />
+            - <code>content</code>: розмір відповідає розміру вмісту. <br />
+            - <code>&lt;розмір&gt;</code>: вказується конкретний розмір
+            (наприклад, <code>100px</code>, <code>50%</code>).
+          </td>
+        </tr>
+        <tr>
+          <td><strong>flex</strong></td>
+          <td>
+            <code
+              >&lt;flex-grow&gt; &lt;flex-shrink&gt; &lt;flex-basis&gt;</code
+            >
+          </td>
+          <td>
+            Коротка форма для задання <code>flex-grow</code>,
+            <code>flex-shrink</code>, і <code>flex-basis</code> одночасно.
+            Наприклад, <code>flex: 1 1 0</code> означає, що елемент може як
+            збільшуватися, так і зменшуватися з початковим розміром
+            <code>0</code>.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>align-self</strong></td>
+          <td>
+            <code>auto</code>, <code>flex-start</code>, <code>flex-end</code>,
+            <code>center</code>, <code>baseline</code>, <code>stretch</code>
+          </td>
+          <td>
+            Задає вирівнювання окремого елемента вздовж поперечної осі,
+            перевизначаючи значення <code>align-items</code> для цього елемента.
+            <br />
+            - <code>auto</code>: бере значення
+            <code>align-items</code> контейнера. <br />
+            - Інші значення аналогічні <code>align-items</code>.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
