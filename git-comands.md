@@ -454,6 +454,9 @@ git reset --hard HEAD^
 
 - Видаляє останній коміт і повертає файли до стану перед комітом.
 
+<hr style="height: 5px; background: lawngreen" />
+<hr style="height: 5px; background: lawngreen" />
+
 ### Скасування змін в файлах
 
 ```bash
