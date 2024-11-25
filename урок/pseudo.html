@@ -50,17 +50,17 @@
       } */
 
       /* selection */
-      ::selection {
+      .selection::selection {
         background-color: #fcfc6b;
       }
-      li::selection {
+      .selection li::selection {
         background-color: #025302;
         color: #fff;
       }
 
       /* first letter */
       .first-letter::first-letter {
-        display: inline-block;
+        /* display: inline-block; */
         color: green;
         font-size: 2em;
         font-weight: bold;
@@ -68,7 +68,7 @@
         padding: 2px 8px;
         margin-right: 10px;
         margin-top: 7px;
-        float: left;
+        /* float: left; */
       }
 
       /* first line */
@@ -113,35 +113,40 @@
       <!-- <footer>&copy; nth-child blocks</footer> -->
     </div>
 
-    <!-- <hr />
+    <hr />
     <h3>::selection</h3>
-    <ol>
+    <ul class="selection">
       <li>color</li>
       <li>background-color</li>
       <li>cursor</li>
       <li>outline</li>
       <li>text-decoration</li>
       <li>text-shadow</li>
-    </ol> -->
+    </ul>
 
-    <!-- <hr />
+    <hr />
     <h3>::first-letter</h3>
-    <ol>
+    <ul>
+      <li class="first-letter">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+        minima esse, quos soluta atque eum exercitationem. Itaque magni, ea odio
+      </li>
       <li>margin</li>
       <li>padding</li>
       <li>border</li>
       <li>box-shadow</li>
       <li>float</li>
       <li>vertical-align (тільки якщо float дорівнює none)</li>
-    </ol>
-    <div class="first-letter">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident minima
-      esse, quos soluta atque eum exercitationem. Itaque magni, ea odio
-    </div> -->
+    </ul>
 
-    <!-- <hr />
+    <hr />
     <h3>::first-line</h3>
-    <ol>
+    <ul>
+      <li class="first-line">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+        minima esse, quos soluta atque eum exercitationem. Itaque magni, ea odio
+        nihil molestias aperiam est unde ratione, assumenda ipsum eum veniam.
+      </li>
       <li>
         Властивості групи font (font-family, font-size, font-style, font-weight,
         font-variant та ін.),
@@ -157,11 +162,6 @@
       <li>text-shadow</li>
       <li>text-transform</li>
       <li>line-height</li>
-    </ol>
-    <div class="first-line">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident minima
-      esse, quos soluta atque eum exercitationem. Itaque magni, ea odio nihil
-      molestias aperiam est unde ratione, assumenda ipsum eum veniam.
-    </div> -->
+    </ul>
   </body>
 </html>
