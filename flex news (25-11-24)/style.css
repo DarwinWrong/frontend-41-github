@@ -1,13 +1,10 @@
-/* Reset CSS */
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
 
 body {
-    margin: 0;
+    margin: 10px;
 }
 
 h3 {
@@ -18,11 +15,10 @@ h3 {
     background-color: rgba(173, 217, 230, 1);
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
     width: 100%;
-    max-width: 800px; /* Adjust as needed */
+    max-width: 800px;
     margin: 0 auto;
+    padding: 10px;
 }
 
 .column {
@@ -34,6 +30,7 @@ h3 {
 .top-column {
     display: flex;
     justify-content: center;
+    align-items: center;
     background-color: rgba(195, 195, 195, 1);
     padding: 20px;
 }
@@ -44,37 +41,37 @@ h3 {
 }
 
 .first-top {
-    padding: 40px;
+    height: 100px;
 }
 
 .second-top {
-    padding: 20px;
+    height: 60px;
 }
 
 .third-top {
-    padding: 20px;
+    height: 60px;
 }
 
 .fourth-top {
-    padding: 60px;
+    height: 150px;
 }
 
 .fifth-top {
-    padding: 60px;
+    height: 160px;
 }
 
 .sixth-top {
-    padding: 70px;
+    height: 220px;
 }
 
 .seventh-top {
-    padding: 20px;
+    height: 60px;
 }
 
 .eighth-top {
-    padding: 40px;
+    height: 100px;
 }
 
 .ninth-top {
-    padding: 40px;
+    height: 100px;
 }
