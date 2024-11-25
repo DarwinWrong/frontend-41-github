@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudot</title>
+    <link rel="stylesheet" href= pseudo.css">
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        ul{
+            max-width: 300px;
+            border-bottom: 5px solid #0c887d;
+        }
+        /* Chrome */
+
+        .selection li::selection {
+            background-color: #0c887d;
+            color: #33b70f;
+        }
+
+        /* Firefox */
+        .selection li::-moz-selection {
+            background-color: #0c887d;
+            color: #74dd1e;
+        }
+        
+
+        .first-letter li::first-letter {
+           padding: 3px;
+           font-size: 24px;
+           font-style: italic;
+              color: #0c887d;
+        }
+
+        .first-line li::first-line {
+            font-size: 24px;
+            font-style: italic;
+            color: #0c887d;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <ul class="selection">
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati inventore ipsa doloremque error adipisci aperiam repellat odit impedit amet! </li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati inventore ipsa doloremque error adipisci aperiam repellat odit impedit amet! </li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati inventore ipsa doloremque error adipisci aperiam repellat odit impedit amet! </li>
+    </ul>
+
+    <ul class="first-letter">
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati inventore ipsa doloremque error adipisci aperiam repellat odit impedit amet! </li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati inventore ipsa doloremque error adipisci aperiam repellat odit impedit amet!</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati inventore ipsa doloremque error adipisci aperiam repellat odit impedit amet! </li>
+    </ul>
+
+    <ul class="first-line">
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati inventore ipsa doloremque error adipisci aperiam repellat odit impedit amet! </li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati inventore ipsa doloremque error adipisci aperiam repellat odit impedit amet! </li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati inventore ipsa doloremque error adipisci aperiam repellat odit impedit amet! </li>
+</body>
+</html>
