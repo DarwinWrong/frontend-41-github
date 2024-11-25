@@ -3,18 +3,67 @@
     font-family: Arial, sans-serif;
 }
 
+h3 {
+    margin-left: 0;
+}
+
 .container {
-    background-color: rgba(173,217,230,255);
+    background-color: rgba(173, 217, 230, 255);
     display: flex;
-    align-content: center;
+    flex-wrap: wrap;
     justify-content: center;
+    width: 1050px;
+    margin: 0 auto;
+}
+
+.column {
+    width: 30%;
 }
 
 .top-column {
+    display: flex;
+    justify-content: center;
     background-color: rgba(195,195,195,255);
     margin-bottom: 0;
     padding: 20px;
 }
+
+.first-top {
+    padding: 40px;
+}
+
+.second-top {
+    padding: 20px;
+}
+
+.third-top {
+    padding: 30px;
+}
+
+.fourth-top {
+    padding: 60px;
+}
+
+.fifth-top {
+    padding: 80px;
+}
+
+.sixth-top {
+    padding: 100px;
+}
+
+.seventh-top {
+    padding: 20px;
+}
+
+.eighth-top {
+    padding: 40px;
+}
+
+.ninth-top {
+    padding: 40px;
+}
+
 
 .bottom-column {
     margin-top: 0;
