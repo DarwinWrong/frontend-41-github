@@ -1,0 +1,61 @@
+.wraper-1  .el {
+    font-weight: 600;
+}
+
+
+.wraper-1  .el:first-child {
+    margin: 20px 0;
+    width: 200px;
+   
+}
+
+.wraper-1  div:last-child {
+    margin: 30px 0;
+    /* 1 */
+    /* display: inline-block; */
+
+    /* 2 */
+    border-top: 30px solid transparent;
+    margin-top: 0;
+}
+/* 3 */
+.wraper-2  .el:first-child {
+    margin: 20px 0;
+   padding: 5px 0;
+   
+}
+
+.wraper-2  .el:first-child {
+    margin: 20px 0;
+    padding: 5px 0;
+   
+}
+
+.wraper-2  div:last-child {
+    margin: 30px 0;
+    margin-top: 0;
+    padding-top: 30px;
+}
+
+.wraper-2  .el-2-text{
+    padding: 10px 0;
+}
+
+/* 4 */
+.wraper-3  {
+    display: flex;
+    flex-direction: column;
+    /* gap: 50px; */
+}
+
+.wraper-3  .el:first-child {
+    margin: 20px 0;
+    padding: 5px 0;
+   
+}
+
+.wraper-3  .el:last-child {
+    margin: 20px 0;
+    padding: 5px 0;
+   
+}
