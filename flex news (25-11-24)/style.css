@@ -1,5 +1,5 @@
 * {
-    margin: 10px 10px;
+    margin: 10px;
     font-family: Arial, sans-serif;
 }
 
@@ -12,12 +12,14 @@ h3 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 1050px;
+    align-items: flex-start;
+    width: 800px;
     margin: 0 auto;
 }
 
 .column {
     width: 30%;
+    margin: 0;
 }
 
 .top-column {
@@ -28,6 +30,13 @@ h3 {
     padding: 20px;
 }
 
+.bottom-column {
+    margin-top: 0;
+    background-color: rgba(245,245,245,255);
+    padding: 20px;
+}
+
+
 .first-top {
     padding: 40px;
 }
@@ -36,8 +45,9 @@ h3 {
     padding: 20px;
 }
 
+
 .third-top {
-    padding: 30px;
+    padding: 20px;
 }
 
 .fourth-top {
@@ -45,28 +55,37 @@ h3 {
 }
 
 .fifth-top {
-    padding: 80px;
+    padding: 60px;
+}
+
+.fifth {
+    margin-top: -80px;
 }
 
 .sixth-top {
-    padding: 100px;
+    padding: 70px;
+}
+
+.sixth {
+    margin-top: -40px;
 }
 
 .seventh-top {
     padding: 20px;
 }
 
+.seventh {
+    margin-top: -90px;
+}
+
 .eighth-top {
     padding: 40px;
 }
 
-.ninth-top {
-    padding: 40px;
+.eighth {
+    margin-top: -60px;
 }
 
-
-.bottom-column {
-    margin-top: 0;
-    background-color: rgba(245,245,245,255);
-    padding: 20px;
+.ninth-top {
+    padding: 40px;
 }
