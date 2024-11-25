@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrapper {
+    width: 100%;
+    padding: 50px;
+}
+.cards {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.card {
+    /* 1 */
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis:33%;
+    /* 2 */
+    flex: 0 1 33%;
+    background: linear-gradient(10deg, #1d848b 1%, #ffffff 100%);
+}
