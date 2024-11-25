@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pseudo</title>
+    <style>
+      body {
+        box-sizing: border-box;
+      }
+      ul {
+        max-width: 300px;
+        border-bottom: 4px solid red;
+      }
+      /* chrome */
+      .selection li::selection {
+        color: yellow;
+        background-color: aqua;
+      }
+      /* firefox */
+      .selection li::-moz-selection {
+        color: yellow;
+        background-color: aqua;
+      }
+      .first-letter li::first-letter {
+        padding: 3px;
+        font-size: 24px;
+        font-style: italic;
+        color: chocolate;
+      }
+      .first-line li::first-line {
+        color: chocolate;
+        font-size: 24px;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="selection">
+      <li>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore quis
+        nostrum libero repellat ea voluptate enim
+      </li>
+      <li>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore quis
+        nostrum libero repellat ea voluptate enim
+      </li>
+      <li>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore quis
+        nostrum libero repellat ea voluptate enim
+      </li>
+    </ul>
+    <ul class="first-letter">
+      <li>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore quis
+        nostrum libero repellat ea voluptate enim
+      </li>
+      <li>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore quis
+        nostrum libero repellat ea voluptate enim
+      </li>
+      <li>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore quis
+        nostrum libero repellat ea voluptate enim
+      </li>
+    </ul>
+    <ul class="first-line">
+      <li>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore quis
+        nostrum libero repellat ea voluptate enim
+      </li>
+      <li>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore quis
+        nostrum libero repellat ea voluptate enim
+      </li>
+      <li>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore quis
+        nostrum libero repellat ea voluptate enim
+      </li>
+    </ul>
+  </body>
+</html>
