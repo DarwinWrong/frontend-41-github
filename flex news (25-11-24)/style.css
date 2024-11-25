@@ -1,0 +1,23 @@
+* {
+    margin: 10px 10px;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    background-color: rgba(173,217,230,255);
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.top-column {
+    background-color: rgba(195,195,195,255);
+    margin-bottom: 0;
+    padding: 20px;
+}
+
+.bottom-column {
+    margin-top: 0;
+    background-color: rgba(245,245,245,255);
+    padding: 20px;
+}
