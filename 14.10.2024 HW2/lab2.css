@@ -1,0 +1,48 @@
+.site {
+    background-color: black;
+}
+
+.title {
+    color: white;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.dialogue {
+    color: yellow;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.author {
+    color: white;
+    margin-bottom: 30px;
+}
+
+.quote {
+    color: white;
+    font-style: italic;
+    border-left: 5px solid;
+    padding-left: 10px;
+    border-color: yellow;
+    margin-left: 20px;
+    margin-bottom: 30px;
+}
+
+.picture {
+    width: 870px;
+    height: 500px;
+    display: block;
+    margin: 0 auto;
+}
+
+.signature {
+    text-align: center;
+    color: white;
+}
+
+.end {
+    color: gray;
+    text-align: center;
+    font-size: 0.9rem;
+}
