@@ -1,0 +1,56 @@
+footer {
+    background-color: #679efe;
+    color: white
+}
+
+.one,
+.two {
+    display: inline-block;
+    margin: 100px;
+    font-size: 20px;
+    list-style-type: none;
+    line-height: 35px;
+}
+
+p:before {
+    content: "";
+    display: block;
+    width: 1100px;
+    margin-left: 100px;
+    height: 1px;
+    background-color: white;
+    margin-bottom: 50px;
+}
+
+p {
+    text-align: center;
+    position: relative;
+    bottom: 60px;
+}
+
+.picture {
+    width: 60px;
+    position: relative;
+    left: 150px;
+    margin: 25px;
+}
+
+li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.facebook:hover {
+    content: url(images/1:1:1.png);
+    cursor: pointer;
+}
+
+.instagram:hover {
+    content: url(images/2:1.png);
+    cursor: pointer;
+}
+
+.youtube:hover {
+    content: url(images/3:1.png);
+    cursor: pointer;
+}
