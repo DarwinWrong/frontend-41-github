@@ -1,0 +1,41 @@
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.block {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 110px 420px;
+}
+
+.ramka_left {
+    border-width: 20px 20px 0 20px;
+    border-style: solid;
+    width: 350px;
+    height: 90px;
+    color: mediumaquamarine;
+    transform: rotate(-45deg) translate(-175px);
+    z-index: 2;
+    position: absolute;
+    top: -100px;
+
+}
+
+img {
+    width: 400px;
+    z-index: 1;
+}
+
+.ramka_right {
+    border-width: 20px 20px 0 20px;
+    border-style: solid;
+    width: 350px;
+    height: 90px;
+    color: mediumaquamarine;
+    transform: rotate(135deg) translate(-180px);
+    z-index: 2;
+    position: absolute;
+
+}
