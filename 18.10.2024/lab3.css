@@ -1,0 +1,18 @@
+ol{
+    padding: 20px;
+    margin: 20px;
+    list-style-position: inside;
+    background-color: #FFC0CB;
+}
+li{
+    padding: 15px;
+    margin: 10px;
+    color: white;
+    background-color: #DB7093;
+    font-size: 20px;
+}
+span{
+    background-color: #8d4b60;
+    padding: 15px;
+    margin: 10px;
+}
