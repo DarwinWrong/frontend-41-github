@@ -1,0 +1,25 @@
+.red {
+    color: #8B0000;
+}
+
+.dark {
+    color: black;
+
+}
+
+.card {
+    background: #E0E0E0;
+    padding: 1px 5px 1px 5px;
+    vertical-align: middle
+}
+
+ul{
+    /* list-style-type: none; */
+    background-color: beige; 
+}
+
+li{
+    background-color:  #8B0000;
+    color: white;
+    list-style-position: outside;
+}
