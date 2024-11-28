@@ -1,0 +1,114 @@
+body {
+    margin: 50px 40px;
+}
+
+header {
+    width: 100%;
+    height: 90px;
+    background-color: #c6538c;
+}
+
+.banner {
+    color: white;
+    float: left;
+    margin: 35px 50px;
+}
+
+menu {
+    width: 1204px;
+    height: 50px;
+    background-color: #993366;
+}
+
+.navigation {
+    color: white;
+    float: left;
+    margin: 15px 10px;
+}
+
+.aside-1 {
+    width: 25%;
+    height: 110px;
+    background-color: #d279a6;
+}
+
+.aside-text-1 {
+    color: white;
+    float: left;
+    margin: 45px 50px;
+}
+
+.aside-2 {
+    width: 25%;
+    height: 150px;
+    background-color: #d279a6;
+    margin-top: 15px;
+}
+
+.aside-text-2 {
+    color: white;
+    float: left;
+    margin: 45px 50px;
+}
+
+.aside-3 {
+    width: 10%;
+    height: 275px;
+    background-color: #d279a6;
+    margin-top: -275px;
+    float: right;
+}
+
+.aside-text-3 {
+    color: white;
+    float: left;
+    margin: 70px 53px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+
+main {
+    width: 61%;
+    height: 360px;
+    background-color: #d279a6;
+    margin-left: 335px;
+    margin-top: -293px;
+}
+
+.main-text {
+    color: white;
+    padding: 40px 40px 0px;
+}
+
+section {
+    width: 90%;
+    height: 110px;
+    background-color: #dda1c0;
+    margin-left: 38px;
+    margin-bottom: 15px;
+}
+
+.section-text-1 {
+    color: white;
+    float: left;
+    margin: -20px 60px;
+}
+
+.section-text-2 {
+    color: white;
+    float: left;
+    margin: 25px 60px;
+}
+
+footer {
+    width: 100%;
+    height: 50px;
+    background-color: #993366;
+    margin-top: 20px;
+}
+
+.footer-text {
+    color: white;
+    float: left;
+    margin: 15px 50px;
+}
