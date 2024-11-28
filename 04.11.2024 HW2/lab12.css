@@ -1,0 +1,150 @@
+body {
+    margin: 50px;
+    background-color: rgb(195, 238, 238);
+}
+
+.logo {
+    width: 100px;
+
+}
+
+menu {
+    width: 100%;
+    margin-left: -70px;
+    display: inline-flex;
+}
+
+h2 {
+    margin-left: 30px;
+}
+
+.search {
+    margin-top: 13px;
+    margin-left: 430px;
+    width: 180px;
+    height: 30px;
+    background-color: white;
+}
+
+.aside-one {
+    width: 38%;
+    background-color: rgb(72, 134, 134);
+    margin-left: 780px;
+}
+
+.aside-two {
+    width: 38%;
+    height: max-content;
+    background-color: rgb(72, 134, 134);
+    margin-left: 780px;
+    margin-top: -500px;
+}
+
+.block-picture {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image-aside {
+    width: calc(25% - 5px);
+    margin: 2.5px;
+    height: auto;
+}
+
+main {
+    margin-top: -280px;
+}
+
+.image-main {
+    width: 730px;
+}
+
+.text {
+    width: 730px;
+}
+
+footer {
+    margin-top: 320px;
+}
+
+@media (min-width:768px) and (max-width:1023px) {
+
+    .search {
+        position: absolute;
+        top: 8%;
+        right: 0;
+    }
+
+    .aside-one {
+        width: 25%;
+    }
+
+    .aside-two {
+        width: 25%;
+        height: max-content;
+    }
+
+    .image-aside {
+        width: calc(50% - 5px);
+        margin: 2.5px;
+        height: max-content;
+    }
+
+    main {
+        margin-top: -270px;
+    }
+
+    .image-main {
+        max-width: 85%;
+    }
+
+    .text {
+        max-width: 85%;
+    }
+
+}
+
+@media (min-width:320px) and (max-width:768px) {
+    menu {
+        width: 100%;
+    }
+
+    .search {
+        position: absolute;
+        top: 8%;
+        right: 0;
+    }
+
+    .aside-one {
+        display: none;
+    }
+
+    .aside-two {
+        width: 100%;
+        height: max-content;
+        margin-left: 0;
+        margin-top: 0px;
+    }
+
+    .image-aside {
+        width: calc(12.5% - 5px);
+        margin: 2.5px;
+        height: max-content;
+    }
+
+    main {
+        margin-top: -20px;
+    }
+
+    .image-main {
+        width: 100%;
+    }
+
+    .text {
+        width: 100%;
+    }
+
+    footer {
+        margin-top: 0px;
+    }
+}
