@@ -1,0 +1,35 @@
+.list {
+    width: 600px;
+}
+
+h1 {
+    margin-left: 40px;
+}
+
+li {
+    list-style-image: url(images/chkbox1.png);
+    padding: 10px;
+    list-style-position: inside;
+    text-indent: 25px;
+
+}
+
+.done {
+    list-style-image: url(images/chkbox2.png);
+    text-decoration: line-through;
+    background-color: #DCDCDC;
+}
+
+li::after {
+    content: "\2715";
+    padding: 15px;
+    color: red;
+}
+
+.odd {
+    background-color: #4682B4;
+}
+
+.even {
+    background-color: #87CEFA;
+}
