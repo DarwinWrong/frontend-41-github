@@ -1,0 +1,98 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .flex-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 40px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    background-color: #fff;
+  }
+  
+  .flex-item {
+    padding: 10px;
+    text-align: center;
+    border: 2px solid #333;
+    background-color: #f9f9f9;
+    font-size: 14px;
+  }
+  
+  /* task1: flex-grow */
+  .task-1 {
+    width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .task-1 .flex-item {
+    flex-basis: 200px;
+  }
+  
+  .task-1 .flex-item:nth-child(1),
+  .task-1 .flex-item:nth-child(2),
+  .task-1 .flex-item:nth-child(3) {
+    flex-grow: 1;
+  }
+  
+  .task-1 .flex-item:nth-child(4) {
+    flex-grow: 2;
+    background-color: #ffdd99;
+  }
+  
+  /* task 2: flex-shrink */
+  .task-2 {
+    width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .task-2 .flex-item {
+    flex-basis: 250px;
+  }
+  
+  .task-2 .flex-item:nth-child(1),
+  .task-2 .flex-item:nth-child(2),
+  .task-2 .flex-item:nth-child(3),
+  .task-2 .flex-item:nth-child(4) {
+    flex-shrink: 1;
+    background-color: #ccf2ff;
+  }
+  
+  .task-2 .flex-item:nth-child(5) {
+    flex-shrink: 0;
+    background-color: #ffcccc;
+  }
+  
+  /* task3: flex-shrink зі специфікацією */
+  .task-3 {
+    width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .task-3 .flex-item {
+    flex-basis: 250px;
+  }
+  
+  .task-3 .flex-item:nth-child(1),
+  .task-3 .flex-item:nth-child(2),
+  .task-3 .flex-item:nth-child(3),
+  .task-3 .flex-item:nth-child(5) {
+    flex-shrink: 1;
+    background-color: #ccffcc;
+  }
+  
+  .task-3 .flex-item:nth-child(4) {
+    flex-shrink: 2;
+    background-color: #ffff99;
+  }
+  
