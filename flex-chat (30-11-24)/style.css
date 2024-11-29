@@ -1,1 +1,31 @@
 @import url(clear.css);
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    height: 100vh;
+}
+
+.wrapper {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.jack-message, .anie-message {
+    width: 90%;
+    padding: 20px;
+    margin: 10px;
+}
+
+.anie-message {
+    background-color: rgba(255,182,193,255);
+    border-radius: 20px 20px 20px 0;
+}
+
+.jack-message {
+    background-color: rgba(173,217,230,255);
+    border-radius: 20px 20px 0 20px;
+}
