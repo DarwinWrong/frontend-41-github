@@ -8,3 +8,9 @@ body {
     align-items: center;
     height: max-content;
 }
+
+.chat-container {
+    width: 1090px;
+    background-color: #ffffff;
+    padding: 30px;
+}
