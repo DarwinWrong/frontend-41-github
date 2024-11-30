@@ -26,3 +26,8 @@ body {
     display: flex;
     flex-direction: row;
 }
+
+.message-right {
+    display: flex;
+    flex-direction: row-reverse;
+}
