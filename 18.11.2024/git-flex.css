@@ -19,3 +19,11 @@
     display: flex;
     justify-content: space-around;
 }
+
+.content {
+    flex-grow: 0;
+    flex-shrink: 2;
+    flex-basis: 29%;
+    background-color: rgb(163, 163, 223);
+    height: max-content;
+}
