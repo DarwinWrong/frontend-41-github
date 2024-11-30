@@ -31,3 +31,11 @@ body {
     display: flex;
     flex-direction: row-reverse;
 }
+
+.message-content {
+    width: 70%;
+    height: 60px;
+    padding: 10px;
+    position: relative;
+    margin: 10px;
+}
