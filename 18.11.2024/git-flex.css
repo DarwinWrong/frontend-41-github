@@ -1,4 +1,44 @@
 .wrapper {
     display: flex;
     width: 90%;
-    padding: 50px
+    padding: 50px;
+}
+
+.cards-one,
+.cards-two,
+.cards-three {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    color: black;
+    padding: 20px;
+
+}
+
+.card {
+    display: flex;
+    justify-content: space-around;
+}
+
+.content {
+    flex-grow: 0;
+    flex-shrink: 2;
+    flex-basis: 29%;
+    background-color: rgb(163, 163, 223);
+    height: max-content;
+}
+
+img {
+    width: 350px;
+    object-fit: contain;
+}
+
+h3 {
+    text-align: center;
+}
+
+p {
+    padding: 10px;
+    width: 95%;
+
+}
