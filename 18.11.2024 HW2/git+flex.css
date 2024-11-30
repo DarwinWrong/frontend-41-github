@@ -21,3 +21,8 @@ body {
     border-radius: 50%;
     margin: 0 10px;
 }
+
+.message-left {
+    display: flex;
+    flex-direction: row;
+}
