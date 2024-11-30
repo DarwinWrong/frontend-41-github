@@ -3,6 +3,7 @@
 body {
     font-family: Arial, sans-serif;
     font-size: 16px;
+    background-color: #f4f4f4;
     height: 100vh;
 }
 
@@ -14,18 +15,78 @@ body {
     height: 100%;
 }
 
-.jack-message, .anie-message {
-    width: 90%;
-    padding: 20px;
-    margin: 10px;
+.content {
+    width: 70%;
+    max-width: 800px;
 }
 
-.anie-message {
-    background-color: rgba(255,182,193,255);
+.message-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    position: relative;
+}
+
+.message {
+    width: 50%;
+    padding: 15px 20px;
+    border-radius: 20px;
+}
+
+.anie .message {
+    background-color: rgba(255, 182, 193, 1);
     border-radius: 20px 20px 20px 0;
 }
 
-.jack-message {
-    background-color: rgba(173,217,230,255);
+.jack .message {
+    background-color: rgba(173, 217, 230, 1);
     border-radius: 20px 20px 0 20px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.pfp {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-info .name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.anie .profile-info .time-passed {
+    text-align: right;
+    color: gray;
+    font-size: 12px;
+}
+
+.jack .profile-info .time-passed {
+    text-align: left;
+    color: gray;
+    font-size: 12px;
+}
+
+.anie .profile {
+    left: 0;
+    flex-direction: row;
+}
+
+.jack .profile {
+    right: -35px;
+    flex-direction: row;
 }
