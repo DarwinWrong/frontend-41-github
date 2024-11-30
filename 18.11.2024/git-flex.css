@@ -3,3 +3,14 @@
     width: 90%;
     padding: 50px;
 }
+
+.cards-one,
+.cards-two,
+.cards-three {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    color: black;
+    padding: 20px;
+
+}
