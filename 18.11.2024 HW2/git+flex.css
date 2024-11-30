@@ -56,3 +56,7 @@ body {
     display: flex;
     flex-direction: row-reverse;
 }
+
+.message-right .avatar {
+    display: flex;
+}
