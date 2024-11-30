@@ -22,7 +22,6 @@ body {
 
 .message-block {
     display: flex;
-    align-items: center;
     justify-content: center;
     margin: 10px 0;
     position: relative;
@@ -44,7 +43,7 @@ body {
     border-radius: 20px 20px 0 20px;
 }
 
-.profile {
+.profile-wrapper {
     display: flex;
     align-items: center;
     position: absolute;
@@ -59,34 +58,33 @@ body {
     margin: 0 10px;
 }
 
-.profile-info {
+.profile {
     display: flex;
     flex-direction: column;
 }
 
-.profile-info .name {
+.profile .name {
     font-size: 18px;
     font-weight: bold;
 }
 
-.anie .profile-info .time-passed {
+.profile .time-passed {
+    color: gray;
+    font-size: 12px;
+}
+
+.anie .profile .time-passed {
     text-align: right;
-    color: gray;
-    font-size: 12px;
 }
 
-.jack .profile-info .time-passed {
+.jack .profile .time-passed {
     text-align: left;
-    color: gray;
-    font-size: 12px;
 }
 
-.anie .profile {
+.anie .profile-wrapper {
     left: 0;
-    flex-direction: row;
 }
 
-.jack .profile {
+.jack .profile-wrapper {
     right: -35px;
-    flex-direction: row;
 }
