@@ -39,3 +39,9 @@ body {
     position: relative;
     margin: 10px;
 }
+
+.message-left .message-content {
+    margin-left: 10px;
+    background-color: #fddde6;
+    border-radius: 20px 20px 20px 0px;
+}
