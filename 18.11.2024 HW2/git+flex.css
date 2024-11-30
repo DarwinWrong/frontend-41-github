@@ -60,3 +60,11 @@ body {
 .message-right .avatar {
     display: flex;
 }
+
+.name,
+.time {
+    margin-bottom: 5px;
+    font-size: 12px;
+    color: #666;
+
+}
