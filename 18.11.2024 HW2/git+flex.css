@@ -45,3 +45,9 @@ body {
     background-color: #fddde6;
     border-radius: 20px 20px 20px 0px;
 }
+
+.message-right .message-content {
+    margin-right: 10px;
+    background-color: #d8efff;
+    border-radius: 20px 20px 0px 20px;
+}
