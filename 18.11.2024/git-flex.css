@@ -27,3 +27,8 @@
     background-color: rgb(163, 163, 223);
     height: max-content;
 }
+
+img {
+    width: 350px;
+    object-fit: contain;
+}
