@@ -1,0 +1,34 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.image-container {
+    position: relative;
+    width: 300px; /* Ширина контейнера */
+    height: 300px; /* Висота контейнера */
+}
+
+.image-container .frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 5px solid #f28ea8; /* Рожевий колір рамки */
+    transform: rotate(45deg); /* Поворот рамки */
+    z-index: 1;
+    pointer-events: none; /* Щоб рамка не заважала взаємодії */
+}
+
+.image-container img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Масштабування зображення */
+    z-index: 2; /* Зображення поверх рамки */
+}
