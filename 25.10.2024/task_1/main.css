@@ -1,0 +1,105 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #200000;
+    color: #fff;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+article {
+    margin-bottom: 30px;
+}
+
+article h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: #db819e;
+}
+
+figure {
+    text-align: center;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+}
+
+blockquote {
+    font-style: italic;
+    margin-left: 20px;
+    border-left: 5px solid #db819e;
+    padding-left: 10px;
+}
+
+.footer {
+    background-color: #2a4a6e; /* Dark blue color */
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Container for aligning links in columns */
+.footer .footer-links-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 15px;
+}
+
+/* Styling for footer links */
+.footer .footer-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer .footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer .footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer .footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Social media icons using Unicode characters */
+.footer .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.footer .social-icons a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Copyright text */
+.footer .copyright {
+    font-size: 14px;
+    color: #dddddd;
+}
+
+/* Line separator */
+.footer .separator {
+    width: 80%;
+    height: 1px;
+    background-color: #dddddd;
+    margin: 15px auto;
+}
+
