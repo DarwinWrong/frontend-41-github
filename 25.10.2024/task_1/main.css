@@ -40,14 +40,13 @@ blockquote {
 }
 
 .footer {
-    background-color: #2a4a6e; /* Dark blue color */
+    background-color: #200000; 
     color: #ffffff;
     padding: 20px 0;
     text-align: center;
     font-family: Arial, sans-serif;
 }
 
-/* Container for aligning links in columns */
 .footer .footer-links-container {
     display: flex;
     justify-content: center;
@@ -55,7 +54,6 @@ blockquote {
     margin-bottom: 15px;
 }
 
-/* Styling for footer links */
 .footer .footer-links {
     list-style-type: none;
     padding: 0;
@@ -75,7 +73,6 @@ blockquote {
     text-decoration: underline;
 }
 
-/* Social media icons using Unicode characters */
 .footer .social-icons {
     display: flex;
     justify-content: center;
@@ -89,13 +86,11 @@ blockquote {
     text-decoration: none;
 }
 
-/* Copyright text */
 .footer .copyright {
     font-size: 14px;
     color: #dddddd;
 }
 
-/* Line separator */
 .footer .separator {
     width: 80%;
     height: 1px;
@@ -103,3 +98,7 @@ blockquote {
     margin: 15px auto;
 }
 
+.Instagram, .Facebook, .YouTube {
+    max-width: 50px;
+    height: 50px;
+}
