@@ -1,38 +1,97 @@
 body {
+    background-color: wheat;
+}
+
+.body {
+    width: 100%;
+    margin-left: 200px;
+    background-color: wheat;
 }
 
 .header {
+    margin: 5px;
+    padding: 5px;
     box-sizing: border-box;
-    width: 500px;
-    height: 100px;
+    width: 1000px;
+    height: 50px;
+    background-color: rgb(133, 50, 115);
+    color: wheat;
+    text-align: center;
 }
 
-.menu {
+.menu, .foot {
+    box-sizing: border-box;
+    margin: 5px;
+    padding: 5px;
+    background-color: rgb(80, 24, 68);
+    color: wheat;
+    text-align: center;
+    width: 1000px;
+    height: 30px;
 }
 
 .main-fool {
-}
-
-.aside-1-2 {
+    display: flex;
 }
 
 .aside-1 {
+    margin: 0 5px;
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: rgb(172, 78, 151);
+    color: wheat;
+    text-align: center;
+    width: 200px;
+    height: 50px;
 }
 
 .aside-2 {
+    margin: 5px;
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: rgb(172, 78, 151);
+    color: wheat;
+    text-align: center;
+    width: 200px;
+    height: 80px;
+    
 }
 
 .main {
+    padding: 0 5px;
+    background-color: rgb(172, 78, 151);
+    color: wheat;
+    text-align: center;
+    width: 700px;
+    height: 200px;
 }
 
 .sec-1 {
+    background-color: rgb(221, 111, 197);
+    color: wheat;
+    text-align: center;
+    width: 600px;
+    height: 50px;
+    margin-left: 50px;
 }
 
 .sec-2 {
+    background-color: rgb(221, 111, 197);
+    color: wheat;
+    text-align: center;
+    width: 600px;
+    height: 50px;
+    margin-top: 5px;
+    margin-left: 50px;
 }
 
 .aside-3 {
-}
-
-.foot {
+    margin: 0 5px;
+    padding-top: 90px;
+    box-sizing: border-box;
+    background-color: rgb(172, 78, 151);
+    color: wheat;
+    text-align: center;
+    width: 80px;
+    height: 200px;
 }
