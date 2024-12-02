@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.news-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.news-column {
+    flex: 1 1 calc(33.33% - 20px);  
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #917373;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
