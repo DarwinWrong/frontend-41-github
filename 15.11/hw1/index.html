@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Containers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Flex Container 1 (flex-grow)</h2>
+    <p>Контейнер з шириною 1000px. 4 елементи, кожен має flex-basis 200px. 
+       Перші три елементи мають flex-grow: 1, останній flex-grow: 2.</p>
+    <div class="flex-container flex-container-1">
+        <div class="flex-item grow-1" style="background-color: #ff9999;">1 (flex-grow: 1)</div>
+        <div class="flex-item grow-1" style="background-color: #ffcc99;">2 (flex-grow: 1)</div>
+        <div class="flex-item grow-1" style="background-color: #ffff99;">3 (flex-grow: 1)</div>
+        <div class="flex-item grow-2" style="background-color: #99ff99;">4 (flex-grow: 2)</div>
+    </div>
+
+    <h2>Flex Container 2 (flex-shrink)</h2>
+    <p>Контейнер з шириною 1000px. 5 елементів, кожен має flex-basis 250px. 
+       Через брак простору 250px, 4 елементи скорочуються (flex-shrink: 1), один не скорочується (flex-shrink: 0).</p>
+    <div class="flex-container flex-container-2">
+        <div class="flex-item shrink-1" style="background-color: #99ccff;">1 (flex-shrink: 1)</div>
+        <div class="flex-item shrink-1" style="background-color: #cc99ff;">2 (flex-shrink: 1)</div>
+        <div class="flex-item shrink-1" style="background-color: #ff99ff;">3 (flex-shrink: 1)</div>
+        <div class="flex-item shrink-1" style="background-color: #ff9999;">4 (flex-shrink: 1)</div>
+        <div class="flex-item shrink-0" style="background-color: #9999ff;">5 (flex-shrink: 0)</div>
+    </div>
+
+    <h2>Flex Container 3 (flex-shrink)</h2>
+    <p>Контейнер з шириною 1000px. 5 елементів, кожен має flex-basis 250px. 
+       Через брак простору 250px, 4 елементи скорочуються (flex-shrink: 1), один скорочується вдвічі швидше (flex-shrink: 2).</p>
+    <div class="flex-container flex-container-3">
+        <div class="flex-item shrink-1" style="background-color: #ccffff;">1 (flex-shrink: 1)</div>
+        <div class="flex-item shrink-1" style="background-color: #99ffcc;">2 (flex-shrink: 1)</div>
+        <div class="flex-item shrink-1" style="background-color: #ccff99;">3 (flex-shrink: 1)</div>
+        <div class="flex-item shrink-1" style="background-color: #ffff99;">4 (flex-shrink: 1)</div>
+        <div class="flex-item shrink-2" style="background-color: #ffcc99;">5 (flex-shrink: 2)</div>
+    </div>
+</body>
+</html>
