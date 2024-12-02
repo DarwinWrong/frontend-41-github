@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>:Pseudo</title>
     <style>
+      /**********/
+      .heading {
+        font-size: 24px;
+        font-weight: bold;
+        position: relative;
+      }
+      .heading:before {
+        content: "🔷"; /* Додаємо іконку перед заголовком */
+        margin-right: 10px;
+      }
+      .heading:after {
+        content: "⚡"; /* Додаємо іконку після заголовка */
+        margin-left: 10px;
+      }
+      /**********/
+
       .block {
         display: inline-block;
         width: 15%;
@@ -103,6 +119,13 @@
     </style>
   </head>
   <body>
+    <!--**********-->
+    <div id="pseudo">
+      <h2 class="heading">Мій заголовок</h2>
+    </div>
+    <hr />
+    <!--**********-->
+
     <h3>nth-child та nth-of-type</h3>
     <div class="container">
       <!-- <h2>Our blocks</h2> -->
