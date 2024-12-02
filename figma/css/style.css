@@ -1,1 +1,15 @@
 @import url(clear.css);
+
+.banner {
+    min-height: 769px;
+    background: linear-gradient(45deg, #ef2779 0%, #7834be 100%);
+    padding-top: 100px;
+}
+
+header {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+}
