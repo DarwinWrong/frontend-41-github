@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Align center</title>
+    <style>
+      body {
+        width: 100%;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <style>
+      .text-align {
+        display: block;
+        text-align: center;
+      }
+      .text-align div {
+        border: 1px solid black;
+      }
+      .block {
+        width: 500px;
+      }
+    </style>
+    <h2>text-align:center</h2>
+    <div class="text-align">
+      <h3>
+        Контейнера з text-align:center має display:block + (width,
+        min-width).<br />
+        Діти мають display:inline;
+      </h3>
+      <span>Lorem, ipsum dolor sit amet consectetur adipisicing.</span>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+      <div>
+        &lt;div&gt; є блочним і займає усю ширину, вирівнювання діє на текст
+        всередині нього.
+      </div>
+      <br />
+      <div class="block">
+        &lt;div&gt; має width: 500px; і ми бачимо що лише текст вирівнюється
+        всередині нього.
+      </div>
+    </div>
+
+    <hr />
+    <style>
+      .margin-auto {
+        /* margin:auto not work */
+        /* display: inline-block; */
+        width: fit-content;
+        margin: 0 auto;
+      }
+    </style>
+    <h2>margin: 0 auto;</h2>
+    <div class="margin-auto">
+      <h3>
+        контейнер з margin-auto має width, допустимо width: fit-content;<br />
+        margin-auto вирівнює лише блоки, не текст в блоках.
+      </h3>
+      <span>Lorem, ipsum dolor sit amet consectetur adipisicing.</span>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+      <div>Lorem ipsum dolor sit amet consectetur adipisicing.</div>
+    </div>
+
+    <hr />
+    <style>
+      .flex-center {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+    <h2>flex center</h2>
+    <div class="flex-center">
+      <h3>
+        контейнер з margin-auto має width, допустимо width: fit-content;<br />
+        margin-auto вирівнює лише блоки, не текст в блоках.
+      </h3>
+      <span>Lorem, ipsum dolor sit amet consectetur adipisicing.</span>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+      <div>Lorem ipsum dolor sit amet consectetur adipisicing.</div>
+    </div>
+
+    <hr />
+    <style>
+      .grid-center {
+        display: grid;
+        place-items: center;
+      }
+    </style>
+    <h2>grid center</h2>
+    <div class="grid-center">
+      <h3>
+        контейнер з margin-auto має width, допустимо width: fit-content;<br />
+        margin-auto вирівнює лише блоки, не текст в блоках.
+      </h3>
+      <span>Lorem, ipsum dolor sit amet consectetur adipisicing.</span>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+      <div>Lorem ipsum dolor sit amet consectetur adipisicing.</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tooltops</title>
+    <style>
+      body {
+        font-size: 20px;
+        width: 100%;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <style>
+      .attrs {
+        /* margin:auto work */
+        width: fit-content;
+        margin: 0 auto;
+      }
+      [class^="att"] {
+        color: green;
+      }
+      [id*="tr"] {
+        color: blue;
+      }
+    </style>
+    <div class="attrs">
+      <div class="attr">[class^="att"]</div>
+      <div id="attr">[id*="tr"]</div>
+    </div>
+
+    <hr />
+
+    <style>
+      .tooltips {
+        height: inherit;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+      }
+      [data-tooltip] {
+        position: relative;
+        cursor: pointer;
+        color: blue;
+        font-weight: 600;
+        text-decoration: none;
+        z-index: 10;
+      }
+      [data-tooltip]:hover {
+        text-decoration: underline;
+      }
+      [data-tooltip]::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        color: greenyellow;
+        background-color: darkblue;
+        border: 1px dotted red;
+        border-radius: 10px;
+        /* width: 100%; */
+        left: 50%;
+        transform: translateX(-50%);
+        transition: all 0.5s ease;
+        /* top: -130%; */
+        top: -1.8em;
+        padding: 5px;
+        /* display: none; */
+        opacity: 0;
+        white-space: nowrap;
+        font-size: 16px;
+      }
+      [data-tooltip]:hover::after {
+        /* display: inline-block; */
+        opacity: 1;
+        z-index: 10;
+      }
+    </style>
+    <div class="tooltips">
+      <p>
+        Lorem ipsum dolor sit amet
+        <a href="#" data-tooltip="This is linked text"
+          >consectetur adipisicing elit</a
+        >
+        . Porro nobis est placeat
+      </p>
+      <p>
+        Lorem ipsum dolor
+        <span data-tooltip="This is span text">consectetur</span> sit amet
+        adipisicing elit.
+      </p>
+    </div>
+  </body>
+</html>
