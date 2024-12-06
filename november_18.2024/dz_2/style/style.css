@@ -58,3 +58,20 @@ body {
     font-size: 0.8em;
     color: gray;
 }
+.message-content {
+    background-color: #ececec;
+    padding: 10px 15px;
+    border-radius: 10px;
+    max-width: 400px;
+    word-wrap: break-word;
+}
+
+.message.left .message-content {
+    background-color: #f28b82;
+    color: white;
+}
+
+.message.right .message-content {
+    background-color: #cfe9ff;
+    color: black;
+}
