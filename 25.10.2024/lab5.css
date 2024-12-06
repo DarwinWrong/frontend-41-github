@@ -41,16 +41,16 @@ li:hover {
 }
 
 .facebook:hover {
-    content: url(images/1:1:1.png);
+    content: url(images/image1.png);
     cursor: pointer;
 }
 
 .instagram:hover {
-    content: url(images/2:1.png);
+    content: url(images/image2.png);
     cursor: pointer;
 }
 
 .youtube:hover {
-    content: url(images/3:1.png);
+    content: url(images/image3.png);
     cursor: pointer;
 }
