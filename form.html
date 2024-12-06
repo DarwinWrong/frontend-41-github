@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <fieldset>
+        <input type="text" name="username" placeholder="Введіть ім'я" />
+      </fieldset>
+      <fieldset>
+        <input type="email" name="email" placeholder="example@mail.com" />
+        <input type="password" name="password" minlength="8" />
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+          required
+        />
+      </fieldset>
+      <fieldset>
+        <input type="checkbox" name="agree" value="yes" /> Я погоджуюсь
+        <input type="radio" name="gender" value="male" /> Чоловік
+        <input type="radio" name="gender" value="female" /> Жінка
+      </fieldset>
+      <fieldset>
+        <select name="country">
+          <option value="ua">Україна</option>
+          <option value="us">США</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <input type="file" name="profile_picture" />
+      </fieldset>
+      <fieldset>
+        <input type="button" value="click" />
+        <button type="submit">Відпра oвити</button>
+        <button type="reset">Скинути</button>
+      </fieldset>
+      <input type="number" min="10" max="22" />
+      <label for="cowbell">Cowbell</label>
+      <input
+        type="range"
+        id="cowbell"
+        name="cowbell"
+        min="0"
+        max="100"
+        value="90"
+        step="10"
+      />
+    </form>
+  </body>
+</html>
