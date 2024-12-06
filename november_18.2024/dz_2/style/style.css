@@ -50,11 +50,13 @@ body {
 }
 
 .name-time {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 10px;
+    text-align: left;
 }
+
+.message.right .name-time {
+    text-align: right;
+}
+
 
 .name {
     font-weight: bold;
