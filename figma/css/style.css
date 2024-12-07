@@ -88,7 +88,6 @@
     color: #38A3F1;
   }
   
- 
   .banner {
     padding: 100px 20px 50px;
   }
@@ -135,6 +134,27 @@
     transform: scale(1.1);
   }
   
+  
+  .features {
+    padding: 50px 20px;
+    background-color: white;
+  }
+  
+  .feature {
+    margin-bottom: 30px;
+  }
+  
+  .feature h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #202020;
+  }
+  
+  .feature p {
+    font-size: 16px;
+    color: #202020;
+  }
+  
 
   .wave-section {
     margin: 20px 0;
@@ -145,7 +165,6 @@
     height: auto;
   }
   
-
   footer {
     padding: 20px;
     background: #202020;
@@ -157,6 +176,44 @@
   
  
   @media (max-width: 600px) {
+
+    .additional {
+        text-align: center; 
+        padding: 50px 20px; 
+        background-color: white;
+       } 
+       .additional p:first-child { 
+           color: #202020;
+           font-size: 18px; 
+            margin-bottom: 10px; } 
+            .additional h2 { 
+               color: #202020;
+               font-size: 32px; 
+               margin-bottom: 10px; 
+           } 
+           .additional p:last-child {
+               color: #202020;
+                font-size: 16px; }
+   
+ 
+   .additional {
+     display: block;
+     text-align: center;
+     padding: 50px 100px;
+   }
+ 
+   .additional h2 {
+     font-size: 36px;
+     margin-bottom: 20px;
+   }
+ 
+   .additional p {
+     font-size: 20px;
+     margin-bottom: 30px;
+   }
+ }
+
+
     .text-content h1 {
       font-size: 32px;
     }
@@ -191,7 +248,7 @@
       align-items: flex-start;
       width: 100%;
     }
-  }
+
   
   @media (min-width: 1440px) {
     header {
@@ -229,28 +286,75 @@
     .menu a {
       margin: 0 15px;
     }
-  }
   
+    .features {
+      display: flex;
+      justify-content: space-between;
+      padding: 50px 100px;
+    }
+  
+    .feature {
+      max-width: 30%;
+    }
+  
+    .feature h2 {
+      font-size: 28px;
+    }
+  
+    .feature p {
+      font-size: 18px;
+    }
 
-  @keyframes buttonHover {
-    from {
-      transform: scale(1);
-      background-color: #38A3F1;
+
+    .features .start {
+        margin-bottom: 30px;
+        color: #202020;
+
     }
-    to {
-      transform: scale(1.1);
-      background-color: #1E90FF;
+
+    .features .start h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #202020;
+    }
+
+   
+    .additional {
+         text-align: center; 
+         padding: 50px 20px; 
+         background-color: white;
+        } 
+        .additional p:first-child { 
+            color: #202020;
+            font-size: 18px; 
+             margin-bottom: 10px; } 
+             .additional h2 { 
+                color: #202020;
+                font-size: 32px; 
+                margin-bottom: 10px; 
+            } 
+            .additional p:last-child {
+                color: #202020;
+                 font-size: 16px; }
+    
+  
+    .additional {
+      display: block;
+      text-align: center;
+      padding: 50px 100px;
+    }
+  
+    .additional h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+  
+    .additional p {
+      font-size: 20px;
+      margin-bottom: 30px;
     }
   }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
+   
+
+
+ 
