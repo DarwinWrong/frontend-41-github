@@ -1,0 +1,256 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #ef2779, #7834be);
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+  }
+  
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 30px;
+  }
+  
+  header img {
+    height: 40px;
+  }
+  
+  .subscribe-form {
+    display: none;
+    gap: 10px;
+  }
+  
+  .subscribe-form input {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+  }
+  
+  .subscribe-form button {
+    padding: 10px 20px;
+    background: #38A3F1;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .subscribe-form button:hover {
+    background: #1E90FF;
+  }
+  
+  .burger {
+    display: block;
+    cursor: pointer;
+  }
+  
+  .menu-toggle {
+    display: none;
+  }
+  
+  .menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: #202020;
+    padding: 20px;
+  }
+  
+  .menu-toggle:checked + .burger + .menu,
+  .menu-toggle:checked + .burger + .subscribe-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .menu a {
+    color: white;
+    text-decoration: none;
+    margin: 10px 0;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  .menu a:hover {
+    color: #38A3F1;
+  }
+  
+ 
+  .banner {
+    padding: 100px 20px 50px;
+  }
+  
+  .text-content h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    animation: fadeIn 2s ease-in-out forwards;
+  }
+  
+  .text-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    animation: fadeIn 2s ease-in-out forwards;
+  }
+  
+  .banner-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .banner-image {
+    width: 80%;
+    max-width: 600px;
+  }
+  
+  .try-button {
+    margin-top: 20px;
+    padding: 15px 30px;
+    background: #38A3F1;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    animation: buttonHover 1.5s infinite alternate;
+    transition: all 0.3s ease;
+  }
+  
+  .try-button:hover {
+    background: #1E90FF;
+    transform: scale(1.1);
+  }
+  
+
+  .wave-section {
+    margin: 20px 0;
+  }
+  
+  .wave-image {
+    width: 100%;
+    height: auto;
+  }
+  
+
+  footer {
+    padding: 20px;
+    background: #202020;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+  }
+  
+ 
+  @media (max-width: 600px) {
+    .text-content h1 {
+      font-size: 32px;
+    }
+  
+    .text-content p {
+      font-size: 14px;
+    }
+  
+    .try-button {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  
+    .burger {
+      display: block;
+    }
+  
+    .menu {
+      display: none;
+    }
+  
+    .menu-toggle:checked + .burger + .menu,
+    .menu-toggle:checked + .burger + .subscribe-form {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  
+    .menu-toggle:checked + .burger + #header-menu {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+    }
+  }
+  
+  @media (min-width: 1440px) {
+    header {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 60px;
+    }
+  
+    .menu {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      background: none;
+      padding: 0;
+    }
+  
+    .burger {
+      display: none;
+    }
+  
+    .menu-toggle {
+      display: none;
+    }
+  
+    .subscribe-form {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+    }
+  
+    .menu a {
+      margin: 0 15px;
+    }
+  }
+  
+
+  @keyframes buttonHover {
+    from {
+      transform: scale(1);
+      background-color: #38A3F1;
+    }
+    to {
+      transform: scale(1.1);
+      background-color: #1E90FF;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
