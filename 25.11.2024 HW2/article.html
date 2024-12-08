@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Стильна стаття</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        line-height: 1.8;
+        margin: 20px;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+      article {
+        padding: 20px;
+        margin: 20px 0;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: #0073e6;
+      }
+      .first-article p::first-letter {
+        color: red;
+        font-size: 36px;
+        border: 2px dashed red;
+      }
+      .first-article p::first-line {
+        font-weight: bold;
+        font-size: 18px;
+      }
+      .second-article p::first-letter {
+        font-size: 36px;
+        font-weight: bold;
+        color: #1a73e8;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        font-style: italic;
+      }
+      .second-article p::first-line {
+        font-style: italic;
+        color: green;
+      }
+      .third-article p::first-letter {
+        font-size: 36px;
+        text-decoration: underline;
+        color: orange;
+      }
+      .third-article p::first-line {
+        color: purple;
+        font-style: inherit;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="uk">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Статті з різними стилями</title>
+        <link rel="stylesheet" href="styles.css" />
+      </head>
+      <body>
+        <section>
+          <article>
+            <h1>Мистецтво веб-дизайну</h1>
+            <div class="first-article">
+              <p>
+                Веб-дизайн — це не лише про красу, але й про зручність. Гарний
+                дизайн завжди враховує потреби користувача.
+              </p>
+              <p>
+                Сучасні технології, такі як CSS, дозволяють створювати
+                дивовижний досвід для відвідувачів ваших сайтів.
+              </p>
+            </div>
+          </article>
+          <article>
+            <h1>Псевдоелементи у веб-розробці</h1>
+            <div class="second-article">
+              <p>
+                Можливості CSS розширюються з кожним роком. Псевдоелементи
+                дозволяють додавати цікаві акценти.
+              </p>
+              <p>
+                Використовуйте <strong>::first-letter</strong>, щоб зробити
+                текст більш привабливим.
+              </p>
+            </div>
+          </article>
+          <article>
+            <h1>Виділення тексту</h1>
+            <div class="third-article">
+              <p>
+                Виділення тексту — це важливий аспект взаємодії користувача зі
+                сторінкою. За допомогою <strong>::selection</strong> можна
+                створити інтерактивний дизайн.
+              </p>
+              <p>Подумайте про те, як ваш сайт виглядає при взаємодії з ним.</p>
+            </div>
+          </article>
+        </section>
+      </body>
+    </html>
+  </body>
+</html>
