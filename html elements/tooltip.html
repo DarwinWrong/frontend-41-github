@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tooltip</title>
+    <style>
+      p {
+        margin-top: 50px;
+        font-size: 18px;
+        font-weight: 400;
+      }
+      span {
+        position: relative;
+        z-index: 3;
+        color: blue;
+        text-decoration: underline;
+        font-weight: 600;
+      }
+      span:hover {
+        cursor: pointer;
+      }
+      [data-tip]::before {
+        opacity: 0;
+        content: attr(data-tip);
+        position: absolute;
+        background-color: chocolate;
+        /* text in line */
+        white-space: nowrap;
+        /* position center */
+        left: 50%;
+        transform: translateX(-50%);
+        top: -1.8em;
+        padding: 5px;
+        z-index: 3;
+        border-top-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        color: white;
+        font-size: 0.8em;
+        transition: opacity 0.5s ease;
+      }
+      [data-tip]:hover::before {
+        opacity: 1;
+      }
+
+      [data-tip]::after {
+        opacity: 0;
+        content: attr(data-tip);
+        position: absolute;
+        background-color: chocolate;
+        /* text in line */
+        white-space: nowrap;
+        /* position center */
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -2em;
+        padding: 5px;
+        z-index: 3;
+        border-bottom-left-radius: 20px;
+        border-top-right-radius: 20px;
+        color: white;
+        font-size: 0.8em;
+        transition: opacity 0.5s ease;
+      }
+      [data-tip]:hover::after {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Lorem ipsum dolor,
+      <span data-tip="This is a simple tip"
+        >sit amet consectetur adipisicing elit</span
+      >. Aspernatur, architecto!
+    </p>
+  </body>
+</html>
