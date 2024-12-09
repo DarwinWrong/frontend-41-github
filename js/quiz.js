@@ -2,19 +2,18 @@
     try {
         const basePath = window.location.pathname.split('/').slice(0, -1).join('/');
         const fullPath = `${basePath}/data/dependency/tests.json`;
-
-        console.log('fullPath:', fullPath);
-
         const testsResponse = await fetch(fullPath);
+
         if (!testsResponse.ok) {
             throw new Error('Помилка завантаження списку тестів');
         }
+
         const tests = await testsResponse.json();
         populateTestList(tests);
 
         const activeTest = tests.find(test => test.active);
         if (activeTest) {
-            await loadTest(basePath, activeTest);
+            await loadTest(activeTest);
         } else {
             console.warn('Немає активного тесту!');
         }
@@ -23,11 +22,10 @@
     }
 })();
 
-async function loadTest(basePath, test) {
+async function loadTest(test) {
     try {
+        const basePath = window.location.pathname.split('/').slice(0, -1).join('/');
         const { decodeFile } = await import('./decode.js');
-        console.log(`${basePath}${test.path}`);
-
         const questions = await decodeFile(`${basePath}${test.path}`);
 
         renderQuiz(questions);
