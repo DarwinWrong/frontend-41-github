@@ -1,9 +1,6 @@
 html,
 body {
     min-height: 100%;
-    /* margin: 0;
-  padding: 0;
-  box-sizing: border-box; */
 }
 
 body {
@@ -15,20 +12,16 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    /* align-items: stretch; */
-    /* Мінімум повна висота вікна */
     width: 100%;
 }
 
 .left-aside {
-    /* Забезпечує скролінг, якщо контент перевищує висоту */
     overflow-y: visible;
     padding: 20px 0;
     border-right: 5px solid black;
     width: 30%;
     max-width: 352px;
     min-height: 100%;
-    /* Забороняємо зменшувати розмір */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -100,7 +93,6 @@ h1 {
     color: red;
 }
 
-/* Стилі для позначок */
 label.correct {
     color: green;
 }
@@ -136,15 +128,10 @@ label.correct:before {
     width: 20px;
     height: 20px;
     display: inline-block;
-    /* Додаємо цей стиль */
     text-align: center;
-    /* Вирівнюємо текст всередині блоку */
     line-height: 20px;
-    /* Робимо висоту тексту рівною висоті блоку */
     font-size: 18px;
-    /* Збільшення розміру символа */
     font-weight: bold;
-    /* За бажанням — робимо символ жирним */
 }
 
 label.incorrect:before {
@@ -167,9 +154,7 @@ label.unanswered:before {
     font-weight: bold;
 }
 
-/* Пояснення */
 .hint {
-    /* margin-top: 10px; */
     padding: 10px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;

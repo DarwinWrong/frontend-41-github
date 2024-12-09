@@ -1,85 +1,71 @@
 [
     {
       "name": "Теги html",
-      "raw": "/raw/tags.json",
       "path": "/data/tags.json",
       "active": true
     },
     {
       "name": "Таблиці html",
-      "raw": "/raw/table.json",
       "path": "/data/table.json",
       "active": false
     },
     {
       "name": "Позиціонування в CSS",
-      "raw": "/raw/position.json",
       "path": "/data/position.json",
       "active": false
     },
     {
       "name": "Графіка в html",
-      "raw": "/raw/graphic.json",
       "path": "/data/graphic.json",
       "active": false
     },
     {
       "name": "Форми в html",
-      "raw": "/raw/form.json",
       "path": "/data/form.json",
       "active": false
     },
     {
       "name": "Анімації в CSS",
-      "raw": "/raw/animation.json",
       "path": "/data/animation.json",
       "active": false
     },
     {
       "name": "Використання Figma",
-      "raw": "/raw/figma.json",
       "path": "/data/figma.json",
       "active": false
     },
     {
       "name": "Flexbox в CSS",
-      "raw": "/raw/flexbox.json",
       "path": "/data/flexbox.json",
       "active": false
     },
     {
       "name": "Адаптивність в html",
-      "raw": "/raw/adaptive.json",
       "path": "/data/adaptive.json",
       "active": false
     },
     {
       "name": "Списки в html",
-      "raw": "/raw/lists.json",
       "path": "/data/lists.json",
       "active": false
     },
     {
       "name": "Псевдоелемелти, псевдокласи",
-      "raw": "/raw/pseudo.json",
       "path": "/data/pseudo.json",
       "active": false
     },
     {
       "name": "Grid в CSS",
-      "raw": "/raw/grid.json",
       "path": "/data/grid.json",
       "active": false
     },
     {
       "name": "Git",
-      "raw": "/raw/git.json",
       "path": "/data/git.json",
       "active": false
     },
     {
       "name": "HTML",
-      "raw": "/raw/questions.json",
       "path": "/data/questions.json",
       "active": false
     }

@@ -1,17 +1,13 @@
-// Завантаження JSON із питаннями
 (async () => {
     try {
-        // Завантаження списку тестів
-        const testsResponse = await fetch('/data/dependency/tests.json');
+        const testsResponse = await fetch('/frontend-41-github/data/dependency/tests.json');
         if (!testsResponse.ok) {
             throw new Error('Помилка завантаження списку тестів');
         }
         const tests = await testsResponse.json();
 
-        // Заповнення списку тестів у <datalist>
         populateTestList(tests);
 
-        // Вибір активного тесту
         const activeTest = tests.find(test => test.active);
         if (activeTest) {
             await loadTest(activeTest);
@@ -23,141 +19,57 @@
     }
 })();
 
-// Завантаження тесту за обраним шляхом
 async function loadTest(test) {
     try {
         const { decodeFile } = await import('./decode.js');
-        const questions = await decodeFile(test.path); // Декодування Base64
+        const questions = await decodeFile(test.path);
 
-        renderQuiz(questions); // Відображення тесту
-        setupSubmitHandler(questions); // Обробка відповідей
+        renderQuiz(questions);
+        setupSubmitHandler(questions);
     } catch (error) {
         console.error(`Не вдалося завантажити тест "${test.name}":`, error);
     }
 }
 
-/**
- * Заповнення списку тестів у <datalist>
- * @param {*} tests 
- */
-// function populateTestDataList(tests) {
-//     const testsList = document.getElementById('tests');
-//     const testInput = document.getElementById('test');
-
-//     tests.forEach(test => {
-//         const option = document.createElement('option');
-//         option.value = test.name; // Назва тесту
-//         testsList.appendChild(option);
-//     });
-
-//     // Обробка вибору тесту
-//     testInput.addEventListener('input', async (event) => {
-//         const selectedTestName = event.target.value;
-//         const selectedTest = tests.find(test => test.name === selectedTestName);
-
-//         if (selectedTest) {
-//             // Позначаємо обраний тест як активний
-//             tests.forEach(test => test.active = false);
-//             selectedTest.active = true;
-
-//             // Оновлюємо файл tests.json
-//             await saveTestsData(tests);
-
-//             // Завантажуємо обраний тест
-//             await loadTest(selectedTest);
-//         } else {
-//             console.warn(`Тест "${selectedTestName}" не знайдено.`);
-//         }
-//     });
-// }
-
 function populateTestList(tests) {
     const testsList = document.getElementById('tests');
-    // Select2
-    // const testsList = document.getElementsByClassName('.select2-container');
 
-    // Очищення списку, якщо він вже заповнений
     testsList.innerHTML = '';
 
-    // Додавання тестів до списку
     tests.forEach(test => {
         const option = document.createElement('option');
-        option.value = test.name; // Назва тесту
+        option.value = test.name;
         option.textContent = test.name;
         if (test.active) {
-            option.selected = true; // Позначаємо активний тест
+            option.selected = true;
         }
         testsList.appendChild(option);
     });
 
-    // Додаємо обробник події 'change' для Select2
     $('#tests').on('change', async function (event) {
-        const selectedTestName = $(this).val(); // Отримуємо значення вибраного тесту
+        const selectedTestName = $(this).val();
         const selectedTest = tests.find(test => test.name === selectedTestName);
 
         if (selectedTest) {
-            // Позначаємо обраний тест як активний
             tests.forEach(test => test.active = false);
             selectedTest.active = true;
-            // Оновлюємо файл tests.json
-            // await saveTestsData(tests);
-            // Завантажуємо обраний тест
+
             await loadTest(selectedTest);
         } else {
             console.warn(`Тест "${selectedTestName}" не знайдено.`);
         }
     });
-
-    // Обробка вибору тесту
-    // testsList.addEventListener('change', async (event) => {
-    //     const selectedTestName = event.target.value; // Отримуємо назву вибраного тесту
-    //     const selectedTest = tests.find(test => test.name === selectedTestName);
-    //     if (selectedTest) {
-    //         // Позначаємо обраний тест як активний
-    //         tests.forEach(test => test.active = false);
-    //         selectedTest.active = true;
-    //         // Оновлюємо файл tests.json
-    //         // await saveTestsData(tests);
-    //         // Завантажуємо обраний тест
-    //         await loadTest(selectedTest);
-    //     } else {
-    //         console.warn(`Тест "${selectedTestName}" не знайдено.`);
-    //     }
-    // });
 }
 
-// Збереження оновленого списку тестів
-async function saveTestsData(tests) {
-    try {
-        const response = await fetch('/data/dependency/tests.json', {
-            method: 'POST', // Потрібен сервер для обробки POST-запитів
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(tests, null, 2),
-        });
-
-        if (!response.ok) {
-            throw new Error('Помилка збереження списку тестів');
-        }
-        console.log('Список тестів успішно оновлено');
-    } catch (error) {
-        console.error('Не вдалося зберегти список тестів:', error);
-    }
-}
-
-// Функція для екранування HTML-спеціальних символів
 function escapeHtmlUsingTextContent(str) {
-    var div = document.createElement("div"); // Створюємо тимчасовий елемент
-    div.textContent = str; // Присвоюємо текстовий вміст
-    return div.innerHTML; // Повертаємо екранований HTML
+    var div = document.createElement("div");
+    div.textContent = str;
+    return div.innerHTML;
 }
 
-// Генерація HTML для тесту
 function renderQuiz(questions) {
     const quizContainer = document.getElementById("quiz");
 
-    // Очищення контейнера перед додаванням нового HTML
     quizContainer.innerHTML = "";
 
     questions.forEach((q, index) => {
@@ -185,7 +97,6 @@ function renderQuiz(questions) {
         quizContainer.innerHTML += questionHTML;
     });
 
-    // Додаємо події до кнопок пояснень
     const explanationButtons = document.querySelectorAll(".describe-btn");
     explanationButtons.forEach((button) => {
         button.addEventListener("click", () => {
@@ -197,16 +108,14 @@ function renderQuiz(questions) {
     });
 }
 
-// Налаштування обробника для перевірки результатів
 function setupSubmitHandler(questions) {
     document.getElementById("submit").addEventListener("click", () => {
         let score = 0;
-        let allAnswered = true; // Флаг для перевірки, чи всі відповіді дані.
+        let allAnswered = true;
         const explanations = document.querySelectorAll(
             "[class^='hint']"
         );
 
-        // Приховуєм пояснення
         explanations.forEach((explain) => {
             explain.style.display = "none";
         });
@@ -215,17 +124,16 @@ function setupSubmitHandler(questions) {
             const options = document.querySelectorAll(
                 `input[name="q${index}"]`
             );
-            let answered = false; // Чи відповів користувач на це питання?
+            let answered = false;
 
             options.forEach((option) => {
-                const label = option.parentElement; // Отримуємо <label>
+                const label = option.parentElement;
                 const question = option.parentElement.parentElement.querySelector('h3');
 
-                // Скидаємо класи
                 label.classList.remove("correct", "incorrect", "correct-answer", "incorrect-answer", "unanswered");
 
                 if (option.checked) {
-                    answered = true; // Користувач обрав варіант
+                    answered = true;
                     if (option.value === q.correctAnswer) {
                         label.classList.add("correct");
                         question.classList.remove("incorrect-answer");
@@ -239,7 +147,6 @@ function setupSubmitHandler(questions) {
                 }
             });
 
-            // Якщо питання залишилось без відповіді
             if (!answered) {
                 allAnswered = false;
                 options.forEach((option) => {
@@ -249,7 +156,6 @@ function setupSubmitHandler(questions) {
             }
         });
 
-        // Показуємо результат
         const result = document.getElementById("result");
         if (!allAnswered) {
             result.innerHTML = `Не усі відповіді надані! </br> Вірно ${score} з ${questions.length} відповідей!`;
