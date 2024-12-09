@@ -1,16 +1,20 @@
 (async () => {
     try {
-        const testsResponse = await fetch('/frontend-41-github/data/dependency/tests.json');
+        const basePath = window.location.pathname.split('/').slice(0, -1).join('/');
+        const fullPath = `${basePath}/data/dependency/tests.json`;
+
+        console.log('fullPath:', fullPath);
+
+        const testsResponse = await fetch(fullPath);
         if (!testsResponse.ok) {
             throw new Error('Помилка завантаження списку тестів');
         }
         const tests = await testsResponse.json();
-
         populateTestList(tests);
 
         const activeTest = tests.find(test => test.active);
         if (activeTest) {
-            await loadTest(activeTest);
+            await loadTest(basePath, activeTest);
         } else {
             console.warn('Немає активного тесту!');
         }
@@ -19,10 +23,12 @@
     }
 })();
 
-async function loadTest(test) {
+async function loadTest(basePath, test) {
     try {
         const { decodeFile } = await import('./decode.js');
-        const questions = await decodeFile(test.path);
+        console.log(`${basePath}${test.path}`);
+
+        const questions = await decodeFile(`${basePath}${test.path}`);
 
         renderQuiz(questions);
         setupSubmitHandler(questions);
@@ -49,10 +55,14 @@ function populateTestList(tests) {
     $('#tests').on('change', async function (event) {
         const selectedTestName = $(this).val();
         const selectedTest = tests.find(test => test.name === selectedTestName);
+        const result = document.getElementById("result");
 
         if (selectedTest) {
             tests.forEach(test => test.active = false);
             selectedTest.active = true;
+
+            result.textContent = "";
+            result.innerHTML = "";
 
             await loadTest(selectedTest);
         } else {
@@ -67,33 +77,41 @@ function escapeHtmlUsingTextContent(str) {
     return div.innerHTML;
 }
 
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
 function renderQuiz(questions) {
     const quizContainer = document.getElementById("quiz");
 
     quizContainer.innerHTML = "";
 
     questions.forEach((q, index) => {
+        const shuffledOptions = shuffleArray([...q.options]);
+
         const questionHTML = `
-     <div class="question">
-         <h3>${index + 1}. ${escapeHtmlUsingTextContent(q.question)}</h3>
-             <p class="hint" id="hint-${index}" style="display: none;">
-             ${escapeHtmlUsingTextContent(q.hint)}
-         </p>
-         ${q.options
+            <div class="question">
+                <h3>${index + 1}. ${escapeHtmlUsingTextContent(q.question)}</h3>
+                <p class="hint" id="hint-${index}" style="display: none;">
+                    ${escapeHtmlUsingTextContent(q.hint)}
+                </p>
+                ${shuffledOptions
                 .map(
                     (option) => `
-             <label>
-                 <input type="radio" name="q${index}" value="${escapeHtmlUsingTextContent(
-                        option
-                    )}">
-                 <span>${escapeHtmlUsingTextContent(option)}</span>
-             </label><br>
-         `
+                            <label>
+                                <input type="radio" name="q${index}" value="${escapeHtmlUsingTextContent(option)}">
+                                <span>${escapeHtmlUsingTextContent(option)}</span>
+                            </label><br>
+                        `
                 )
                 .join("")}
-         <button class="describe-btn" data-index="${index}">Підказка</button>
-     </div>
- `;
+                <button class="describe-btn" data-index="${index}">Підказка</button>
+            </div>
+        `;
         quizContainer.innerHTML += questionHTML;
     });
 
