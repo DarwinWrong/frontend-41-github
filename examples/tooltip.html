@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tooltip</title>
+    <style>
+      p {
+        margin-top: 50px;
+        font-size: 18px;
+        font-weight: 400;
+      }
+      span {
+        position: relative;
+        z-index: 3;
+        color: blue;
+        text-decoration: underline;
+        font-weight: bold;
+      }
+      span:hover {
+        cursor: pointer;
+      }
+      [data-tip]::after {
+        content: attr(data-tip);
+        position: absolute;
+        background-color: chocolate;
+        white-space: nowrap;
+        left: 6%;
+        bottom: -2em;
+        padding: 5px;
+        z-index: 3;
+        border-top-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        color: white;
+        font-size: 0.8em;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+      [data-tip]:hover::after {
+        opacity: 1;
+      }
+
+      [data-tip]::before {
+        content: attr(data-tip);
+        position: absolute;
+        background-color: chocolate;
+        white-space: nowrap;
+        left: 6%;
+        top: -1.8em;
+        padding: 5px;
+        z-index: 3;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        color: white;
+        font-size: 0.8em;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+      [data-tip]:hover::before {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      <span data-tip="This is a simple tip">Debitis, recusandae.</span>
+    </p>
+  </body>
+</html>

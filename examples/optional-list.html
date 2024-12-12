@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select + input:list</title>
+  </head>
+  <body>
+    <h2>Select</h2>
+    <label for="fruits">Select fruit</label>
+    <select name="fruits" id="fruits">
+      <option value="Apple">Apple</option>
+      <option value="Orange" selected>Orange</option>
+      <option value="Cherry">Cherry</option>
+    </select>
+
+    <hr />
+
+    <h2>Datalist</h2>
+    <label for="">Select day</label>
+    <input type="list" id="list" list="days" />
+    <datalist id="days">
+      <option value="Monday"></option>
+      <option value="Thursday"></option>
+      <option value="Friday"></option>
+    </datalist>
+  </body>
+</html>
