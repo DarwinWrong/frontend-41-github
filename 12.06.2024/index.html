@@ -4,19 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration</title>
+    <style>
+        form{
+            width: 50%;
+        }
+        fieldset:nth-of-type(2) {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
 </head>
 <body>
     <form action="script.php" method="post">
-        <input type="file" name="photo" id="photo">
-
-        <label for="name">Write your name:</label>
-        <input type="text" name="name" id="name">
-
-        <label for="age">Write your age:</label>
-        <input type="text" name="age" id="age" min="18" max="50">
-
-        <label for="email">Write your email:</label>
-        <input type="email" name="email" id="email">
-    </form>
+        <fieldset>
+          <label for="name">Upload photo:</label>
+          <input type="file" name="photo" id="photo" placeholder="photo" />
+        </fieldset>
+        <fieldset>
+          <label for="name">Write your name:</label>
+          <input type="text" name="name" id="name" placeholder="Anton" />
+          <label for="age">Write your age:</label>
+          <input type="number" name="age" id="age" min="18" max="50" placeholder="age 18 - 50"/>
+          <label for="email">Write your email:</label>
+          <input type="email" name="email" id="email" placeholder="example@gmail.com"/>
+          <label for="phone">Write your phone:</label>
+          <input type="tel" name="phone" id="phone">
+        </fieldset>
+        <fieldset>
+            <input type="submit" value="Send">
+        </fieldset>
+      </form>
 </body>
 </html>
