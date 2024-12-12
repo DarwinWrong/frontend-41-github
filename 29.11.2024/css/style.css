@@ -45,7 +45,7 @@ header svg {
     color: white;
 }
 
-.banner .wrapper img {
+/* .banner .wrapper img {
     margin-top: 60px;
 }
 
@@ -62,7 +62,7 @@ header svg {
     margin-top: 60px;
     position: relative;
     z-index: 3;
-}
+} */
 
 .wrapper button {
     width: 236px;
@@ -99,6 +99,65 @@ header svg {
 
 header svg:hover {
     transform: scale(1.8);
+    cursor: pointer;
+}
+
+.text-features {
+    text-align: center;
+    width: 318px;
+    height: 184px;
+    margin: 80px 50px 50px 50px;
+}
+
+.text-features h3 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.text-features h2 {
+    font-size: 46px;
+    margin-bottom: 17px;
+}
+
+.text-features p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #374754;
+}
+
+.features {
+    width: 270px;
+    height: 714px;
+    margin: 0px 90px;
+}
+
+.features .image {
+    display: flex;
+}
+
+.features img {
+    width: 43px;
+    height: 43px;
+    margin: 0px 10px 0px 0px;
+}
+
+.features h3 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.features p {
+    font-size: 18px;
+    color: #374754;
+    margin-bottom: 75px;
+}
+
+.features img:hover {
+    width: 57px;
+    height: 57px;
+    cursor: pointer;
 }
 
 @media screen and (min-width: 1440px) {
@@ -153,15 +212,38 @@ header svg:hover {
         text-decoration: underline;
         font-size: 20px;
         font-weight: bold;
+        cursor: pointer;
     }
 
     input[type^="button"]:hover {
         background-color: #70183dae;
         color: white;
+        cursor: pointer;
     }
 
     input[type^="email"]:hover {
         background-color: rgba(0, 0, 0, 0.227);
         color: white;
+        cursor: pointer;
+    }
+
+    .wrapper button {
+        display: none;
+    }
+
+    .text-features {
+        margin: 80px 561px 80px 561px;
+    }
+
+    .features {
+        width: 869px;
+        height: 187px;
+        margin: 0px 286px 80px 285px;
+        display: flex;
+    }
+
+    .feature-one,
+    .feature-two {
+        padding-right: 52px;
     }
 }
