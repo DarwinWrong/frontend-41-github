@@ -1,0 +1,72 @@
+@import url(clear.css);
+
+.content {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.main {
+    width: 100%;
+    height: max-content;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 320px;
+    margin: 20px;
+    box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.2);
+}
+
+img {
+    background-color: rgb(85, 85, 255);
+    height: 120px;
+    width: 120px;
+    border-radius: 80px;
+    transition: all 1s ease;
+    margin-bottom: 20px;
+}
+
+button {
+    transition: all 1s ease;
+    margin-top: 10px;
+}
+
+.cards:hover {
+    img {
+        background-color: red;
+    }
+
+    button {
+        color: red;
+    }
+}
+
+@media (min-width:768px) and (max-width:1023px) {
+    .main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .cards {
+
+        width: 38%;
+    }
+}
+
+@media (min-width:1024px) {
+    .main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .cards {
+
+        width: 25%;
+    }
+}
