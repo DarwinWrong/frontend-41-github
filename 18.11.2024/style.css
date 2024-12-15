@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f0f8ff;
+    background-color: #f4f4f4;
 }
 
 .news-container {
@@ -9,12 +9,14 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 20px;
+    background-color: #e9f0f7;
+    margin: 0;
 }
 
 .news-column {
     flex: 1;
     margin: 10px;
-    background-color: #fff;
+    background-color: #ffffff;
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -24,7 +26,7 @@ body {
 .news-image {
     width: 100%;
     padding-bottom: 50%; 
-    background-color: #ddd;
+    background-color: #c7d7e3; 
     text-align: center;
     color: #fff;
     font-size: 1.2em;
