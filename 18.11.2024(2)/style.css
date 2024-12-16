@@ -4,7 +4,6 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    
 }
 
 img {
@@ -18,19 +17,23 @@ img {
     display: flex;
     align-items: center;
     gap: 10px; 
+    width: 400px;
 }
 
 .bluetext {
-    background-color: rgb(35, 144, 218);
-    padding: 8px;
+    background-color: rgb(122, 195, 243);
+    padding: 4px;
     border-radius: 20px 20px 0px 20px;
     margin-top: 20px;
     margin-bottom: 20px;
+    padding-left: 20px;
 }
 
+
 .pinktext {
-    background-color: rgb(255, 0, 128);
-    padding: 8px;
+    background-color: rgb(255, 117, 186);
+    padding: 4px;
     border-radius: 20px 20px 20px 0px;
+    padding-left: 20px;
 }
 
