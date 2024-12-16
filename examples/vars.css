@@ -1,0 +1,26 @@
+:root {
+    --green: green;
+    --orange: orange;
+    --card-width: 300px;
+}
+
+.first-svg {
+    width: var(--card-width);
+}
+
+.card {
+    width: var(--card-width);
+}
+
+.first-svg rect {
+    fill: var(--green)
+}
+
+.first-svg path {
+    fill: var(--orange)
+}
+
+/* img rect {
+    fill: red;
+}не працює,
+тому використовувати способи зверху для svg */
