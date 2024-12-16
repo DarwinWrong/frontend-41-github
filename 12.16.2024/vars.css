@@ -8,14 +8,14 @@
     width: var(--card-width);
 }
 
-/* .first-svg rect {
+.first-svg rect {
     fill: var(--green);
 }
 
 .first-svg path {
     fill: var(--orange);
-} */
+} 
 
-/* img rect {
+img rect {
     fill: red;
-} */
+}
