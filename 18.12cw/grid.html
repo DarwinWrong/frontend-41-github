@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid</title>
+
+    <style>
+      body {
+        width: 100%;
+        height: 100vh;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 10px;
+      }
+      .grid {
+        display: grid;
+        border: 2px dashed red;
+      }
+      .grid div {
+        border: 2px dotted green;
+      }
+      hr {
+        height: 4px;
+        background-color: darkblue;
+      }
+    </style>
+  </head>
+  <body>
+    <hr />
+    <h3>П'ять фіксованих колонок по 50px</h3>
+    <style>
+      .grid-tc-5 {
+        grid-template-columns: 50px 50px 50px 50px 50px;
+        /* grid-template-columns: 50px 50px 50px; */
+        grid-template-rows: 50px 50px;
+        /* grid-template-rows: 50px 50px 50px; */
+        column-gap: 10px;
+        row-gap: 10px;
+
+        /* justify-content: center;
+        align-content: center; */
+
+        /* justify-items: center;
+        align-items: center; */
+
+        /* grid-auto-flow: column; */
+        /* grid-auto-flow: row; */
+      }
+
+      /* Others has order:0; */
+      /* .grid-tc-5 div:nth-child(1) {
+        order: 1;
+      } */
+    </style>
+    <div class="grid grid-tc-5">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </div>
+
+    <hr />
+    <h3>П'ять колонок repeat(50px) => по 50px</h3>
+    <style>
+      .grid-repeat-5 {
+        grid-template-columns: repeat(5, 50px);
+        grid-template-rows: repeat(2, 50px);
+        gap: 10px;
+      }
+    </style>
+    <div class="grid grid-repeat-5">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </div>
+
+    <hr />
+    <h3>П'ять колонок однакової ширини 5 по 1fr, яка адаптується</h3>
+    <style>
+      .grid-fr-5 {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: repeat(5, 1fr);
+        gap: 10px;
+      }
+    </style>
+    <div class="grid grid-fr-5">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+      <div>10</div>
+    </div>
+
+    <hr />
+    <h3>
+      Розміщення елементів у сітці: <br />
+      початок: 2 рядок, 2 колонка <br />
+      кінець: 4 рядок, 2 колонка
+    </h3>
+    <style>
+      .grid-position {
+        grid-template-columns: repeat(5, 50px);
+        grid-template-rows: repeat(5, 50px);
+      }
+      .grid-position div:nth-child(1) {
+        grid-column-start: 2;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        grid-row-end: 4;
+      }
+    </style>
+    <div class="grid grid-position">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </div>
+
+    <hr />
+    <h3>
+      Скорочення <br />
+      (grid-column-start, grid-column-end) => grid-column: 2 / 4;<br />(grid-row-start,
+      grid-row-end) => grid-row: 2 / 4;
+    </h3>
+    <style>
+      .grid-position div:nth-child(1) {
+        grid-column: 2 / 4;
+        grid-row: 2 / 4;
+      }
+    </style>
+    <div class="grid grid-position">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </div>
+
+    <hr />
+    <h3>
+      span у скороченнях:<br />
+      Початок 2 колонки, займає 2 колонки => grid-column: 2 / span 2
+      <br />
+      Початок 2 рядок, займає 2 рядки => grid-row: 2 / span 2
+    </h3>
+    <style>
+      .grid-position div:nth-child(1) {
+        grid-column: 2 / span 2;
+        grid-row: 2 / span 2;
+      }
+    </style>
+    <div class="grid grid-position">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </div>
+
+    <hr />
+    <h3>
+      Скорочення (grid-column, grid-row) => grid-area <br />
+      Від 2 рядка до 4, від 2 колонки до 4 => grid-area: 2 / 2 / 4 / 4;
+    </h3>
+    <style>
+      .grid-position div:nth-child(1) {
+        grid-area: 2 / 2 / 4 / 4;
+      }
+    </style>
+    <div class="grid grid-position">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </div>
+
+    <hr />
+    <h3>
+      Автоматичне заповнення з auto-fill<br />repeat(auto-fill, minmax(100px,
+      1fr))
+    </h3>
+    <style>
+      .grid-auto-fill {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 10px;
+        border: 2px solid black;
+      }
+      .grid-auto-fill div {
+        background: lightblue;
+        text-align: center;
+        padding: 10px;
+        border: 1px solid black;
+      }
+    </style>
+    <div class="grid grid-auto-fill">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+
+    <hr />
+    <h3>
+      Автоматичне заповнення з auto-fit<br />repeat(auto-fit, minmax(100px,
+      1fr))
+    </h3>
+    <style>
+      .grid-auto-fit {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 10px;
+        border: 2px solid black;
+      }
+
+      .grid-auto-fit div {
+        background: lightgreen;
+        text-align: center;
+        padding: 10px;
+        border: 1px solid black;
+      }
+    </style>
+    <div class="grid grid-auto-fit">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+
+    <hr />
+    <h3>Неявна сітка через grid-auto-columns та grid-auto-rows</h3>
+    <style>
+      .grid-auto {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 100px);
+        grid-auto-columns: 50px;
+        grid-auto-rows: 50px;
+        gap: 5px;
+      }
+    </style>
+    <div class="grid-auto">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div style="grid-column: 5; grid-row: 5">Extra</div>
+    </div>
+
+    <hr />
+    <h3>Іменування стовпчиків та рядків</h3>
+    <style>
+      .grid-container {
+        display: grid;
+        grid-template-columns: [start-col] 1fr [mid-col] 1fr [end-col];
+        grid-template-rows: [start-row] 100px [mid-row] 100px [end-row];
+        gap: 10px;
+      }
+      .grid-item-1 {
+        grid-column: start-col / mid-col;
+        grid-row: start-row / mid-row;
+        background-color: lightblue;
+      }
+      .grid-item-2 {
+        grid-column: mid-col / end-col;
+        grid-row: start-row / mid-row;
+        background-color: lightgreen;
+      }
+      .grid-item-3 {
+        grid-column: start-col / end-col;
+        grid-row: mid-row / end-row;
+        background-color: lightcoral;
+        text-align: center;
+      }
+    </style>
+    <div class="grid-container">
+      <div class="grid-item-1">Елемент 1</div>
+      <div class="grid-item-2">Елемент 2</div>
+      <div class="grid-item-3">Елемент 3</div>
+    </div>
+
+    <hr />
+    <h3>Іменування областей через grid-template-areas</h3>
+    <style>
+      .grid-areas {
+        display: grid;
+        grid-template-areas:
+          "header header"
+          "main sidebar"
+          "footer footer";
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 100px 1fr 50px;
+      }
+      .header {
+        grid-area: header;
+      }
+      .main {
+        grid-area: main;
+      }
+      .sidebar {
+        grid-area: sidebar;
+      }
+      .footer {
+        grid-area: footer;
+      }
+    </style>
+    <div class="grid grid-areas">
+      <div class="header">Header</div>
+      <div class="main">Main</div>
+      <div class="sidebar">Sidebar</div>
+      <div class="footer">Footer</div>
+    </div>
+
+    <hr />
+    <h3>Стала висота + grid-colum, grid-row</h3>
+    <style>
+      #garden {
+        display: grid;
+        height: 400px;
+        grid-template-columns: repeat(5, 20%);
+        grid-template-rows: 50px 10% 10% 10% 10%;
+        /* grid-auto-columns: 50px;
+        grid-auto-rows: 50px; */
+        border: 2px dashed red;
+      }
+      #water {
+        grid-column: 1 / 5;
+        grid-row: 5 / 6;
+        border: 2px dotted green;
+      }
+    </style>
+    <div id="garden">
+      <div id="water"></div>
+    </div>
+  </body>
+</html>
