@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Статті з різними стилями</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        line-height: 1.8;
+        margin: 20px;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+
+      article {
+        padding: 20px;
+        margin-bottom: 20px; 
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        overflow: hidden; 
+      }
+
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: #0073e6;
+      }
+
+      article:first-of-type {
+        border-left: 5px solid #e60000; 
+      }
+
+      article:nth-of-type(2) {
+        border-left: 5px solid #0073e6; 
+      }
+
+      article:nth-of-type(3) {
+        border-left: 5px solid #ff9900; 
+      }
+
+      article:nth-of-type(1) p:first-of-type:first-letter,
+      article:nth-of-type(1) p:nth-of-type(2):first-letter {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #e60000;
+        float: left;
+        margin-right: 5px;
+        line-height: 1;
+        border: 2px dashed #e60000;
+        padding: 0 5px;
+      }
+
+      article:nth-of-type(2) p:first-of-type:first-letter,
+      article:nth-of-type(2) p:nth-of-type(2):first-letter {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #0073e6;
+        float: left;
+        margin-right: 5px;
+        line-height: 1;
+      }
+
+      article:nth-of-type(3) p:first-of-type:first-letter,
+      article:nth-of-type(3) p:nth-of-type(2):first-letter {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #ff9900;
+        float: left;
+        margin-right: 5px;
+        line-height: 1;
+        text-decoration: underline;
+      }
+
+      article:nth-of-type(3)::selection {
+        background-color: #ffcc00;
+        color: white;
+      }
+      
+      p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 10px;
+      }
+
+      strong {
+        font-weight: bold;
+        color: #e60000; 
+      }
+
+      article:nth-of-type(2) strong {
+        color: #0073e6; 
+      }
+
+      article:nth-of-type(3) strong {
+        color: #ff9900; 
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <article>
+        <h1>Мистецтво веб-дизайну</h1>
+        <p>
+          <span class="first-letter">В</span>еб-дизайн — це не лише про красу, але й про зручність. Гарний дизайн завжди враховує потреби користувача.
+        </p>
+        <p>
+          <span class="first-letter">С</span>учасні технології, такі як CSS, дозволяють створювати дивовижний досвід для відвідувачів ваших сайтів.
+        </p>
+      </article>
+
+      <article>
+        <h1>Псевдоелементи у веб-розробці</h1>
+        <p>
+          <span class="first-letter">М</span>ожливості CSS розширюються з кожним роком. Псевдоелементи дозволяють додавати цікаві акценти.
+        </p>
+        <p>
+          Використовуйте <strong>::first-letter</strong>, щоб зробити текст більш привабливим.
+        </p>
+      </article>
+
+      <article>
+        <h1>Виділення тексту</h1>
+        <p>
+          <span class="first-letter">В</span>иділення тексту — це важливий аспект взаємодії користувача зі сторінкою. За допомогою <strong>::selection</strong> можна створити інтерактивний дизайн.
+        </p>
+        <p>Подумайте про те, як ваш сайт виглядає при взаємодії з ним.</p>
+      </article>
+    </section>
+  </body>
+</html>
