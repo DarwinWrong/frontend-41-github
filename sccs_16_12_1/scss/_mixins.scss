@@ -2,3 +2,11 @@
     color: blue;
     text-decoration: underline;
 }
+
+@mixin box-shadow($color: rgba(0, 0, 0, 0.2), $blur: 10px, $offset-x: 0px, $offset-y: 4px) {
+    box-shadow: $offset-x $offset-y $blur $color;
+}
+
+@mixin center-block {
+    margin: 0 auto;
+}
