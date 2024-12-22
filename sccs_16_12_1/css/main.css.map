@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["../scss/_global.scss","../scss/_variables.scss","../scss/_mixins.scss"],"names":[],"mappings":"AAAA;EACI,kBCDO;EDEP,OCDS;EDET;;;AAGJ;EACI,SCLW;;;ADQf;EACI;EACA,SCVW;EDWX;;AAEA;EACI;;AAGJ;EACI;EACA;;AAGJ;EACI;;;AAIR;EE5BI;EACA","file":"main.css"}
