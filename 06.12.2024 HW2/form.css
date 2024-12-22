@@ -1,0 +1,137 @@
+@import url(clear.css);
+
+.content-forms {
+    background-color: #252B42;
+    color: white;
+    padding: 160px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.content-forms .text {
+    text-align: center;
+    margin: 0 auto;
+    padding-bottom: 17px;
+    max-width: 318px;
+    height: 144px;
+}
+
+.content-forms .social {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 30px;
+}
+
+.content-forms .content-contacts {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-forms .contacts {
+    width: 264px;
+    height: 188px;
+    margin: 60px;
+}
+
+.content-forms .contacts .info {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.content-forms .contacts .info img {
+    padding-right: 12px;
+}
+
+.content-forms .forms {
+    background-color: white;
+    width: 378px;
+    height: 720px;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 130px;
+}
+
+.message {
+    height: 193px;
+    padding-bottom: 150px;
+    border-radius: 0px;
+}
+
+form input {
+    width: 280px;
+    height: 54px;
+    margin-bottom: 45px;
+    padding: 19px;
+    border: 1px solid #ddd;
+    border-radius: 40px;
+    font-size: 14px;
+}
+
+form button {
+    width: 142px;
+    height: 52px;
+    padding: 10px;
+    background-color: #EF2779;
+    color: white;
+    border-radius: 35px;
+    margin-bottom: 52px;
+}
+
+@media screen and (min-width: 1440px) {
+    .container {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .container-two {
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 80px;
+        margin-bottom: 50px;
+        gap: 60px;
+    }
+
+    .content-forms .social img {
+        max-width: 50px;
+        max-height: 50px;
+    }
+
+    .content-forms .forms {
+        height: 550px;
+        width: 400px;
+
+    }
+
+    form {
+        padding-top: 60px;
+    }
+
+    .message {
+        width: 318px;
+        height: 126px;
+    }
+
+    form input {
+        width: 318px;
+        height: 36px;
+        margin-bottom: 30px;
+    }
+}
