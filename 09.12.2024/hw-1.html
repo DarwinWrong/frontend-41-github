@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Анімоване меню та картки</title>
+    <style>
+      :root {
+        --main-color: #333;
+        --menu-color: #222;
+        --link-color: #fff;
+        --tips-color: #c5f077;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        background-image: url(images/st-fon-1.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+      }
+
+      .animated-menu {
+        width: 100%;
+        height: 50px;
+        background-color: var(--menu-color);
+        position: fixed;
+      }
+
+      .animated-menu ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-evenly;
+      }
+
+      .animated-menu ul li {
+        justify-content: center;
+        padding: 15px 30px;
+        width: 120px;
+        height: 50px;
+      }
+
+      .animated-menu ul li a {
+        text-decoration: none;
+        color: white;
+      }
+
+      .animated-menu ul li:hover {
+        background-color: var(--main-color);
+      }
+      .center-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .product-cards {
+        display: flex;
+        justify-content: space-evenly;
+        background-color: black;
+        padding: 50px;
+        flex-wrap: wrap;
+      }
+
+      .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 2px solid var(--link-color);
+        border-radius: 30px;
+        max-width: 25%;
+        min-height: 400px;
+        color: var(--link-color);
+        line-height: 2;
+        transition: all 2s;
+        box-sizing: border-box;
+      }
+
+      .card img {
+        padding-top: 35px;
+        padding-bottom: 50px;
+        max-width: 80%;
+        transition: all 2s;
+      }
+
+      .card:hover {
+        transform: translateY(-30px);
+        cursor: pointer;
+      }
+
+      .card img:hover {
+        transform: scale(1.2);
+      }
+      @media (max-width: 600px) {
+        .animated-menu {
+          opacity: 0;
+        }
+        .product-cards {
+          margin-top: 1100px;
+          width: 90%;
+          display: flex;
+          flex-direction: column;
+          gap: 50px;
+        }
+        .card {
+          max-width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="animated-menu">
+      <ul>
+        <li><a href="#" title="Перейти на головну">Головна</a></li>
+        <li><a href="#" title="Дізнатися про нас">Про нас</a></li>
+        <li><a href="#" title="Переглянути послуги">Послуги</a></li>
+        <li><a href="#" title="Зв'язатися з нами">Контакти</a></li>
+      </ul>
+    </nav>
+    <div class="center-container">
+      <section class="product-cards">
+        <div class="card">
+          <img src="images/st-1.webp" alt="Товар 1" title="Деталі товару 1" />
+          <h3>Star Wars Toys</h3>
+          <p>Опис товару 1.</p>
+        </div>
+        <div class="card">
+          <img src="images/st-2.webp" alt="Товар 2" title="Деталі товару 2" />
+          <h3>Homeware</h3>
+          <p>Опис товару 2.</p>
+        </div>
+        <div class="card">
+          <img src="images/st-3.webp" alt="Товар 3" title="Деталі товару 3" />
+          <h3>Star Wars Collectibles</h3>
+          <p>Опис товару 3.</p>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
