@@ -1,0 +1,103 @@
+:root {
+    --main-bg-color: #f0f0f0;
+    --menu-bg-color: #333;
+    --menu-item-color: #fff;
+    --card-bg-color: #fff;
+    --card-hover-bg-color: #ddd;
+    --card-hover-transform: translateY(-10px);
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--main-bg-color);
+    background-attachment: fixed;
+  }
+  
+  .animated-menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--menu-bg-color);
+    z-index: 1000;
+  }
+  
+  .animated-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .animated-menu li {
+    margin: 0 15px;
+  }
+  
+  .animated-menu a {
+    color: var(--menu-item-color);
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    position: relative;
+  }
+  
+  .animated-menu a::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .animated-menu a:hover::after {
+    opacity: 1;
+  }
+  
+  .product-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 80px;
+    padding: 20px;
+  }
+  
+  .card {
+    background-color: var(--card-bg-color);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 15px;
+    width: 300px;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .card:hover {
+    background-color: var(--card-hover-bg-color);
+    transform: var(--card-hover-transform);
+  }
+  
+  .card img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s;
+  }
+  
+  .card img:hover {
+    transform: scale(1.1);
+  }
+  
+  @media (max-width: 600px) {
+    .animated-menu {
+      display: none;
+    }
+  
+    .product-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
