@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: linear-gradient(90deg, #ec008c, #673ab7);
+    padding: 10px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1440px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.logo img {
+    height: 40px;
+}
+
+#menu-toggle {
+    display: none; 
+}
+
+.menu-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-icon img {
+    height: 30px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100%;
+    width: 300px;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.3s ease;
+    z-index: 1000;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.menu li {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+    padding: 10px;
+}
+
+.menu li a:hover {
+    color: #ff4081;
+}
+
+.subscribe {
+    display: none; 
+    gap: 10px;
+}
+
+.subscribe input {
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+}
+
+.subscribe button {
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    background-color: #ff4081;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.subscribe button:hover {
+    background-color: #ffcc00;
+}
+
+#menu-toggle:checked + .menu-icon + .menu {
+    right: 0; /
+}
+
+.close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: #333;
+    cursor: pointer;
+    z-index: 1002;
+}
+
+@media (min-width: 768px) {
+    .menu {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        width: auto;
+        right: 0;
+        background-color: transparent;
+        box-shadow: none;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menu li a {
+        font-size: 1.2rem;
+        color: white;
+        padding: 0 15px;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+    .subscribe {
+        display: flex;
+    }
+
+    .close-menu {
+        display: none;
+    }
+}
+
+@media (min-width: 1440px) {
+    .navbar {
+        max-width: 1440px;
+    }
+
+    .menu li a {
+        font-size: 1.2rem;
+    }
+
+    .subscribe input {
+        width: 250px; 
+    }
+
+    .subscribe button {
+        padding: 12px 30px;
+    }
+}
+
+.features-section {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.features-section h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.features-section p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.features-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .features-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.feature-card {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fefefe;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.feature-icon {
+    font-size: 2rem;
+    color: #ec008c;
+    margin-bottom: 15px;
+}
