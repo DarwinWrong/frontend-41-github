@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iFrame</title>
+    <style>
+      hr {
+        height: 4px;
+        background-color: darkblue;
+      }
+    </style>
+  </head>
+  <body>
+    <p><strong>Основні атрибути:</strong></p>
+    <ol>
+      <li>
+        <strong><code>src</code></strong
+        >: URL сторінки, яку потрібно вбудувати.
+      </li>
+      <li>
+        <strong><code>width</code> та <code>height</code></strong
+        >: Розміри фрейму.
+      </li>
+      <li>
+        <strong><code>title</code></strong
+        >: Опис контенту для доступності.
+      </li>
+      <li>
+        <strong><code>sandbox</code></strong
+        >: Обмежує можливості вбудованого контенту для підвищення безпеки.
+      </li>
+      <li>
+        <strong><code>allow</code></strong
+        >: Дозволяє специфічні API чи функціональність (наприклад, геолокація,
+        камера).
+      </li>
+      <li>
+        <strong><code>loading</code></strong
+        >: Оптимізація завантаження:
+        <ul>
+          <li>
+            <code>lazy</code>: Завантаження відкладено до моменту, коли iframe
+            з’явиться в полі зору.
+          </li>
+          <li><code>eager</code>: Завантаження виконується одразу.</li>
+        </ul>
+      </li>
+    </ol>
+
+    <hr />
+    <p>
+      <strong>Доступні значення <code>sandbox</code>:</strong>
+    </p>
+    <ul>
+      <li>
+        <strong><code>allow-same-origin</code></strong
+        >: Дозволяє iframe працювати в контексті того ж джерела (необхідно для
+        JavaScript, але знижує безпеку).
+      </li>
+      <li>
+        <strong><code>allow-scripts</code></strong
+        >: Дозволяє виконання JavaScript, але без створення нових спливаючих
+        вікон чи форм.
+      </li>
+      <li>
+        <strong><code>allow-popups</code></strong
+        >: Дозволяє відкриття нових вікон.
+      </li>
+      <li>
+        <strong><code>allow-forms</code></strong
+        >: Дозволяє надсилання форм.
+      </li>
+      <li>
+        <strong><code>allow-downloads</code></strong
+        >: Дозволяє завантаження файлів.
+      </li>
+    </ul>
+    <pre>
+        <code>
+          iframe
+          src="https://example.com"
+          sandbox="allow-scripts allow-same-origin">
+          /iframe>
+        </code>
+    </pre>
+    <iframe
+      src="https://example.com"
+      sandbox="allow-scripts allow-same-origin"
+    ></iframe>
+
+    <hr />
+    <iframe
+      src="https://example.com"
+      width="600"
+      height="400"
+      title="Embedded Example"
+    ></iframe>
+
+    <hr />
+    <h2>Відео з YouTube:</h2>
+    <pre><code>
+      iframe
+      src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+      width="560"
+      height="315"
+      frameborder="0"
+      allowfullscreen
+      >
+      /iframe>
+    </code></pre>
+    <iframe
+      src="https://www.youtube.com/embed/QvsQ9hYKq7c"
+      width="560"
+      height="315"
+      frameborder="0"
+      allowfullscreen
+    ></iframe>
+
+    <hr />
+    <h2>Google Maps:</h2>
+    <pre><code>
+        iframe
+        src="https://www.google.com/maps/embed?pb=!1m18"
+        width="600"
+        height="450"
+        style="border: 0"
+        allowfullscreen
+        >
+        /iframe>
+    </code></pre>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12093.243667569802!2d-74.0060156!3d40.7127281!3m2!1i1024!2i768!4f13.1"
+      width="600"
+      height="450"
+      style="border: 0"
+      allowfullscreen
+      loading="lazy"
+    ></iframe>
+
+    <hr />
+    <h2>Документ PDF:</h2>
+    <pre><code>
+        iframe 
+        src="/path/to/document.pdf" 
+        width="800" 
+        height="600">
+        /iframe>
+    </code></pre>
+    <iframe src="/path/to/document.pdf" width="800" height="600"></iframe>
+  </body>
+</html>

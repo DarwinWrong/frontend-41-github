@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f5f5f5;
+        height: 100vh;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .site {
+        display: grid;
+        height: 100vh;
+        grid-template-areas:
+          "header header"
+          "aside content"
+          "footer footer";
+        grid-template-rows: 100px 1fr 200px;
+        grid-template-columns: 250px 1fr;
+        grid-template: 100px 1fr 200px / 250px 1fr;
+        grid-template:
+          "header header" 100px
+          "aside content" 1fr
+          "footer footer" 200px
+          / 250px 1fr;
+        gap: 10px;
+      }
+
+      header,
+      aside,
+      .content,
+      footer {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      header {
+        grid-area: header;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      header img {
+        width: 100px;
+        border-radius: 50%;
+      }
+
+      header ul {
+        display: flex;
+        gap: 15px;
+      }
+
+      header ul li {
+        padding: 5px 10px;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      header ul li:hover {
+        background-color: #0056b3;
+      }
+
+      aside {
+        grid-area: aside;
+      }
+
+      aside ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      aside ul li {
+        padding: 10px;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      aside ul li:hover {
+        background-color: #e0e0e0;
+      }
+
+      .content {
+        grid-area: content;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .content h2 {
+        color: #007bff;
+      }
+
+      footer {
+        grid-area: footer;
+        text-align: center;
+      }
+
+      footer ul {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      footer ul li {
+        padding: 5px 10px;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      footer ul li:hover {
+        background-color: #0056b3;
+      }
+
+      @media (max-width: 768px) {
+        .site {
+          grid-template-areas:
+            "header"
+            "content"
+            "aside"
+            "footer";
+          grid-template-columns: 1fr;
+          grid-template-rows: auto 1fr auto auto;
+        }
+
+        header ul {
+          flex-direction: column;
+        }
+
+        aside ul {
+          flex-direction: row;
+          overflow-x: auto;
+        }
+
+        aside ul li {
+          flex: 0 0 auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="site">
+      <header class="header">
+        <img src="#logo" alt="Logo" />
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Services</li>
+          <li>Contact</li>
+        </ul>
+      </header>
+      <main>
+        <aside class="left-menu">
+          <ul>
+            <li>Option 1</li>
+            <li>Option 2</li>
+            <li>Option 3</li>
+          </ul>
+        </aside>
+        <div class="content">
+          <h2>Title</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos,
+            aliquid!
+          </p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+      </main>
+      <footer>
+        <ul>
+          <li>Privacy Policy</li>
+          <li>Terms of Use</li>
+          <li>Contact Us</li>
+        </ul>
+      </footer>
+    </div>
+  </body>
+</html>
