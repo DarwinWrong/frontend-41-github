@@ -10,21 +10,7 @@
       href="compiled-css/bootstrap-icons/font/bootstrap-icons.min.css"
     />
     <script src="js/bootstrap.bundle.min.js"></script>
-    <style>
-      body {
-        height: 100vh;
-      }
-      header {
-        min-height: 56px;
-      }
-      .carousel .carousel-item {
-        height: 32em;
-      }
-      link,
-      a {
-        cursor: pointer;
-      }
-    </style>
+    <link rel="stylesheet" href="css/style.min.css" />
   </head>
   <body>
     <header>
@@ -71,20 +57,38 @@
         </div>
       </nav>
     </header>
+
+    <div class="b-example-divider"></div>
+
     <main>
-      <section id="breadcrumbs">
-        <nav
-          class="px-3 py-1 w-100"
-          style="--bs-breadcrumb-divider: '>'"
-          aria-label="breadcrumb"
-        >
-          <ol class="breadcrumb m-0">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Bootstrap</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Site</li>
+      <div class="container my-5">
+        <nav aria-label="breadcrumb">
+          <ol
+            class="breadcrumb breadcrumb-custom overflow-hidden text-center bg-body-tertiary border rounded-3"
+          >
+            <li class="breadcrumb-item">
+              <a
+                class="link-body-emphasis fw-semibold text-decoration-none"
+                href="#"
+              >
+                <svg class="bi" width="16" height="16">
+                  <use xlink:href="#house-door-fill"></use>
+                </svg>
+                Home
+              </a>
+            </li>
+            <li class="breadcrumb-item">
+              <a
+                class="link-body-emphasis fw-semibold text-decoration-none"
+                href="#"
+                >Library</a
+              >
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Data</li>
           </ol>
         </nav>
-      </section>
+      </div>
+
       <section id="carousel">
         <div id="carouselExampleDark" class="carousel carousel-dark slide">
           <div class="carousel-indicators">
@@ -111,7 +115,11 @@
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="10000">
-              <img src="..." class="d-block w-100" alt="..." />
+              <img
+                src="images/jpg/image-1.jpg"
+                class="d-block w-100"
+                alt="car-1"
+              />
               <div class="carousel-caption d-none d-md-block">
                 <h5>First slide label</h5>
                 <p>
@@ -120,7 +128,11 @@
               </div>
             </div>
             <div class="carousel-item" data-bs-interval="2000">
-              <img src="..." class="d-block w-100" alt="..." />
+              <img
+                src="images/jpg/image-2.jpg"
+                class="d-block w-100"
+                alt="car-2"
+              />
               <div class="carousel-caption d-none d-md-block">
                 <h5>Second slide label</h5>
                 <p>
@@ -129,7 +141,11 @@
               </div>
             </div>
             <div class="carousel-item">
-              <img src="..." class="d-block w-100" alt="..." />
+              <img
+                src="images/jpg/image-3.jpg"
+                class="d-block w-100"
+                alt="car-3"
+              />
               <div class="carousel-caption d-none d-md-block">
                 <h5>Third slide label</h5>
                 <p>
@@ -158,11 +174,84 @@
           </button>
         </div>
       </section>
+
+      <section id="cards">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card h-100 bg-dark bg-opacity-25">
+              <img
+                src="images/jpg/image-1.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+              </div>
+              <div class="card-footer">
+                <small class="text-body-secondary"
+                  >Last updated 3 mins ago</small
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 bg-dark bg-opacity-25">
+              <img
+                src="images/jpg/image-2.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This card has supporting text below as a natural lead-in to
+                  additional content.
+                </p>
+              </div>
+              <div class="card-footer">
+                <small class="text-body-secondary"
+                  >Last updated 3 mins ago</small
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 bg-dark bg-opacity-25">
+              <img
+                src="images/jpg/image-3.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This card has even longer
+                  content than the first to show that equal height action.
+                </p>
+              </div>
+              <div class="card-footer">
+                <small class="text-body-secondary"
+                  >Last updated 3 mins ago</small
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
+
     <footer
-      class="container-fluid border border-2 border-secondary rounded-2 bg-info-subtle"
+      class="container-fluid border border-2 border-secondary rounded-2 bg-black opacity-75"
     >
-      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+      <div
+        class="row row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center"
+      >
         <nav class="row text-center mt-3">
           <a
             class="my-1 link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover pointer-event"
@@ -191,7 +280,7 @@
             >SItemap</a
           >
         </nav>
-        <nav class="row text-center mt-3">
+        <nav class="row text-center mt-3 col-md-12">
           <a
             class="my-1 link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover pointer-event"
             >lorem 1</a

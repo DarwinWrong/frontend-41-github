@@ -1,0 +1,68 @@
+@import 'variables';
+@import 'mixin';
+@import 'function';
+
+body {
+    height: 100vh;
+  }
+
+  header {
+    min-height: 56px;
+  }
+
+  .carousel .carousel-item {
+    height: 32em;
+  }
+
+  link,
+  a {
+    cursor: pointer;
+  }
+
+//   Bootsrap
+.carousel {
+    img {
+        object-fit: cover;
+        height: 400px;
+    }
+
+    .carousel-control-prev, .carousel-control-next {
+        .carousel-control-prev-icon, .carousel-control-next-icon  {
+            filter: none;
+            width: rem(50);
+            height: rem(50);
+            background-color: black;
+            border-radius: 5px;
+        }
+    }
+}
+
+.features {
+    svg {
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 1.5;
+        text-align: center;
+        width: 1.75em;
+        height: 1.75em;
+        box-sizing: border-box;
+        flex-shrink: 0!important;
+        margin-right: 1rem!important;
+        color: rgba(222, 226, 230, 0.75)!important;
+        vertical-align: -.125em;
+        fill: currentColor;
+
+        use {
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1.5;
+            text-align: center;
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: transparent;
+            color: rgba(222, 226, 230, 0.75)!important;
+            box-sizing: border-box;
+            width: 28px!important;
+            height: 28px!important;
+        } 
+    }
+}

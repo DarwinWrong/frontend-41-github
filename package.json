@@ -1,7 +1,10 @@
 {
   "scripts": {
     "build-css": "sass --style=compressed style/scss:style/css",
-    "watch-css": "sass --watch style/scss:style/css"
+    "minify": "sass --style compressed style/scss/style.scss:style/css/style.min.css",
+    "watch-css": "sass --watch style/scss:style/css",
+    "bootstrap": "sass bootstrap/scss:bootstrap/css && sass --style compressed bootstrap/scss/style.scss:bootstrap/css/style.min.css",
+    "bootstrap-watch": "sass --watch --style compressed bootstrap/scss/style.scss:bootstrap/css/style.min.css"
   },
   "dependencies": {
     "bootstrap": "^5.3.3",

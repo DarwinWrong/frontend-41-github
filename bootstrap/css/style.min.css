@@ -1,0 +1,62 @@
+body {
+    height: 100vh
+}
+
+header {
+    min-height: 56px
+}
+
+.carousel .carousel-item {
+    height: 32em
+}
+
+link,
+a {
+    cursor: pointer
+}
+
+.carousel img {
+    object-fit: cover;
+    height: 400px
+}
+
+.carousel .carousel-control-prev .carousel-control-prev-icon,
+.carousel .carousel-control-prev .carousel-control-next-icon,
+.carousel .carousel-control-next .carousel-control-prev-icon,
+.carousel .carousel-control-next .carousel-control-next-icon {
+    filter: none;
+    width: 3.125rem;
+    height: 3.125rem;
+    background-color: #000;
+    border-radius: 5px
+}
+
+.features svg {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: center;
+    width: 1.75em;
+    height: 1.75em;
+    box-sizing: border-box;
+    flex-shrink: 0 !important;
+    margin-right: 1rem !important;
+    color: rgba(222, 226, 230, .75) !important;
+    vertical-align: -0.125em;
+    fill: currentColor
+}
+
+.features svg use {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: center;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    color: rgba(222, 226, 230, .75) !important;
+    box-sizing: border-box;
+    width: 28px !important;
+    height: 28px !important
+}
+
+/*# sourceMappingURL=style.min.css.map */
