@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adaptive Blocks</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      h1 {
+        text-align: center;
+        margin: 20px 0;
+      }
+
+      h2 {
+        text-align: center;
+        margin: 20px 0;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .card {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        text-align: center;
+        padding: 20px;
+        max-width: 300px;
+        flex: 1 1 calc(33.333% - 40px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .card img {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 15px;
+      }
+
+      .card h3 {
+        margin: 10px 0;
+      }
+
+      .card p {
+        color: #666;
+      }
+
+      .card a {
+        display: inline-block;
+        margin-top: 15px;
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      .card a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        .card {
+          flex: 1 1 calc(50% - 40px);
+        }
+      }
+
+      @media (max-width: 480px) {
+        .card {
+          flex: 1 1 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Завдання 2</h1>
+    <h2>Our Services</h2>
+    <div class="container">
+      <div class="card">
+        <img src="https://via.placeholder.com/60" alt="Shared Hosting" />
+        <h3>Shared Hosting</h3>
+        <p>
+          Generators on the Internet tend to repeat predefined chunks as
+          necessary
+        </p>
+        <a href="#">Read More &rarr;</a>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/60" alt="Dedicated Hosting" />
+        <h3>Dedicated Hosting</h3>
+        <p>
+          Generators on the Internet tend to repeat predefined chunks as
+          necessary
+        </p>
+        <a href="#">Read More &rarr;</a>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/60" alt="Cloud Hosting" />
+        <h3>Cloud Hosting</h3>
+        <p>
+          Generators on the Internet tend to repeat predefined chunks as
+          necessary
+        </p>
+        <a href="#">Read More &rarr;</a>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/60" alt="VPS Hosting" />
+        <h3>VPS Hosting</h3>
+        <p>
+          Generators on the Internet tend to repeat predefined chunks as
+          necessary
+        </p>
+        <a href="#">Read More &rarr;</a>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/60" alt="Wordpress Hosting" />
+        <h3>Wordpress Hosting</h3>
+        <p>
+          Generators on the Internet tend to repeat predefined chunks as
+          necessary
+        </p>
+        <a href="#">Read More &rarr;</a>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/60" alt="Domain Name" />
+        <h3>Domain Name</h3>
+        <p>
+          Generators on the Internet tend to repeat predefined chunks as
+          necessary
+        </p>
+        <a href="#">Read More &rarr;</a>
+      </div>
+    </div>
+  </body>
+</html>
