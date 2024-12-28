@@ -271,7 +271,7 @@ git branch
 git branch -a
 ```
 
-### Створення нової гілки та перехід до неї
+### Створення нової гілки з активної та перехід до неї
 
 ```bash
 git checkout -b ivanenko
@@ -282,6 +282,18 @@ git switch -c ivanenko
 ```
 
 - Створює нову гілку `ivanenko` і перемикається на неї.
+
+### Створення нової гілки з віддаленої та перехід до неї
+
+```bash
+git switch -c main origin/main
+```
+
+```bash
+git checkout -b main origin/main
+```
+
+- Створення нової гілки main з віддаленої гілки origin/main та перемикання на неї.
 
 ### Створення нової гілки з коміту
 
@@ -295,7 +307,7 @@ git switch -c <new-branch-name> <commit-hash>
 
 - Створює нову гілку з коміту.
 
-### Перехід до існуючої гілки
+### Перехід до існуючої локальної гілки
 
 ```bash
 git checkout ivanenko
@@ -314,6 +326,14 @@ git branch -m стара_назва нова_назва
 ```
 
 - Перейменовує гілку з `стара_назва` на `нова_назва`.
+
+### Перегляд віддаленої гілки
+
+```bash
+git checkout origin/main
+```
+
+- Якщо хочете лише переглянути стан віддаленої гілки (detached HEAD)
 
 ### Видалення гілки на локальному репозиторії
 
@@ -512,6 +532,12 @@ git push --force origin ivanenko
 ```
 
 - Відправляє зміни з поточної гілки на віддалений репозиторій у гілку `ivanenko` з перезаписом (перетирання) усіх файлів.
+
+```bash
+git push origin main:main-merge
+```
+
+- Команда для пушу З локальної гілки `main` в нову віддалену гілку `main-merge`:
 
 <hr style="height: 5px; background: lawngreen" />
 <hr style="height: 5px; background: lawngreen" />
