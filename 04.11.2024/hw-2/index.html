@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Рамка з поворотом</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+      }
+
+      .frame {
+        position: relative;
+        display: inline-block;
+        transform: rotate(45deg);
+        z-index: 1;
+      }
+
+      .frame::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        right: -10px;
+        bottom: -10px;
+        border: 5px solid #ff5722;
+        z-index: -1;
+      }
+
+      img {
+        display: block;
+        width: 300px;
+        height: auto;
+        transform: rotate(-45deg); /* Вирівнюємо зображення */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="frame">
+      <img src="HW/images/your-image.jpg" alt="Приклад зображення" />
+    </div>
+  </body>
+</html>
