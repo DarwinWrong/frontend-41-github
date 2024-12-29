@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    background-color: #007bff;
+    color: white;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    text-transform: uppercase;
+}
+
+.service-grid {
+    display: grid;
+    gap: 20px;
+    padding: 0 20px;
+    grid-template-columns: 1fr; 
+}
+
+.service-block {
+    background: #98bfe0; 
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-block img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+    transition: transform 1s ease;
+}
+
+.service-block h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #007bff;
+}
+
+.service-block p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.service-block a {
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.service-block:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-block:hover img {
+    transform: scale(1.2);
+}
+
+.service-block a:hover {
+    color: #0056b3;
+}
+
+@media (min-width: 480px) {
+    .service-grid {
+        grid-template-columns: 1fr 1fr; 
+    }
+}
+
+@media (min-width: 768px) {
+    .service-grid {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
+@media (min-width: 1024px) {
+    .service-grid {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
