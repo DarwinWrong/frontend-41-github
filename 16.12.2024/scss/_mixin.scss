@@ -1,0 +1,13 @@
+@mixin link-hover{
+    color: $text-color;
+    text-decoration: none;
+    transition: all 2s;  
+    margin-bottom: 30px;
+    &:hover {
+        color: blue;
+        text-decoration: underline;
+        transform: scale(1.5);
+        @content;
+      }
+
+}
