@@ -1,0 +1,5 @@
+@mixin my-mixin($bg-color, $text-color, $padding-size) {
+    background: $bg-color;
+    color: $text-color;
+    padding: $padding-size;
+}
