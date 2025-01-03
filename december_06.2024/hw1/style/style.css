@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+
+header {
+    padding: 15px;
+    background: linear-gradient(90deg, #ff007a, #6200ea);
+    color: white;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img {
+    height: 40px;
+}
+
+header .menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+header .menu {
+    position: fixed;
+    top: 0;
+    right: -240px; 
+    width: 170px; 
+    height: 70vh;
+    background: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center; 
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+    transition: right 0.3s ease-in-out;
+    gap: 20px; 
+}
+
+header .menu.active {
+    right: 0; 
+}
+
+header .menu .close-menu {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    color: black;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+header .menu a {
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px 15px;
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+}
+
+header .menu a:hover {
+    background: #f5f5f5;
+    color: #333;
+}
+
+header .menu a:first-child {
+    margin-top: 20px; 
+}
+.banner {
+    text-align: center;
+    padding: 50px 20px;
+    background: url('../img/wave.png') no-repeat;
+    background-size: cover;
+}
+
+.banner .content {
+    max-width: 1200px;
+    margin: 0 auto;
+    color: white;
+}
+
+.banner .try-btn {
+    padding: 15px 30px;
+    background: #ff007a;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background 0.3s;
+}
+
+.banner .try-btn:hover {
+    background: #e6006a;
+}
+
+.banner .banner-image img {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+@media (min-width: 1201px) {
+    .banner .content {
+        padding: 50px 20px;
+    }
+
+    header .menu a {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+    .banner .content {
+        padding: 20px;
+    }
+
+    .banner .try-btn {
+        font-size: 1rem;
+        padding: 12px 25px;
+    }
+
+    header .menu a {
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+    header {
+        padding: 15px;
+    }
+
+    header .menu-toggle {
+        display: block;
+    }
+
+    header .menu {
+        display: none;
+    }
+
+    header .menu.active {
+        display: flex;
+    }
+
+    header .menu a {
+        font-size: 0.9rem;
+    }
+
+    .banner {
+        padding: 30px 10px;
+    }
+
+    .banner .try-btn {
+        width: 100%;
+        max-width: 300px;
+        font-size: 0.9rem;
+    }
+
+    .banner .banner-image img {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 479px) {
+    header {
+        padding: 15px;
+    }
+
+    header .menu-toggle {
+        display: block;
+    }
+
+    header .menu {
+        display: none;
+    }
+
+    header .menu.active {
+        display: flex;
+    }
+
+    header .menu a {
+        font-size: 0.8rem;
+    }
+
+    .banner {
+        padding: 20px 5px;
+    }
+
+    .banner .try-btn {
+        font-size: 0.8rem;
+        padding: 10px 20px;
+    }
+
+    .banner .banner-image img {
+        width: 100%;
+    }
+}
