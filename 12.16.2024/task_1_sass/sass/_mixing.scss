@@ -3,3 +3,7 @@
     color: $text-color;
     padding: $padding-size;
 }
+
+body{
+    @include my-mixin(#570e0e, #e4bdbd, 20px);
+}
