@@ -20,6 +20,7 @@ body {
 }
 
 .block {
+    position: relative;
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -52,10 +53,25 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 1s ease, opacity 0.3s ease;
+    transition: transform 1s ease;
 }
 
 .block:hover img {
     transform: scale(1.2);
-    opacity: 0.8;
+}
+
+/* Напівпрозора плашка */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.3s ease;
+    z-index: 1; /* Плашка перекриває зображення */
+}
+
+.block:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
 }
