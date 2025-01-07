@@ -1,0 +1,109 @@
+:root {
+    --primary-bg: black;
+    --primary-color: white;
+    --highlight-color: #ff5722;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: var(--primary-color);
+    background: var(--primary-bg) url('../img/st-fon-1.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.fixed-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+}
+
+.fixed-menu ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 10px;
+}
+
+.fixed-menu li {
+    margin: 0 15px;
+}
+
+.fixed-menu a {
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: all 0.3s;
+}
+
+.fixed-menu a:hover {
+    background: var(--highlight-color);
+    border-radius: 5px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 100px 20px;
+}
+
+.card {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid var(--highlight-color);
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    width: 300px;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.image-container {
+    position: relative;
+}
+
+.image-container img {
+    width: 100%;
+    display: block;
+}
+
+.tooltip {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--highlight-color);
+    color: var(--primary-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    display: none;
+}
+
+.image-container:hover .tooltip {
+    display: block;
+}
+
+@media (max-width: 600px) {
+    .fixed-menu {
+        display: none;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
