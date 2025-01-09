@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Специфічність CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="rules">
+        <ol>
+            <h4>CSS-специфічність визначається чотирма категоріями:</h4>
+            <li>Inline-стилі (style=“color: red;”) (A): Рівень 1:0:0:0.</li>
+            <li>Ідентифікатори (#id) (B): Рівень 0:1:0:0.</li>
+            <li>
+                Класи, атрибути, псевдокласи (.class, [attr=value], :hover) (C): Рівень 0:0:1:0.
+            </li>
+            <li>
+                Типи елементів, псевдоелементи (h1, ::before) (D): Рівень 0:0:0:1.
+            </li>
+            <li style="list-style: none">
+                Коли при оголошенні стилю використовується модифікатор,<br />
+                !important це оголошення отримує найвищий пріоритет серед усіх інших
+                оголошень !important.
+            </li>
+        </ol>
+        <h2>Тест</h2>
+    </div>
+
+    <hr />
+
+    <!-- 1 -->
+    <div id="important-example">
+        <p class="highlight">Lorem ipsum dolor sit 1</p>
+    </div>
+
+    <hr />
+
+    <!-- 2 -->
+    <div id="test">
+        <span id="test-2">Lorem ipsum dolor sit 2</span>
+    </div>
+
+    <hr />
+
+    <!-- 3 -->
+    <div id="main" class="box">
+        <p>Lorem ipsum dolor sit 3</p>
+    </div>
+
+    <hr />
+
+    <!-- 4 -->
+    <div class="container">
+        <span class="text">Lorem ipsum dolor sit 4</span>
+    </div>
+
+    <hr />
+
+    <!-- 5 -->
+    <ul id="list">
+        <li class="item">Lorem ipsum dolor sit 5</li>
+        <li class="item special">Lorem ipsum dolor sit 5</li>
+    </ul>
+
+    <hr />
+
+    <!-- 6 -->
+    <p id="inline" class="inline" style="color: blue">
+        Lorem ipsum dolor sit 6
+    </p>
+</body>
+</html>

@@ -1,0 +1,50 @@
+p {
+    margin: 0;
+    line-height: 1.4;
+}
+
+.bold1 {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.bold1::first-letter {
+    font-size: 150%;
+    border: 2px dashed;
+    color: red;
+    margin: 3px;
+}
+
+.bold2 {
+    font-weight: 600;
+    color:rgb(6, 199, 109);
+    font-style: italic;
+}
+
+.bold2::first-letter {
+    font-size: 250%;
+    color: rgb(65, 141, 255);
+    margin: 1px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.bold2 strong {
+    color: rgb(24, 187, 24);
+}
+
+.bold3 {
+    font-family:'Times New Roman', Times, serif;
+    font-size: large;
+    font-weight: 700;
+    color: rgb(206, 58, 211);
+    font-style: italic;
+}
+
+.bold3::first-letter {
+    font-size: 200%;
+    font-weight: 100;
+    color: rgb(253, 87, 36);
+    margin: 1px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-decoration:underline;
+}

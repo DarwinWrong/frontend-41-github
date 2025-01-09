@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: linear-gradient(90deg, purple, red);
+}
+
+.logo {
+  flex: 0 0 auto;
+}
+
+.menu {
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.menu ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.menu li {
+  color: white;
+  text-decoration: none;
+}
+
+.RightContent {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.RightContent input {
+  border: 2px solid rgb(190, 88, 190);
+  border-radius: 25px;
+  padding: 12px;
+}
+
+.RightContent button {
+  padding: 12px 20px;
+  border: 2px solid rgb(190, 88, 190);
+  background: #ffffff;
+  color: rgb(190, 88, 190);
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+}
+  
