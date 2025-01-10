@@ -1,0 +1,44 @@
+body {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.rules {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+hr {
+    height: 3px;
+    background-color: black;
+    margin: 10px 0;
+}
+
+#important-example p {
+    color: blue !important;
+}
+
+div#test span {
+    color: red;
+}
+
+.box {
+    color: green;
+}
+
+.container .text {
+    color: purple;
+}
+
+ul li {
+    color: orange;
+}
+
+.item.special {
+    font-size: 18px;
+    color: pink;
+}
+
