@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Приклад зображеннь</title>
+    <link rel="stylesheet" href="graphics.css" />
+    <link
+      rel="preload"
+      as="image"
+      href="images/html.png"
+      imagesrcset="image-1000w.jpg 1000w, image-2000w.jpg 2000w"
+    />
+    <style>
+      h3 {
+        margin: 5px 0;
+      }
+      hr {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Викоритсання медіа файлів</h1>
+    <hr />
+
+    <!--============================box-sizing==============================-->
+    <h2>box-sizing</h2>
+    <!--====================================================================-->
+    <div class="wrapper">
+      <h3>box-sizing: content-box</h3>
+      <img class="content-box" src="images/html.png" alt="html image" />
+    </div>
+
+    <div class="wrapper">
+      <h3>box-sizing: border-box</h3>
+      <!-- Внутрішня тінь -->
+      <img class="border-box" src="images/html.png" alt="Гора" />
+    </div>
+    <hr />
+
+    <!--===================Заповнення в контейнері==========================-->
+    <h2>Заповнення в контейнері</h2>
+    <!--====================================================================-->
+    <div class="wrapper">
+      <h3>object-fit: cover</h3>
+      <img
+        class="object-fit-cover"
+        src="images/html.png"
+        srcset="images/html.png 768w, images/html.png 1200w"
+        sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        alt="cover"
+      />
+    </div>
+    <div class="wrapper">
+      <h3>object-fit: contain</h3>
+      <img class="object-fit-contain" src="images/html.png" alt="contain" />
+    </div>
+    <div class="wrapper">
+      <h3>object-fit: fill</h3>
+      <img class="object-fit-fill" src="images/html.png" alt="fill" />
+    </div>
+    <div class="wrapper">
+      <h3>object-fit: scale-down</h3>
+      <img
+        class="object-fit-scaledown"
+        src="images/html.png"
+        alt="scale down"
+      />
+    </div>
+    <hr />
+
+    <!--==========================Тінь box-shadow===========================-->
+    <h2>Тінь box-shadow</h2>
+    <!--====================================================================-->
+    <div class="wrapper">
+      <img class="simple-shadow" src="images/html.png" alt="html image" />
+    </div>
+
+    <div class="wrapper">
+      <!-- Внутрішня тінь -->
+      <h3>box-shadow: inset</h3>
+      <div
+        class="inside-shadow"
+        style="width: 200px; height: 100px; border: 1px solid black"
+      >
+        Внутрішня тінь
+      </div>
+    </div>
+    <hr />
+
+    <!--====================Обтікання та позиціювання=======================-->
+    <h2>Обтікання та позиціювання</h2>
+    <!--====================================================================-->
+    <!--Обтікання текстом (float):-->
+    <div class="wrapper">
+      <h3>float: left</h3>
+      <img
+        src="images/html.png"
+        alt="Example"
+        style="float: right; margin-right: 20px"
+      />
+      <p>
+        Текст обтікає зображення зліва. Це приклад використання властивості
+        `float`. Коли зображення розташоване ліворуч, текст автоматично обтікає
+        його праворуч.
+      </p>
+    </div>
+
+    <!--Обтікання з використанням круглих форм (shape-outside):-->
+    <div class="wrapper">
+      <h3>shape-outside: circle(50%)</h3>
+      <img
+        src="images/html.png"
+        alt="Example"
+        style="float: left; shape-outside: circle(50%); margin-right: 15px"
+      />
+      <p>
+        Тут зображення обтікається текстом по колу. Властивість `shape-outside`
+        дозволяє задавати фігурні об'єкти для обтікання текстом.
+      </p>
+    </div>
+
+    <!--Абсолютне позиціювання (position):-->
+    <div class="wrapper" style="position: relative">
+      <h3>position: absolute</h3>
+      <img
+        src="images/html.png"
+        alt="Example"
+        style="position: absolute; top: 0; right: 0"
+      />
+      <p>
+        Це текст, який відображається всередині блоку. Зображення закріплене у
+        правому верхньому куті за допомогою властивості `position: absolute`.
+      </p>
+    </div>
+
+    <!--Центрування зображення (text-align):-->
+    <div class="wrapper" style="text-align: center">
+      <h3>text-align: center</h3>
+      <img src="images/html.png" alt="Example" />
+      <p>Зображення по центру за допомогою `text-align: center`.</p>
+    </div>
+    <hr />
+
+    <!--====================================================================-->
+    <h2>Атрибути srcset і sizes в img</h2>
+    <!--====================================================================-->
+    <!--Атрибути srcset і sizes в <img> - кілька версій одного зображення для різних роздільностей екрану-->
+    <h3>srcset і sizes</h3>
+    <img
+      srcset="images/chkbox2.png 480w, images/html.png 800w"
+      sizes="(max-width: 560px) 480px, (min-width: 768px) 800px"
+      alt="Example image"
+      class="srcset"
+    />
+    <picture>
+      <source
+        srcset="images/chkbox2.png 480w, images/html.png 600w"
+        sizes="(max-width: 600px) 480px, (min-width: 601px) and (max-width: 699px) 600px, (min-width: 700px) 600px"
+      />
+      <img src="images/chkbox2.png" alt="Example image" class="srcset" />
+    </picture>
+
+    <!--Використання елемента <picture> для підтримки різних форматів-->
+    <h3>picture і source</h3>
+    <picture>
+      <source srcset="images/html.webp" type="image/webp" />
+      <source srcset="images/html.jpg" type="image/jpeg" />
+      <img src="images/html.png" alt="Example image" class="srcset" />
+    </picture>
+
+    <!--Комбінування <picture> із srcset для різних пристроїв і форматів-->
+    <h3>picture, source, img</h3>
+    <picture>
+      <!-- WebP версії з різними розмірами -->
+      <source
+        srcset="
+          images/html.webp  480w,
+          images/html.webp  800w,
+          images/html.webp 1200w
+        "
+        sizes="(max-width: 600px) 480px, (max-width: 1000px) 800px, 1200px"
+        type="image/webp"
+      />
+
+      <!-- JPEG версії для браузерів без підтримки WebP -->
+      <source
+        srcset="
+          images/html.jpg  480w,
+          images/html.jpg  800w,
+          images/html.jpg 1200w
+        "
+        sizes="(max-width: 600px) 480px, (max-width: 1000px) 800px, 1200px"
+        type="image/jpeg"
+      />
+
+      <!-- Резервне зображення -->
+      <img src="images/html.png" alt="Example image" class="srcset" />
+    </picture>
+    <hr />
+
+    <!--=================Використання фону background=======================-->
+    <h2>Використання фону background</h2>
+    <!--====================================================================-->
+    <!--.background-${Використання властивостей фону}*13-->
+    <div class="background-1">Багато фонів</div>
+    <div class="background-2">background-position: top right;</div>
+    <div class="background-3">background-position: 50% 50%;</div>
+    <div class="background-4">background-size: cover;</div>
+    <div class="background-5">background-size: contain;</div>
+    <div class="background-6">background-attachment: fixed;</div>
+    <div class="container">
+      <div class="background-7">background-attachment: scroll;</div>
+    </div>
+    <div class="background-8">background-origin: content-box;</div>
+    <div class="background-9">background-origin: border-box;</div>
+    <div class="background-10">background-origin: padding-box;</div>
+    <div class="background-11">background-clip: content-box;</div>
+    <div class="background-12">background-clip: border-box;</div>
+    <div class="background-13">background-clip: padding-box;</div>
+    <hr />
+
+    <!--=============================image map==============================-->
+    <h2>image map, with clickable regions. Each region is a hyperlink</h2>
+    <!--====================================================================-->
+    <img
+      src="images/html.png"
+      alt="Workplace"
+      usemap="#workmap"
+      width="400"
+      height="379"
+    />
+    <map name="workmap">
+      <area
+        shape="rect"
+        coords="34,44,270,350"
+        alt="Computer"
+        href="computer.htm"
+      />
+      <area
+        shape="rect"
+        coords="290,172,333,250"
+        alt="Phone"
+        href="phone.htm"
+      />
+      <area
+        shape="circle"
+        coords="337,300,44"
+        alt="Cup of coffee"
+        href="coffee.htm"
+      />
+    </map>
+
+    <!--=============================mimetype===============================-->
+    <h2>mimetype</h2>
+    <!--====================================================================-->
+    <picture>
+      <source srcset="diagram.svg" type="image/svg+xml" />
+      <source srcset="diagram.png" type="image/png" />
+      <img
+        src="images/html.png"
+        width="620"
+        height="540"
+        alt="Diagram showing the data channels"
+      />
+    </picture>
+
+    <!--====================================================================-->
+    <!--====================================================================-->
+
+    <img
+      src="images/html.png"
+      srcset="images/html.png 600w, images/chkbox2.png 800w"
+      sizes="(max-width: 600px) 100vw, 50vw"
+      alt="Адаптивне зображення"
+      width="400"
+      height="300"
+    />
+    <picture>
+      <source srcset="images/chkbox2.png" media="(min-width: 600px)" />
+      <img src="images/html.png" alt="MDN" />
+    </picture>
+  </body>
+</html>

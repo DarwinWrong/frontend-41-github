@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Goal Animations</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2ecc71;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            /*display: flex;*/
+            /*flex-direction: column;*/
+            /*justify-content: center;*/
+        }
+        .scene {
+            /*display: inline-block;*/
+            position: relative;
+            width: 49.5%;
+            height: 450px;
+            border: 1px solid black;
+            margin: 10px auto;
+        }
+        .player {
+            position: absolute;
+            width: 50px;
+            height: 120px;
+            padding: 5px;
+            background-color: #2980b9;
+            writing-mode: vertical-lr;
+            text-orientation: upright;
+            text-align: center;
+            align-content: center;
+        }
+        .ball {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border: 1px dashed black;
+            border-radius: 50%;
+            box-shadow: 0 0 5px black;
+            z-index: 2;
+        }
+        .vorota {
+            position: absolute;
+            /*position: absolute;*/
+            width: 140px;
+            height: 80px;
+            background-color: #fff;
+            border: 5px solid black;
+            border-top: 10px solid black;
+            border-bottom: 0;
+        }
+
+        /*Анімація №1: Ворота справа, футболіст зліва*/
+        .scene-1 .player {
+            left: 40%;
+            bottom: 0;
+        }
+        .scene-1 .ball {
+            left: 45%;
+            bottom: 0;
+            animation: goal-1 2s ease-out forwards;
+        }
+        .scene-1 .vorota {
+            top: 0;
+            left: 40%;
+        }
+        @keyframes goal-1 {
+            0% {
+                left: 45%;
+                bottom: 0;
+            }
+            100% {
+                left: 45%;
+                bottom: 85%;
+            }
+        }
+
+        /*Анімація №2: Ворота зліва, футболіст справа*/
+        .scene-2 .player {
+            left: 0;
+            top: 40%;
+        }
+        .scene-2 .ball {
+            left: 40px;
+            top: 60%;
+            animation: goal-2 2s ease-out forwards;
+        }
+        .scene-2 .vorota {
+            top: 40%;
+            right: 0;
+            transform: rotate(90deg);
+        }
+        @keyframes goal-2 {
+            0% {
+                left: 40px;
+                top: 60%;
+            }
+            100% {
+                left: 90%;
+                top: 40%;
+            }
+        }
+
+        /*Анімація №3: Ворота зверху, футболіст знизу*/
+        .scene-3 .player {
+            top: 0;
+            left: 40%;
+        }
+        .scene-3 .ball {
+            top: 100px;
+            left: 45%;
+            animation: goal-3 2s ease-out forwards;
+        }
+        .scene-3 .vorota {
+            bottom: 0;
+            left: 40%;
+            transform: rotate(180deg);
+        }
+        @keyframes goal-3 {
+            0% {
+                top: 100px;
+                left: 45%;
+            }
+            100% {
+                top: 85%;
+                left: 45%;
+            }
+        }
+
+        /*Анімація №4: Ворота знизу, футболіст зверху*/
+        .scene-4 .player {
+            top: 40%;
+            right: 0;
+        }
+        .scene-4 .ball {
+            top: 60%;
+            right: 30px;
+            animation: goal-4 2s ease-out forwards;
+        }
+        .scene-4 .vorota {
+            top: 40%;
+            left: 0;
+            transform: rotate(270deg);
+        }
+        @keyframes goal-4 {
+            0% {
+                top: 60%;
+                right: 30px;
+            }
+            100% {
+                top: 45%;
+                right: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Анімація №1: Ворота справа, футболіст зліва -->
+<div class="scene scene-1">
+    <div class="player">player</div>
+    <div class="ball"></div>
+    <div class="vorota"></div>
+</div>
+
+<!-- Анімація №2: Ворота зліва, футболіст справа -->
+<div class="scene scene-2">
+    <div class="player">player</div>
+    <div class="ball"></div>
+    <div class="vorota"></div>
+</div>
+
+<!-- Анімація №3: Ворота зверху, футболіст знизу -->
+<div class="scene scene-3">
+    <div class="player">player</div>
+    <div class="ball"></div>
+    <div class="vorota"></div>
+</div>
+
+<!-- Анімація №4: Ворота знизу, футболіст зверху -->
+<div class="scene scene-4">
+    <div class="player">player</div>
+    <div class="ball"></div>
+    <div class="vorota"></div>
+</div>
+
+</body>
+</html>

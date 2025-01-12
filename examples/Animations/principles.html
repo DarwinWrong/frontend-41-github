@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .wrong {
+        top: 50px;
+        /* padding-top: 50px; */
+        position: relative;
+        width: 100%;
+        height: 100vh;
+      }
+      .block {
+        width: 20%;
+        height: 50px;
+        display: inline-block;
+        text-align: center;
+        padding-top: 20px;
+        border: 2px solid brown;
+      }
+      .ball {
+        display: inline-block;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        /* 1 */
+        position: relative;
+        transition: all 1s ease;
+        z-index: 3;
+      }
+      /* 1 */
+      .ball:nth-child(6) {
+        background-color: rgb(128, 0, 75);
+        animation: position-move 3s ease infinite;
+      }
+      /* 1 */
+      @keyframes position-move {
+        from {
+          left: 0;
+          top: 50px;
+        }
+        to {
+          left: 10%;
+          top: -50px;
+        }
+      }
+      /* 2 */
+      .ball-2 {
+        background-color: rgb(30, 7, 73);
+        /* show difference between margin and transform*/
+        /* 1 */
+        /* also with and witout absolute */
+        position: absolute;
+        animation: margin-move 3s ease infinite;
+        /* 2 */
+        /* animation: translate-move 3s ease infinite; */
+      }
+      @keyframes margin-move {
+        /* % значення margin береться з розмірів батьківського елемента. */
+        from {
+          margin-left: 20%;
+          margin-top: 50px;
+        }
+        to {
+          margin-left: 25%;
+          margin-top: -50px;
+        }
+      }
+      /* 3 */
+      .ball-3 {
+        background-color: rgb(180, 239, 63);
+        animation: translate-move 3s ease infinite;
+      }
+      @keyframes translate-move {
+        /* % значення translateX чи translateY береться з розмірів елемента. */
+        from {
+          transform: translate(40vw, 50px);
+        }
+        to {
+          transform: translate(45vw, -50px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrong">
+      <div class="block">1</div>
+      <div class="block">2</div>
+      <div class="block">3</div>
+      <div class="block">4</div>
+      <br />
+      <div class="ball ball-1"></div>
+      <div class="ball ball-2"></div>
+      <div class="ball ball-3"></div>
+      <div class="ball ball-4"></div>
+    </div>
+  </body>
+</html>

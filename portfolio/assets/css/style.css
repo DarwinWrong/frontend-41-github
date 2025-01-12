@@ -1,0 +1,44 @@
+header nav.navbar {
+  background-color: #1A1A1A !important;
+}
+header nav.navbar a,
+header nav.navbar span {
+  color: #C7C7C7;
+}
+header nav.navbar .navbar-brand {
+  text-transform: uppercase;
+}
+#banner h3 {
+  font-size: 40px;
+}
+#banner .profile {
+  width: 100%;
+  max-width: 600px;
+  max-height: 663px;
+}
+#banner .socials .bi-linkedin, #banner .socials .bi-github {
+  width: 26px;
+  line-height: 26px;
+}
+#banner .socials .bi-linkedin::before, #banner .socials .bi-github::before {
+  width: 26px;
+}
+#banner .socials .bi-linkedin {
+  color: #222222;
+  background-color: #d3e97a;
+}
+#banner .socials .bi-linkedin::before {
+  color: #222222;
+  background-color: #d3e97a;
+}
+@media (min-width: 769px) {
+  #banner h3 {
+    font-size: 70px;
+  }
+}
+
+.c-pointer {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style.css.map */

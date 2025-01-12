@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .students {
+        width: 500px;
+      }
+      .students tr {
+        font-weight: bold;
+      }
+      .students td:nth-child(2) {
+      }
+      .students tr:nth-of-type(2) {
+      }
+    </style>
+  </head>
+  <body style="padding: 50px">
+    <!-- <table border="1">
+      <tr>
+        <th colspan="1">Інформація про користувача</th>
+      </tr>
+      <tr>
+        <td>Ім'я</td>
+        <td>Вік</td>
+      </tr>
+      <tr>
+        <td rowspan="2">Іван</td>
+        <td>25</td>
+      </tr>
+      <tr>
+        <td>30</td>
+      </tr>
+    </table> -->
+
+    <br />
+    <table border="1" class="students">
+      <caption>
+        Список студентів
+      </caption>
+      <thead>
+        <tr>
+          <th>Ім'я</th>
+          <th>Факультет</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Оксана</td>
+          <td>Інформатика</td>
+        </tr>
+        <tr>
+          <td>Микола</td>
+          <td>Математика</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="2">Всього студентів: 2</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <br />
+    <!-- <table border="1" style="border-collapse: collapse">
+      <tr>
+        <th>Ім'я</th>
+        <th>Вік</th>
+      </tr>
+      <tr>
+        <td>Тарас</td>
+        <td>22</td>
+      </tr>
+      <tr>
+        <td>Ірина</td>
+        <td>28</td>
+      </tr>
+    </table> -->
+
+    <br />
+    <!-- <table border="1">
+      <thead>
+        <tr>
+          <th>День</th>
+          <th>Час</th>
+          <th>Предмет</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2">Понеділок</td>
+          <td>9:00 - 10:30</td>
+          <td>Математика</td>
+        </tr>
+        <tr>
+          <td>10:45 - 12:15</td>
+          <td>Фізика</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3">Кінець розкладу</td>
+        </tr>
+      </tfoot>
+    </table> -->
+
+    <br />
+    <!-- <table border="1" style="border-collapse: collapse">
+      <tr>
+        <th>First</th>
+        <th>Second</th>
+        <th>Third</th>
+      </tr>
+      <tr>
+        <td>day 1</td>
+        <td>day 2</td>
+        <td>day 3</td>
+      </tr>
+      <tr>
+        <td>day 4</td>
+        <td>day 5</td>
+        <td>day 6</td>
+      </tr>
+    </table> -->
+
+    <br />
+    <!-- <table border="3" style="border-collapse: separate">
+      <caption>
+        Table
+      </caption>
+      <colgroup>
+        <col style="background: red" />
+        <col style="width: 100px; height: 300px; background: gold" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th>First</th>
+          <th>Second</th>
+          <th>Third</th>
+          <th>Third</th>
+        </tr>
+      </thead> -->
+
+    <br />
+    <!-- <tr>
+        <td>day 1</td>
+        <td>day 2</td>
+        <td colspan="3">day 3</td>
+      </tr>
+      <tr>
+        <td>day 4</td>
+        <td>day 5</td>
+        <td rowspan="3">day 6</td>
+      </tr>
+      <tr>
+        <td>day 9</td>
+        <td>day 10</td>
+        <td>day 11</td>
+      </tr>
+    </table> -->
+
+    <br />
+    <!-- Завдання 1 -->
+    <!-- <table border="1" style="border-collapse: separate">
+      <caption>
+        Simple table
+      </caption>
+      <colgroup>
+        <col style="background: greenyellow" />
+      </colgroup>
+      <thead>
+        <tr style="background: greenyellow">
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+        </tr>
+      </tbody>
+    </table> -->
+
+    <br />
+    <!-- <table border="1" cellpadding="10" cellspacing="0">
+      <tr>
+        <td colspan="4">1</td>
+      </tr>
+      <tr>
+        <td rowspan="2">2</td>
+
+        <td rowspan="2">3</td>
+  
+        <td colspan="2">4</td>
+      
+      </tr>
+      <tr>
+        <td>5</td>
+  
+        <td>6</td>
+
+      </tr>
+      <tr>
+        <td colspan="4">7</td>
+
+      </tr>
+    </table> -->
+
+    <br />
+    <!-- <table border="1">
+      <tr>
+        <td colspan="2">Ця комірка займає два стовпці</td>
+      </tr>
+      <tr>
+        <td>Одна комірка</td>
+        <td>Ще одна комірка</td>
+      </tr>
+    </table> -->
+
+    <br />
+    <!-- <table border="1">
+      <tr>
+        <td rowspan="2">Ця комірка займає два рядки</td>
+        <td>Комірка 1</td>
+      </tr>
+      <tr>
+        <td>Комірка 2</td>
+      </tr>
+    </table> -->
+
+    <br />
+    <table border="1" cellpadding="10" cellspacing="0">
+      <tr>
+        <td colspan="4">1</td>
+        <!-- 1 займає 4 комірки по горизонталі -->
+      </tr>
+      <tr>
+        <td rowspan="2">2</td>
+        <!-- 2 займає 2 рядки по вертикалі -->
+        <td rowspan="2">3</td>
+        <!-- 3 займає 2 рядки по вертикалі -->
+        <td colspan="2">4</td>
+        <!-- 4 займає 2 комірки по горизонталі, справа від 2 і 3 -->
+      </tr>
+      <tr>
+        <td>5</td>
+        <!-- 5 стандартна комірка під 4 -->
+        <td>6</td>
+        <!-- 6 стандартна комірка під 4 -->
+      </tr>
+      <tr>
+        <td colspan="4">7</td>
+        <!-- 7 займає 4 комірки по горизонталі -->
+      </tr>
+    </table>
+
+    <br />
+    <table border="1" cellpadding="20" cellspacing="10">
+      <colgroup>
+        <col span="2" style="background-color: lightgrey" />
+        <!-- Перші 2 стовпці мають сірий фон -->
+        <col style="background-color: lightblue" />
+        <!-- Третій стовпець має блакитний фон -->
+        <col style="background-color: lightgreen" />
+        <!-- Четвертий стовпець має зелений фон -->
+      </colgroup>
+      <tr>
+        <td style="border: 1px solid red">1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+      </tr>
+    </table>
+
+    <br />
+    <!-- <table
+      border="1"
+      cellpadding="10"
+      cellspacing="0"
+      style="border-collapse: separate"
+    >
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td rowspan="2">4</td>
+          <td>5</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>8</td>
+        </tr>
+        <tr>
+          <td colspan="3">9</td>
+        </tr>
+      </tbody>
+    </table> -->
+
+    <br />
+    <!-- <table
+      border="1"
+      cellpadding="10"
+      cellspacing="0"
+      style="border-collapse: separate"
+    >
+      <caption>
+        title
+      </caption>
+      <thead>
+        <tr>
+          <th rowspan="2">qqqq</th>
+          <th colspan="2">wwww</th>
+          <th rowspan="2">rrrr</th>
+          <th rowspan="2">tttt</th>
+        </tr>
+        <tr>
+          <th>aaaa</th>
+          <th>ssss</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>xxx</td>
+          <td>ccc</td>
+          <td>vvv</td>
+          <td>bbb</td>
+          <td>nnn</td>
+        </tr>
+        <tr>
+          <td>aaa</td>
+          <td>sss</td>
+          <td>ddd</td>
+          <td>fff</td>
+          <td>ggg</td>
+        </tr>
+      </tbody>
+    </table> -->
+
+    <hr />
+    <style id="div-table">
+      /* .table {
+        display: table;
+        width: 100%;
+        border: 2px solid black;
+      }
+
+      .row {
+        display: table-row;
+      }
+
+      .cell {
+        display: table-cell;
+        padding: 10px;
+        border: 1px solid gray;
+      } */
+    </style>
+    <!-- <div class="display-table">
+      <div class="table">
+        <div class="row">
+          <div class="cell">Клітинка 1</div>
+          <div class="cell">Клітинка 2</div>
+          <div class="cell">Клітинка 3</div>
+        </div>
+        <div class="row">
+          <div class="cell">Клітинка 4</div>
+          <div class="cell">Клітинка 5</div>
+          <div class="cell">Клітинка 6</div>
+        </div>
+      </div>
+    </div> -->
+  </body>
+</html>

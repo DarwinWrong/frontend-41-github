@@ -1,0 +1,36 @@
+body {
+    overflow: hidden;
+}
+
+.colored-text {
+    max-width: 500px;
+    color: yellow;
+    background-color: black;
+    animation: move 3s linear forwards;
+    transition: all 1s ease-in;
+    position: relative;
+}
+
+@keyframes move {
+    0% {
+        color: yellow;
+        margin-left: 0;
+    }
+
+    100% {
+        color: white;
+        margin-left: 100vw;
+    }
+}
+
+@keyframes moveup {
+    0% {
+        top: 0;
+        transform: translatey(0);
+    }
+
+    100% {
+        top: 100px;
+        transform: translatey(100px);
+    }
+}

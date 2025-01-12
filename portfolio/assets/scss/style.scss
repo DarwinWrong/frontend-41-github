@@ -1,0 +1,68 @@
+    // @import url(bootstrap-grid.scss); // import as file
+header {
+    nav.navbar {
+        background-color: #1A1A1A !important;
+
+        a,
+        span {
+          color: #C7C7C7;
+        }
+      
+        .navbar-brand {
+          text-transform: uppercase;
+        }
+    
+        .container-fluid {
+            
+        }
+    
+        .navbar-toggler-icon {
+            
+        }
+      }
+}
+
+
+      #banner {
+        h3 {
+            // text-transform: uppercase;
+            font-size: 40px;
+        }
+        .profile {
+            width: 100%;
+            max-width: 600px;
+            max-height: 663px;
+        }
+        .socials {
+            .bi-linkedin, .bi-github {
+                // font-size: 1rem; 
+                width: 26px; 
+                // height: 26px;
+                // font-size: 19px;
+                line-height: 26px;
+                &::before{
+                    width: 26px; 
+                    // height: 26px; 
+                    // font-size: 26px; 
+                }
+            }
+            .bi-linkedin {
+                color: #222222;
+                background-color: #d3e97a;
+                &::before{
+                    color: #222222;
+                    background-color: #d3e97a;
+                }
+            }
+        }
+
+        @media (min-width: 769px){
+            h3 {
+                font-size: 70px;
+            } 
+        }
+      }
+
+      .c-pointer {
+            cursor: pointer;
+      }

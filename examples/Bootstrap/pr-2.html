@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy New Year!</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background: url(assets/images/nw-1.webp);
+      }
+      .banner {
+        background: url("assets/images/nw-2.jpg") no-repeat center center;
+        background-size: cover;
+        height: 300px;
+        color: white;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+      .progress-title {
+        font-weight: bold;
+        margin-top: 10px;
+      }
+      .carousel img {
+        object-fit: cover;
+        /* height: 400px; */
+      }
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        filter: none;
+        width: 80px;
+        height: 80px;
+        background-color: black;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- БАНЕР -->
+    <div class="banner">🎉 Happy New Year 2025! 🎉</div>
+
+    <div class="container-fluid">
+      <div class="row mt-4">
+        <!-- Бокова панель -->
+        <nav class="col-md-3 col-lg-2 bg-dark sidebar py-3">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">🎄 Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">🎁 Completed Tasks</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">📈 Goals</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">🎆 Wishes</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Основний контент -->
+        <main
+          class="col-md-9 col-lg-10 justify-content-center align-items-center d-flex flex-column"
+        >
+          <!-- Слайдер -->
+          <div
+            id="newYearCarousel"
+            class="carousel slide mb-4 col-lg-8"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="assets/images/santa-1.jpg"
+                  class="d-block w-100"
+                  alt="Celebration 1"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="assets/images/santa-2.jpg"
+                  class="d-block w-100"
+                  alt="Celebration 2"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="assets/images/santa-3.webp"
+                  class="d-block w-100"
+                  alt="Celebration 3"
+                />
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#newYearCarousel"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#newYearCarousel"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
+          <!-- Графічна діаграма виконаних завдань -->
+          <section class="text-light">
+            <h3 class="text-center mb-3">🎯 Progress of Completed Tasks</h3>
+            <div class="progress-title">Task 1: Decorate the Tree</div>
+            <div class="progress mb-3">
+              <div class="progress-bar bg-success" style="width: 80%">80%</div>
+            </div>
+            <div class="progress-title">Task 2: Buy Gifts</div>
+            <div class="progress mb-3">
+              <div class="progress-bar bg-info" style="width: 60%">60%</div>
+            </div>
+            <div class="progress-title">Task 3: Prepare Food</div>
+            <div class="progress mb-3">
+              <div class="progress-bar bg-warning" style="width: 50%">50%</div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <!-- Футер -->
+    <footer class="bg-dark text-white py-3 mt-4">
+      <div class="container text-center">
+        <p>
+          🎉 Wishing you a prosperous New Year filled with joy, love, and
+          success! 🎆
+        </p>
+        <p>© 2024 Your Name</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

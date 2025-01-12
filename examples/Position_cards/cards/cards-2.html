@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Проєкти</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+    .projects {
+      display: flex;
+      gap: 20px;
+      max-width: 900px;
+      width: 100%;
+    }
+    .project-card {
+      position: relative;
+      width: 300px;
+      height: 400px;
+      overflow: hidden;
+      border: 3px solid transparent;
+      transition: border-color 0.5s ease;
+      border-bottom-color: orange;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .project-card:hover {
+      border-color: orange;
+    }
+    .project-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .project-content {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 20px;
+      transition: transform 0.5s ease;
+      transform: translateY(100%);
+    }
+    .project-card:hover .project-content {
+      transform: translateY(0);
+    }
+    .project-title {
+      background-color: orange;
+      padding: 5px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .project-location {
+      font-size: 0.9em;
+      margin-bottom: 10px;
+      color: #ddd;
+    }
+    .project-description {
+      line-height: 1.5;
+    }
+    .project-description p:last-child {
+      display: none;
+    }
+    .project-card:hover .project-description p:last-child {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="projects">
+    <div class="project-card">
+      <img src="project1.jpg" alt="Project 1" class="project-image">
+      <div class="project-content">
+        <div class="project-location">Cobb County, Georgia, United States</div>
+        <div class="project-title">Project 1</div>
+        <div class="project-description">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p>Libero voluptate perferendis natus.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="project2.jpg" alt="Project 2" class="project-image">
+      <div class="project-content">
+        <div class="project-location">Southwestern, United States</div>
+        <div class="project-title">Project 2</div>
+        <div class="project-description">
+          <p>Est libero ipsa repellendus accusantium, illum?</p>
+          <p>Magnam accusantium, possimus temporibus.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="project3.jpg" alt="Project 3" class="project-image">
+      <div class="project-content">
+        <div class="project-location">Dubai, UAE</div>
+        <div class="project-title">Project 3</div>
+        <div class="project-description">
+          <p>Est libero ipsa repellendus accusantium, illum?</p>
+          <p>Possimus, commodi!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

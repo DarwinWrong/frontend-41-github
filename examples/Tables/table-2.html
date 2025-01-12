@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        th, td {
+            padding: 15px;
+            border: 2px solid grey;
+        }
+
+        th {
+            background-color: #f4f4f4;
+            font-size: 1.2em;
+        }
+
+        /* Заголовки планів */
+        .plan-basic {
+            background-color: #ff5722;
+            color: white;
+        }
+
+        .plan-medium {
+            background-color: #2196f3;
+            color: white;
+        }
+
+        .plan-advance {
+            background-color: #004d40;
+            color: white;
+        }
+
+        /* Стилі для галочок і хрестиків */
+        .check {
+            color: green;
+            font-size: 1.5em;
+        }
+
+        .cross {
+            color: red;
+            font-size: 1.5em;
+        }
+
+        .na {
+            font-size: 1em;
+            color: gray;
+        }
+
+        /* Кнопки "Buy Plan" */
+        .buy-btn {
+            padding: 10px 20px;
+            color: white;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .buy-basic {
+            background-color: #ff5722;
+        }
+
+        .buy-medium {
+            background-color: #2196f3;
+        }
+
+        .buy-advance {
+            background-color: #004d40;
+        }
+        .buttons {
+            border: 2px solid grey;
+        }
+        .buttons td {
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+<table border="2">
+    <thead>
+        <tr>
+            <th></th>
+            <th class="plan-basic">Квітень</th>
+            <th class="plan-medium">Травень</th>
+            <th class="plan-advance">Червень</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Біг на 3000м</td>
+            <td class="na">N/A</td>
+            <td class="check">✔</td>
+            <td class="check">✔</td>
+        </tr>
+        <tr>
+            <td>129 TB Bandwidth</td>
+            <td class="check">✔</td>
+            <td class="na">N/A</td>
+            <td class="check">✔</td>
+        </tr>
+        <tr>
+            <td>Dedicated Support Panel</td>
+            <td class="check">✔</td>
+            <td class="check">✔</td>
+            <td class="check">✔</td>
+        </tr>
+        <tr>
+            <td>Extra Plugin Features</td>
+            <td class="cross">✖</td>
+            <td class="cross">✖</td>
+            <td class="check">✔</td>
+        </tr>
+        <tr>
+            <td>Email Support</td>
+            <td class="check">✔</td>
+            <td class="check">✔</td>
+            <td class="check">✔</td>
+        </tr>
+        <tr>
+            <td>Chat Support Option</td>
+            <td class="check">✔</td>
+            <td class="check">✔</td>
+            <td class="cross">✖</td>
+        </tr>
+        <tr class="buttons">
+            <td></td>
+            <td><a href="#" class="buy-btn buy-basic">Оновити</a></td>
+            <td><a href="#" class="buy-btn buy-medium">Оновити</a></td>
+            <td><a href="#" class="buy-btn buy-advance">Оновити</a></td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

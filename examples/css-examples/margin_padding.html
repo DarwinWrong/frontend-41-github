@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lists</title>
+    <link rel="stylesheet" href="lists.css" />
+    <style>
+      /*****111111*****/
+      .block {
+        background-color: lightblue;
+        padding: 20px; /* Внутрішній відступ */
+        margin: 15px; /* Зовнішній відступ */
+      }
+
+      /*****222222*****/
+      .outer {
+        background-color: lightblue;
+        padding: 30px;
+        margin: 20px;
+      }
+
+      .inner {
+        background-color: lightgreen;
+        padding: 20px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--*****111111-222222*****-->
+    <div id="blocks">
+      <h2>Внутрішні та зовнішні відступи</h2>
+      <div class="block">Перший блок з текстом</div>
+      <div class="block">Другий блок з текстом</div>
+      <div class="block">Третій блок з текстом</div>
+
+      <h1>Відступи для вкладених блоків</h1>
+      <div class="outer">
+        Зовнішній блок
+        <div class="inner">Внутрішній блок</div>
+      </div>
+    </div>
+  </body>
+</html>

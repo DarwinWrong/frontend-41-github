@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        padding-top: 100px;
+        text-align: center;
+        width: 100%;
+        height: 100vh;
+        font-size: 1vw;
+      }
+      .card {
+        margin: 20px 10px;
+        font-size: 14px;
+        display: inline-block;
+        position: relative;
+        width: 28%;
+        min-width: 280px;
+        overflow: hidden;
+        box-shadow: 0 3px 8px 5px black;
+        text-align: left;
+        transition: box-shadow 1s ease, transform 1s ease;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .text {
+        padding: 10px;
+        padding-top: 20px;
+        background-color: rgba(255,255,255,1);
+        position: absolute;
+        top: 0;
+        height: 100%;
+        transform: translateY(55%);
+        border: none;
+        transition: background-color 1s ease, transform 1s ease, height 1s ease, color 1s ease, border 0.5s ease;
+        font-size: 100%;
+      }
+      .title {
+        margin-top: 10px;
+        transition: background-color 0.5s ease;
+      }
+      .subtitle {
+        margin-top: 10px;
+      }
+      .hidden-text {
+        margin-top: 10px;
+        visibility: hidden;
+        opacity: 0;
+        height: 0;
+        transition: visibility 1s ease, opacity 1s ease;
+      }
+      .card:hover {
+        cursor: pointer;
+        color: white;
+        text-align: center;
+        /* border-bottom: 5px solid orange; */
+        box-shadow: 0 3px 5px 8px orange;
+        transform: scale(1.03);
+        transform-origin: center;
+        /* outline: 5px solid orange;
+        outline-offset: -5px; */
+      }
+      .card:hover .text {
+        background-color: rgba(0,0,0,0.4);
+        transform: translateY(0);
+        border-bottom: 5px solid orange;
+      }
+      .card:hover .title {
+        width: 100%;
+        background-color: orange;
+        padding: 5px;
+      }
+      .card:hover .hidden-text {
+        visibility: visible;
+        opacity: 1;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <img src="images/car.png" alt="" />
+      <div class="text">
+        <span>Lorem ipsum, dolor</span>
+        <h3 class="title">Lorem ipsum, dolor sit ame</h3>
+        <p class="subtitle"></p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi cum
+          veritatis modi distinctio
+        </p>
+        <p class="hidden-text">
+          molestiae dolore ad consequatur dignissimos neque minus dolores
+          provident harum, iure odit voluptatem praesentium omnis debitis
+          maxime.
+        </p>
+      </div>
+    </div>
+    <div class="card">
+        <img src="images/car.png" alt="" />
+        <div class="text">
+          <span>Lorem ipsum, dolor</span>
+          <h3 class="title">Lorem ipsum, dolor sit ame</h3>
+          <p class="subtitle"></p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi cum
+            veritatis modi distinctio
+          </p>
+          <p class="hidden-text">
+            molestiae dolore ad consequatur dignissimos neque minus dolores
+            provident harum, iure odit voluptatem praesentium omnis debitis
+            maxime.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/car.png" alt="" />
+        <div class="text">
+          <span>Lorem ipsum, dolor</span>
+          <h3 class="title">Lorem ipsum, dolor sit ame</h3>
+          <p class="subtitle"></p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi cum
+            veritatis modi distinctio
+          </p>
+          <p class="hidden-text">
+            molestiae dolore ad consequatur dignissimos neque minus dolores
+            provident harum, iure odit voluptatem praesentium omnis debitis
+            maxime.
+          </p>
+        </div>
+      </div>
+  </body>
+</html>

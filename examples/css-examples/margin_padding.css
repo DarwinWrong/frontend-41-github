@@ -1,0 +1,22 @@
+        /*****111111*****/
+        .block {
+            background-color: lightblue;
+            color: red;
+            padding: 20px;
+            /* Внутрішній відступ */
+            margin: 15px;
+            /* Зовнішній відступ */
+        }
+
+        /*****222222*****/
+        .outer {
+            background-color: lightblue;
+            padding: 30px;
+            margin: 20px;
+        }
+
+        .inner {
+            background-color: lightgreen;
+            padding: 20px;
+            margin: 10px;
+        }

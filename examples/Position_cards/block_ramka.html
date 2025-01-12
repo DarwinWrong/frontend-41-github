@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Borders</title>
+    <style>
+      * {
+        box-sizing: 0;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        width: 100vw;
+        height: 100%;
+      }
+      /* 1 */
+      .block__wrap {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        margin-top: 10%;
+      }
+      .block,
+      .block__before-after {
+        width: 100%;
+        height: 100%;
+        background-color: brown;
+        z-index: 1;
+      }
+      .block__ramka-left,
+      .block__ramka-right,
+      .block__before-after::before,
+      .block__before-after::after {
+        position: absolute;
+        display: block;
+        width: 200px;
+        height: 40px;
+        border-style: solid;
+        border-color: black;
+        z-index: 2;
+      }
+      .block__ramka-left,
+      .block__before-after::before {
+        border-width: 10px 10px 0 10px;
+        transform: rotate(-45deg) translate(-60px, -30px);
+      }
+      .block__ramka-right,
+      .block__before-after::after {
+        border-width: 0 10px 10px 10px;
+        transform: rotate(-45deg) translate(85px, -25px);
+      }
+      /* 2 */
+      .block__before-after::before,
+      .block__before-after::after {
+        content: "";
+      }
+      .block__before-after {
+        position: relative;
+      }
+      .block__before-after::before {
+        top: 0;
+      }
+      .block__before-after::after {
+        bottom: 0;
+        transform: rotate(-45deg) translate(45px, 15px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="block__wrap">
+      <div class="block__ramka-left"></div>
+      <div class="block"></div>
+      <div class="block__ramka-right"></div>
+    </div>
+    <div class="block__wrap">
+      <div class="block__before-after"></div>
+    </div>
+  </body>
+</html>

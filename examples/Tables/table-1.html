@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorful Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0e0e0; /* Світло-сірий фон сторінки */
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+
+        /* Стилі для заголовків таблиці */
+        th {
+            background-color: #ff9800; /* Помаранчевий фон для заголовків */
+            border-bottom: 2px solid wheat;
+        }
+
+        tr {
+            border-bottom: 2px solid white;
+        }
+
+        /* Стилі для першого стовпця */
+        td:first-child {
+            background-color: #006400; /* Темно-зелений фон */
+            font-weight: bold;
+        }
+
+        /* Стилі для даних таблиці */
+        td {
+            background-color: #d7bde2; /* Світло-фіолетовий фон для всіх клітинок */
+            color: #333;
+        }
+
+        /* Відтінки для кожного стовпця */
+        td:nth-child(2) {
+            background-color: #d7bde2;
+        }
+
+        td:nth-child(3) {
+            background-color: #af7ac5;
+        }
+
+        td:nth-child(4) {
+            background-color: #d7bde2;
+        }
+
+        td:nth-child(5) {
+            background-color: #af7ac5;
+        }
+
+        td:nth-child(6) {
+            background-color: #d7bde2;
+        }
+
+        td:nth-child(7) {
+            background-color: #af7ac5;
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Data 1</th>
+                <th>Data 2</th>
+                <th>Data 3</th>
+                <th>Data 4</th>
+                <th>Data 5</th>
+                <th>Data 6</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Wanda</td>
+                <td>25</td>
+                <td>55</td>
+                <td>26</td>
+                <td>19</td>
+                <td>39</td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td>Wave</td>
+                <td>35</td>
+                <td>65</td>
+                <td>36</td>
+                <td>52</td>
+                <td>33</td>
+                <td>41</td>
+            </tr>
+            <tr>
+                <td>Candy</td>
+                <td>15</td>
+                <td>45</td>
+                <td>39</td>
+                <td>42</td>
+                <td>23</td>
+                <td>17</td>
+            </tr>
+            <tr>
+                <td>chocos</td>
+                <td>25</td>
+                <td>49</td>
+                <td>29</td>
+                <td>22</td>
+                <td>46</td>
+                <td>37</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

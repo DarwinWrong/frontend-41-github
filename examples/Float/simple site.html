@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout Example</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+        width: 100%;
+      }
+
+      header,
+      nav,
+      footer {
+        background-color: #8b1c3f;
+        color: white;
+        text-align: left;
+        padding: 20px 20px 20px 50px;
+        /* clear: both; */
+      }
+      header {
+        margin-bottom: 20px;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+      }
+
+      .wrapper {
+        width: 100%;
+        text-align: center;
+      }
+
+      main {
+        background-color: #b85775;
+        padding: 40px;
+        margin: 10px 10px 20px 15px;
+        margin: 10px auto 20px;
+        /* float: left; */
+        width: 61%;
+        /* центрування блоків зліва */
+        display: inline-block;
+        text-align: left;
+      }
+
+      section {
+        background-color: #d69aa9;
+        padding: 50px;
+        margin: 10px 0;
+      }
+
+      .left-asides {
+        float: left;
+        width: 20%;
+        margin-bottom: 30px;
+      }
+
+      aside {
+        background-color: #c16c8a;
+        color: white;
+        padding: 20px 20px 20px 50px;
+        margin: 10px 0;
+      }
+
+      .left-aside {
+        float: left;
+        /* clear: both; для всіх float елементів */
+        width: 100%;
+      }
+
+      /* починаючи з другого елемента що обтікає зліва */
+      .aside-2 {
+        height: 220px;
+        clear: left;
+      }
+
+      .right-aside {
+        float: right;
+        width: 17%;
+        height: 300px;
+        text-align: center;
+        /* 1 */
+        position: relative;
+      }
+
+      .right-aside h3 {
+        writing-mode: vertical-lr;
+        text-orientation: upright;
+        /* 1 */
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* 2 */
+        /* position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); */
+        /* 3 */
+        /* line-height: 150px;
+        display: inline-block;
+        vertical-align: middle; */
+      }
+
+      footer {
+        background-color: #8b1c3f;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>HEADER</h1>
+    </header>
+
+    <nav>
+      <h2>MENU</h2>
+    </nav>
+
+    <div class="wrapper">
+      <div class="left-asides">
+        <aside class="left-aside aside-1">
+          <h3>ASIDE 1</h3>
+        </aside>
+        <aside class="left-aside aside-2">
+          <h3>ASIDE 2</h3>
+        </aside>
+      </div>
+
+      <main>
+        <h2>Main Content</h2>
+        <section class="section-1">
+          <h3>Section 1</h3>
+        </section>
+        <section class="section-2">
+          <h3>Section 2</h3>
+        </section>
+      </main>
+
+      <aside class="right-aside aside-3">
+        <h3>ASIDE 3</h3>
+      </aside>
+    </div>
+
+    <footer>
+      <h2>FOOTER</h2>
+    </footer>
+  </body>
+</html>

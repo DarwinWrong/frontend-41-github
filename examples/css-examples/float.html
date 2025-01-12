@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Float</title>
+    <style id="float-clearfix">
+      h4 {
+        display: inline-block;
+        padding: 10px;
+      }
+      .float {
+        padding: 10px;
+        float: left;
+      }
+      .child-1,
+      .child-2 {
+        padding: 5px;
+        float: left;
+      }
+      .float-2 {
+      }
+      /* 2 */
+      hr {
+        clear: both;
+      }
+      .clear-float h4:hover {
+        cursor: pointer;
+      }
+      /* 
+          Селектор ~ дозволяє вибрати будь-який наступний елемент того ж рівня в DOM
+          ~ знаходить всі наступні елементи з класом .float-2 після h4:nth-of-type(2). 
+          */
+      .clear-float h4:nth-of-type(1):hover ~ .float-1 .child-2 {
+        clear: left;
+      }
+      .clear-float h4:nth-of-type(2):hover ~ .float-2 {
+        clear: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="clear-float">
+      <h4>1) Clear 2 element in 1 block</h4>
+      <h4>2) Clear 2 block</h4>
+      <br />
+      <div class="float float-1" style="background-color: lightblue">
+        <div class="child-1" style="background-color: lightcoral">
+          Дочірній елемент 1
+        </div>
+        <div class="child-2" style="background-color: lightgreen">
+          Дочірній елемент 2
+        </div>
+      </div>
+      <!-- 2 -->
+      <!-- <hr /> -->
+      <div class="float float-2" style="background-color: lightblue">
+        <div class="child-1" style="background-color: lightcoral">
+          Дочірній елемент 1
+        </div>
+        <div class="child-2" style="background-color: lightgreen">
+          Дочірній елемент 2
+        </div>
+      </div>
+    </div>
+
+    <hr />
+    <style>
+      .article-content {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        border: 1px solid brown;
+        padding: 10px;
+        max-width: 45%;
+        display: inline-block;
+        text-align: justify;
+      }
+      .article-image {
+        float: left;
+        margin: 0 15px 15px 0;
+        width: 200px;
+      }
+      .article-content:nth-of-type(2) .article-image {
+        float: right;
+      }
+    </style>
+    <article class="article-content">
+      <img
+        src="https://via.placeholder.com/200"
+        alt="Приклад зображення"
+        class="article-image"
+      />
+      <p>
+        Ласкаво просимо до нашої новинної статті! У цьому тексті ми обговоримо
+        важливі події дня та поділимося цікавими фактами. Зображення, яке ви
+        бачите ліворуч, ілюструє основну тему нашої статті. Текст автоматично
+        обтікає зображення.
+      </p>
+      <p>
+        Сучасні веб-технології дозволяють створювати адаптивні макети, які
+        виглядають однаково добре як на комп’ютерах, так і на мобільних
+        пристроях. За допомогою CSS властивості `float` ми можемо легко
+        розташувати зображення ліворуч або праворуч від тексту, забезпечуючи
+        зручне читання.
+      </p>
+      <p>
+        Ця техніка все ще корисна для створення простих макетів, але у більш
+        складних випадках варто використовувати сучасніші інструменти, такі як
+        Flexbox чи Grid.
+      </p>
+    </article>
+    <article class="article-content">
+      <img
+        src="https://via.placeholder.com/200"
+        alt="Приклад зображення"
+        class="article-image"
+      />
+      <p>
+        Ласкаво просимо до нашої новинної статті! У цьому тексті ми обговоримо
+        важливі події дня та поділимося цікавими фактами. Зображення, яке ви
+        бачите ліворуч, ілюструє основну тему нашої статті. Текст автоматично
+        обтікає зображення.
+      </p>
+      <p>
+        Сучасні веб-технології дозволяють створювати адаптивні макети, які
+        виглядають однаково добре як на комп’ютерах, так і на мобільних
+        пристроях. За допомогою CSS властивості `float` ми можемо легко
+        розташувати зображення ліворуч або праворуч від тексту, забезпечуючи
+        зручне читання.
+      </p>
+      <p>
+        Ця техніка все ще корисна для створення простих макетів, але у більш
+        складних випадках варто використовувати сучасніші інструменти, такі як
+        Flexbox чи Grid.
+      </p>
+    </article>
+  </body>
+</html>

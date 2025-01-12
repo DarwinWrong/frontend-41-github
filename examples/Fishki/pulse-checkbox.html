@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pulse checkbox</title>
+    <style>
+      .pulsar {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 15px;
+        height: 15px;
+        padding: 0;
+        margin: 1px;
+        appearance: none !important;
+        -webkit-appearance: none !important;
+        -moz-appearance: none !important;
+        -o-appearance: none !important;
+        box-sizing: border-box !important;
+        border: 1.5px solid red !important;
+        border-radius: 2px !important;
+        background: linear-gradient(45deg, rgb(240, 179, 179) 0%, #fff 100%);
+        cursor: pointer;
+        -webkit-box-shadow: 0 0 0 0 rgba(204, 44, 44, 0.1) !important;
+        -moz-box-shadow: 0 0 0 0 rgba(204, 44, 44, 0.1) !important;
+        -moz-box-shadow: 0 0 0 0 rgba(204, 44, 44, 0.1) !important;
+        box-shadow: 0 0 0 0 rgba(204, 44, 44, 0.1);
+        animation: chboxScale 2s ease infinite;
+      }
+
+      .pulsar::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 2px solid red;
+        border-radius: 10%;
+        animation: pulseBorder 1s ease-in-out infinite;
+      }
+
+      .pulsar:hover {
+        animation: none;
+      }
+
+      .pulsar:checked,
+      .pulsar:focus,
+      .pulsar:active {
+        border: 1.5px solid blue !important;
+        background: linear-gradient(45deg, #a9f594 0%, #fff 100%);
+      }
+
+      .pulsar:checked::after,
+      .pulsar:focus::after,
+      .pulsar:active::after {
+        border-color: blue;
+      }
+
+      .pulsar:hover:checked::before {
+        content: "✓";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: blue;
+        font-size: 10px;
+        font-weight: bold;
+      }
+
+      @keyframes chboxScale {
+        0% {
+          transform: scale(1);
+        }
+
+        50% {
+          transform: scale(0.85);
+        }
+
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      @keyframes pulseBorder {
+        0% {
+          transform: scale(1, 1);
+          opacity: 1;
+        }
+
+        100% {
+          transform: scale(1.8, 1.8);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <input type="checkbox" class="pulsar" tabindex="0" />
+    <hr />
+  </body>
+</html>

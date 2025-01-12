@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style id="position">
+      * {
+        box-sizing: border-box;
+      }
+
+      body,
+      html {
+        height: 100%;
+      }
+
+      body {
+        height: 2000px;
+      }
+
+      .block {
+        padding: 20px;
+        border: 2px solid black;
+      }
+
+      .positions {
+        /* overflow-x: scroll; */
+        /* overflow: hidden; */
+        height: 1000px;
+        border: 2px solid green;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="positions">
+      <div class="block" style="position: static">Це статичний елемент.</div>
+
+      <div class="block" style="position: relative; left: 10px">
+        Це відносно позиційований елемент.
+      </div>
+
+      <div
+        class="block"
+        style="
+          position: absolute;
+          top: 10px;
+          left: 100px;
+          background: blue no-repeat center/cover;
+        "
+      >
+        Це абсолютно позиційований елемент.
+      </div>
+
+      <div class="block" style="position: relative; height: 600px">
+        Блок відносного позиціонування
+        <div class="block" style="background-color: yellowgreen">
+          Звичайни блок
+        </div>
+        <div
+          class="block"
+          style="
+            position: absolute;
+            bottom: 0px;
+            z-index: 2;
+            background: blue no-repeat center/cover;
+          "
+        >
+          Це абсолютно позиційований елемент.
+        </div>
+        <div
+          class="block"
+          style="
+            width: 150px;
+            position: absolute;
+            bottom: 0px;
+            z-index: 9999;
+            background: red no-repeat center/cover;
+          "
+        >
+          Це абсолютно позиційований елемент.
+        </div>
+      </div>
+
+      <div
+        class="block"
+        style="
+          position: fixed;
+          top: 200px;
+          right: 0;
+          z-index: 99;
+          background: greenyellow;
+        "
+      >
+        Це фіксований елемент у правому нижньому кутку.
+      </div>
+
+      <div
+        class="block"
+        style="position: sticky; top: 0; background-color: aqua"
+      >
+        Це елемент, що прилипає до верху при прокрутці.
+      </div>
+    </div>
+
+    <div class="z-index">
+      <!-- <div style="
+          position: relative;
+          z-index: 1;
+          background-color: lightblue;
+          width: 200px;
+          height: 200px;
+        ">
+            Блок з z-index 1
+        </div>
+
+        <div style="
+          position: relative;
+          z-index: 2;
+          background-color: lightcoral;
+          width: 150px;
+          height: 150px;
+          margin-top: -50px;
+        ">
+            Блок з z-index 2
+        </div>
+
+        <div style="
+          position: relative;
+          z-index: 3;
+          background-color: lightgreen;
+          width: 100px;
+          height: 100px;
+          margin-top: -50px;
+        ">
+            Блок з z-index 3
+        </div> -->
+    </div>
+
+    <div class="overflow">
+      <!-- <div style="width: 200px; height: 100px; background-color: lightblue">
+        Це блок з властивістю overflow: visible. Якщо вміст більше, ніж розмір
+        блоку, він буде видимим за межами. Довгий текст, що виходить за межі
+        елемента.
+      </div> -->
+
+      <!-- <div style="
+          width: 200px;
+          height: 100px;
+          background-color: lightcoral;
+          overflow: hidden;
+        ">
+            Це блок з властивістю overflow: hidden. Якщо вміст більше, ніж розмір
+            блоку, він буде обрізаний. Довгий текст, що виходить за межі елемента.
+        </div> -->
+
+      <!-- <div
+        style="
+          width: 200px;
+          height: 100px;
+          background-color: lightgreen;
+          overflow: scroll;
+        "
+      >
+        Це блок з властивістю overflow: scroll. Додаються смуги прокрутки для
+        всього вмісту, навіть якщо частина вмісту не виходить за межі елемента.
+        Довгий текст, що виходить за межі елемента.
+      </div> -->
+
+      <!-- <div
+        style="
+          width: 200px;
+          height: 100px;
+          background-color: lightyellow;
+          overflow: auto;
+        "
+      >
+        Це блок з властивістю overflow: auto. Смуги прокрутки з'являються лише
+        тоді, коли вміст виходить за межі елемента. Довгий текст, що виходить за
+        межі елемента.
+      </div> -->
+    </div>
+  </body>
+</html>
