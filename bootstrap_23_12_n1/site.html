@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Listing</title>
+  
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <i class="bi bi-bootstrap text-danger"></i>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="https://getbootstrap.com" target="_blank">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#dropdown">Dropdown</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#offcanvas">Offcanvas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#accordion">Accordion</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section id="dropdown" class="container my-4">
+    <h2>Choose Your Car</h2>
+    <select class="form-select">
+      <option selected>Select a car</option>
+      <option value="1">Audi Rs 7</option>
+      <option value="2">Scoda Octavia 2019</option>
+      <option value="3">Mersedes JlS</option>
+    </select>
+  </section>
+
+  <section id="cars" class="container my-4">
+    <h2>Available Cars</h2>
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="card">
+          <img src="img/Audi_Rs_7.jpg" class="card-img-top" alt="Car 1">
+          <div class="card-body">
+            <h5 class="card-title">Audi Rs 7</h5>
+            <p class="card-text">This is a reliable and efficient car. Great for city driving!</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="img/Scoda_octavia_2019.jpg" class="card-img-top" alt="Car 2">
+          <div class="card-body">
+            <h5 class="card-title">Scoda Octavia 2019</h5>
+            <p class="card-text">A spacious family car with modern safety features.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="img/mersedes_jls.jpg" class="card-img-top" alt="Car 3">
+          <div class="card-body">
+            <h5 class="card-title">Mersedes JlS</h5>
+            <p class="card-text">A stylish and powerful car for long-distance trips.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews" class="container my-4">
+    <h2>Customer Reviews</h2>
+    <div class="border p-3 mb-3">
+      <h5>Review 1</h5>
+      <p><strong>This is the first review:</strong> Great service and reliable cars!</p>
+    </div>
+    <div class="border p-3">
+      <h5>Review 2</h5>
+      <p><strong>Excellent customer support:</strong> A great selection of vehicles.</p>
+    </div>
+  </section>
+
+  <footer class="container-fluid d-flex justify-content-between align-items-center py-3 mt-4 border-top">
+    <a href="#registration-form" class="btn btn-primary">Open Registration Form</a>
+    <div id="registration-form" class="modal-overlay">
+      <div class="modal">
+        <a href="#" class="modal-close">&times;</a>
+        <h5>Registration Form</h5>
+        <form>
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+    <span>&copy; 2025 CarBrand. All luxury cars.</span>
+  </footer>
+
+</body>
+</html>
