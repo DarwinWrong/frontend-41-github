@@ -1,0 +1,11 @@
+@mixin link-hover {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+  
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+      transition: transform 0.3s ease, color 0.3s ease;
+      @content;
+    }
+  }

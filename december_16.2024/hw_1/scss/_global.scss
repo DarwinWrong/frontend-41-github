@@ -1,0 +1,13 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: $bg-color;
+    color: $text-color;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: $padding-size;
+  }
