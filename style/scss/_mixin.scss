@@ -1,0 +1,25 @@
+@mixin flex-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @content;
+}
+
+@mixin breakpoint ($width) {
+    @media (min-width: $width) {
+        @content;
+    }
+}
+
+@mixin link-hover {
+    color: blue;
+    text-decoration: underline;
+ 
+      &:hover {
+        cursor: pointer;
+ 
+        @content;
+      }
+    }
+ 

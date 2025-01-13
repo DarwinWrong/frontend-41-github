@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "build": "npm run build-css",
+    "build-css": "sass scss/style.scss css/style.css",
+    "watch": "npm run watch-css",
+    "watch-css": "sass --watch scss/style.scss:css/style.css"
+  },
+  "dependencies": {
+    "sass": "^1.83.0"
+  }
+}

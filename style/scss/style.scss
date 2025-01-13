@@ -1,0 +1,59 @@
+@import 'variables';
+@import 'mixin';
+@import 'functions';
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.content {
+    font-size: 18px;
+    font-weight: 600;
+    font-style: italic;
+    color: black;
+
+    h4 {
+        color: darkblue;
+        text-decoration: underline;
+        font-size: rem(25);
+    }
+
+    .text {
+        font-size: 16px;
+        font-weight: 400;
+        font-style: normal;
+
+        .second-text {
+            color: green;
+        }
+    }
+}
+
+.rectangle {
+    background-color: $bg-color;
+    width: $rect-width;
+    height: $rect-height;
+    border: $rect-border
+}
+
+.flex-wrapper {
+    @include flex-centered;
+ 
+    @include breakpoint(768) {
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+ 
+    @include link-hover {
+        transform: scale(1.02);
+        transition: all 0.5s ease
+    }
+}
+
+.flex-wrapper-extended {
+    @extend .flex-wrapper;
+    flex-wrap: wrap;
+    align-content: stretch;
+}
