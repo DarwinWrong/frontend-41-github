@@ -1,0 +1,54 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+h1, h2, h3 {
+  font-family: Verdana, sans-serif;
+}
+
+p {
+  font-family: Arial, sans-serif;
+}
+
+.image {
+  box-shadow: 5px 10px 20px white;
+  display: block;
+  margin: 0 auto;
+}
+
+.centered {
+  width: 50%;
+  height: auto;
+  padding: 20px;
+  margin: 0 auto;
+}
+.centered h2 {
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn-base, .btn-secondary, .btn-primary {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: blue;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: gray;
+  color: white;
+}
+
+/*# sourceMappingURL=style.css.map */

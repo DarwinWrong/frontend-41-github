@@ -1,0 +1,58 @@
+@import 'variables';
+@import 'mixins';
+
+body {
+    background-color: $primary-color;
+    color: $text-color;
+}
+
+h1, h2, h3 {
+    font-family: $font-header;
+}
+
+p {
+    font-family: $font-text;
+}
+
+.image {
+    @include box-shadow(white, 20px, 5px, 10px);
+    display: block;
+    margin: 0 auto;
+}
+
+.centered {
+    width: 50%;
+    height: auto;
+    padding: 20px;
+    @include center-block;
+
+    h2 {
+        text-align: center;
+    }
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-base { 
+    padding: 10px 20px; 
+    border-radius: 5px;
+    font-size: 16px; 
+    text-transform: uppercase; 
+    cursor: pointer; 
+}
+
+.btn-primary { 
+    @extend .btn-base;
+    background-color: blue;
+    color: white;
+}
+
+.btn-secondary { 
+    @extend .btn-base;
+    background-color: gray;
+    color: white;
+}
