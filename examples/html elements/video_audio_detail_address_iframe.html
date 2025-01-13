@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elements</title>
+  </head>
+  <body>
+    <h3>Video</h3>
+    <video
+      controls
+      autoplay
+      loop
+      muted
+      poster="images/poster.png"
+      width="640"
+      height="360"
+      preload="auto"
+    >
+      <source src="video/cards animation.mp4" type="video/mp4" />
+      <source src="video.ogg" type="video/ogg" />
+      Ваш браузер не підтримує відео.
+    </video>
+    <hr />
+
+    <h3>Audio</h3>
+    <audio controls autoplay loop muted preload="auto">
+      <source src="audio/I miss you.mp3" type="audio/mpeg" />
+      <source src="audio.ogg" type="audio/ogg" />
+      Ваш браузер не підтримує аудіо.
+    </audio>
+    <hr />
+
+    <h3>Detail</h3>
+    <details open>
+      <summary>Детальніше про нашу компанію</summary>
+      <p>Ми спеціалізуємося на розробці веб-рішень для бізнесу.</p>
+    </details>
+    <hr />
+
+    <h3>Address</h3>
+    <address>
+      <strong>Контактна інформація:</strong><br />
+      Іван Іванов<br />
+      м. Київ, вул. Хрещатик, 1<br />
+      <a href="mailto:ivan@example.com">ivan@example.com</a>
+    </address>
+    <hr />
+
+    <article>
+      <h3>iFrame</h3>
+    </article>
+    <iframe
+      src="https://www.example.com"
+      width="600"
+      height="400"
+      title="Example Website"
+      sandbox="allow-scripts allow-same-origin allow-popups"
+      allow="fullscreen; autoplay"
+      loading="lazy"
+      referrerpolicy="no-referrer"
+    ></iframe>
+    <hr />
+  </body>
+</html>
