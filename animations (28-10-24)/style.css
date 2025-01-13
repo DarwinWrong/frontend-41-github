@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.block-1, .block-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    width: 150px;
+    height: 100px;
+}
+
+.block-1 {
+    background-color: green;
+    animation: slideIn 3s ease forwards, scaleUp 3s 3s ease-in-out forwards;
+}
+
+.block-2 {
+    background-color: blue;
+    animation: moveOut 3s 6s ease forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-1000%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleUp {
+    to {
+        transform: scale(1.5);
+        color: red;
+    }
+}
+
+@keyframes moveOut {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(1000%);
+    }
+}
