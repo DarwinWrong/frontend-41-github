@@ -66,6 +66,8 @@ public/vendor/
 vendor/
 # Дозволити доступ до scss/vendor/
 !scss/vendor/
+!scss/vendor/*
+!scss/vendor/*.scss
 
 # IDE специфічні файли
 .idea/
