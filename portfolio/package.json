@@ -4,7 +4,8 @@
     "build-min-css": "sass --style compressed assets/scss/style.scss:assets/css/style.min.css",
     "watch-css": "sass --watch assets/scss/style.scss:assets/css/style.css",
     "watch-min-css": "sass --watch --style compressed assets/scss/style.scss:assets/css/style.min.css",
-    "watch": "npm-run-all --parallel watch-css watch-min-css"
+    "watch": "npm-run-all --parallel watch-css watch-min-css",
+    "watch-js": "node watch.js"
   },
   "dependencies": {
     "bootstrap-icons": "^1.11.3",
