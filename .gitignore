@@ -64,6 +64,8 @@ venv/
 # Бібліотеки сторонніх виробників
 public/vendor/
 vendor/
+# Дозволити доступ до scss/vendor/
+!scss/vendor/
 
 # IDE специфічні файли
 .idea/
