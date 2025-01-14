@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Стильна стаття</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        line-height: 1.8;
+        margin: 20px;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+      article {
+        padding: 20px;
+        margin: 20px 0;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+    
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: #0073e6;
+      }
+    
+
+      article p:first-of-type::first-letter, article p + p::first-letter {
+        color: #f56;
+        font-weight: bold;
+        border: 2px dashed #f56;
+        padding: 5px;
+        margin-right: 5px;
+        font-size: 50px;
+      }
+
+     article:first-child p::first-line {
+        font-weight: 800;
+      }
+    
+      article:nth-of-type(2) p:first-of-type::first-letter, article:nth-of-type(2) p + p::first-letter {
+        color: #0073e6;
+        font-style: italic;
+        border: none;
+        margin-right: -5px;
+        font-size: 50px;
+      }
+
+      article:nth-child(2) p::first-line {
+        color: #6cbba7;
+        font-style: italic;
+      }
+
+      article:nth-child(3) p::first-line {
+        color: violet;
+        font-family: 'Courier New';
+        font-size: 18px;
+      }
+    
+      article:nth-of-type(3) p:first-of-type::first-letter, article:nth-of-type(3) p + p::first-letter {
+        font-weight: normal;
+        color: orange;
+        text-decoration: underline;
+        border: none;
+        margin-right: -5px;
+        font-size: 50px;
+      }
+    
+      ::selection {
+        background: lightblue;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="uk">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Статті з різними стилями</title>
+        <link rel="stylesheet" href="styles.css" />
+      </head>
+      <body>
+        <section>
+          <article>
+            <h1>Мистецтво веб-дизайну</h1>
+            <p>
+              Веб-дизайн — це не лише про красу, але й про зручність. Гарний
+              дизайн завжди враховує потреби користувача.
+            </p>
+            <p>
+              Сучасні технології, такі як CSS, дозволяють створювати дивовижний
+              досвід для відвідувачів ваших сайтів.
+            </p>
+          </article>
+          <article>
+            <h1>Псевдоелементи у веб-розробці</h1>
+            <p>
+              Можливості CSS розширюються з кожним роком. Псевдоелементи
+              дозволяють додавати цікаві акценти.
+            </p>
+            <p>
+              Використовуйте <strong>::first-letter</strong>, щоб зробити текст
+              більш привабливим.
+            </p>
+          </article>
+          <article>
+            <h1>Виділення тексту</h1>
+            <p>
+              Виділення тексту — це важливий аспект взаємодії користувача зі
+              сторінкою. За допомогою <strong>::selection</strong> можна
+              створити інтерактивний дизайн.
+            </p>
+            <p>Подумайте про те, як ваш сайт виглядає при взаємодії з ним.</p>
+          </article>
+        </section>
+      </body>
+    </html>
+  </body>
+</html>
