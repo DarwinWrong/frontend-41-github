@@ -1,0 +1,24 @@
+#important-example p.highlight {
+    color: red !important;
+  }
+  
+  div#test span#test-2 {
+    color: green;
+  }
+  
+  div#main.box {
+    color: orange;
+  }
+  
+  div.container span.text {
+    color: purple;
+  }
+  
+  ul#list li.item.special {
+    color: pink;
+  }
+  
+  p#inline.inline {
+    color: teal !important;
+  }
+  
