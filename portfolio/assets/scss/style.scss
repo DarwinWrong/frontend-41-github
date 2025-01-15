@@ -24,6 +24,8 @@ header {
 
 
       #banner {
+            margin-bottom: 64px;
+
         h3 {
             // text-transform: uppercase;
             font-size: 40px;
@@ -35,28 +37,26 @@ header {
         }
         .socials {
             .bi-linkedin, .bi-github {
-                // font-size: 1rem; 
-                width: 26px; 
-                // height: 26px;
-                // font-size: 19px;
-                line-height: 26px;
+                width: 24px; 
+                font-size: 18px;
                 &::before{
-                    width: 26px; 
-                    // height: 26px; 
-                    // font-size: 26px; 
+                    width: 24px; 
+                    font-size: 24px; 
                 }
             }
             .bi-linkedin {
-                color: #222222;
-                background-color: #d3e97a;
+                color: #d3e97a;
+                // background-color: #d3e97a;
                 &::before{
-                    color: #222222;
-                    background-color: #d3e97a;
+                    // color: #222222;
+                    // background-color: #d3e97a;
                 }
             }
         }
 
-        @media (min-width: 769px){
+        @media (min-width: 769px) {
+            margin-bottom: 80px;
+
             h3 {
                 font-size: 70px;
             } 
@@ -65,4 +65,40 @@ header {
 
       .c-pointer {
             cursor: pointer;
+      }
+
+      #projects {
+        color: white;
+
+        h3 {
+            line-height: 140%;
+            text-transform: uppercase;
+        }
+        p {
+            color: #C7C7C7;
+        }
+
+        .cards {
+
+            .cards-heading {
+                margin-bottom: 64px;
+            }
+            
+            .card {
+                color: white;
+                background-color: transparent;
+
+                .img-wrapper {
+                    background-color: #1A1A1A;  
+                  }
+            }
+        }
+
+        @media (min-width: 768px) {
+            .cards {
+                .cards-heading {
+                    margin-bottom: 80px;
+                }
+            }
+        }
       }
