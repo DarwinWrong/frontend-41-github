@@ -1,0 +1,13 @@
+@use 'variables';
+
+@mixin link-hover {
+  color: variables.$link-hover-color;
+  text-decoration: variables.$link-hover-decoration;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform 0.3s ease, color 0.3s ease;
+    @content;
+  }
+}
