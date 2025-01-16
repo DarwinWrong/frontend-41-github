@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Click imitation</title>
+  </head>
+  <body>
+    <style>
+      .hidden-checkbox {
+        display: none;
+      }
+
+      .button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #4caf50;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.1s ease;
+      }
+
+      .hidden-checkbox:checked + .button {
+        background-color: #388e3c;
+        transform: scale(0.95);
+      }
+      .hidden {
+        width: 50px;
+        height: 50px;
+        background-color: chocolate;
+        display: none;
+      }
+      .hidden-checkbox:checked ~ .hidden {
+        display: block;
+      }
+    </style>
+    <h4>checkbox:checked</h4>
+    <label class="clickable">
+      <input type="checkbox" class="hidden-checkbox" />
+      <span class="button">Click me</span>
+
+      <div class="hidden"></div>
+    </label>
+
+    <hr />
+
+    <style>
+      .hidden-content {
+        display: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .hidden-content:target {
+        display: block;
+        opacity: 1;
+      }
+
+      .close {
+        margin-top: 10px;
+        text-decoration: none;
+        color: #007bff;
+      }
+    </style>
+    <h4>checkbox:checked</h4>
+    <a href="#toggle" class="button">Toggle Content</a>
+
+    <div id="toggle" class="hidden-content">
+      <p>This content is now visible!</p>
+      <a href="#" class="close">Close</a>
+    </div>
+
+    <hr />
+
+    <style>
+      .btn {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #4caf50;
+        border: none;
+        color: white;
+        cursor: pointer;
+        transition: transform 0.1s ease;
+      }
+
+      .btn:active,
+      .btn:focus {
+        transform: scale(0.95);
+        background-color: #388e3c;
+      }
+      .btn:focus + .hidden {
+        display: block;
+      }
+    </style>
+    <h4>:focus</h4>
+    <button class="btn">Click me</button>
+    <div class="hidden"></div>
+  </body>
+</html>

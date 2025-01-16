@@ -1,0 +1,28 @@
+table, td, th{
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 700px;
+    height: 30px;
+    text-align: center;
+}
+
+.col_1 {
+    background-color: rgb(255, 255, 99);
+    width: 300px;
+}
+
+.col_2 {
+    background-color: rgb(166, 135, 250);
+}
+
+.col_3 {
+    background-color: rgb(255, 137, 137);
+}
+
+.col_4 {
+    background-color: rgb(195, 255, 195);
+}
+
+.col_5 {
+    background-color: rgb(255, 174, 237);
+}

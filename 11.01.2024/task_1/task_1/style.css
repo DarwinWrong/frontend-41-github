@@ -1,0 +1,36 @@
+table {
+    border-collapse: collapse;
+    width: 30px;
+    font-family: Arial, sans-serif;
+}
+
+/* Стилі для заголовка таблиці */
+th {
+    background-color: #FFA500; /* Помаранчевий колір для заголовка */
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+}
+
+/* Стилі для рядків даних */
+td {
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+/* Перший стовпець з назвами */
+.title-column {
+    background-color: #006400; /* Темно-зелений колір для першого стовпця */
+    font-weight: bold;
+}
+
+.data-cell {
+    background-color: #DDA0DD; 
+}
+
+.data-1 { background-color: #E6CCE6; }
+.data-2 { background-color: #D8A7D8; }
+.data-3 { background-color: #CC88CC; }
+.data-4 { background-color: #C266C2; }
+.data-5 { background-color: #B84DB8; }

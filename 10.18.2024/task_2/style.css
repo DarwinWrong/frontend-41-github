@@ -1,0 +1,38 @@
+body {
+    width: 40%;
+    display: inline-block;
+    border-left-width: 20px;
+  }
+
+span {
+    color: red;
+}
+
+.line {
+    color: black;
+    text-decoration: line-through;
+}
+
+.blue,
+.light,
+.white {
+    font-weight: 600;
+}
+
+.blue,
+.light {
+    list-style: disc inside url(unchecked_16.png);
+}
+
+.white {
+    list-style: disc inside url(checked_16.png);
+    background-color: rgb(190, 190, 190);
+}
+
+.blue {
+    background-color: rgb(37, 134, 183);
+}
+
+.light {
+    background-color: rgb(79, 161, 202);
+}

@@ -1,0 +1,56 @@
+table {
+    border-collapse: collapse; 
+    width: 550px;
+}
+th, td {
+    border: 1px solid black; 
+    padding: 8px; 
+    text-align: center; 
+}
+
+
+
+.april_b {
+    border: none;
+    background-color: orange;
+    color: white;
+}
+
+.may_b {
+    border: none;
+    background-color: lightblue;
+    color: white;
+}
+
+.june_b {
+    border: none;
+    background-color: darkgreen;
+    color: white;
+}
+
+.april {
+    background-color: orange;
+    color: white;
+}
+
+.may {
+    background-color: lightblue;
+    color: white;
+}
+
+.june {
+    background-color: darkgreen;
+    color: white;
+}
+
+.grey {
+    color: gray;
+}
+
+.green {
+    color: green
+}
+
+.red {
+    color: red;
+}
