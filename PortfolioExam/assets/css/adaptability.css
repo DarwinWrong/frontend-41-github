@@ -1,0 +1,116 @@
+@media (max-width: 1200px) {
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .header .logo a {
+        font-size: 1.2rem;
+    }
+
+    .nav a {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .nav ul{
+        width: 350px;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    .hero .container {
+        flex-direction: column; 
+        text-align: center;
+    }
+
+    .hero .stats {
+        width: 100%;
+    }
+
+    .text-container {
+        margin-bottom: 2rem;
+    }
+
+    .image-man {
+        margin-top: 2rem;
+    }
+
+    .nav ul {
+        display: block;
+        text-align: center;
+    }
+
+    .nav a {
+        display: block;
+        padding: 1rem 0;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .hero h2 {
+        font-size: 20px;
+    }
+
+    .btn {
+        width: 100%; 
+        margin-bottom: 1rem;
+    }
+
+    .about-me-rightside p{
+        max-width: 100%;
+        font-size: 14px;
+    }
+
+    .portfolio-item img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .header .btn-primary{
+        display: none;
+    }
+
+
+    .service-card {
+        margin-bottom: 2rem;
+    }
+
+    .sc4, .sc5, .sc6 {
+        display: none;
+    }
+
+    .about-me-rightside {
+        width: 500px;
+    }
+
+    .about-me-rightside p {
+        font-size: small !important; 
+    }
+
+    .about-me-leftside {
+        padding-right: 10px;
+    }
+    
+    .about-me-leftside img {
+        width: 300px;
+    }
+
+    .footer-text p {
+        font-size: 0.9rem;
+    }
+
+    .about-me-rightside p {
+        font-size: 0.95rem;
+    }
+
+    .contact-form {
+        margin-left: 5% !important;
+        width: 90%;
+    }
+}
+
