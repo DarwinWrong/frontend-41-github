@@ -156,19 +156,40 @@ body {
   }
   
   footer {
-    padding: 2rem 1rem;
-    text-align: center;
     background-color: #1a1a1a;
-    color: #d3d3d3;
+    color: #f8f9fa;
+  }
+  
+  footer h5 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  footer p {
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
   
   footer a {
-    color: #ffc107;
-    text-decoration: none;
+    transition: color 0.3s ease;
   }
   
   footer a:hover {
-    text-decoration: underline;
+    color: #ffc107;
+  }
+  
+  footer .social-icons a {
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  footer .social-icons a:hover {
+    transform: scale(1.1);
+    color: #ffc107;
+  }
+  
+  footer .border-top {
+    border-color: #333;
   }
   
   @media (max-width: 768px) {
