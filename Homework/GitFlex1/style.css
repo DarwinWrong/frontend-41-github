@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    width: 1000px;
+    margin: 100px auto;
+}
+
+/* Перший дочірній елемент */
+.container div:first-child {
+    background-color: lightblue;
+}
+
+/* Останній дочірній елемент */
+.container div:last-child {
+    background-color: lightgreen;
+}
+
+/* Перший елемент свого типу */
+.container div:first-of-type {
+    background-color: lightgoldenrodyellow;
+}
+
+/* Останній елемент свого типу */
+.container div:last-of-type {
+    background-color: lightcoral;
+}
+
+/* Другий елемент свого типу */
+.container div:nth-of-type(2) {
+    background-color: lightpink;
+}
+
+/* Стилізація нового елемента (п'ятого) */
+.container div:nth-of-type(5) {
+    background-color: lightgray;
+}
+
+/* Загальні стилі для елементів */
+.container div {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid black;
+}
+
+.element {
+    border: 1px solid #ddd;
+    flex-basis: 250px;
+    /*flex-basis: 200px;*/
+}
+
+.first{
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.second{
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.third{
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.fourth{
+    flex-grow: 2;
+    flex-shrink: 1;
+}
+
+.fifth{
+    /*flex-shrink: 0;*/
+    flex-shrink: 2;
+}
