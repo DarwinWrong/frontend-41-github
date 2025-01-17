@@ -1,0 +1,39 @@
+.navbar-nav .nav-link {
+    margin: 0 15px;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .navbar-nav .nav-link.active {
+    color: #ffc107 !important;
+    font-weight: bold;
+  }
+  
+  header {
+    background: #1a1a1a; 
+  }
+  
+  header h1 {
+    font-size: 3rem;
+  }
+  
+  header h2 {
+    font-size: 2.5rem;
+  }
+  
+  header p {
+    font-size: 1rem;
+    color: #cccccc;
+  }
+  
+  header .btn {
+    font-size: 1rem;
+  }
+  
+  header .position-relative {
+    display: inline-block;
+  }
+  
+  header .rounded-circle {
+    border: 5px solid #ffc107;
+  }
