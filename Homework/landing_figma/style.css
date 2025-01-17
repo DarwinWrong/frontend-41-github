@@ -1,0 +1,74 @@
+* {
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url("src/images/main_bg.png") no-repeat;
+    background-size: cover;
+}
+
+.header_wrapper {
+    margin: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    margin: 10px;
+}
+
+.main_wrapper {
+    margin: 30px 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.text_wrapper {
+    padding: 50px 15px 60px 15px;
+}
+
+.main_header_wrapper {
+    margin-bottom: 30px;
+    text-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.main_header_wrapper h2 {
+    font-size: 46px;
+    letter-spacing: 0.2px;
+    line-height: 57px;
+    font-weight: 400;
+}
+
+.description_wrapper{
+    margin: 10px;
+}
+
+.description_wrapper h4{
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.img_wrapper img{
+    height: 225px;
+    width: 380px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+}
+
+.button_wrapper {
+    margin: 60px 70px 50px 70px;
+}
+
+.button_wrapper button{
+    border: none;
+    background-color: #38A3F1;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    padding: 16px 60px;
+    border-radius: 35px;
+    cursor: pointer;
+}

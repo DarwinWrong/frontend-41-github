@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #2ecc71;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+  .scene {
+    position: relative;
+    width: 49.5%;
+    height: 450px;
+    border: 1px solid black;
+    margin: 10px auto;
+  }
+  .player {
+    position: absolute;
+    width: 50px;
+    height: 120px;
+    padding: 5px;
+    background-color: #2980b9;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    text-align: center;
+    align-content: center;
+  }
+  .ball {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border: 1px dashed black;
+    border-radius: 50%;
+    box-shadow: 0 0 5px black;
+    z-index: 2;
+  }
+  .vorota {
+    position: absolute;
+    width: 140px;
+    height: 80px;
+    background-color: #fff;
+    border: 5px solid black;
+    border-top: 10px solid black;
+    border-bottom: 0;
+  }
+
+  /*Анімація №4: Ворота знизу, футболіст зверху*/
+  .scene-4 .player {
+    top: 40%;
+    right: 0;
+    animation: player-move .5s ease forwards;
+  }
+
+  .scene-4 .ball {
+    top: 60%;
+    right: 30px;
+    animation: ball-move 1s .3s linear forwards;
+  }
+  .scene-4 .vorota {
+    top: 40%;
+    left: 0;
+    transform: rotate(270deg);
+  }
+
+  @keyframes player-move {
+    0% {
+        transform-origin: bottom right;
+    }
+
+    100% {
+        transform-origin: bottom right;
+        transform: rotate(20deg);
+    }
+  }
+
+@keyframes ball-move {
+
+    100% {
+        transform: translate(-550px, -50px);
+    }
+}

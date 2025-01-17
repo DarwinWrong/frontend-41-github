@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Football Goal Animations</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #2ecc71;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        position: relative;
+      }
+      .scene {
+        position: relative;
+        width: 49.5%;
+        height: 450px;
+        border: 1px solid black;
+        margin: 10px auto;
+      }
+      .player {
+        position: absolute;
+        width: 50px;
+        height: 120px;
+        padding: 5px;
+        background-color: #2980b9;
+        writing-mode: vertical-lr;
+        text-orientation: upright;
+        text-align: center;
+        align-content: center;
+      }
+      .ball {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background-color: white;
+        border: 1px dashed black;
+        border-radius: 50%;
+        box-shadow: 0 0 5px black;
+        z-index: 2;
+      }
+      .vorota {
+        position: absolute;
+        width: 140px;
+        height: 80px;
+        background-color: #fff;
+        border: 5px solid black;
+        border-top: 10px solid black;
+        border-bottom: 0;
+      }
+
+      /*Анімація №3: Ворота зверху, футболіст знизу*/
+      .scene-3 .player {
+        top: 0;
+        left: 40%;
+        animation: player-move 1s ease forwards;
+      }
+      .scene-3 .ball {
+        top: 100px;
+        left: 45%;
+        animation: ball-move 1s .6s linear forwards;
+      }
+      .scene-3 .vorota {
+        bottom: 0;
+        left: 40%;
+        transform: rotate(180deg);
+      }
+
+      @keyframes ball-move {
+        100% {
+            transform: translateY(300px);
+        }
+      }
+
+      @keyframes player-move {
+        0% {
+            transform: translate(30px, -40px);
+        }
+        100% {
+            transform: translate(30px, 20px);
+        } 
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Анімація №3: Ворота зверху, футболіст знизу -->
+    <div class="scene scene-3">
+      <div class="player">player</div>
+      <div class="ball"></div>
+      <div class="vorota"></div>
+    </div>
+  </body>
+</html>

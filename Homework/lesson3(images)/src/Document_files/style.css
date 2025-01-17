@@ -1,0 +1,68 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+header {
+    background-color: rgb(135, 55, 88);
+    padding: 25px 50px;
+    margin: 10px 0;
+}
+
+nav {
+    background-color: rgb(101, 27, 55);
+    padding: 5px 50px;
+    margin: 10px 0;
+}
+
+.main-content {
+    margin: 10px 0;
+}
+
+.side-content {
+    width: 300px;
+    float: left;
+}
+
+aside {
+    background-color: rgb(170, 97, 129);
+    padding: 5px 50px;
+}
+
+.aside-2{
+    margin: 10px 0;
+    height: 150px;
+}
+
+.aside-3 {
+    float: right;
+    height: 240px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+
+.aside-3 h2{
+    margin: 10px 0;
+}
+
+main {
+    background-color: rgb(170, 97, 129);
+    margin-left: 310px;
+    margin-right: 140px;
+    overflow: hidden;
+    padding: 10px 50px;
+}
+
+section {
+    background-color: rgb(208, 149, 174);
+    padding: 5px 50px;
+    margin: 10px 0;
+    height: 100px;
+}
+
+footer {
+    background-color: rgb(101, 27, 55);
+    padding: 5px 50px;
+    margin: 10px 0;
+}

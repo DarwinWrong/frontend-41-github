@@ -1,0 +1,71 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+}
+
+footer {
+    background-color: rgb(52, 78, 108);
+    width: 1000px;
+    margin: 0 auto;
+    padding: 40px 80px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+a:hover {
+    color: skyblue;
+    transition: .3s;
+}
+
+.social-media {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 150px;
+}
+
+img {
+    height: 35px;
+    width: 35px;
+}
+
+.facebook:hover {
+    content: url("src/facebook1.png");
+}
+
+.instagram:hover {
+    content: url("src/instagram1.png");
+}
+
+.youtube:hover {
+    content: url("src/youtube1.png");
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.copyright {
+    font-size: 12px;
+    text-align: center;
+}

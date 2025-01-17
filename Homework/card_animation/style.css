@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #414141;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    margin: 0 20px;
+}
+
+
+.face{
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: .4s;
+}
+
+.face1{
+    position: relative;
+    background: #313131;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    z-index: 1;
+    transform: translateY(100px);
+}
+
+
+
+.face2{
+    background: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    transform: translateY(-100px);
+}
+
+img {
+    object-fit: cover;
+}
+
+.card:hover .face.face1{
+    transform: translateY(0);
+    background-image: url("./frontend-41-github/images/2015_AUDI_Q5_PREMIUM_PLUS/1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: .5s;
+}
+
+.outer{
+    opacity: .3;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.card:hover .outer{
+    opacity: 1;
+}
+
+.card:hover .face.face2{
+    transform: translateY(0);
+}
+
+p, a{
+    font-size: 10pt;
+    margin: 0;
+    padding: 0;
+    color: #313131;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    box-sizing: border-box;
+    outline: 1px solid #333;
+    padding: 10px;
+    margin: 15px 0 0;
+    display: inline-block;
+}
+
+a:hover{
+    background: #313131;
+    color: #fff;
+}
+
+.title{
+    color: #fff;
+}

@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.circle {
+    position: absolute;
+    top: 250px;
+    left: 50px;
+    height: 50px;
+    width: 50px;
+    background-color: #000;
+    border-radius: 50%;
+    animation: 5s linear 1s infinite alternate bounce;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    12.5% {
+        transform: translateY(-250px) translateX(150px) scale(1.5, 1);
+    }
+    25%{
+        transform: scale(1, 1) translateY(-125px) translateX(200px) rotate(180deg);
+    }
+    37.5% {
+        transform: translateY(0) translateX(250px) scale(1.5, 1);
+    }
+    43.75% {
+        transform: translateY(-125px) translateX(275px) scale(1, 1);
+    }
+    50% {
+        transform: translateY(-250px) translateX(300px) scale(1.5, 1);
+    }
+    62.5% {
+        transform: translateY(-200px) translateX(350px) scale(1, 1);
+    }
+    75% {
+        transform: translateY(-150px) translateX(400px) scale(1, 1.5);
+    }
+    100% {
+        transform: translateY(0) translateX(300px) scale(1, 1);
+    }
+}

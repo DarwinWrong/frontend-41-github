@@ -1,0 +1,41 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+ul {
+    list-style-image: url(images/chkbox1.png);
+    list-style-position: inside;
+    margin: 50px auto;
+    padding: 0;
+    width: 500px;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+li {
+    padding: 10px 30px;
+    background-color: rgb(169, 202, 217);
+}
+
+li:nth-child(2n){
+    background-color: rgb(176, 216, 229);
+}
+
+li.checked {
+    background-color: rgb(225, 225, 225);
+    list-style-image: url(images/chkbox2.png);
+}
+
+.checked span {
+    text-decoration: line-through;
+}
+
+li::after {
+    content: "x";
+    margin-left: 10px;
+}
+
+
+span {
+    padding-left: 20px;
+}
