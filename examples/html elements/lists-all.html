@@ -6,39 +6,18 @@
     <title>Lists</title>
     <link rel="stylesheet" href="lists.css" />
     <style>
-      /*****111111*****/
-      .block {
-        background-color: lightblue;
-        padding: 20px; /* Внутрішній відступ */
-        margin: 15px; /* Зовнішній відступ */
+      hr {
+        height: 4px;
+        background-color: black;
       }
-
-      /*****222222*****/
-      .outer {
-        background-color: lightblue;
-        padding: 30px;
-        margin: 20px;
-      }
-
-      .inner {
-        background-color: lightgreen;
-        padding: 20px;
-        margin: 10px;
-      }
-
-      /*****333333*****/
-      .heading {
-        font-size: 24px;
-        font-weight: bold;
-        position: relative;
-      }
-      .heading:before {
-        content: '🔷'; /* Додаємо іконку перед заголовком */
-        margin-right: 10px;
-      }
-      .heading:after {
-        content: '⚡'; /* Додаємо іконку після заголовка */
-        margin-left: 10px;
+      hr.spacer {
+        margin: 10px 0;
+        padding: 0;
+        border: none;
+        height: 0;
+        background: none;
+        opacity: 0;
+        visibility: hidden;
       }
 
       /*****4444444*****/
@@ -89,25 +68,6 @@
     </style>
   </head>
   <body>
-    <!--*****111111-222222*****-->
-    <div id="blocks">
-      <h2>Внутрішні та зовнішні відступи</h2>
-      <div class="block">Перший блок з текстом</div>
-      <div class="block">Другий блок з текстом</div>
-      <div class="block">Третій блок з текстом</div>
-
-      <h1>Відступи для вкладених блоків</h1>
-      <div class="outer">
-        Зовнішній блок
-        <div class="inner">Внутрішній блок</div>
-      </div>
-    </div>
-
-    <!--*****333333*****-->
-    <div id="pseudo">
-      <h2 class="heading">Мій заголовок</h2>
-    </div>
-
     <!--*****444444*****-->
     <div id="numbered-list">
       <h2>Нумерований список</h2>
@@ -116,7 +76,90 @@
         <li>Елемент другий</li>
         <li>Елемент третій</li>
       </ol>
+
+      <hr class="spacer">
+
+      <H3> Нумерація - великі латинські літери</H3>
+      <OL type=A>
+        <LI>Зима</LI>
+        <LI>Весна</LI>
+        <LI>Літо</LI>
+        <LI>Осінь</LI>
+      </OL>
+
+      <hr class="spacer">
+
+      <H3> Нумерація - малі латинські літери</H3>
+      <OL type=a>
+        <LI>Зима</LI>
+        <LI>Весна</LI>
+        <LI>Літо</LI>
+        <LI>Осінь</LI>
+      </OL>
+
+      <hr class="spacer">
+
+      <H3> Нумерація - великі римські цифри</H3>
+      <OL type=I>
+
+        <LI>Зима</LI>
+        <LI>Весна</LI>
+        <LI>Літо</LI>
+        <LI>Осінь</LI>
+      </OL>
+
+      <hr class="spacer">
+
+      <H3> Нумерація - малі римські цифри</H3>
+      <OL type=i>
+        <LI>Зима</LI>
+        <LI>Весна</LI>
+        <LI>Літо</LI>
+        <LI>Осінь</LI>
+      </OL>
+
+      <hr class="spacer">
+
+      <H3> Нумерація - арабські цифри</H3>
+      <OL type=1>
+        <LI>Зима</LI>
+        <LI>Весна</LI>
+        <LI>Літо</LI>
+        <LI>Осінь</LI>
+      </OL>
+
+      <hr class="spacer">
+
+      <H3>Список починається - з третього номера</H3>
+      <OL type=1 Start = "3">
+        <LI>Зима</LI>
+        <LI>Весна</LI>
+        <LI>Літо</LI>
+        <LI>Осінь</LI>
+      </OL>
+
+      <hr class="spacer">
+
+      <H3>Список починається - з другого номера</H3>
+      <OL type=A Start = "2">
+        <LI>Зима</LI>
+        <LI>Весна</LI>
+        <LI>Літо</LI>
+        <LI>Осінь</LI>
+      </OL>
+
+      <hr class="spacer">
+
+      <H3>Список починається - з четвертого номера</H3>
+      <OL type=I Start = "4">
+        <LI>Зима</LI>
+        <LI>Весна</LI>
+        <LI>Літо</LI>
+        <LI>Осінь</LI>
+      </OL>
     </div>
+
+    <hr>
 
     <div id="markered-list">
       <h2>Маркований список</h2>
@@ -125,7 +168,39 @@
         <li>Елемент два</li>
         <li>Елемент три</li>
       </ul>
+
+      <hr class="spacer">
+
+      <H3>Маркери - заповнені кола</H3>
+      <UL type=disk>
+          <LI>Зима</LI>
+          <LI>Весна</LI>
+          <LI>Літо</LI>
+          <LI>Осінь</LI>
+      </UL>
+
+      <hr class="spacer">
+
+      <H3>Маркери - порожні кола</H3>
+      <UL type=circle>
+          <LI>Зима</LI>
+          <LI>Весна</LI>
+          <LI>Літо</LI>
+          <LI>Осінь</LI>
+      </UL>
+
+      <hr class="spacer">
+
+      <H3>Маркери - квадрати</H3>
+      <UL type=square>
+          <LI>Зима</LI>
+          <LI>Весна</LI>
+          <LI>Літо</LI>
+          <LI>Осінь</LI>
+      </UL>
     </div>
+
+    <hr>
 
     <!--*****5555555*****-->
     <div id="multi-level-list">
@@ -148,6 +223,8 @@
       </ol>
     </div>
 
+    <hr>
+
     <!--*****444444*****-->
     <div id="list-definitions">
       <h2>Словник термінів</h2>
@@ -165,9 +242,23 @@
       </dl>
     </div>
 
+    <hr class="spacer">
+
+    <h3>Списки визначень:</h3>
+    <dl>
+      <dt>Термін 1</dt>
+      <dd>Визначення 1</dd>
+      <dt>Термін 2</dt>
+      <dd>Визначення 2</dd>
+    </dl>
+
+    <hr />
+
     <!--*****777777*****-->
+    <h2>Випадаючі списки</h2>
+
     <div id="drop-down-list">
-      <h2>Виберіть місто</h2>
+      <h3>Виберіть місто</h3>
       <label for="cities">Оберіть місто:</label>
       <input list="cities" id="city" name="city" />
       <datalist id="cities">
@@ -177,15 +268,44 @@
         <option value="Харків"></option>
       </datalist>
 
-      <h1>Оберіть улюблений фрукт</h1>
-      <label for="fruits">Фрукти:</label>
-      <select id="fruits" name="fruits">
+      <hr class="spacer">
+
+      <label for="browser">Виберіть браузер:</label>
+      <input list="browsers" id="browser" name="browser" />
+      <datalist id="browsers">
+        <option value="Chrome"></option>
+        <option value="Firefox"></option>
+        <option value="Safari"></option>
+        <option value="Edge"></option>
+        <option value="Opera"></option>
+      </datalist>
+
+      <hr>
+
+      <h2>Списки опцій</h2>
+
+      <h3>Оберіть улюблений фрукт</h3>
+      <label for="fruits-2">Фрукти:</label>
+      <select id="fruits-2" name="fruits-2">
         <option value="яблуко">Яблуко</option>
         <option value="банан">Банан</option>
         <option value="апельсин">Апельсин</option>
         <option value="виноград">Виноград</option>
       </select>
     </div>
+
+    <hr class="spacer">
+
+    <label for="cars">Виберіть автомобіль:</label>
+    <br>
+    <select id="cars" name="cars" multiple>
+      <option value="volvo">Volvo</option>
+      <option value="saab" selected>Saab</option>
+      <option value="mercedes">Mercedes</option>
+      <option value="audi">Audi</option>
+    </select>
+
+    <hr>
 
     <!--*****888888*****-->
     <div id="multiline-text">
