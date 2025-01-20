@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox News Columns</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7ff;
+            padding: 20px;
+        }
+
+        .news-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .news-column {
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            padding: 10px;
+            width: 100%;
+            max-width: 350px;
+        }
+
+        .news-column h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .news-column p {
+            font-size: 14px;
+            color: #666666;
+        }
+
+        @media (min-width: 768px) {
+            .news-column {
+                flex: 1 1 calc(33.333% - 20px);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .news-column {
+                flex: 1 1 calc(33.333% - 40px);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="news-container">
+    <div class="news-column">
+        <h3>Title</h3>
+        <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+    <div class="news-column">
+        <h3>A little longer title</h3>
+        <p>Aliquam ornare nulla a velit vehicula, sed dignissim nunc pharetra. Fusce in dolor eu metus cursus imperdiet. Vestibulum at velit vitae est placerat cursus.</p>
+    </div>
+    <div class="news-column">
+        <h3>Title</h3>
+        <p>Aenean feugiat dui et libero consectetur hendrerit. Suspendisse potenti.</p>
+    </div>
+    <div class="news-column">
+        <h3>The title</h3>
+        <p>In ultrices lorem id consectetur tempus. Mauris tristique enim in hendrerit dapibus. Proin at metus et nunc gravida egestas. Cras id leo nec arcu fermentum fermentum.</p>
+    </div>
+    <div class="news-column">
+        <h3>Title</h3>
+        <p>Mauris nec purus nec ligula euismod convallis. Vivamus ac tortor vel quam viverra tristique.</p>
+    </div>
+    <div class="news-column">
+        <h3>A title</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut facilisis purus sed ipsum rhoncus, aliquet feugiat elit euismod. Morbi tempus ligula ac sapien tincidunt, id hendrerit libero convallis. Pellentesque habitant morbi tristique senectus et netus.</p>
+    </div>
+    <div class="news-column">
+        <h3>Title</h3>
+        <p>Nulla ut justo iaculis, faucibus tortor non, blandit tortor. Quisque id lectus et ipsum bibendum mattis vitae sagittis magna. Vestibulum ac orci vel sapien ultricies facilisis nec non metus.</p>
+    </div>
+    <div class="news-column">
+        <h3>Title</h3>
+        <p>Vivamus ac tortor vel quam viverra tristique. Curabitur suscipit est non mattis volutpat. Integer id nisl quis justo consectetur vehicula nec nec urna.</p>
+    </div>
+</div>
+</body>
+</html>
