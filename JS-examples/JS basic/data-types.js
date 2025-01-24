@@ -48,6 +48,10 @@ const idB = Symbol('id');
 let objB = { [idB]: 'ModuleB' };
 console.log('objA[idA]', objA[idA]); // 'ModuleA'
 console.log('objB[idB]', objB[idB]); // 'ModuleB'
+// Унікальність властивостей
+const sym1 = Symbol('id');
+const sym2 = Symbol('id');
+console.log('sym1 === sym2', sym1 === sym2); // false
 
 // КОлекція властивостей object
 let user2 = {

@@ -9,7 +9,6 @@ let myvariable = 20;
 console.log('MyVariable', MyVariable); // Виведе 10
 console.log('myvariable', myvariable); // Виведе 20
 
-
 /**************** Однорядкові коментарі: ********************/
 // Це однорядковий коментар
 console.log('Hello, world!');
