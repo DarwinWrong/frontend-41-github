@@ -33,10 +33,47 @@ console.log(5 !== '5'); // true
 /**************** Логічні оператори ********************/
 // && — логічне І (AND):
 console.log(true && false); // false
+
 // || — логічне АБО (OR):
 console.log(true || false); // true
+
 // ! — логічне НЕ (NOT):
 console.log(!true); // false
+let fatGirl = false;
+let prettyGIrl = !fatGirl;
+console.log(prettyGIrl); // true
+
+// ??
+console.log(true ?? false); // true
+let a = 1, b = null;
+let c = a ?? b;
+console.log(c); // 1
+let d = null, e = undefined;
+let j = d ?? e;
+console.log(j); // undefined
+
+// опціональний ланцюжок
+const user = {
+    profile: {
+        name: 'John',
+        // email: undefined
+    },
+    friends: undefined, // error
+    age: "",
+    height: null,
+}
+const userFriends = user.friends;
+// console.log('userFriends?.tommy',userFriends.tommy); // error
+console.log('userFriends?.tommy', userFriends?.tommy); //work undf
+
+const userEmail = user.profile.email;
+console.log('userEmail', userEmail);
+const userName = user?.profile?.name;
+const userAge = user?.age;
+const userHeight = user?.height;
+console.log('userName', userName);
+console.log('userAge', userAge);
+console.log('userHeight', userHeight);
 
 /**************** Оператор typeof ********************/
 console.log(typeof 42); // 'number'
