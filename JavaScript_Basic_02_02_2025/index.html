@@ -6,6 +6,44 @@
     <title>Document</title>
 </head>
 <body>
-    <script src="script.js"></script>
+    <!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Взаємодія з користувачем</title>
+</head>
+<body>
+    <script>
+       
+        alert("Ласкаво просимо на наш сайт!");
+        
+        const userName = prompt("Як вас звати?");
+        console.log("Ваше ім'я:", userName);
+
+        const isConfirmed = confirm("Ви впевнені, що хочете продовжити?");
+        console.log("Підтвердження дії:", isConfirmed);
+
+        const book = {
+            title: "Гаррі Поттер і філософський камінь",
+            author: "Дж. К. Роулінг",
+            year: 1997,
+            genre: "Фентезі"
+        };
+
+        console.log("Назва:", book.title);
+        console.log("Автор:", book.author);
+        console.log("Рік видання:", book.year);
+        console.log("Жанр:", book.genre);
+
+        const colors = ["червоний", "зелений", "синій", "жовтий"];
+        console.log("Перший колір:", colors[0]);
+        console.log("Останній колір:", colors[colors.length - 1]);
+    </script>
+</body>
+</html>
+
+    <!-- <script src="script.js"></script> -->
+     
 </body>
 </html>
