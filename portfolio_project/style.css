@@ -74,15 +74,15 @@
 
 h4 {
     font-size: 1rem;
-    opacity: 0.5; 
-    text-align: center; 
-    font-size: 1rem; 
-    line-height: 1.5; 
+    opacity: 0.5; /* Прозрачность текста */
+    text-align: center; /* Выравниваем текст влево */
+    font-size: 1rem; /* Настраиваем размер текста */
+    line-height: 1.5; /* Интервал между строками */
 }
 h4 span  {
-    font-weight: bold; 
-    font-size: 1.3rem; 
-    display: block; 
+    font-weight: bold; /* Делаем вторую строку жирной (по желанию) */
+    font-size: 1.3rem; /* Увеличиваем размер имени */
+    display: block; /* Переводим текст на новую строку */
 }
 
 h2 {
@@ -99,7 +99,7 @@ p {
     font-size: 1.2rem;
 }
 
-
+/* Стиль для соціальних іконок */
 .social-icons {
     display: flex;
     justify-content: center;
@@ -125,52 +125,52 @@ p {
     justify-content: space-around;
     align-items: center;
     padding: 1rem 0;
-    background-color: #252626; 
-    border-radius: 8px;       
+    background-color: #252626; /* Темный фон */
+    border-radius: 8px;       /* Скругление углов */
 }
 
 .stats div {
-    text-align: left; 
+    text-align: left; /* Выравнивание содержимого блока по левому краю */
     flex: 1;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 10px; 
+    padding-left: 10px; /* Добавляем отступ слева для текста */
 }
 
 .stats div h3 {
     font-size: 1.5rem;
     margin: 0;
-    color: #ff6700; 
-    text-align: left; 
+    color: #ff6700; /* Цвет цифр */
+    text-align: left; /* Выравнивание цифр по левому краю */
 }
 
 .stats div p {
     font-size: 1.25rem;
     margin: 0;
     color: #f8f9fa;
-    text-align: left; 
+    text-align: left; /* Выравнивание текста по левому краю */
 }
 
 
-
+/* Добавляем вертикальные полоски */
 .stats div:not(:last-child)::after {
     content: '';
     position: absolute;
-    top: 10%; 
-    right: 0; 
-    width: 1px; 
-    height: 90%; 
-    background-color: #ffffff; 
-    opacity: 0.5; 
+    top: 10%; /* Отступ сверху */
+    right: 0; /* Полоска справа */
+    width: 1px; /* Ширина полоски */
+    height: 90%; /* Высота полоски (почти на весь блок) */
+    background-color: #ffffff; /* Цвет полоски */
+    opacity: 0.5; /* Прозрачность полоски */
 }
 
 
 
 /* Загальні стилі для блоку "Services" */
 #services {
-    background-color: #1E1E1E;
+    background-color: #1E1E1E; /* Фон секції */
     padding: 2rem 1rem;
 }
 
@@ -180,15 +180,15 @@ p {
 
 /* Сервісні картки */
 .service-card {
-    background-color: #252626; 
-    border-radius: 10px; 
+    background-color: #252626; /* Темно-сірий фон картки */
+    border-radius: 10px; /* Скруглення */
     padding: 1.5rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Анімація */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Тінь */
     height: 100%;
 }
 
-
+/* Анімація при наведенні */
 .service-card:hover {
     transform: scale(1.05); /* Збільшення */
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.5); /* Глибша тінь */
@@ -197,20 +197,20 @@ p {
 /* Іконки */
 .service-icon {
     font-size: 2.5rem;
-    color: #ff6700; 
+    color: #ff6700; /* Помаранчевий колір */
 }
 
-
+/* Заголовок картки */
 .service-card h3 {
     font-size: 1.2rem;
     margin: 1rem 0 0.5rem;
-    color: #ffc107; 
+    color: #ffc107; /* Жовтий текст */
 }
 
-
+/* Опис */
 .service-card p {
     font-size: 0.9rem;
-    color: #d3d3d3; 
+    color: #d3d3d3; /* Світло-сірий */
     margin-bottom: 0;
 }
 
@@ -295,7 +295,7 @@ p {
     height: 16px;
 }
 
-
+/* Стиль для навичок */
 .skills-container {
     display: flex;
     justify-content: center;
@@ -303,7 +303,7 @@ p {
     margin-top: 2rem;
 }
 
-
+/* Прогресні кружки */
 .progress-circle {
     width: 100px;
     height: 100px;
@@ -313,7 +313,7 @@ p {
     justify-content: center;
     position: relative;
     background: #252626;
-    margin: 0 auto; 
+    margin: 0 auto; /* Централізація прогресного кружка */
 }
 
 .progress-circle::after {
@@ -342,10 +342,10 @@ p {
     background: conic-gradient(#ff6700 70%, #252626 0);
 }
 
-
+/* Іконки */
 .service-icon {
     font-size: 2.5rem;
-    color: #ff6700; 
+    color: #ff6700; /* Помаранчевий колір */
     position: relative;
     z-index: 2;
     display: flex;
@@ -354,7 +354,7 @@ p {
 }
 
 
-
+/* Стиль для секції "Портфоліо" */
 #portfolio {
     background-color: #1E1E1E;
     padding: 3rem 1rem;
@@ -394,7 +394,7 @@ p {
 
 .carousel {
     display: flex;
-    width: 300%; 
+    width: 300%; /* 3 слайда */
     transition: transform 0.5s ease-in-out;
 }
 
@@ -411,7 +411,7 @@ p {
     object-fit: cover;
 }
 
-
+/* Кнопки навігації */
 .prev, .next {
     position: absolute;
     top: 50%;
@@ -433,7 +433,7 @@ p {
     right: 20px;
 }
 
-
+/* Логіка переміщення між слайдами */
 #slide1:checked ~ .carousel {
     transform: translateX(0%);
 }
@@ -446,7 +446,7 @@ p {
     transform: translateX(-200%);
 }
 
-
+/* Ховаємо радіо-кнопки */
 input[type="radio"] {
     display: none;
 }
