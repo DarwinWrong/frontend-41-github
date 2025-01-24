@@ -1,0 +1,452 @@
+/* Основний стиль для Header */
+.bg-header {
+    background-color: #1E1E1E;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.burger-menu {
+    display: flex;
+    align-items: center;
+}
+
+.burger-menu .navbar-toggler {
+    border: none;
+    background: transparent;
+}
+
+.burger-menu .navbar-toggler-icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    content: " ";
+    background: no-repeat center center;
+    background-size: 100% 100%;
+    background-image: url("https://img.icons8.com/material-outlined/24/ffffff/menu--v1.png");
+}
+
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    font-weight: lighter;
+    color: #FA6E00;
+}
+
+.btn-outline-warning {
+    color: #ffc107;
+    border-color: #ffc107;
+}
+
+
+
+
+/* Основний стиль для Hero Section */
+#hero {
+    background-color: #1E1E1E;
+}
+
+.text-warning {
+    color: #ffc107;
+}
+
+.btn-outline-warning {
+    color: #ffc107;
+    border-color: #ffc107;
+}
+
+.btn-outline-light {
+    color: #f8f9fa;
+    border-color: #f8f9fa;
+}
+
+h4 {
+    font-size: 1rem;
+    opacity: 0.5; 
+    text-align: center; 
+    font-size: 1rem; 
+    line-height: 1.5; 
+}
+h4 span  {
+    font-weight: bold; 
+    font-size: 1.3rem; 
+    display: block; 
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-icons a {
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+}
+
+
+
+
+
+/* Стилі для блока з показниками */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 0;
+    background-color: #252626; 
+    border-radius: 8px;       
+}
+
+.stats div {
+    text-align: left; 
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10px; 
+}
+
+.stats div h3 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: #ff6700; 
+    text-align: left; 
+}
+
+.stats div p {
+    font-size: 1.25rem;
+    margin: 0;
+    color: #f8f9fa;
+    text-align: left; 
+}
+
+
+
+.stats div:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 10%; 
+    right: 0; 
+    width: 1px; 
+    height: 90%; 
+    background-color: #ffffff; 
+    opacity: 0.5; 
+}
+
+
+
+/* Загальні стилі для блоку "Services" */
+#services {
+    background-color: #1E1E1E;
+    padding: 2rem 1rem;
+}
+
+#services p {
+    opacity: 0.5;
+}
+
+/* Сервісні картки */
+.service-card {
+    background-color: #252626; 
+    border-radius: 10px; 
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
+    height: 100%;
+}
+
+
+.service-card:hover {
+    transform: scale(1.05); /* Збільшення */
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.5); /* Глибша тінь */
+}
+
+/* Іконки */
+.service-icon {
+    font-size: 2.5rem;
+    color: #ff6700; 
+}
+
+
+.service-card h3 {
+    font-size: 1.2rem;
+    margin: 1rem 0 0.5rem;
+    color: #ffc107; 
+}
+
+
+.service-card p {
+    font-size: 0.9rem;
+    color: #d3d3d3; 
+    margin-bottom: 0;
+}
+
+
+
+/* Стиль для секції "Про мене" */
+#about {
+    background-color: #1E1E1E;
+    padding: 3rem 1rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+
+
+#about p {
+    opacity: 0.5;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.photo-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-background {
+    position: relative;
+    width: 300px;
+    height: 450px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-background img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.about-text p {
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1.6;
+    text-align: justify;
+    margin: 0;
+    word-wrap: break-word;
+    color: #ffffff;
+    padding: 20px;
+}
+
+#about .btn {
+    margin-top: 1rem;
+    background-color: #ff6f00;
+    border-color: #ff6f00;
+    color: #ffffff;
+    padding: 0.75рем 1.5рем;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#about .btn:hover {
+    background-color: #e65c00;
+    border-color: #e65c00;
+}
+
+.download-icon {
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+}
+
+
+.skills-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+
+.progress-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: #252626;
+    margin: 0 auto; 
+}
+
+.progress-circle::after {
+    content: '';
+    width: 85%;
+    height: 85%;
+    background: #1E1E1E;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+}
+
+.progress-100 {
+    background: conic-gradient(#ff6700 100%, #252626 0);
+}
+
+.progress-85 {
+    background: conic-gradient(#ff6700 85%, #252626 0);
+}
+
+.progress-60 {
+    background: conic-gradient(#ff6700 60%, #252626 0);
+}
+
+.progress-70 {
+    background: conic-gradient(#ff6700 70%, #252626 0);
+}
+
+
+.service-icon {
+    font-size: 2.5rem;
+    color: #ff6700; 
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+#portfolio {
+    background-color: #1E1E1E;
+    padding: 3rem 1rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+#portfolio h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#portfolio .btn-outline-filter {
+    margin: 0.5rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #ffffff;
+    border-color: #4d4a4a;
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+#portfolio .btn-outline-filter:hover,
+#portfolio .btn-outline-filter.active {
+    background-color: #ff6700;
+    color: #ffffff;
+}
+
+.carousel-wrapper {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    width: 300%; 
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    width: 100%;
+    flex: 1 0 100%;
+    position: relative;
+    text-align: center;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 15px;
+    font-size: 24px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+
+#slide1:checked ~ .carousel {
+    transform: translateX(0%);
+}
+
+#slide2:checked ~ .carousel {
+    transform: translateX(-100%);
+}
+
+#slide3:checked ~ .carousel {
+    transform: translateX(-200%);
+}
+
+
+input[type="radio"] {
+    display: none;
+}
