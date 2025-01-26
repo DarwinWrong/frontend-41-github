@@ -43,7 +43,7 @@ let fatGirl = false;
 let prettyGIrl = !fatGirl;
 console.log(prettyGIrl); // true
 
-// ??
+// // ??
 console.log(true ?? false); // true
 let a = 1, b = null;
 let c = a ?? b;
@@ -63,8 +63,9 @@ const user = {
     height: null,
 }
 const userFriends = user.friends;
-// console.log('userFriends?.tommy',userFriends.tommy); // error
-console.log('userFriends?.tommy', userFriends?.tommy); //work undf
+// console.log('userFriends.tommy', userFriends.tommy); // error
+let friendTommy = userFriends?.tommy;
+console.log('userFriends?.tommy', friendTommy); //work undf
 
 const userEmail = user.profile.email;
 console.log('userEmail', userEmail);

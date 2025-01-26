@@ -45,7 +45,10 @@ const idA = Symbol('id');
 let objA = { [idA]: 'ModuleA' };
 // Модуль B
 const idB = Symbol('id');
-let objB = { [idB]: 'ModuleB' };
+let objB = {
+    [idB]: 'ModuleB',
+    'id': 'ModuleC'
+};
 console.log('objA[idA]', objA[idA]); // 'ModuleA'
 console.log('objB[idB]', objB[idB]); // 'ModuleB'
 // Унікальність властивостей
