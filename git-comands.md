@@ -25,7 +25,8 @@
 17. [Робота з тегами (tags)](#17-робота-з-тегами-tags)
 18. [Відновлення змін](#18-відновлення-змін)
 19. [Команди для роботи з Git Stash](#19-команди-для-роботи-з-git-stash)
-20. [Створення Git Alias](#20-Як-створити-Git-Alias)
+20. [Створення Git Alias](#20-створення-git-alias)
+21. [Fix bugs](#21-fix-bugs)
 
 ---
 
@@ -772,7 +773,7 @@ git stash branch new-feature-branch
 <hr style="height: 5px; background: lawngreen" />
 <hr style="height: 5px; background: lawngreen" />
 
-## 20. Як створити Git Alias
+## 20. Створення Git Alias
 
 <h4>Git Alias — це спосіб скорочення довгих команд, які ви часто використовуєте, у коротші назви.</h4>
 <ol>
@@ -840,3 +841,53 @@ new = config --global alias
 
 <hr style="height: 5px; background: lawngreen" />
 <hr style="height: 5px; background: lawngreen" />
+
+## 21. Fix bugs
+
+### Пропуск перевірки шляхів з використанням core.protectNTFS
+Якщо проблема полягає тільки в символах, недопустимих для файлової системи Windows, ви можете вимкнути захист від таких шляхів:
+```bash
+git config core.protectNTFS false
+```
+Після цього спробуйте знову переключитись:
+```bash
+git switch origin/Branch --detach
+```
+
+### Створити нову гілку з віддаленої гілки
+Ще один варіант — створити нову локальну гілку, яка буде базуватися на віддаленій. Це може допомогти вам уникнути проблем з неприпустимими іменами файлів:
+```bash
+git checkout -b Branch origin/Branch
+```
+
+### Видалити неприпустимі файли перед переключенням гілки
+Ще один варіант — тимчасово видалити або перемістити проблемний файл з вашого робочого каталогу, щоб Git дозволив вам переключитися на потрібну гілку.
+Використовуєте команду для видалення файлів, що створюють проблему:
+```bash
+git rm --cached "20.12.2024/images/Portfolio | CV - Susi Sánchez Arias.jpg"
+```
+Виконайте переключення на гілку:
+```bash
+git switch origin/Branch --detach
+```
+Якщо необхідно, після переключення ви можете відновити або перейменувати ці файли.
+
+### Зміни в git index (індексі)
+Іноді можуть бути проблеми з індексом Git. У цьому випадку допоможе очистка кешу:
+```bash
+git rm --cached -r .
+git reset --hard
+```
+
+### Синхронізація .gitignore між гілками:
+Переконайтеся, що .gitignore синхронізований між гілками, або додайте його вручну до потрібної гілки.
+```bash
+git checkout <branch_with_gitignore> -- .gitignore
+```
+
+### Очистити відстежувані файли:
+Якщо файли вже були додані до індексу у другій гілці, їх потрібно видалити з індексу, щоб вони ігнорувалися Git.
+```bash
+git rm --cached path/to/ignored/files
+git commit -m "Remove files from index to apply .gitignore"
+```
