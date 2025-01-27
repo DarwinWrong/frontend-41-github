@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>alert prompt</title>
+  </head>
+  <body>
+    <script>
+      alert("Ласкаво просимо на наш сайт!");
+      let name = prompt("Як вас звати?", "Ім’я");
+      if (name) {
+        alert(`Привіт, ${name}!`);
+      } else {
+        alert("Ви не ввели ім’я");
+      }
+
+      let deleteConfirmed = confirm(
+        "Ви впевнені, що хочете видалити цей файл?"
+      );
+      if (deleteConfirmed) {
+        alert("Файл видалено");
+      } else {
+        alert("Видалення скасовано");
+      }
+    </script>
+  </body>
+</html>
