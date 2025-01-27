@@ -1,7 +1,7 @@
-function greeting() {
-    console.log("Привіт, світ!");
+function greeting(hello = 'Привіт, світ!', name = 'Анонім') {
+    console.log(`${hello} Мене звати ${name}`);
 }
-greeting(); // виклик функції
+greeting('Привіт всім'); // виклик функції
 
 // Функція з параметрами
 function add(a, b) {
@@ -25,10 +25,26 @@ let greet = function (name) {
 greet("Олексій"); // викликає анонімну функцію
 
 
+const sum3 = (a, b) => a + b;
+const divide = (a, b) => a / b;
+const multiply2 = (a, b) => a * b;
+
+function sumAndLog(c, d) {
+    console.log(sum3(c, d))
+}
+sumAndLog(2, 3)
+
+// Розширюваність, Локалізація залежностей
+function sumAndLog2(operation, c, d) { // логіка змінилась без зміни функції
+    console.log(operation(c, d))
+}
+sumAndLog2(sum, 3, 4); // 7
+sumAndLog2(multiply2, 3, 4); // 12
+sumAndLog2(divide, 10, 2); // 5
+
 // ==============================
 function myFunction() {
     log('arguments', arguments);
-
 }
 myFunction(1, 2, 3); // { 0: 1, 1: 2, 2: 3 }
 
@@ -53,11 +69,11 @@ const dogs = ['Bulldog', 'Beagle', 'Labrador'];
 log('argsLength(dogs[])', argsLength(dogs)); // 3
 
 // ==============================
-const myFunction = (a, b) => a + b;
-
-
+const myArrowFunction = (a, b) => a + b;
 
 // ==============================
+log('its working', 'true');
+
 function log(name = 'name', value = 'value') {
     console.log(name, value);
 }
