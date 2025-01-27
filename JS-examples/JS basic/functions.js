@@ -3,7 +3,6 @@ function greeting() {
 }
 greeting(); // виклик функції
 
-// ==============================
 // Функція з параметрами
 function add(a, b) {
     return a + b; // повертає суму a і b
@@ -16,6 +15,7 @@ function multiply(a, b, c) {
 }
 let result2 = multiply(2, 3, 4); // викликаємо функцію з трьома параметрами
 log('result2', result2); // виведе 24
+
 
 // ==============================
 // Анонімна функція з параметрами за замовчуванням
@@ -42,6 +42,7 @@ function sum() {
 log('sum(1, 2, 3)', sum(1, 2, 3)); // 6
 log('sum(10, 20, 30, 40)', sum(10, 20, 30, 40)); // 100
 
+
 // ==============================
 function argsLength(args) {
     return args.length;
@@ -56,3 +57,6 @@ log('argsLength(dogs[])', argsLength(dogs)); // 3
 function log(name = 'name', value = 'value') {
     console.log(name, value);
 }
+
+// ==============================
+const myFunction = (a, b) => a + b;
