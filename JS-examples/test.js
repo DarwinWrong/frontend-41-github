@@ -129,37 +129,77 @@
 // c /= a; // c = c / a;
 
 
-let a = 2, b = 10;
-let c = a + b;
+// let a = 2, b = 10;
+// let c = a + b;
 
-let max = c < 10;
+// let max = c < 10;
 
-if (max) {
-    console.log('less than 10');
-} else {
-    console.log('more than 10');
-}
-
-let d = max ? 'less than 10' : 'more than 10';
-console.log(d);
-
-switch (true) {
-    case max === true:
-        console.log('less than 10');
-        break;
-    case max === false:
-        console.log('more than 10');
-        break;
-    default: console.log('error');
-}
-
-// ==============================
-// function log(name = 'name', value = 'value') {
-//     console.log(name, value);
+// if (max) {
+//     console.log('less than 10');
+// } else {
+//     console.log('more than 10');
 // }
 
-let number = 10;
-while (number > 0) {
-    console.log('number', number);
-    number--;
+// let d = max ? 'less than 10' : 'more than 10';
+// console.log(d);
+
+// switch (true) {
+//     case max === true:
+//         console.log('less than 10');
+//         break;
+//     case max === false:
+//         console.log('more than 10');
+//         break;
+//     default: console.log('error');
+// }
+
+// // ==============================
+// // function log(name = 'name', value = 'value') {
+// //     console.log(name, value);
+// // }
+
+// let number = 10;
+// while (number > 0) {
+//     console.log('number', number);
+//     number--;
+// }
+
+// function numbers() {
+//     console.log(typeof arguments);
+//     console.log('arguments', arguments);
+//     console.log('arguments.length', arguments.length);
+//     console.log('arguments[2]', arguments[2]);
+// }
+// numbers(23, 33, 45, 55);
+
+
+const sum = (a, b) => a + b;
+const divide = (a, b) => a / b;
+const multiply = (a, b) => a * b;
+
+function sumAndLog(c, d) {
+    console.log(sum(c, d))
 }
+sumAndLog(2, 3)
+
+// Розширюваність, Локалізація залежностей
+function sumAndLog2(operation, c, d) { // логіка змінилась без зміни функції
+    console.log(operation(c, d))
+}
+sumAndLog2(sum, 3, 4); // 7
+sumAndLog2(multiply, 3, 4); // 12
+sumAndLog2(divide, 10, 2); // 5
+
+
+// const sum2 = (a, b) => {
+//     return a + b;
+// }
+// const sum3 = (a, b) => {
+//     console.log('a', a);
+//     a += 2;
+//     console.log('a', a);
+//     return a + b;
+// }
+
+// console.log(sum(2, 3));
+// sum3(4, 5);
