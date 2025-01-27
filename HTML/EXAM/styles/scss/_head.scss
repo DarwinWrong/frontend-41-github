@@ -1,0 +1,72 @@
+.head {
+    width: 100vw;
+    &__rov{
+        display: flex;
+        width: inherit;
+        &--logo {
+            padding-left: 60px;
+            padding-top: 36px;
+        }
+        &--nav {
+            padding-left: 927px;
+            font-family: "Inter", serif;
+            font-size: 16px;
+            
+            
+            ul{
+                display: flex;
+                
+            }
+            li{
+                padding-right: 32px;
+                padding-top: 36px;
+                list-style-type: none;
+            }
+            a{
+                text-decoration: none;
+                color: #c7c7c7;
+            }
+            
+            
+        }
+    }
+    &__content {
+        &--info {
+            padding-left: 108px;
+            width: 544px;
+            &-h2 {
+                margin-top: 194px;
+                font-family: "Bebas Neue", serif;
+                font-size: 101px;
+                width: 544px;
+                height: 182px;
+                color: #ffffff;
+            }
+            &-p {
+                font-family: "Manrope", serif;
+                color: #c7c7c7;
+                font-size: 18px;
+            }
+            &-contact {
+                ul{
+                    padding-top: 40px;
+                    box-sizing: border-box;
+                    width: 327px;
+                    display: flex;
+                    list-style: none;
+                    padding-left: 0;
+                }
+                li{
+                   padding-right: 16px; 
+                }
+                
+            }
+        }
+        &--img {
+        }
+    }
+
+    
+}  
+
+
