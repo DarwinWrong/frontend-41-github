@@ -52,11 +52,12 @@ log('argsLength("Hello")', argsLength("Hello")); // 5
 const dogs = ['Bulldog', 'Beagle', 'Labrador'];
 log('argsLength(dogs[])', argsLength(dogs)); // 3
 
+// ==============================
+const myFunction = (a, b) => a + b;
+
+
 
 // ==============================
 function log(name = 'name', value = 'value') {
     console.log(name, value);
 }
-
-// ==============================
-const myFunction = (a, b) => a + b;

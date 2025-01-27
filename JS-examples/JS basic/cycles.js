@@ -1,48 +1,48 @@
 let count = 0;
 while (count < 5) {
-    console.log(count);
-    count++;
+    console.log('count', count);
+    count++; // count = count + 1;
 }
 
 
 // ===================
 let count2 = 0;
 do {
-    console.log(count2);
+    console.log('count2', count2);
     count2++;
 } while (count2 < 5);
 
 
 // ====================
 for (let i = 0; i < 5; i++) {
-    console.log(i);
+    console.log('i', i);
 }
 
 // =====================
-for (let i = 0; i < 10; i++) {
-    if (i === 5) {
+for (let k = 0; k < 10; k++) {
+    if (k === 5) {
         break; // вихід з циклу, якщо i дорівнює 5
     }
-    console.log(i);
+    console.log('k, break', k);
 }
 
 let j = 0;
 while (j < 10) {
-    if (j === 5) {
+    if (j === 2) {
         break; // вихід з циклу, якщо i дорівнює 5
     }
-    console.log(j);
+    console.log('j, break', j);
     j++;
 }
 
-let i = 0;
+let v = 0;
 do {
-    if (i === 5) {
+    if (v === 5) {
         break; // вихід з циклу, якщо i дорівнює 5
     }
-    console.log(i);
-    i++;
-} while (i < 10);
+    console.log('v, break', v);
+    v++;
+} while (v < 10);
 
 // =====================
 for (let i = 0; i < 5; i++) {
