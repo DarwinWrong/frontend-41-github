@@ -153,9 +153,9 @@ switch (true) {
     default: console.log('error');
 }
 
-// ============================
+// ==============================
 // function log(name = 'name', value = 'value') {
-//     console log(name, value);
+//     console.log(name, value);
 // }
 
 let number = 10;
@@ -163,4 +163,3 @@ while (number > 0) {
     console.log('number', number);
     number--;
 }
-
