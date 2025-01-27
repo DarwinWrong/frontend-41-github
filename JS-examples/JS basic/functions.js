@@ -49,7 +49,7 @@ function argsLength(args) {
 log('argsLength("Hello")', argsLength("Hello")); // 5
 
 const dogs = ['Bulldog', 'Beagle', 'Labrador'];
-log('argsLength(dogs)', argsLength(dogs)); // 3
+log('argsLength(dogs[])', argsLength(dogs)); // 3
 
 
 // ==============================
