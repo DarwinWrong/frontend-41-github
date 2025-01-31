@@ -1,32 +1,23 @@
 // ************************** RECURSION **************************
 function countdown(n) {
-    if (n <= 0) {  // Базовий випадок: коли n досягає 0, зупиняємось
-        console.log("🚀 Старт!");
+    if (n <= 0) {
+        console.log("Старт!");
         return;
     }
 
-    console.log(n);  // Виводимо поточне значення n
-    countdown(n - 1);  // Рекурсивний виклик із зменшеним n
+    console.log(n);
+    countdown(n - 1);
 }
 
 countdown(5);
 
 function sumTo(n) {
-    if (n === 0) return 0; // Базовий випадок: якщо n = 0, сума теж 0
+    if (n === 7) return 0;
 
-    return n + sumTo(n - 1); // Додаємо n до суми менших чисел
+    return n + sumTo(n + 1);
 }
 
 console.log(sumTo(5)); // 15
-
-
-function countUp(n, current = 1) {
-    if (current > n) return; // Базовий випадок: коли current дорівнює n, зупиняємось
-
-    console.log(current);  // Виводимо поточне значення current
-    countUP(n, current ++);  // Рекурсивний виклик ��з збільшеним current
-}
-countUp(5);
 
 // ================================================================
 
