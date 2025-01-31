@@ -1,29 +1,24 @@
-// Функція, щоб перевірити, чи викликається правильно
 function logFunctionCall(functionName) {
   console.log(functionName + " викликається");
 }
 
-// Використання alert
 function showMessage() {
   logFunctionCall('showMessage');
   alert("Привіт, це повідомлення!");
 }
 
-// Використання prompt
 function getUserName() {
   logFunctionCall('getUserName');
   const userName = prompt("Як твоє ім'я?");
   console.log("Ім'я користувача:", userName);
 }
 
-// Використання confirm
 function confirmAction() {
   logFunctionCall('confirmAction');
   const isConfirmed = confirm("Ти хочеш продовжити?");
   console.log("Підтверджено:", isConfirmed);
 }
 
-// Робота з об'єктом
 const book = {
   title: "Сучасна веб-розробка",
   author: "Іван Іванов",
@@ -39,7 +34,6 @@ function displayBookInfo() {
   console.log("Жанр:", book.genre);
 }
 
-// Робота з масивом
 const colors = ["червоний", "зелений", "синій", "жовтий"];
 
 function displayColors() {
@@ -48,7 +42,6 @@ function displayColors() {
   console.log("Останній колір:", colors[colors.length - 1]);
 }
 
-// Додаємо обробники подій для кнопок
 document.getElementById("showMessageBtn").addEventListener("click", showMessage);
 document.getElementById("getUserNameBtn").addEventListener("click", getUserName);
 document.getElementById("confirmActionBtn").addEventListener("click", confirmAction);
