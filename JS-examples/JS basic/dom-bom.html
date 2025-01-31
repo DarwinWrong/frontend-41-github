@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DOM BOM</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        .flex {
+            margin: 50px 0;
+        }
+        .markdown {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {background-color: #f5f5f5;}
+    </style>
+</head>
+<body>
+<div class="flex w-full flex-col gap-1 empty:hidden first:pt-[3px]">
+    <div class="markdown prose w-full break-words dark:prose-invert dark"><p>Таблиця з основними властивостями
+        об'єкта <code>window</code></p>
+        <table border="1" style="border: 1px solid black; border-collapse: collapse;">
+            <thead>
+            <tr>
+                <th>Властивість</th>
+                <th>Опис</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><code>window.document</code></td>
+                <td>Посилання на об'єкт <code>document</code>, який представляє HTML-сторінку.</td>
+            </tr>
+            <tr>
+                <td><code>window.location</code></td>
+                <td>Об'єкт, що містить URL поточної сторінки і методи для його зміни.</td>
+            </tr>
+            <tr>
+                <td><code>window.history</code></td>
+                <td>Об'єкт для роботи з історією перегляду браузера.</td>
+            </tr>
+            <tr>
+                <td><code>window.navigator</code></td>
+                <td>Інформація про браузер і пристрій користувача.</td>
+            </tr>
+            <tr>
+                <td><code>window.screen</code></td>
+                <td>Інформація про екран користувача (ширина, висота тощо).</td>
+            </tr>
+            <tr>
+                <td><code>window.innerWidth</code></td>
+                <td>Внутрішня ширина вікна браузера (без рамок).</td>
+            </tr>
+            <tr>
+                <td><code>window.innerHeight</code></td>
+                <td>Внутрішня висота вікна браузера (без рамок).</td>
+            </tr>
+            <tr>
+                <td><code>window.outerWidth</code></td>
+                <td>Повна ширина вікна браузера (включаючи рамки).</td>
+            </tr>
+            <tr>
+                <td><code>window.outerHeight</code></td>
+                <td>Повна висота вікна браузера (включаючи рамки).</td>
+            </tr>
+            <tr>
+                <td><code>window.scrollX</code></td>
+                <td>Поточне горизонтальне прокручування сторінки.</td>
+            </tr>
+            <tr>
+                <td><code>window.scrollY</code></td>
+                <td>Поточне вертикальне прокручування сторінки.</td>
+            </tr>
+            <tr>
+                <td><code>window.localStorage</code></td>
+                <td>Локальне сховище для збереження даних між сеансами.</td>
+            </tr>
+            <tr>
+                <td><code>window.sessionStorage</code></td>
+                <td>Сховище для збереження даних протягом сесії.</td>
+            </tr>
+            <tr>
+                <td><code>window.alert()</code></td>
+                <td>Відображає модальне діалогове вікно з повідомленням.</td>
+            </tr>
+            <tr>
+                <td><code>window.confirm()</code></td>
+                <td>Відображає модальне вікно з питанням (OK/Cancel).</td>
+            </tr>
+            <tr>
+                <td><code>window.prompt()</code></td>
+                <td>Відображає діалогове вікно для введення тексту.</td>
+            </tr>
+            <tr>
+                <td><code>window.setTimeout()</code></td>
+                <td>Виконує функцію через певний час.</td>
+            </tr>
+            <tr>
+                <td><code>window.setInterval()</code></td>
+                <td>Виконує функцію періодично через певний інтервал.</td>
+            </tr>
+            <tr>
+                <td><code>window.clearTimeout()</code></td>
+                <td>Зупиняє виконання <code>setTimeout()</code>.</td>
+            </tr>
+            <tr>
+                <td><code>window.clearInterval()</code></td>
+                <td>Зупиняє виконання <code>setInterval()</code>.</td>
+            </tr>
+            <tr>
+                <td><code>window.open()</code></td>
+                <td>Відкриває нове вікно або вкладку.</td>
+            </tr>
+            <tr>
+                <td><code>window.close()</code></td>
+                <td>Закриває поточне вікно (якщо дозволено).</td>
+            </tr>
+            <tr>
+                <td><code>window.focus()</code></td>
+                <td>Фокусується на поточному вікні.</td>
+            </tr>
+            <tr>
+                <td><code>window.blur()</code></td>
+                <td>Знімає фокус з поточного вікна.</td>
+            </tr>
+            <tr>
+                <td><code>window.matchMedia()</code></td>
+                <td>Перевіряє відповідність медіа-запиту (наприклад, розмір екрану).</td>
+            </tr>
+            <tr>
+                <td><code>window.getComputedStyle()</code></td>
+                <td>Отримує стилі елемента.</td>
+            </tr>
+            <tr>
+                <td><code>window.requestAnimationFrame()</code></td>
+                <td>Запускає анімацію в наступному кадрі оновлення екрану.</td>
+            </tr>
+            <tr>
+                <td><code>window.cancelAnimationFrame()</code></td>
+                <td>Скасовує запит <code>requestAnimationFrame()</code>.</td>
+            </tr>
+            <tr>
+                <td><code>window.addEventListener()</code></td>
+                <td>Додає обробник подій.</td>
+            </tr>
+            <tr>
+                <td><code>window.removeEventListener()</code></td>
+                <td>Видаляє обробник подій.</td>
+            </tr>
+            </tbody>
+        </table>
+        </div>
+</div>
+
+<div id="content" style="padding: 10px;">
+    <h2>Browser Object Model (BOM)</h2>
+    <p>BOM — це API, яке дозволяє робити взаємодію з браузером. Вона визначає структуру веб-сторінки, створює об'єкти для елементів, доступ до властивостей, �� методи для зміни сторінки.</p>
+
+    <h3>Основні об'єкти BOM</h3>
+</div>
+
+<article id="article" style="padding: 10px;">
+    <h2>DOM (Document Object Model)</h2>
+    <p>DOM — це API, яке дозволяє робити взаємодію з HTML-документом. Вона визначає структуру документа, створює об'єкти для елементів, доступ до властивостей, �� методи для зміни сторінки.</p>
+
+    <h3>Основні об'єкти DOM</h3>
+</article>
+
+<button id="myButton" style="padding: 10px;">click me</button>
+
+<button id="frontend-41" style="padding: 10px;" onclick="window.location.href='https://github.com/DarwinWrong/frontend-41-github'">go to reposetory</button>
+
+<script src="dom-bom.js"></script>
+</body>
+</html>
