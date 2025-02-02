@@ -15,9 +15,11 @@
             font-family: Arial, sans-serif;
             background-color: #f2f2f2;
         }
+
         .flex {
             margin: 50px 0;
         }
+
         .markdown {
             display: flex;
             flex-direction: column;
@@ -38,7 +40,9 @@
             border-bottom: 1px solid #ddd;
         }
 
-        tr:hover {background-color: #f5f5f5;}
+        tr:hover {
+            background-color: #f5f5f5;
+        }
     </style>
 </head>
 <body>
@@ -175,26 +179,144 @@
             </tr>
             </tbody>
         </table>
-        </div>
+    </div>
 </div>
+
+<div class="markdown prose w-full break-words dark:prose-invert dark"><p>Ось таблиця, яка показує, які методи повертають
+    <strong>масивоподібну структуру</strong> (HTMLCollection або NodeList), а які повертають <strong>окремий
+        елемент</strong>:</p>
+    <table style="border: 1px; border-collapse: collapse">
+        <thead>
+        <tr>
+            <th>Метод</th>
+            <th>Що повертає</th>
+            <th>Тип поверненого значення</th>
+            <th>Динамічне оновлення</th>
+            <th>Доступ через <code>[0]</code></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><code>document.getElementById("id")</code></td>
+            <td>❌ Один елемент або <code>null</code></td>
+            <td><code>Element</code></td>
+            <td>❌ Ні</td>
+            <td>❌ Нема сенсу</td>
+        </tr>
+        <tr>
+            <td><code>document.getElementsByClassName("class")</code></td>
+            <td>✅ Колекція (навіть якщо 1)</td>
+            <td><code>HTMLCollection</code></td>
+            <td>✅ Так</td>
+            <td>✅ Так</td>
+        </tr>
+        <tr>
+            <td><code>document.getElementsByTagName("tag")</code></td>
+            <td>✅ Колекція (навіть якщо 1)</td>
+            <td><code>HTMLCollection</code></td>
+            <td>✅ Так</td>
+            <td>✅ Так</td>
+        </tr>
+        <tr>
+            <td><code>document.querySelector("selector")</code></td>
+            <td>❌ Один елемент або <code>null</code></td>
+            <td><code>Element</code></td>
+            <td>❌ Ні</td>
+            <td>❌ Нема сенсу</td>
+        </tr>
+        <tr>
+            <td><code>document.querySelectorAll("selector")</code></td>
+            <td>✅ Колекція (NodeList)</td>
+            <td><code>NodeList</code></td>
+            <td>❌ Ні</td>
+            <td>✅ Так</td>
+        </tr>
+        <tr>
+            <td><code>document.forms</code></td>
+            <td>✅ Колекція форм (<code>&lt;form&gt;</code>)</td>
+            <td><code>HTMLCollection</code></td>
+            <td>✅ Так</td>
+            <td>✅ Так</td>
+        </tr>
+        <tr>
+            <td><code>document.images</code></td>
+            <td>✅ Колекція картинок (<code>&lt;img&gt;</code>)</td>
+            <td><code>HTMLCollection</code></td>
+            <td>✅ Так</td>
+            <td>✅ Так</td>
+        </tr>
+        <tr>
+            <td><code>document.links</code></td>
+            <td>✅ Колекція посилань (<code>&lt;a href&gt;</code>)</td>
+            <td><code>HTMLCollection</code></td>
+            <td>✅ Так</td>
+            <td>✅ Так</td>
+        </tr>
+        <tr>
+            <td><code>document.childNodes</code></td>
+            <td>✅ Колекція дочірніх вузлів</td>
+            <td><code>NodeList</code></td>
+            <td>❌ Ні</td>
+            <td>✅ Так</td>
+        </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h3>🔥 Ключові висновки:</h3>
+    <ol>
+        <li><p><strong>Повертають ОКРЕМИЙ елемент (<code>Element</code>)</strong>:</p>
+            <ul>
+                <li><code>getElementById("id")</code></li>
+                <li><code>querySelector("selector")</code></li>
+                <li>❌ <strong>Не потребують <code>[0]</code></strong>, бо повертають <strong>конкретний елемент</strong>.
+                </li>
+            </ul>
+        </li>
+        <li><p><strong>Повертають МАСИВОПОДІБНУ КОЛЕКЦІЮ (<code>HTMLCollection</code>)</strong>:</p>
+            <ul>
+                <li><code>getElementsByClassName("class")</code></li>
+                <li><code>getElementsByTagName("tag")</code></li>
+                <li><code>document.forms</code>, <code>document.images</code>, <code>document.links</code></li>
+                <li>✅ <strong>Потребують <code>[0]</code>, <code>[1]</code></strong> або <code>for</code>.</li>
+            </ul>
+        </li>
+        <li><p><strong>Повертають МАСИВОПОДІБНУ КОЛЕКЦІЮ (<code>NodeList</code>)</strong>:</p>
+            <ul>
+                <li><code>querySelectorAll("selector")</code></li>
+                <li><code>document.childNodes</code></li>
+                <li>✅ <strong>Потребують <code>[0]</code>, <code>[1]</code></strong> або <code>forEach()</code>.</li>
+            </ul>
+        </li>
+        <li><p><strong>Динамічне оновлення</strong>:</p>
+            <ul>
+                <li><code>HTMLCollection</code> оновлюється автоматично при зміні DOM.</li>
+                <li><code>NodeList</code> не оновлюється (виняток — <code>childNodes</code>, який є "живим").</li>
+            </ul>
+        </li>
+    </ol>
+    </div>
 
 <div id="content" style="padding: 10px;">
     <h2>Browser Object Model (BOM)</h2>
-    <p>BOM — це API, яке дозволяє робити взаємодію з браузером. Вона визначає структуру веб-сторінки, створює об'єкти для елементів, доступ до властивостей, �� методи для зміни сторінки.</p>
+    <p>BOM — це API, яке дозволяє робити взаємодію з браузером. Вона визначає структуру веб-сторінки, створює об'єкти
+        для елементів, доступ до властивостей, �� методи для зміни сторінки.</p>
 
     <h3>Основні об'єкти BOM</h3>
 </div>
 
 <article id="article" style="padding: 10px;">
     <h2>DOM (Document Object Model)</h2>
-    <p>DOM — це API, яке дозволяє робити взаємодію з HTML-документом. Вона визначає структуру документа, створює об'єкти для елементів, доступ до властивостей, �� методи для зміни сторінки.</p>
+    <p>DOM — це API, яке дозволяє робити взаємодію з HTML-документом. Вона визначає структуру документа, створює об'єкти
+        для елементів, доступ до властивостей, �� методи для зміни сторінки.</p>
 
     <h3>Основні об'єкти DOM</h3>
 </article>
 
 <button id="myButton" style="padding: 10px;">click me</button>
 
-<button id="frontend-41" style="padding: 10px;" onclick="window.location.href='https://github.com/DarwinWrong/frontend-41-github'">go to reposetory</button>
+<button id="frontend-41" style="padding: 10px;"
+        onclick="window.location.href='https://github.com/DarwinWrong/frontend-41-github'">go to reposetory
+</button>
 
 <script src="dom-bom.js"></script>
 </body>

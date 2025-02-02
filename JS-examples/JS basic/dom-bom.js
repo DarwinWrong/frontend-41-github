@@ -1,39 +1,32 @@
 // **************** BOM *****************
-// Виведення повідомлення
-window.alert('Привіт, це BOM!');
-// Отримання поточного URL
-console.log(window.location.href);
-
-// Перехід на іншу сторінку
+// window.alert('Привіт, це BOM!');
+// console.log(window.location.href);
+//
 // window.location.href = 'https://www.example.com';
-
-// Отримуємо інформацію про браузер
-console.log(navigator.userAgent);
-
-// Переходимо на одну сторінку назад
+//
+// // Отримуємо інформацію про браузер
+// console.log(navigator.userAgent);
+//
 // window.history.back();
-// Переходимо на одну сторінку вперед
 // window.history.forward();
-
-// Отримуємо ширину екрана
-console.log(screen.width);
+//
+// console.log(screen.width);
 // ======================================
 
+
 // **************** DOM *****************
-// Отримуємо елемент за ID
-let title = document.getElementById('content');
-// Змінюємо текст всередині елемента
-title.innerHTML = '<h1>Новий текст!</h1>';
-// Додаємо новий елемент
+let content = document.getElementById('content');
+
+content.innerHTML = '<h1>Новий текст!</h1>';
+
 let newParagraph = document.createElement('p');
 newParagraph.textContent = 'Це новий абзац.';
-title.appendChild(newParagraph);
+content.appendChild(newParagraph);
 
 
-// Змінюємо атрибут класу
 let div = document.getElementById('article');
 div.setAttribute('class', 'new-class');
-// Змінюємо стиль
+div.classList.add('new-class-2');
 div.style.backgroundColor = 'yellow';
 
 

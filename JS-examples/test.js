@@ -173,22 +173,22 @@
 // numbers(23, 33, 45, 55);
 
 
-const sum = (a, b) => a + b;
-const divide = (a, b) => a / b;
-const multiply = (a, b) => a * b;
-
-function sumAndLog(c, d) {
-    console.log(sum(c, d))
-}
-sumAndLog(2, 3)
-
-// Розширюваність, Локалізація залежностей
-function sumAndLog2(operation, c, d) { // логіка змінилась без зміни функції
-    console.log(operation(c, d))
-}
-sumAndLog2(sum, 3, 4); // 7
-sumAndLog2(multiply, 3, 4); // 12
-sumAndLog2(divide, 10, 2); // 5
+// const sum = (a, b) => a + b;
+// const divide = (a, b) => a / b;
+// const multiply = (a, b) => a * b;
+//
+// function sumAndLog(c, d) {
+//     console.log(sum(c, d))
+// }
+// sumAndLog(2, 3)
+//
+// // Розширюваність, Локалізація залежностей
+// function sumAndLog2(operation, c, d) { // логіка змінилась без зміни функції
+//     console.log(operation(c, d))
+// }
+// sumAndLog2(sum, 3, 4); // 7
+// sumAndLog2(multiply, 3, 4); // 12
+// sumAndLog2(divide, 10, 2); // 5
 
 
 // const sum2 = (a, b) => {
@@ -203,3 +203,5 @@ sumAndLog2(divide, 10, 2); // 5
 
 // console.log(sum(2, 3));
 // sum3(4, 5);
+
+
