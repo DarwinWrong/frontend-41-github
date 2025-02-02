@@ -1,0 +1,290 @@
+@media (max-width: 430px) {
+  .main_title {
+    font-size: 24px;
+    margin-bottom: 14px;
+  }
+  .main_subtitle {
+    font-size: 16px;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  .gray_button {
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+  }
+  .orange_button {
+    padding: 8px 16px;
+  }
+  .header {
+    position: static;
+    padding: 30px 24px;
+    margin-bottom: 30px;
+  }
+  .header .header__inner {
+    padding: 0;
+  }
+  .header .header__inner .header__burger {
+    display: block;
+  }
+  .header .header__inner .header__logo {
+    font-size: 24px;
+  }
+  .header .header__inner .header__nav {
+    display: none;
+  }
+  .header .header__inner .header_button {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  main {
+    padding: 0 24px;
+  }
+  main .home {
+    flex-direction: column;
+    margin-bottom: 100px;
+  }
+  main .home .element-animation {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  main .home .home__img.element-animation {
+    transform: translateX(0);
+  }
+  main .home__info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 535px;
+  }
+  main .home__info_typewriter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  main .home__info_typewriter .info_welcome-text {
+    font-size: 16px;
+  }
+  main .home__info_typewriter .info_name-text {
+    font-size: 20px;
+  }
+  main .home__info_typewriter .info_speciality-text {
+    font-size: 50px;
+    margin-bottom: 15px;
+    animation: none;
+    width: 100%;
+  }
+  main .home__info_media {
+    width: 220px;
+    margin-bottom: 40px;
+  }
+  main .home__info_media img {
+    cursor: pointer;
+  }
+  main .home__info_buttons {
+    margin-bottom: 50px;
+    width: 250px;
+  }
+  main .home__info_buttons .hire_button {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+  }
+  main .home__info_projects {
+    width: 385px;
+    height: 100px;
+    margin-bottom: 25px;
+  }
+  main .home__info_projects h3 {
+    font-size: 20px;
+  }
+  main .home__info_projects p {
+    font-size: 16px;
+  }
+  main .home .home__img {
+    filter: grayscale(1);
+  }
+  main .home .home__img img {
+    width: 383px;
+    height: 484px;
+  }
+  main .services {
+    margin-bottom: 100px;
+  }
+  main .services .element-animation {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  main .services__inner {
+    text-align: center;
+  }
+  main .services__inner .services_table {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  main .services__inner .services_table .table-element {
+    padding: 17px 30px;
+  }
+  main .services__inner .services_table .table-element img {
+    margin-bottom: 8px;
+    width: 24px;
+    height: 24px;
+  }
+  main .services__inner .services_table .table-element .element-title {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+  main .services__inner .services_table .table-element .element-description {
+    font-size: 16px;
+  }
+  main .aboutMe.element-animation {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  main .aboutMe {
+    text-align: center;
+  }
+  main .aboutMe_container {
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 70px;
+  }
+  main .aboutMe_container .aboutMe_image {
+    width: 395px;
+    height: 565px;
+    margin-bottom: 34px;
+  }
+  main .aboutMe_container .aboutMe_info {
+    margin: 0;
+    padding: 24px;
+  }
+  main .aboutMe_container .aboutMe_info-text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+    margin-bottom: 24px;
+  }
+  main .aboutMe_container .aboutMe_info-button {
+    font-size: 16px;
+  }
+  main .knowledgeProcess.element-animation {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  main .knowledgeProcess {
+    margin-bottom: 100px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+  main .knowledgeProcess_item {
+    text-align: center;
+  }
+  main .knowledgeProcess_item-image {
+    margin-bottom: 25px;
+    width: 90px;
+    height: 90px;
+  }
+  main .knowledgeProcess_item-title {
+    font-size: 24px;
+  }
+  main .knowledgeProcess_item-subtitle {
+    font-size: 20px;
+  }
+  main .portfolio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 150px;
+  }
+  main .portfolio .main_title {
+    margin-bottom: 40px;
+  }
+  main .portfolio_navigation {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 70px;
+    width: 380px;
+  }
+  main .portfolio_navigation_item {
+    font-size: 14px;
+    padding: 10px 20px;
+    margin: 10px;
+    white-space: nowrap;
+    text-align: center;
+    width: fit-content;
+  }
+  main .portfolio_project {
+    font-size: 16px;
+    font-weight: 700;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  main .portfolio_project-item {
+    background: rgb(27, 27, 27);
+    border-radius: 28px;
+  }
+  main .portfolio_project_info {
+    display: flex;
+    justify-content: space-between;
+    margin: 16px;
+  }
+  main .portfolio_project_info-title {
+    color: #C6C6C6;
+  }
+  main .portfolio_project_info-subtitle {
+    color: #959595;
+  }
+  main .contactMe {
+    margin-bottom: 100px;
+  }
+  main .contactMe_form {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+    width: 100%;
+  }
+  main .contactMe_button {
+    justify-content: center;
+  }
+  footer .footer_container {
+    margin: 0;
+    width: 100%;
+  }
+  footer .footer_container-items {
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  footer .footer_container-items .footer_container-item {
+    margin: 12px;
+  }
+  footer .footer_container-social {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    margin-bottom: 50px;
+  }
+  footer .footer_container-contacts {
+    justify-content: center;
+    flex-direction: column;
+  }
+  footer .footer_container-contacts .footer_container-mail {
+    margin-bottom: 20px;
+  }
+  footer .footer_container-contacts .footer_container-phone {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  footer .footer_container-contacts img {
+    margin-right: 15px;
+  }
+}
+
+/*# sourceMappingURL=mobile.css.map */

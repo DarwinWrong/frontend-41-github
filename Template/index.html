@@ -7,169 +7,338 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel=”stylesheet” href=”https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css”rel=”nofollow” integrity=”sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm” crossorigin=”anonymous”>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css">
     <title>Document</title>
 </head>
 <body>
-<header>
-    <img class="burger" src="src/images/burger.png" alt="">
-    <img class="logo" src="src/images/LOGO.png" alt="">
-    <nav>
-        <ul>
-            <li>Home</li>
-            <li>Services</li>
-            <li>About me</li>
-            <li>Contact me</li>
-        </ul>
-    </nav>
-    <button class="hireButton">Hire Me</button>
-</header>
+   <div class="wrapper">
+       <div class="content">
+           <header class="header">
+               <div class="header__inner">
+                   <img src="src/images/burger.png" alt="" class="header__burger">
+                   <h2 class="header__logo">
+                       Logo
+                   </h2>
+                   <nav class="header__nav">
+                       <ul class="header__nav-list">
+                           <li class="nav__item">
+                               <a href="#">Home</a>
+                           </li>
+                           <li class="nav__item">
+                               <a href="#">Services</a>
+                           </li>
+                           <li class="nav__item">
+                               <a href="#">About me</a>
+                           </li>
+                           <li class="nav__item">
+                               <a href="#">Portfolio</a>
+                           </li>
+                           <li class="nav__item">
+                               <a href="#">Contact me</a>
+                           </li>
+                       </ul>
+                   </nav>
+                   <button class="orange_button header_button">Hire me</button>
+               </div>
+           </header>
 
-<main>
-    <div class="container">
-        <div class="about">
-            <h3>Hi i am</h3>
-            <h2>Mahmood Fazile</h2>
-            <h1>UI/UX Designer</h1>
-            <div class="socialMedia">
-                <a href="#">
-                    <img src="src/images/icons/instagram.png" alt="">
-                </a>
-                <a href="#">
-                    <img src="src/images/icons/linked.png" alt="">
-                </a>
-                <a href="#">
-                    <img src="src/images/icons/ball.png" alt="">
-                </a>
-                <a href="#">
-                    <img src="src/images/icons/be.png" alt="">
-                </a>
-            </div>
-            <div class="buttonsContainer">
-                <button class="hireButton">Hire Me</button>
-                <button class="cvButton">Download CV</button>
-            </div>
-            <div class="experience">
-                <div class="cell">
-                    <h3>5+</h3>
-                    <p>Experience</p>
-                </div>
-                <div class="cell centerCell">
-                    <h3>20+</h3>
-                    <p>Project done</p>
-                </div>
-                <div class="cell">
-                    <h3>80+</h3>
-                    <p>Happy Clients</p>
-                </div>
-            </div>
-        </div>
-        <div class="imageContainer">
-            <img src="src/images/manImage.png" alt="">
-        </div>
-    </div>
-    <div class="services">
-        <div class="title">
-            <h3>Services</h3>
-            <p>Lorem ipsum dolor sit amet consectetur.</p>
-        </div>
-        <div class="cards">
-            <div class="card">
-                <img src="src/images/icons/user.png" alt="">
-                <h3>Web Design</h3>
-                <p>Lorem ipsum dolor sit amet Imperdiet.</p>
-            </div>
-            <div class="card">
-                <img src="src/images/icons/user.png" alt="">
-                <h3>Web Design</h3>
-                <p>Lorem ipsum dolor sit amet Imperdiet.</p>
-            </div>
-            <div class="card">
-                <img src="src/images/icons/user.png" alt="">
-                <h3>Web Design</h3>
-                <p>Lorem ipsum dolor sit amet Imperdiet.</p>
-            </div>
-            <div class="card">
-                <img src="src/images/icons/user.png" alt="">
-                <h3>Web Design</h3>
-                <p>Lorem ipsum dolor sit amet Imperdiet.</p>
-            </div>
-            <div class="card">
-                <img src="src/images/icons/user.png" alt="">
-                <h3>Web Design</h3>
-                <p>Lorem ipsum dolor sit amet Imperdiet.</p>
-            </div>
-            <div class="card">
-                <img src="src/images/icons/user.png" alt="">
-                <h3>Web Design</h3>
-                <p>Lorem ipsum dolor sit amet Imperdiet.</p>
-            </div>
-        </div>
-    </div>
-    <div class="aboutMe">
-        <h3>About Me</h3>
-        <p class="subtitle">User Interface and User Experience and Also</p>
-        <img src="src/images/manImage.png" alt="">
-        <p class="description">A software engineer, the modern-day architect of digital realms, navigates the ethereal landscapes of code, sculpting intangible structures that shape our technological world. With fingers poised over keyboards like virtuoso pianists, they compose symphonies of logic, their minds a labyrinth of algorithms and solutions. Their canvas is a screen, a vast expanse where lines of code dance in intricate patterns, weaving the fabric of programs and applications.</p>
-        <button class="downloadCV">
-            <img src="src/images/icons/Download.png" alt="">
-            Download CV
-        </button>
-    </div>
-    <div class="contactForm">
-        <h3>Contact Me</h3>
-        <p>Cultivating Connections: Reach Out and Connect with Me</p>
-        <form action="#">
-            <input type="text" placeholder="Name">
-            <input type="email" placeholder="Email">
-            <input type="number" placeholder="Phone Number">
-            <select name="interest" id="interest-select">
-                <option value="" disabled selected>Select your option</option>
-                <option value="Web Design">Web Design</option>
-                <option value="Web Development">Web Development</option>
-                <option value="Web Design">Web Design</option>
-                <option value="Web Design">Web Design</option>
-                <option value="Web Design">Web Design</option>
-            </select>
-            <input type="text" placeholder="Timeline">
-            <textarea placeholder="Project Details..."></textarea>
-        </form>
-        <button>Send</button>
-    </div>
-</main>
-<footer>
-    <div class="footerContainer">
-        <div class="nav">
-            <h3>Logo</h3>
-            <ul>
-                <li>Home</li>
-                <li>Services</li>
-                <li>About me</li>
-                <li>Contact me</li>
-            </ul>
-        </div>
-        <div class="socialMedia">
-            <a href="#">
-                <img src="src/images/icons/instagram.png" alt="">
-            </a>
-            <a href="#">
-                <img src="src/images/icons/linked.png" alt="">
-            </a>
-            <a href="#">
-                <img src="src/images/icons/ball.png" alt="">
-            </a>
-            <a href="#">
-                <img src="src/images/icons/be.png" alt="">
-            </a>
-        </div>
-        <div class="wrapper">
-            <img src="src/images/icons/mail.png" alt="">
-            <p>Bertashevskyyv@gmail.com</p>
-        </div>
-        <div class="wrapper">
-            <img src="src/images/icons/phone.png" alt="">
-            <p>+93 729 107 005</p>
-        </div>
-    </div>
-</footer>
+           <main>
+               <div class="home">
+                   <div class="home__info element-animation">
+                       <div class="home__info_typewriter">
+                           <h3 class="info_welcome-text">
+                               Hi I am
+                           </h3>
+                           <h2 class="info_name-text">
+                               Mahmood Fazile
+                           </h2>
+                           <h1 class="info_speciality-text typing">
+                               UI/UX designer
+                           </h1>
+                       </div>
+
+                       <div class="home__info_media">
+                           <img src="src/images/icons/instagram.svg" alt="" class="info_media-icon">
+                           <img src="src/images/icons/linked.png" alt="" class="info_media-icon">
+                           <img src="src/images/icons/ball.png" alt="" class="info_media-icon">
+                           <img src="src/images/icons/be.png" alt="" class="info_media-icon">
+                       </div>
+
+                       <div class="home__info_buttons">
+                           <button class="orange_button hire_button">
+                               Hire me
+                           </button>
+                           <button class="gray_button">
+                               Download CV
+                           </button>
+                       </div>
+
+                       <div class="home__info_projects">
+                           <div class="wrapper">
+                               <h3 class="info_projects-title">5+</h3>
+                               <p>Experiences</p>
+                           </div>
+                           <div class="wrapper">
+                               <h3 class="info_projects-title">20+</h3>
+                               <p>Project done</p>
+                           </div>
+                           <div class="wrapper">
+                               <h3 class="info_projects-title">80+</h3>
+                               <p>Happy Clients</p>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="home__img element-animation">
+                       <img src="src/images/manPhotoDesk.png" alt="">
+                   </div>
+               </div>
+
+               <div class="services">
+                   <div class="services__inner element-animation">
+                       <h3 class="main_title">Services</h3>
+                       <p class="main_subtitle">Lorem ipsum dolor sit amet consectetur.</p>
+                       <div class="services_table">
+                           <div class="table-element">
+                               <img src="src/images/icons/user.png" alt="">
+                               <h4 class="element-title">
+                                   UI/UX Designer
+                               </h4>
+                               <p class="element-description">Lorem ipsum dolor sit amet .</p>
+                           </div>
+                           <div class="table-element">
+                               <img src="src/images/icons/user.png" alt="">
+                               <h4 class="element-title">
+                                   UI/UX Designer
+                               </h4>
+                               <p class="element-description">Lorem ipsum dolor sit amet .</p>
+                           </div>
+                           <div class="table-element">
+                               <img src="src/images/icons/user.png" alt="">
+                               <h4 class="element-title">
+                                   UI/UX Designer
+                               </h4>
+                               <p class="element-description">Lorem ipsum dolor sit amet .</p>
+                           </div>
+                           <div class="table-element">
+                               <img src="src/images/icons/user.png" alt="">
+                               <h4 class="element-title">
+                                   UI/UX Designer
+                               </h4>
+                               <p class="element-description">Lorem ipsum dolor sit amet .</p>
+                           </div>
+                           <div class="table-element">
+                               <img src="src/images/icons/user.png" alt="">
+                               <h4 class="element-title">
+                                   UI/UX Designer
+                               </h4>
+                               <p class="element-description">Lorem ipsum dolor sit amet .</p>
+                           </div>
+                           <div class="table-element">
+                               <img src="src/images/icons/user.png" alt="">
+                               <h4 class="element-title">
+                                   UI/UX Designer
+                               </h4>
+                               <p class="element-description">Lorem ipsum dolor sit amet .</p>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <div class="aboutMe element-animation">
+                   <h3 class="main_title">About me</h3>
+                   <p class="main_subtitle">User Interface and User Experience and Also video editing</p>
+                   <div class="aboutMe_container">
+                       <img src="src/images/aboutMe_man.png" alt="" class="aboutMe_image">
+                       <div class="aboutMe_info">
+                           <p class="aboutMe_info-text">A software engineer, the modern-day architect of digital realms, navigates the ethereal landscapes of code, sculpting intangible structures that shape our technological world. With fingers poised over keyboards like virtuoso pianists, they compose symphonies of logic, their minds a labyrinth of algorithms and solutions.Their canvas is a screen, a vast expanse where lines of code dance in intricate patterns, weaving the fabric of programs and applications. Each keystroke is a brushstroke, crafting intricate architectures and breathing life into innovative designs.In this digital atelier, they don the mantle of problem solvers, confronting bugs and glitches like valiant knights in an ever-evolving quest for perfection. Debugging becomes a noble pursuit, unraveling the mysteries hidden within the tangled webs of code. designs.In this digital atelier.</p>
+                            <button class="aboutMe_info-button orange_button">Download CV</button>
+                       </div>
+                   </div>
+               </div>
+               <div class="knowledgeProcess element-animation">
+                    <div class="knowledgeProcess_item">
+                        <img src="src/images/icons/figmaIcon.png" alt="" class="knowledgeProcess_item-image">
+                        <h3 class="knowledgeProcess_item-title">100%</h3>
+                        <p class="knowledgeProcess_item-subtitle">Figma</p>
+                    </div>
+                   <div class="knowledgeProcess_item">
+                       <img src="src/images/icons/adobeIcon.png" alt="" class="knowledgeProcess_item-image">
+                       <h3 class="knowledgeProcess_item-title">100%</h3>
+                       <p class="knowledgeProcess_item-subtitle">Adobe XD</p>
+                   </div>
+                   <div class="knowledgeProcess_item">
+                       <img src="src/images/icons/photoshopIcon.png" alt="" class="knowledgeProcess_item-image">
+                       <h3 class="knowledgeProcess_item-title">85%</h3>
+                       <p class="knowledgeProcess_item-subtitle">Adobe Photoshop</p>
+                   </div>
+                   <div class="knowledgeProcess_item">
+                       <img src="src/images/icons/illustatorIcon.png" alt="" class="knowledgeProcess_item-image">
+                       <h3 class="knowledgeProcess_item-title">60%</h3>
+                       <p class="knowledgeProcess_item-subtitle">Adobe Illustrator</p>
+                   </div>
+                   <div class="knowledgeProcess_item">
+                       <img src="src/images/icons/premierIcon.png" alt="" class="knowledgeProcess_item-image">
+                       <h3 class="knowledgeProcess_item-title">70%</h3>
+                       <p class="knowledgeProcess_item-subtitle">Adobe Premiere</p>
+                   </div>
+               </div>
+               <div class="portfolio">
+                   <h3 class="main_title">Portfolio</h3>
+                   <div class="portfolio_navigation">
+                       <div class="portfolio_navigation_item active">All</div>
+                       <div class="portfolio_navigation_item">Website design</div>
+                       <div class="portfolio_navigation_item">App mobile design</div>
+                       <div class="portfolio_navigation_item">App desktop</div>
+                       <div class="portfolio_navigation_item">Braiding</div>
+                   </div>
+                   <div class="portfolio_project">
+                       <div class="portfolio_project-item">
+                           <div class="portfolio_project-item-image">
+                               <img src="src/images/portfolio.png" alt="" class="portfolio_project-item-image">
+                           </div>
+                           <div class="portfolio_project_info">
+                               <h4 class="portfolio_project_info-title">Name Project</h4>
+                               <p class="portfolio_project_info-subtitle">Categories</p>
+                           </div>
+                       </div>
+                       <div class="portfolio_project-item">
+                           <div class="portfolio_project-item-image">
+                               <img src="src/images/portfolio.png" alt="" class="portfolio_project-item-image">
+                           </div>
+                           <div class="portfolio_project_info">
+                               <h4 class="portfolio_project_info-title">Name Project</h4>
+                               <p class="portfolio_project_info-subtitle">Categories</p>
+                           </div>
+                       </div>
+                       <div class="portfolio_project-item">
+                           <div class="portfolio_project-item-image">
+                               <img src="src/images/portfolio.png" alt="" class="portfolio_project-item-image">
+                           </div>
+                           <div class="portfolio_project_info">
+                               <h4 class="portfolio_project_info-title">Name Project</h4>
+                               <p class="portfolio_project_info-subtitle">Categories</p>
+                           </div>
+                       </div>
+                       <div class="portfolio_project-item">
+                           <div class="portfolio_project-item-image">
+                               <img src="src/images/portfolio.png" alt="" class="portfolio_project-item-image">
+                           </div>
+                           <div class="portfolio_project_info">
+                               <h4 class="portfolio_project_info-title">Name Project</h4>
+                               <p class="portfolio_project_info-subtitle">Categories</p>
+                           </div>
+                       </div>
+                       <div class="portfolio_project-item">
+                           <div class="portfolio_project-item-image">
+                               <img src="src/images/portfolio.png" alt="" class="portfolio_project-item-image">
+                           </div>
+                           <div class="portfolio_project_info">
+                               <h4 class="portfolio_project_info-title">Name Project</h4>
+                               <p class="portfolio_project_info-subtitle">Categories</p>
+                           </div>
+                       </div>
+                       <div class="portfolio_project-item">
+                           <div class="portfolio_project-item-image">
+                               <img src="src/images/portfolio.png" alt="" class="portfolio_project-item-image">
+                           </div>
+                           <div class="portfolio_project_info">
+                               <h4 class="portfolio_project_info-title">Name Project</h4>
+                               <p class="portfolio_project_info-subtitle">Categories</p>
+                           </div>
+                       </div>
+                       <div class="portfolio_project-item">
+                           <div class="portfolio_project-item-image">
+                               <img src="src/images/portfolio.png" alt="" class="portfolio_project-item-image">
+                           </div>
+                           <div class="portfolio_project_info">
+                               <h4 class="portfolio_project_info-title">Name Project</h4>
+                               <p class="portfolio_project_info-subtitle">Categories</p>
+                           </div>
+                       </div>
+                       <div class="portfolio_project-item">
+                           <div class="portfolio_project-item-image">
+                               <img src="src/images/portfolio.png" alt="" class="portfolio_project-item-image">
+                           </div>
+                           <div class="portfolio_project_info">
+                               <h4 class="portfolio_project_info-title">Name Project</h4>
+                               <p class="portfolio_project_info-subtitle">Categories</p>
+                           </div>
+                       </div>
+                       <div class="portfolio_project-item">
+                           <div class="portfolio_project-item-image">
+                               <img src="src/images/portfolio.png" alt="" class="portfolio_project-item-image">
+                           </div>
+                           <div class="portfolio_project_info">
+                               <h4 class="portfolio_project_info-title">Name Project</h4>
+                               <p class="portfolio_project_info-subtitle">Categories</p>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <div class="contactMe">
+                   <h3 class="main_title">Contact me</h3>
+                   <p class="main_subtitle">Cultivating Connections: Reach Out and Connect with Me</p>
+                   <form class="contactMe_form" action="#">
+                       <input class="contactMe_form-input" type="text" placeholder="Name"/>
+                       <input class="contactMe_form-input" type="text" placeholder="Email"/>
+                       <input id="phone" class="contactMe_form-input" type="tel" placeholder="Phone Number"/>
+                       <input class="contactMe_form-input" list="browsers" name="browser" id="browser" placeholder="Service of Interest"/>
+                       <datalist id="browsers">
+                           <option value="Service of Interest">
+                           <option value="Service of Interest">
+                           <option value="Service of Interest">
+                           <option value="Service of Interest">
+                           <option value="Service of Interest">
+                       </datalist>
+                       <input class="contactMe_form-input timeline" type="text" placeholder="Timeline"/>
+                       <textarea class="contactMe_form-input" placeholder="Project Details..."></textarea>
+                   </form>
+                   <div class="contactMe_button">
+                       <button class="gray_button">Send</button>
+                   </div>
+               </div>
+           </main>
+           <footer>
+               <div class="footer_container">
+                   <h3 class="footer_container-title">
+                       Logo
+                   </h3>
+                   <ul class="footer_container-items">
+                       <li class="footer_container-item">
+                           <a href="#">Home</a>
+                       </li>
+                       <li class="footer_container-item">
+                           <a href="#">Services</a>
+                       </li>
+                       <li class="footer_container-item">
+                           <a href="#">About me</a>
+                       </li>
+                       <li class="footer_container-item">
+                           <a href="#">Portfolio</a>
+                       </li>
+                       <li class="footer_container-item">
+                           <a href="#">Contact me</a>
+                       </li>
+                   </ul>
+                   <div class="footer_container-social">
+                       <img src="src/images/icons/instagram.svg" alt="" class="info_media-icon">
+                       <img src="src/images/icons/linked.png" alt="" class="info_media-icon">
+                       <img src="src/images/icons/ball.png" alt="" class="info_media-icon">
+                       <img src="src/images/icons/be.png" alt="" class="info_media-icon">
+                   </div>
+                   <div class="footer_container-contacts">
+                       <div class="footer_container-mail">
+                           <img src="src/images/icons/mail.png" alt="" class="info_media-icon">
+                           <p>Mahmood.fazile7005@gmail.com</p>
+                       </div>
+                       <div class="footer_container-phone">
+                           <img src="src/images/icons/phone.png" alt="" class="info_media-icon">
+                           <p>+93 729 107 005</p>
+                       </div>
+                   </div>
+               </div>
+           </footer>
+       </div>
+   </div>
+<script src="main.js"></script>
 </body>
 </html>
