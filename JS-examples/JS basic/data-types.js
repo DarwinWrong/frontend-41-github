@@ -80,3 +80,15 @@ let users2 = [
 ];
 console.log('users1[0]', users1[2]); // John
 
+// =================================================
+function hello() {}
+console.log(hello.name); // "hello" (вбудована властивість)
+console.log(hello.length); // 0 (кількість параметрів)
+
+function greet() {
+    console.log("Hello!");
+}
+greet.customProperty = "I am an object!";
+console.log(greet.customProperty); // "I am an object!"
+
+
