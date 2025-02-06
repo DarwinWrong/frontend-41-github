@@ -13,4 +13,5 @@ for (let step = 0; step < recipe.length; step++){
             break;
         }
     }
-  
+    console.log(recipe[step]);
+}
