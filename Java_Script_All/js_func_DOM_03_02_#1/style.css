@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+#hero-list {
+    margin: 20px auto;
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #000;
+    background-color: #f4f4f4;
+    text-align: left;
+}
+
+.hero {
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.mask {
+    display: inline-block;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    font-size: 18px;
+}
