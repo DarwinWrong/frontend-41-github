@@ -205,14 +205,15 @@
 // sum3(4, 5);
 // ==============================================
 
-function sumTo(n) {
-    if (n > 6) return 0;  // Умова виходу
 
-    return n + sumTo(n + 1); // ✅ Додаємо `n` до суми наступних чисел
-}
-
-console.log(sumTo(3)); // 3 + 4 + 5 + 6 = 18
-console.log(sumTo(1)); // 1 + 2 + 3 + 4 + 5 + 6 = 21
+// function sumTo(n) {
+//     if (n > 6) return 0;  // Умова виходу
+//
+//     return n + sumTo(n + 1); // ✅ Додаємо `n` до суми наступних чисел
+// }
+//
+// console.log(sumTo(3)); // 3 + 4 + 5 + 6 = 18
+// console.log(sumTo(1)); // 1 + 2 + 3 + 4 + 5 + 6 = 21
 
 // 3 + sumTo(4)
 //   → 4 + sumTo(5)
@@ -236,7 +237,6 @@ console.log(sumTo(1)); // 1 + 2 + 3 + 4 + 5 + 6 = 21
 // |
 // v
 // sumTo(7)  ←  повертає 0
-
 
 function arrayFromAToB(a, b, arr = []) {
     if(a < 0 || b <= 0) return "B should be greater than A";

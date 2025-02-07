@@ -54,45 +54,12 @@ function countdown(n) {
 
 countdown(5);
 
+
+// function unionWords(words = [], text = "", count = 0) {
+//     if (words.length === count) return "finish";
+//     for (count; count < words.length; count++) {
+//         text = words[count]
+//     }
+// }
+
 // ================================================================
-
-
-// ************************** CONTEXT **************************
-// function sayHello(name) {
-//     let greeting = "Hello, " + name; // Локальна змінна
-//     console.log(greeting);
-// }
-//
-// sayHello("Alice");
-// sayHello("Bob");
-//
-// function outer() {
-//     let outerVar = "Я зовнішня змінна";
-//
-//     function inner() {
-//         let innerVar = "Я внутрішня змінна";
-//         console.log(outerVar); // Доступ до змінної з зовнішнього контексту
-//         console.log(innerVar);
-//     }
-//
-//     inner();
-// }
-//
-// outer();
-
-// ************************ THIS **************************
-// const user = {
-//     name: "Alice",
-//     sayHi() {
-//         console.log("Привіт, " + this.name);
-//     }
-// };
-//
-// user.sayHi(); // "Привіт, Alice"
-//
-// const hi = user.sayHi; // Копіюємо функцію
-// hi(); // виклик без обєкта, this стає window, window.name порожній, "Привіт, undefined"
-//
-// window.name = "Global";
-// hi(); // "Привіт, Global"
-// =========================================================
