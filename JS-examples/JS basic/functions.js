@@ -53,7 +53,7 @@ const dogs = ['Bulldog', 'Beagle', 'Labrador'];
 log('argsLength(dogs[])', argsLength(dogs)); // 3
 
 // ==============================
-const myFunction = (a, b) => a + b;
+// const myFunction = (a, b) => a + b;
 
 
 

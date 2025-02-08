@@ -1,0 +1,101 @@
+.featured {
+    padding-left: 105px;
+    &-text {
+        box-sizing: border-box;
+        width: 600px;
+        height: 138px;
+        &-h2 {
+            padding-top: 80px;
+            font-family: var(--second-family);
+            font-weight: 400;
+            font-size: 76px;
+            line-height: 100%;
+            color: #fff;
+        }
+        &-p {
+            padding-top: 5px;
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 150%;
+            color: #c7c7c7;
+        }
+    }
+    &-block {
+        box-sizing: border-box;
+        width: 1224px;
+        height: 600px;
+        display: flex;
+        margin-top: 120px;
+        &-end {
+            margin-bottom: 80px;
+        }
+        &-info {
+            box-sizing: border-box;
+            width: 624px;
+            height: 480px;
+            padding-left: 48px;
+            padding-top: 60px;
+            &-h3 {
+                font-family: var(--font-family);
+                font-weight: 500;
+                font-size: 32px;
+                line-height: 140%;
+                color: #fff;
+            }
+            &-text {
+                font-family: var(--font-family);
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 150%;
+                color: #c7c7c7;
+                padding-top: 16px;
+            }
+            &-pi {
+                padding-top: 32px;
+                padding-bottom: 16px;
+                font-family: var(--font-family);
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 150%;
+                text-transform: uppercase;
+                color: #fff;
+            }
+            &-in {
+                display: flex;
+                justify-content: space-between;
+                padding-top: 16px;
+                padding-bottom: 16px;
+                &-info {
+                    font-family: var(--font-family);
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 160%;
+                    color: #fff;
+                    
+    
+                }
+                &-info2 {
+                    font-family: var(--font-family);
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 160%;
+                    color: #c7c7c7;
+                }
+
+            }
+            
+            &-btn {
+                background-color: #000;
+                margin-top: 48px;
+                border: none;
+            }
+        }
+    }
+}
+
+
+
+
+
+

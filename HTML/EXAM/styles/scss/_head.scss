@@ -3,13 +3,14 @@
     &__rov{
         display: flex;
         width: inherit;
+        
         &--logo {
             padding-left: 60px;
             padding-top: 36px;
         }
         &--nav {
             padding-left: 927px;
-            font-family: "Inter", serif;
+            font-family: var(--third-family);
             font-size: 16px;
             
             
@@ -31,12 +32,13 @@
         }
     }
     &__content {
+        display: flex;
         &--info {
             padding-left: 108px;
             width: 544px;
             &-h2 {
-                margin-top: 194px;
-                font-family: "Bebas Neue", serif;
+                margin-top: 230px;
+                font-family: var(--second-family);
                 font-size: 101px;
                 width: 544px;
                 height: 182px;
@@ -44,9 +46,10 @@
                 line-height: 90%;
             }
             &-p {
-                font-family: "Manrope", serif;
+                font-family: var(--font-family);
                 color: #c7c7c7;
                 font-size: 18px;
+                line-height: 150%;
             }
             &-contact {
                 ul{
@@ -64,6 +67,9 @@
             }
         }
         &--img {
+            padding-left: 187px;
+            padding-top: 67px;
+            padding-bottom: 80px;
         }
     }
 

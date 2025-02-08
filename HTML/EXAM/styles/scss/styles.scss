@@ -1,8 +1,20 @@
 @import "head";
 @import "aboutme";
 @import "featured";
+@import "footer";
 @import "null";
 
 body{
     background: #000;
 }
+
+.on-foot {
+    margin-top: 416px;
+}
+
+:root {
+    --font-family: "Manrope", sans-serif;
+    --second-family: "Bebas Neue", sans-serif;
+    --third-family: "Inter", sans-serif;
+    --font3: "Roboto", sans-serif;
+  }

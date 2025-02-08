@@ -1,0 +1,37 @@
+.aboutme {
+    margin-top: 122px;
+    display: flex;
+    &-h2 {
+        margin-left: 108px;
+        font-family: var(--second-family);
+        font-weight: 400;
+        font-size: 101px;
+        line-height: 90%;
+        color: #fff;
+    }
+    &-abo {
+        margin-left: 213px;
+        &-big {
+            font-family: var(--font-family);
+            font-weight: 500;
+            font-size: 32px;
+            line-height: 140%;
+            color: #fff;
+        }
+        &-text {
+            margin-top: 16px;
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 150%;
+            color: #c7c7c7;
+        }
+        &-btn {
+            margin-top: 53px;
+            background-color: #000;
+            border: none;
+        }
+
+    }
+    
+}
