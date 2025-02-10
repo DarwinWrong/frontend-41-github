@@ -238,15 +238,18 @@
 // v
 // sumTo(7)  ←  повертає 0
 
-function arrayFromAToB(a, b, arr = []) {
-    if(a < 0 || b <= 0) return "B should be greater than A";
-    if (a > b) return arr;
 
-    arr.push(a);
-    return arrayFromAToB(a + 1, b, arr);
-}
+// function arrayFromAToB(a, b, array = []) {
+//     if (a < 0 || b <= 0) return "B should be greater than A";
+//     if (a > b) return array;
 
-console.log(arrayFromAToB(3, 6))
+//     array.push(a);
 
+//     return arrayFromAToB(a + 1, b, array);
+// }
+
+// console.log(arrayFromAToB(3, 6))
+// ===================================================================
+// ===================================================================
 
 

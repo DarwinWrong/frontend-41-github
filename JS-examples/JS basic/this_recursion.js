@@ -32,7 +32,7 @@ console.log(sumTo(1)); // 1 + 2 + 3 + 4 + 5 + 6 = 21
 // sumTo(7)  ←  повертає 0
 
 function arrayFromAToB(a, b, arr = []) {
-    if(a < 0 || b <= 0) return "B should be greater than A";
+    if (a < 0 || b <= 0) return "B should be greater than A";
     if (a > b) return arr;
 
     arr.push(a);
@@ -53,13 +53,4 @@ function countdown(n) {
 }
 
 countdown(5);
-
-
-// function unionWords(words = [], text = "", count = 0) {
-//     if (words.length === count) return "finish";
-//     for (count; count < words.length; count++) {
-//         text = words[count]
-//     }
-// }
-
 // ================================================================

@@ -1,3 +1,11 @@
+function testIfObject() {
+    return 3;
+}
+console.log(testIfObject instanceof Object); // true
+testIfObject.name = "testIfObject";
+console.log(testIfObject.name); // testIfObject
+// ==============================
+
 function greeting(hello = 'Привіт, світ!', name = 'Анонім') {
     console.log(`${hello} Мене звати ${name}`);
 }
@@ -25,7 +33,7 @@ let greet = function (name) {
 greet("Олексій"); // викликає анонімну функцію
 
 // ==============================
-(function() {
+(function () {
     console.log("Ця функція виконується на льоту і більше не буде використовуватись.");
 })();
 
