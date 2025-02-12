@@ -1,0 +1,54 @@
+.banner {
+  &__content {
+    margin-top: 30px;
+    display: flex;
+    gap: 80px;
+    padding: 0 108px 80px;
+
+    &--info {
+      padding-top: 190px;
+      max-width: 544px;
+
+      &-h2 {
+        font-family: var(--second-family);
+        font-size: 101px;
+        letter-spacing: 0;
+        color: #ffffff;
+        line-height: 90%;
+      }
+
+      &-p {
+        font-family: var(--font-family);
+        color: #c7c7c7;
+        font-size: 18px;
+        line-height: 150%;
+      }
+
+      &-contact {
+
+        ul {
+          padding-top: 40px;
+          box-sizing: border-box;
+          display: flex;
+          list-style: none;
+          padding-left: 0;
+        }
+
+        li{
+          padding-right: 16px;
+        }
+
+      }
+    }
+
+    &--img {
+      max-width: 50%;
+      img {
+        min-width: 200px;
+        max-width: 600px;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
