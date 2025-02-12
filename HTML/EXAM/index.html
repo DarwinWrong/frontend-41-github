@@ -3,19 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/scss/styles.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap');
-
-    </style>
-    <title>Document</title>
+    <link rel="stylesheet" href="styles/css/styles.css">
+    <title>Profile page</title>
 </head>
 <body>
     <header class="head">
         <div class="head__rov">
-            <p class="head__rov--logo"><img src="img/robert garcia.png" alt="logo"></p>
+            <p class="head__rov--logo">robert garcia</p>
             <nav class="head__rov--nav">
                 <ul>
                     <li><a href="#Work">Work</a></li>
@@ -24,14 +18,17 @@
                 </ul>
             </nav>
         </div>
-        <div class="head__content">
-            <div class="head__content--info">
-                <h2 class="head__content--info-h2">
+    </header>
+
+    <main>
+        <div class="banner__content">
+            <div class="banner__content--info">
+                <h2 class="banner__content--info-h2">
                     hi, i am <br>
                     robert garcia.</h2>
-                <p class="head__content--info-p">A Sydney based front-end developer passionate about building 
+                <p class="banner__content--info-p">A Sydney based front-end developer passionate about building
                     accessible and user friendly websites.</p>
-                <div class="head__content--info-contact">
+                <div class="banner__content--info-contact">
                     <ul>
                         <li><img src="img/button.png" alt="button"></li>
                         <li><img src="img/in.png" alt="button"></li>
@@ -39,16 +36,13 @@
                     </ul>
                 </div>
             </div>
-            <div class="head__content--img">
-                <img src="img/head.png" alt="head-img">
+            <div class="banner__content--img">
+                <img src="img/head.png" alt="banner-img">
             </div>
         </div>
-        
-    </header>
 
-    <hr>
+        <hr>
 
-    <main>
         <div class="featured" id="Work">
             <div class="featured-text">
                 <h2 class="featured-text-h2">Featured Projects</h2>
@@ -61,12 +55,12 @@
                         <img src="img/main1.png" alt="img" class="featured-block-img-img">
                     </div>
                     <div class="featured-block-info">
-                        <h3 class="featured-block-info-h3">Promotional landing page for our 
+                        <h3 class="featured-block-info-h3">Promotional landing page for our
                             favorite show</h3>
                         <p class="featured-block-info-text">
-                            Teamed up with a designer to breathe life into a promotional webpage 
-                            for our beloved show, Adventure Time. Delivered a fully responsive 
-                            design with dynamic content capabilities, seamlessly integrating a 
+                            Teamed up with a designer to breathe life into a promotional webpage
+                            for our beloved show, Adventure Time. Delivered a fully responsive
+                            design with dynamic content capabilities, seamlessly integrating a
                             newsletter feature to keep fans updated with the latest adventures.</p>
                         <p class="featured-block-info-pi">Project Info</p>
                         <hr>
@@ -97,9 +91,9 @@
                     <div class="featured-block-info">
                         <h3 class="featured-block-info-h3">Blog site for World News</h3>
                         <p class="featured-block-info-text">
-                            Mastered CSS Grid complexities in building an innovative news 
-                            homepage, navigating intricate design decisions for a seamless user 
-                            experience. Leveraged the challenge to enhance skills in  front-end 
+                            Mastered CSS Grid complexities in building an innovative news
+                            homepage, navigating intricate design decisions for a seamless user
+                            experience. Leveraged the challenge to enhance skills in  front-end
                             development.
                         </p>
                         <p class="featured-block-info-pi">Project Info</p>
@@ -117,14 +111,14 @@
                         <div class="featured-block-info-in">
                             <p class="featured-block-info-in-info">Role</p>
                             <p class="featured-block-info-in-info2">Front-end Developer</p>
-                            
+
                         </div>
                         <hr>
-                        
+
                         <button class="featured-block-info-btn">
                             <img src="img/Vector_view.png" alt="">
                         </button>
-                        
+
 
 
                     </div>
@@ -136,8 +130,8 @@
                     <div class="featured-block-info">
                         <h3 class="featured-block-info-h3">E-commerce product page</h3>
                         <p class="featured-block-info-text">
-                            Successfully crafted an engaging product page featuring a dynamic 
-                            lightbox gallery and seamless cart functionality, showcasing 
+                            Successfully crafted an engaging product page featuring a dynamic
+                            lightbox gallery and seamless cart functionality, showcasing
                             proficiency in JavaScript development.
                         </p>
                         <p class="featured-block-info-pi">Project Info</p>
@@ -172,7 +166,7 @@
             <div class="aboutme-abo">
                 <p class="aboutme-abo-big">
                     I am a front-end developer based in Sydney. <br>
-                    Has Mechanical Engineering background. 
+                    Has Mechanical Engineering background.
                 </p>
                 <p class="aboutme-abo-text">
                     I am a front-end developer based in Sydney looking for exciting opportunities. Has <br>
@@ -185,7 +179,7 @@
                     <img src="img/about.png" alt="">
                 </button>
             </div>
-            
+
         </div>
     </main>
 
@@ -210,13 +204,13 @@
             <form class="footer-con-form">
                 <label for="name" class="footer-con-form-name">Name</label><br>
                 <input type="text" id="name" name="name" value="John Doe" class="footer-con-form-in"><br>
-              
+
                 <label for="email" class="footer-con-form-name">Email</label><br>
                 <input type="email" id="email" name="email" class="footer-con-form-in"><br>
-              
+
                 <label for="subject" class="footer-con-form-name">Subject</label><br>
                 <input type="text" id="subject" name="subject" class="footer-con-form-in"><br>
-              
+
                 <label for="message" class="footer-con-form-name">Message</label><br>
                 <textarea id="message" name="message" class="footer-con-form-mes">
                 </textarea>
