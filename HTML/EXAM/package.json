@@ -1,0 +1,11 @@
+{
+    "scripts": {
+      "build-css": "sass styles/scss:styles/css",
+      "watch-css": "sass --watch styles/scss:styles/css",
+      "watch-minify": "sass --watch styles/scss:styles/css --style compressed",
+      "watch": "npm run watch-css && npm run watch-minify"
+    },
+    "dependencies": {
+      "sass": "^1.83.0"
+    }
+  }
