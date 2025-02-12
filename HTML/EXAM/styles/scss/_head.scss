@@ -1,79 +1,38 @@
 .head {
-    width: 100vw;
+    width: 100%;
     &__rov{
         display: flex;
-        width: inherit;
+        justify-content: space-between;
+        align-items: center;
         
         &--logo {
-            padding-left: 60px;
-            padding-top: 36px;
+            padding: 24px 0 24px 60px;
+            font-size: 32px;
+            color: white;
+            font-family: var(--second-family);
+            line-height: 150%;
+            text-transform: uppercase;
+            text-align: center;
         }
         &--nav {
-            padding-left: 927px;
             font-family: var(--third-family);
             font-size: 16px;
-            
-            
+            padding: 36px 60px 36px 0;
+
             ul{
                 display: flex;
-                
+                gap: 32px;
             }
             li{
-                padding-right: 32px;
-                padding-top: 36px;
                 list-style-type: none;
             }
             a{
                 text-decoration: none;
                 color: #c7c7c7;
             }
-            
-            
-        }
-    }
-    &__content {
-        display: flex;
-        &--info {
-            padding-left: 108px;
-            width: 544px;
-            &-h2 {
-                margin-top: 230px;
-                font-family: var(--second-family);
-                font-size: 101px;
-                width: 544px;
-                height: 182px;
-                color: #ffffff;
-                line-height: 90%;
-            }
-            &-p {
-                font-family: var(--font-family);
-                color: #c7c7c7;
-                font-size: 18px;
-                line-height: 150%;
-            }
-            &-contact {
-                ul{
-                    padding-top: 40px;
-                    box-sizing: border-box;
-                    width: 327px;
-                    display: flex;
-                    list-style: none;
-                    padding-left: 0;
-                }
-                li{
-                   padding-right: 16px; 
-                }
-                
-            }
-        }
-        &--img {
-            padding-left: 187px;
-            padding-top: 67px;
-            padding-bottom: 80px;
-        }
-    }
 
-    
+        }
+    }
 }  
 
 
