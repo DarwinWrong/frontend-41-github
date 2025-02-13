@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM BOM</title>
+    <style>
+        .spacer {
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+
+<div class="spacer"></div>
+
+<h1>DOM BOM Example</h1>
+<section class="content">
+  <h2 id="second-header">Document Object Model (DOM)</h2>
+  <p>DOM is a programming interface for HTML and XML documents. It provides a structured representation of the document, allowing JavaScript to access and modify the content.</p>
+</section>
+
+<button type="button" class="btn-change-content">Change content</button>
+
+<button id="btn-scroll" >scroll to</button>
+
+<button id="btnDir" >console.dir()</button>
+<script>
+  console.log(window.navigator)
+  console.log(window.innerWidth)
+  console.log(window.innerHeight)
+
+  let mainHeader = document.querySelector("h1");
+  let content = document.getElementsByClassName("content");
+  let contentHeader = content[0].firstElementChild;
+  let btn = document.getElementsByClassName("btn-change-content");
+  // console.log('btn', btn);
+
+  // console.log('mainHeader', mainHeader);
+  mainHeader.style.fontSize="14px";
+
+  // console.log('content', content)
+
+  // console.log('content first child', contentHeader)
+
+  // content.getElementById("second-header").style.color="blue";
+
+  content[0].style.cssText = "background-color: grey; color: white;";
+
+  function addChildrens(parent, childrens = [], show = false) {
+    show && console.log('parent', parent, typeof parent)
+    if(parent?.[0]) {
+      console.log(parent.length)
+      for (let i = 0; i < childrens.length; i++) {
+        parent[0].appendChild(childrens[i]);
+      }
+    } else {
+      console.log(parent.length)
+      parent.appendChild(childrens[i]);
+    }
+  }
+
+  function addStyles(element, css="", show = false) {
+    show && console.log('element', element, typeof element)
+    if(element?.[0]) {
+      element[0].style.cssText = css;
+      console.log(element.length)
+    } else {
+      element.style.cssText = css;
+      console.log(element.length)
+    }
+  }
+
+  let blueText = document.createElement("span");
+  blueText.textContent = "Blue Text";
+  blueText.style.color = "blue";
+  // content[0].appendChild(blueText);
+
+  let article = document.createElement("div");
+  article.innerHTML="<acticle><h3>Нова стаття</h3></acticle>"
+  // content[0].appendChild(article);
+
+  addChildrens(content, [blueText, article], true);
+  addStyles(blueText, "font-weight: bold; border: 1px solid blue;", true);
+
+  // content[0].setAttribute("id", "content");
+  // content[0].removeAttribute('id')
+  //
+  // btn[0].addEventListener("click", function() {
+  //   addStyles(content, "padding: 10px; text-decoration: underline")
+  // })
+  //
+  // let btnScroll = document.querySelector('#btn-scroll');
+  // console.log('btnScroll', btnScroll)
+  // btnScroll.addEventListener('click', () => {
+  //   console.log('Поточна позиція вертикальної прокрутки:', btnScroll.scrollTop);
+  // });
+
+  // console.dir(element) // show as object
+
+  btnDir.onclick = (e)=>console.dir(e.target)
+</script>
+</body>
+</html>

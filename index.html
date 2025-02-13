@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .progress {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            background-color: grey;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .bg {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            /*position: absolute;*/
+            background-color: white;
+            animation: progress 5s infinite linear;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+       .circle {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            /*background-color: black;*/
+            /*position: absolute;*/
+            /*top: 50%;*/
+            /*left: 50%;*/
+            /*transform: translate(-50%, -50%);*/
+           background: conic-gradient(#ff0000 0deg, transparent 0deg);
+           animation: fillCircle 5s linear infinite;
+       }
+        @keyframes fillCircle {
+            0% {
+                background: conic-gradient(#ff0000 0deg, transparent 0deg);
+            }
+            100% {
+                background: conic-gradient(#ff0000 360deg, transparent 360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="circle"></div>
+
+<!--<div class="progress">-->
+<!--    <div class="bg">-->
+<!--        <div class="circle"></div>-->
+<!--    </div>-->
+<!--</div>-->
+<script src=""></script>
+</body>
+</html>

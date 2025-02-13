@@ -31,6 +31,8 @@ console.log(sumTo(1)); // 1 + 2 + 3 + 4 + 5 + 6 = 21
 // v
 // sumTo(7)  ←  повертає 0
 
+// ========================================================
+// let array = []
 function arrayFromAToB(a, b, arr = []) {
     if (a < 0 || b <= 0) return "B should be greater than A";
     if (a > b) return arr;
@@ -39,9 +41,9 @@ function arrayFromAToB(a, b, arr = []) {
     return arrayFromAToB(a + 1, b, arr);
 }
 
-console.log(arrayFromAToB(3, 0))
+console.log(arrayFromAToB(3, 0));
 
-
+// ========================================================
 function countdown(n) {
     if (n <= 0) {
         console.log("Старт!");
@@ -53,4 +55,3 @@ function countdown(n) {
 }
 
 countdown(5);
-// ================================================================

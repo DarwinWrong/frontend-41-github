@@ -206,49 +206,7 @@
 // ==============================================
 
 
-// function sumTo(n) {
-//     if (n > 6) return 0;  // Умова виходу
-//
-//     return n + sumTo(n + 1); // ✅ Додаємо `n` до суми наступних чисел
-// }
-//
-// console.log(sumTo(3)); // 3 + 4 + 5 + 6 = 18
-// console.log(sumTo(1)); // 1 + 2 + 3 + 4 + 5 + 6 = 21
 
-// 3 + sumTo(4)
-//   → 4 + sumTo(5)
-//     → 5 + sumTo(6)
-//       → 6 + sumTo(7) // sumTo(7) повертає 0
-//         → 6 + 0 = 6
-//       → 5 + 6 = 11
-//     → 4 + 11 = 15
-//   → 3 + 15 = 18
-
-// sumTo(3)  ←  чекає на sumTo(4)
-// |
-// v
-// sumTo(4)  ←  чекає на sumTo(5)
-// |
-// v
-// sumTo(5)  ←  чекає на sumTo(6)
-// |
-// v
-// sumTo(6)  ←  чекає на sumTo(7)
-// |
-// v
-// sumTo(7)  ←  повертає 0
-
-
-// function arrayFromAToB(a, b, array = []) {
-//     if (a < 0 || b <= 0) return "B should be greater than A";
-//     if (a > b) return array;
-
-//     array.push(a);
-
-//     return arrayFromAToB(a + 1, b, array);
-// }
-
-// console.log(arrayFromAToB(3, 6))
 // ===================================================================
 // ===================================================================
 

@@ -15,7 +15,8 @@ console.log("a", a); // output true
 console.log("b", b); // undefined
 console.log("d", d); // output 5
 
-
+// ================================================================
+// ================================================================
 // global scope
 const c = 5;
 
@@ -30,8 +31,8 @@ function myFn() {
 
 myFn()
 
-// ************************** CONTEXT **************************
-
+// ================================================================
+// ================================================================
 function sayHello(name) {
     let greeting = "Hello, " + name;
     console.log(greeting);
@@ -40,6 +41,8 @@ function sayHello(name) {
 sayHello("Alice");
 sayHello("Bob");
 
+// ================================================================
+// ================================================================
 function outer() {
     let outerVar = "Я зовнішня змінна";
 
@@ -53,29 +56,3 @@ function outer() {
 }
 
 outer();
-
-// ************************ THIS **************************
-
-// console.log(this); // В браузері: Window, в Node.js: Global
-
-const user = {
-    name: "Alice",
-    sayHi() {
-        console.log("Привіт, " + this.name);
-    }
-};
-
-user.sayHi();
-
-const hi = user.sayHi;
-hi();
-
-window.name = "Global";
-hi();
-
-// **********************
-const button = document.querySelector("button");
-button.addEventListener("click", function () {
-    console.log(this); // button
-});
-// =========================================================

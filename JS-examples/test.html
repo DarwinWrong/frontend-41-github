@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>Click me</button>
+    <script>
+      //   let a;
+      //   let b;
+      //   let d = 5;
+
+      //   function myFun() {
+      //     let b; // local scope "b"
+      //     a = true; // rewrite global scope "a"
+      //     b = 10; // rewrite local scope "b"
+      //     console.log("b", b); // output 10
+      //   }
+
+      //   myFun();
+
+      //   console.log("a", a); // output true
+      //   console.log("b", b); // undefined
+      //   console.log(d); // output 5
+
+      // global scope
+      // const c = 5;
+      /*      function add() {
+        window.c = 10;
+      }
+      add(); */
+
+      //   function myFn() {
+      //     // window.c = 10;
+      //     // myFn scope
+      //     function innerFn() {
+      //       console.log(c); // innerFn scope 5
+      //     }
+
+      //     innerFn();
+      //   }
+
+      //   myFn();
+
+      /*   const user = {
+        name: "Alice",
+        age: 25,
+      };
+
+      const text = "hello";
+      text = "eveveberb"; // error
+
+      user.name = "Bob";
+      console.log(user.name); // output Bob
+
+      const newUser = user;
+
+      newUser.name = "Eve";
+      console.log(user.name); // output Eve
+      console.log(newUser.name); // output Eve
+
+      function sayHello(name) {
+        let greeting = "Hello, " + name;
+        console.log(greeting);
+      }
+
+      sayHello("Alice");
+      sayHello("Bob"); */
+
+      //   function outer() {
+      //     let outerVar = "Я зовнішня змінна";
+
+      //     function inner() {
+      //       let innerVar = "Я внутрішня змінна";
+      //       console.log(outerVar);
+      //       console.log(innerVar);
+      //     }
+
+      //     inner();
+      //   }
+
+      //   inner(); // error
+      //   outer();
+
+      //   console.log(this);
+
+      // const user = {
+      //   name: "Alice",
+      //   surname: "Doe",
+      //   age: 25,
+      //   sayHi() {
+      //     console.log("Привіт, " + this.name);
+      //   },
+      //   fullName() {
+      //     console.log(this.name + " " + this.surname);
+      //     console.log(`${this.name} ${this.surname}`);
+      //   },
+      // };
+      // user.fullName();
+      //
+      // user.sayHi();
+      //
+      // const hi = user.sayHi;
+      // hi();
+
+      //   window.name = "Global";
+      //   const name = "Petro";
+      //   hi();
+
+      //   console.log("window.name", window.name);
+
+      //   const button = document.querySelector("button");
+      //   button.addEventListener("click", function () {
+      //     console.log(this); // button
+      //     this.style.backgroundColor = "red";
+      //   });
+
+      // const bicycle = {
+      //   owner: "Alice",
+      //   // showOwner: function () {
+      //   //   console.log("Власник велосипеда: " + this.owner);
+      //   // },
+      //   showOwner() {
+      //     console.log("Власник велосипеда: " + this.owner);
+      //   },
+      // };
+      //
+      // bicycle.width;
+      // //   bicycle.showOwner();
+      // console.log("owner", bicycle);
+    </script>
+
+<!--    <button id="openDoorButton">Відкрити двері</button>-->
+
+  <script>
+    const button = document.querySelector("button");
+
+    button.addEventListener("click", function () {
+      console.log(this);
+    });
+
+    document.body.innerHTML += '<button class="btn">Нова кнопка</button>';
+  </script>
+  </body>
+</html>

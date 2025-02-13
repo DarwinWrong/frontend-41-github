@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>this</title>
+  </head>
+  <body>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <script>
+      // console.log(this); // В браузері: Window, в Node.js: Global
+
+      function showThis() {
+        console.log(this.name);
+      }
+
+      function showThisStrict() {
+        const name = "Alice";
+        showThis();
+      }
+
+      showThis(); // В обох випадках в браузері: Window, у строгому режимі: undefined
+    </script>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <script>
+      const user = {
+        name: "Alice",
+        sayHi() {
+          console.log("Привіт, " + this.name);
+        }
+      };
+
+      user.sayHi();
+
+      const hi = user.sayHi;
+      hi();
+
+      window.name = "Global";
+      hi();
+
+      // **********************
+      const button = document.querySelector("button");
+      button.addEventListener("click", function () {
+        console.log(this); // button
+      });
+    </script>
+
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <!-- У подіях браузера this зазвичай вказує на елемент, який викликав подію. -->
+    <button>click</button>
+    <script>
+      const button = document.querySelector("button");
+      button.addEventListener("click", function () {
+        console.log(this); // Сам button
+      });
+
+      const button = document.querySelector("button");
+      document.body.innerHTML += '<button class="btn">Нова кнопка</button>'; // Додаємо нову кнопку
+      button.addEventListener("click", function () {
+        console.log(button); // ❌ Завжди вказує на стару кнопку, нова не працює!
+      });
+
+      document.addEventListener("click", function (event) {
+        if (event.target.tagName === "BUTTON") {
+          console.log(this); // ✅ Вказує на body
+          console.log(event.target); // ✅ Вказує на кнопку, яку натиснули
+        }
+      });
+    </script>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <script>
+      // *** 1 ***
+      const user = {
+        name: "Alice",
+        sayHi() {
+          console.log("Привіт, " + user.name);
+        },
+      };
+      const anotherUser = { name: "Bob" };
+      anotherUser.sayHi = user.sayHi;
+      user.sayHi(); // ✅ "Привіт, Alice"
+      anotherUser.sayHi(); // ❌ "Привіт, Alice" (а не Bob!)
+
+      // *** 2 ***
+      const user = {
+        name: "Alice",
+        sayHi() {
+          console.log("Привіт, " + this.name);
+        },
+      };
+      const anotherUser = { name: "Bob" };
+      anotherUser.sayHi = user.sayHi;
+
+      user.sayHi(); // ✅ "Привіт, Alice"
+      anotherUser.sayHi(); // ✅ "Привіт, Bob" (працює коректно!)
+    </script>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+
+    <script>
+      // Уяви, що є телефон із записаним номером людини (sayHi).
+      // Якщо ти запишеш номер у свій список контактів (const hi = user.sayHi),
+      // телефон не буде знати, звідки цей номер був узятий.
+      // Він просто буде дзвонити за вказаним номером, але без інформації про початкового власника контакту.
+      const user = {
+        name: "Alice",
+        sayHi() {
+          console.log("Привіт, " + this.name);
+        },
+      };
+
+      const hi = user.sayHi; // Скопіювали посилання
+      // hi() викликається сам по собі (без об’єкта перед крапкою).
+      // hi – це просто функція. Вона НЕ знає, що раніше була методом user.
+      // Коли ми викликаємо hi(), функція виконується сама по собі, без об'єкта, тому this тут не буде user
+      // Якщо вона викликається без об'єкта (hi()), this НЕ знає, звідки вона взята (і в залежності від режиму JS може бути undefined або window).
+      hi(); // ❌ "Привіт, undefined"
+
+      const anotherUser = {
+        name: "Bob",
+      };
+      anotherUser.sayHi = user.sayHi; // Копіюємо метод
+      anotherUser.sayHi(); // ✅ "Привіт, Bob"
+
+      // дублювання коду через привязування до обєкта
+      const user = {
+        name: "Alice",
+        sayHi() {
+          console.log("Привіт, " + user.name);
+        },
+      };
+
+      const admin = {
+        name: "Bob",
+        sayHi() {
+          console.log("Привіт, " + admin.name);
+        },
+      };
+
+      const person = {
+        name: "",
+        sayHi() {
+          console.log("Привіт, " + this.name);
+        },
+      };
+
+      const user = { name: "Alice", sayHi: person.sayHi };
+      const admin = { name: "Bob", sayHi: person.sayHi };
+
+      user.sayHi(); // ✅ "Привіт, Alice"
+      admin.sayHi(); // ✅ "Привіт, Bob"
+
+      //   жорстка привязка до обєкта, метод sayHi() буде виводити лише ім'я Alice
+      const user = {
+        name: "Alice",
+        sayHi() {
+          console.log("Привіт, " + user.name); // ❌ Жорстко вказуємо `user`
+        },
+      };
+      const anotherUser = { name: "Bob" };
+      anotherUser.sayHi = user.sayHi; // Копіюємо метод
+      anotherUser.sayHi(); // ❌ "Привіт, Alice" (а мало бути "Привіт, Bob")
+    </script>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+  <script>
+// ======= 1 =======
+      function sayHi(obj) {
+          console.log("Привіт, " + obj.name);
+      }
+
+      const user = { name: "Alice" };
+      const admin = { name: "Bob" };
+
+      sayHi(user); // Привіт, Alice
+      sayHi(admin); // Привіт, Bob
+
+// ======= 2 =======
+      const person = {
+          sayHi() {
+              console.log("Привіт, " + this.name);
+          }
+      };
+
+      // Створюємо нові об'єкти, які наслідують person
+      const user = Object.create(person);
+      user.name = "Alice";
+      const admin = Object.create(person);
+      admin.name = "Bob";
+
+      user.sayHi(); // ✅ "Привіт, Alice"
+      admin.sayHi(); // ✅ "Привіт, Bob"
+  </script>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <script>
+        //   Але коли ми викликаємо actor() всередині castActor(), ми використовуємо звичайну функцію,
+        //   а не метод. Звичайна функція в JavaScript має свій власний контекст this,
+        //   який вказує на глобальний об'єкт (в браузері це window), а не на director
+        const director = {
+            movie: "Зоряні Війни",
+            castActor: function () {
+                function actor() {
+                    console.log(this.movie); // Ось тут ми отримаємо undefined
+                }
+                actor(); // викликається не в контексті об'єкта
+            },
+        };
+        director.castActor(); // Викликаємо метод
+
+        const director = {
+            movie: "Зоряні Війни",
+            castActor: function () {
+                const actor = () => {
+                    console.log(this.movie); // "Зоряні Війни"
+                };
+                actor(); // Тепер працює правильно
+            },
+        };
+        director.castActor(); // Викликаємо метод
+    </script>
+  </body>
+</html>

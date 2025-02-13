@@ -34,4 +34,14 @@ let button = document.getElementById('myButton');
 button.addEventListener('click', function() {
     alert('Кнопка натиснута!');
 });
+
+const list = document.querySelector('.list');
+const firstLi = list.childNodes[0];
+console.log(list);
+console.log(list.childNodes)
+console.log(firstLi)
+console.log(firstLi.nextSibling)
+const secondEl = firstLi.nextSibling.nextSibling;
+console.log(secondEl.previousSibling)
+console.log(secondEl.parentNode)
 // ======================================

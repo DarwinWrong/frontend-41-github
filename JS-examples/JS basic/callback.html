@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Callback function</title>
+  </head>
+  <body>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <!-- 1 Інтерактивність з подіями -->
+    <button id="button-1">1</button>
+    <button id="button-2">2</button>
+    <script>
+      function buttonClickListener(buttonId, callback) {
+        const button = document.getElementById(buttonId);
+        button.addEventListener("click", () => {
+          callback(); // викликаємо передану функцію при кліку
+        });
+      }
+
+      const greetUser = () => alert("Привіт!");
+      const showMessage = () => alert("Повідомлення на екрані!");
+
+      // При кліку на кнопки виконується різний код:
+      buttonClickListener("button1", greetUser); // Привіт!
+      buttonClickListener("button2", showMessage); // Повідомлення на екрані!
+    </script>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <!-- Створення універсальних функцій -->
+    <script>
+      function arrayProcessor(arr, operation) {
+        const result = [];
+        for (let i = 0; i < arr.length; i++) {
+          result.push(operation(arr[i])); // викликається передана функція
+        }
+        return result;
+      }
+
+      // Операції:
+      const double = (num) => num * 2;
+      const square = (num) => num * num;
+      const toUpperCase = (str) => str.toUpperCase();
+
+      // Використовуємо одну функцію:
+      console.log(arrayProcessor([1, 2, 3, 4], double)); // [2, 4, 6, 8]
+
+      // Використовуємо іншу функцію:
+      console.log(arrayProcessor([1, 2, 3, 4], square)); // [1, 4, 9, 16]
+
+      // Використовуємо функцію для рядків:
+      console.log(arrayProcessor(["a", "b", "c"], toUpperCase)); // ['A', 'B', 'C']
+    </script>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <!-- 3 Адаптація поведінки функції без зміни структури -->
+    <script>
+      function notifyUser(message, notifyMethod) {
+        notifyMethod(message); // викликаємо передану функцію для сповіщення
+      }
+
+      // Логіка для сповіщення через email:
+      const sendEmail = (message) => console.log(`Email: ${message}`);
+
+      // Логіка для сповіщення через SMS:
+      const sendSMS = (message) => console.log(`SMS: ${message}`);
+
+      // Тепер можна змінювати спосіб сповіщення, не змінюючи основну функцію:
+      notifyUser("У вас нове повідомлення!", sendEmail); // Email: У вас нове повідомлення!
+      notifyUser("У вас нове повідомлення!", sendSMS); // SMS: У вас нове повідомлення!
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+
+<button type="button" id="show-message" >Click me</button>
+<button type="button" onclick="" id="showMessage" >Click me 2</button>
+
+<ul class="list">
+    <li>1</li>
+    <li>
+        <p>Lorem ipsum dolor sit.</p>
+        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+    </li>
+    <li>3</li>
+</ul>
+
+<script>
+    // use id from window
+    showMessage.onclick = function (){ alert("Clicked")}
+
+   const showBtn = document.getElementById("show-message");
+
+    showBtn.addEventListener("click", function ()  {
+        console.log("Document clicked")
+    })
+
+    showBtn.onresize = function (){ alert("Clicked")}
+
+</script>
+</body>
+</html>
