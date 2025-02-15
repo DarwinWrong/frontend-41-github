@@ -1,6 +1,6 @@
 function multiplyNumbers(num) {
     if (num < 1 || num > 100) {
-        console.log("Це фабрика для реальних чисел! Давай щось нормальне 😏");
+        console.log("Введіть нормальне число");
         return;
     }
     

@@ -3,7 +3,7 @@ let index = 0;
 
 while (index < products.length) {
     let product = products[index];
-    console.log(`Додаємо ${product} у кошик...`);
+    console.log(`Додаємо ${product} у корзину...`);
     
     if (product === "шоколад") {
         console.log("Солодке життя забезпечене!");
@@ -12,4 +12,4 @@ while (index < products.length) {
     index++;
 }
 
-console.log("Всі продукти у кошику! Тепер можна йти на касу.");
+console.log("Всі продукти у корзині.");
