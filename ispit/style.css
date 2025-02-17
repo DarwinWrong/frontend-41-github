@@ -1,0 +1,203 @@
+h1 {
+    margin-left: 280px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+button {
+    padding: 5px 30px;
+    outline: none;
+    border-radius: 25px;
+    border-color: #718EBF;
+    color: #718EBF;
+}
+
+button:hover {
+    border-color: #1814F3;
+    color: #1814F3;
+}
+
+.header {
+    width: 1440px;
+    height: 110px;
+    
+}
+
+.side-bar {
+    width: 211px;
+    height: 538px;
+    float: left;
+    margin-top: 20px
+}
+
+.theme {
+    width: 1110px;
+    height: 120px;
+    margin-left: 280px;
+    margin-top: 20px
+}
+
+.content {
+    width: 1110px;
+    height: 90px;
+    margin-left: 280px;
+    margin-top: 10px
+    
+}
+
+.services {
+    display: inline-block;
+    padding: 20px 30px;
+}
+
+.Services-chanel-text {
+    size: 18px;
+    text-align: center;
+}
+
+.services-side-bar-chanel{
+    display: inline-block;
+    padding: 20px 30px;
+
+}
+
+@media (max-width: 1440px) {
+    h1 {
+        margin-left: 242px;
+        padding-bottom: 20px;
+        padding-top: 20px;
+    }
+    
+    button {
+        padding: 5px 30px;
+        outline: none;
+        border-radius: 25px;
+        border-color: #718EBF;
+        color: #718EBF;
+        float: right;
+    }
+    
+    button:hover {
+        border-color: #1814F3;
+        color: #1814F3;
+    }
+    
+    .header {
+        width: 1023px;
+        height: 85px;
+        
+    }
+    
+    .side-bar {
+        width: 173px;
+        height: 460px;
+        float: left;
+        margin-top: 20px
+    }
+    
+    .theme {
+        width: 743px;
+        height: 90px;
+        margin-left: 242px;
+        margin-top: 20px
+    }
+    
+    .content {
+        width: 743px;
+        height: 69px;
+        margin-left: 242px;
+        margin-top: 10px
+        
+    }
+
+    .nav-container {
+        padding: 10px 20px;
+    }
+    
+    .services {
+        display: inline-block;
+        padding: 5px 10px;
+        
+    }
+
+    .services-side-bar-chanel{
+        display: inline-block;
+        padding: 20px 30px;
+
+    }
+    
+    .Services-chanel-text {
+        size: 18px;
+        text-align: center;
+    }
+
+    .secondary-text-color {
+        color: gray;
+    }
+}
+
+
+@media (max-width: 1023px) {
+    h1 {
+        margin-left: 280px;
+        padding-bottom: 20px;
+        padding-top: 20px;
+    }
+    
+    button {
+        padding: 5px 30px;
+        outline: none;
+        border-radius: 25px;
+        border-color: #718EBF;
+        color: #718EBF;
+    }
+    
+    button:hover {
+        border-color: #1814F3;
+        color: #1814F3;
+    }
+    
+    .header {
+        width: 375px;
+        height: 140px;
+        
+    }
+    
+    .side-bar {
+        display: none;
+    }
+    
+    .theme {
+        width: 720px;
+        height: 85px;
+        margin-top: 20px
+    }
+    
+    .content {
+        width: 325px;
+        height: 69px;
+        margin-top: 10px
+        
+    }
+    
+    .services {
+        display: inline-block;
+        padding: 20px 30px;
+    }
+
+    .services-side-bar-chanel{
+        display: none;
+        display: inline-block;
+        padding: 5px 10px;
+
+    }
+    
+    .Services-chanel-text {
+        size: 18px;
+        text-align: center;
+    }
+
+    .item {
+        display: none;
+    }
+}

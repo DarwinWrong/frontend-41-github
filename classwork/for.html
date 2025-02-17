@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=scr, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       const ProgrammersMeeting = {
+        programmers: [],
+        addProgrammer: function (programmer) {
+          // this.programmers.push(programmer);
+          this.programmers[this.programmers.length] = programmer;
+        },
+        startTask: function (programmerName, callback) {
+          for (const programmer of this.programmers) {
+            if (programmer.name === programmerName) {
+              programmer.performTask(callback);
+            }
+            // console.log("programmer:", programmer);
+          }
+        },
+      };
+ 
+      const frontendDeveloper = {
+        name: "Іван",
+        specialization: "Frontend Developer",
+        taskStatus: "не розпочав задачу",
+        performTask: function (callback) {
+          this.taskStatus = "виконує задачу";
+          callback(
+            `${this.name} - ${this.specialization} - ${this.taskStatus}`
+          );
+        },
+      };
+ 
+      const backendDeveloper = {
+        name: "Марія",
+        specialization: "Backend Developer",
+        taskStatus: "не розпочала задачу",
+        performTask: function (callback) {
+          this.taskStatus = "виконує задачу";
+          callback(
+            // console.log(`${this.name} - ${this.specialization} - ${this.taskStatus}`);
+            `${this.name} - ${this.specialization} - ${this.taskStatus}`
+          );
+        },
+      };
+ 
+      ProgrammersMeeting.addProgrammer(frontendDeveloper);
+      ProgrammersMeeting.addProgrammer(backendDeveloper);
+ 
+      console.log(ProgrammersMeeting.programmers);
+ 
+      //   ProgrammersMeeting.startTask
+ 
+      const meeting = document.getElementById("programmersButtons");
+      const programmers = ProgrammersMeeting.programmers;
+ 
+      for (const key in programmers) {
+        let button = document.createElement("button");
+        let name = programmers[key].name;
+        button.textContent = name;
+ 
+        meeting.appendChild(button);
+ 
+        button.onclick = function () {
+          ProgrammersMeeting.startTask(name, function (status) {
+            console.log(status);
+          });
+        };
+      }
+
+    </script>
+</body>
+</html>
