@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="MeetingBtn"></ul>
+    <div id="text"></div>
+    <script>
+      const ProgrammersMeeting = {
+        programmers: [],
+        addProgrammer(programmer) {
+          this.programmers.push(programmer);
+        },
+        startTask(programmerName, callback) {
+          for (const programmer of this.programmers) {
+            if (programmer.name === programmerName) {
+              programmer.performTask(callback);
+            }
+          }
+        },
+      };
+      const fronEndDevol = {
+        name: "Nik",
+        specialization: "Front-End Developer",
+        taskStatus: "Не розпочала",
+        performTask(callback) {
+          this.taskStatus = "Виконує";
+          callback(
+            `${this.name} - ${this.specialization} - ${this.taskStatus}`
+          );
+        },
+      };
+      const backEndDevol = {
+        name: "Alice",
+        specialization: "Back-End Developer",
+        taskStatus: "Не розпочала",
+        performTask(callback) {
+          this.taskStatus = "Виконує";
+          callback(
+            `${this.name} - ${this.specialization} - ${this.taskStatus}`
+          );
+        },
+      };
+      ProgrammersMeeting.addProgrammer(fronEndDevol);
+      ProgrammersMeeting.addProgrammer(backEndDevol);
+      const meeting = document.getElementById("MeetingBtn");
+      const programmers = ProgrammersMeeting.programmers;
+      for (const people of programmers) {
+        let btn = document.createElement("button");
+        btn.textContent = people.name;
+        btn.onclick = function () {
+          const text = ProgrammersMeeting.startTask(
+            people.name,
+            function (status) {}
+          );
+          console.log(text);
+
+          let p = document.createElement("p");
+          p.textContent = text;
+          const conteiner = document.getElementById("text");
+          conteiner.append(p);
+        };
+        meeting.append(btn);
+      }
+
+      console.log(ProgrammersMeeting.programmers);
+
+      function Programmer(name, spec, taskStatus) {
+        this.name = name;
+        this.spec = spec;
+        this.taskStatus = taskStatus;
+        function performtast() {}
+      }
+      const status = ["Не почав", "Виконує", "Закінчив"];
+    </script>
+  </body>
+</html>

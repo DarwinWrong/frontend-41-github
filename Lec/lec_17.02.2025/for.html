@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   const user = {
+      //     name: "Alice",
+      //     age: 20,
+      //     email: "alice@gmail.com",
+      //   };
+      const fruits = ["apple", "banana", "orange"];
+      //   console.log("user", user);
+      //   console.log("fruits", fruits);
+
+      //   for (let key in user) {
+      //     console.log(key);
+      //     console.log(`${user[key]}`);
+      //   }
+      //   for (let key in fruits) {
+      //     console.log(key);
+      //     console.log(`${fruits[key]}`);
+      //   }
+      const numbers = [];
+      numbers[0] = 1;
+      numbers[2] = 2;
+      numbers[5] = 5;
+      console.log(numbers);
+
+      // for (let i = 0; i < numbers.length; i++) {
+      //   if (!(i in numbers)) {
+      //     numbers[i] = i;
+      //   }
+      // }
+      // console.log(numbers);
+      console.log(typeof numbers[1]);
+      const number = typeof numbers[1];
+      console.log(typeof number);
+
+      for (let i = 0; i < numbers.length; i++) {
+        if (typeof numbers[i] === "undefined") {
+          numbers[i] = i;
+        }
+      }
+      console.log(numbers);
+
+      //   const text = "hello";
+      //   for (const leter of text) {
+      //     console.log(typeof leter);
+      //   }
+      //   for (const fruit of fruits) {
+      //     console.log(fruit);
+      //   }
+    </script>
+  </body>
+</html>

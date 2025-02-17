@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>this, callback</title>
+  </head>
+  <body>
+    <script>
+      //   // window
+      //   function showMessage() {
+      //     console.log(this.message);
+      //   }
+      //   showMessage();
+      //   function showNewMessage() {
+      //     const message = "ALice";
+      //     showMessage();
+      //   }
+
+      //   showNewMessage();
+    </script>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <!-- <button id="btn1">click</button> -->
+    <script>
+      //   const button = document.getElementById("btn1");
+      //   document.body.innerHTML += '<button class="btn">Нова кнопка</button>';
+      //   button.addEventListener("click", function () {
+      //     console.log(button);
+      //   });
+
+      //   document.addEventListener("click", function (event) {
+      //     if (event.target.tagName === "BUTTON") {
+      //       console.log(this); //body
+      //       console.log(event.target);
+      //     }
+      //   });
+    </script>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <script>
+      //   duplication;
+      //   const user = {
+      //     name: "Alice",
+      //     sayHi() {
+      //       console.log("Привіт, " + user.name);
+      //     },
+      //   };
+
+      //   const admin = {
+      //     name: "Bob",
+      //     sayHi() {
+      //       console.log("Привіт, " + admin.name);
+      //     },
+      //   };
+
+      //   const person = {
+      //     name: "",
+      //     sayHi() {
+      //       console.log("Привіт, " + this.name);
+      //     },
+      //   };
+
+      //   const user = { name: "Alice", sayHi: person.sayHi };
+      //   const admin = { name: "Bob", sayHi: person.sayHi };
+      //   user.sayHi();
+      //   admin.sayHi();
+    </script>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <script>
+      //=========== 0
+      //   const user = {
+      //     name: "Alice",
+      //     sayHi() {
+      //       console.log("Привіт, " + this.name);
+      //     },
+      //   };
+      //   const hi = user.sayHi; // copy link
+      //   hi(); // !this
+
+      //   //=========== 1
+      const user = {
+        name: "Alice",
+        sayHi() {
+          console.log("Привіт, " + user.name); //linked
+        },
+      };
+      user.sayHi();
+      const anotherUser = { name: "Bob" };
+      anotherUser.sayHi = user.sayHi;
+      anotherUser.sayHi();
+
+      //   //=============== 2
+      //   const user = {
+      //     name: "Alice",
+      //     sayHi() {
+      //       console.log("Привіт, " + this.name);
+      //     },
+      //   };
+      //   user.sayHi();
+      //   const anotherUser = { name: "Bob" };
+      //   anotherUser.sayHi = user.sayHi;
+      //   anotherUser.sayHi();
+    </script>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+  </body>
+</html>
