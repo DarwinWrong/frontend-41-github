@@ -17,5 +17,6 @@ function listElements(displayParticipants) {
     });
 }
 
+
 const display = sortParticipants(participants); 
 listElements(display);
