@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for in, for off</title>
+</head>
+<body>
+<script>
+    // Хоча for...in працює з масивами, він не призначений для цього і може дати неочікувані результат
+    // for...in Для об'єктів, коли потрібно отримати ключі.
+    const user = {
+        name: "Alice",
+        sayHi: "Hello"
+    }
+
+    const array = ['apple', 'lemon', 'orange'];
+
+    // повертає індекси (ключі)
+    for(const key in user) {
+        console.log(key) // name, sayHi
+        console.log(`${key}: ${user[key]}`)
+    }
+
+    // повертає індекси (ключі)
+    for(const key in array) {
+        console.log(key) // Виведе: 0, 1, 2
+        console.log(`${key}: ${array[key]}`)
+    }
+    // Якщо важлива швидкість – for...in працює повільніше за for...of
+// =======================================================================================
+// =======================================================================================
+    // дірки в масивах
+    const arr = [];
+    arr[0] = "apple";
+    arr[2] = "orange"; // Пропущено arr[1]
+    arr[5] = "banana"; // Пропущено arr[3] і arr[4]
+    // Тут arr[1], arr[3] і arr[4] не існують (тобто це не undefined, а саме "дірки").
+    console.log(arr); // [ 'apple', <1 empty slot>, 'orange', <2 empty slots>, 'banana' ]
+
+    const arr = [ "apple", , "orange", , , "banana" ]; // Тут є пропущені елементи
+
+    // for...in проходить по існуючих ключах, але дірки просто пропускає (не створює ітерацію для них).
+    console.log("for...in:");
+    for (const key in arr) {
+        console.log(`${key}: ${arr[key]}`);
+        // for...in:
+        // 0: apple
+        // 2: orange
+        // 5: banana
+    }
+
+    // for...of ігнорує "дірки" і бере лише існуючі значення:
+    console.log("\nfor...of:");
+    for (const value of arr) {
+        console.log(value);
+        // for...of:
+        // apple
+        // orange
+        // banana
+    }
+
+    // КОЛИ ЦЕ КОРИСНО:
+        // Припустимо, у нас є масив із пропущеними значеннями, і ми хочемо їх заповнити "unknown".
+    const arr = [];
+    arr[0] = "apple";
+    arr[2] = "orange";
+    arr[5] = "banana";
+
+    // Масив до заповнення: [ 'apple', <1 empty slot>, 'orange', <2 empty slots>, 'banana' ]
+    console.log("Масив до заповнення:", arr);
+
+    // Заповнюємо дірки
+    for (let i = 0; i < arr.length; i++) {
+        if (!(i in arr)) { // Перевіряємо, чи індекс відсутній
+            arr[i] = "unknown";
+        }
+    }
+
+    // Масив після заповнення: [ 'apple', 'unknown', 'orange', 'unknown', 'unknown', 'banana' ]
+    console.log("Масив після заповнення:", arr);
+
+
+    // Ми використали i in arr, що працює так само, як for...in – воно бачить, що є пропущені місця.
+    // Якби ми використовували for...of, ми б просто не помітили, що в масиві є відсутні значення.
+</script>
+<!-- ======================================================================================= -->
+<!-- ======================================================================================= -->
+<script>
+    // Використовується для масивів та інших ітерованих структур.
+    // Не підходить для об'єктів, оскільки об'єкти не є ітерованими.
+    // повертає значення
+    for (const value of arr) {
+        console.log(value); // Виведе: apple, orange, banana
+    }
+
+    const message = "Hello";
+    for (let char of message) {
+        console.log(char);
+        // H
+        // e
+        // l
+        // l
+        // o
+    }
+</script>
+
+<!-- ======================================================================================= -->
+<!-- ======================================================================================= -->
+<script>
+    // Так! В масивах for...in може бути небезпечним,
+    // тому що він проходить не лише по числових індексах,
+    // але й по додаткових властивостях, якщо їх хтось випадково додасть.
+    const arr = ["apple", "orange", "banana"];
+    arr.customProperty = "Hello!";
+
+    console.log("for...in:");
+    for (const key in arr) {
+        console.log(key, ":", arr[key]);
+        // for...in:
+        // 0 : apple
+        // 1 : orange
+        // 2 : banana
+        // customProperty : Hello!
+    }
+
+    console.log("\nfor...of:");
+    for (const value of arr) {
+        console.log(value);
+        // for...of:
+        // apple
+        // orange
+        // banana
+    }
+
+</script>
+</body>
+</html>

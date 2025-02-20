@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Зустріч програмістів</title>
+</head>
+<body>
+
+<h1>👨‍💻 Зустріч програмістів 💻</h1>
+<h2>Хто готовий виконати завдання?</h2>
+<div id="programmersButtons"></div>
+<h2>Завдання:</h2>
+<ul id="taskLog"></ul>
+
+<script>
+    // Об'єкт зустрічі програмістів
+    const ProgrammersMeeting = {
+        programmers: [],
+
+        // Метод для додавання програміста
+        addProgrammer: function(programmer) {
+            this.programmers[this.programmers.length] = programmer; // без push()
+        },
+
+        // Метод для початку завдання
+        startTask: function(programmerName, callback) {
+            for (let i = 0; i < this.programmers.length; i++) {
+                if (this.programmers[i].name === programmerName) {
+                    this.programmers[i].performTask(callback);
+                    return;
+                }
+            }
+            console.log("Програміста з таким ім'ям не знайдено! 🚫");
+        }
+    };
+
+    // Створення програмістів
+    const frontEndDev = {
+        name: 'Іван',
+        specialization: 'Frontend Developer',
+        taskStatus: 'не розпочав',
+        performTask: function(callback) {
+            this.taskStatus = 'виконує розмітку сторінки';
+            callback(`${this.name} (${this.specialization}) ${this.taskStatus}... 📑`);
+        }
+    };
+
+    const backEndDev = {
+        name: 'Марія',
+        specialization: 'Backend Developer',
+        taskStatus: 'не розпочав',
+        performTask: function(callback) {
+            this.taskStatus = 'пише серверний код';
+            callback(`${this.name} (${this.specialization}) ${this.taskStatus}... 💻`);
+        }
+    };
+
+    const fullStackDev = {
+        name: 'Олег',
+        specialization: 'Fullstack Developer',
+        taskStatus: 'не розпочав',
+        performTask: function(callback) {
+            this.taskStatus = 'створює базу даних';
+            callback(`${this.name} (${this.specialization}) ${this.taskStatus}... 📊`);
+        }
+    };
+
+    // Додаємо програмістів до зустрічі
+    ProgrammersMeeting.addProgrammer(frontEndDev);
+    ProgrammersMeeting.addProgrammer(backEndDev);
+    ProgrammersMeeting.addProgrammer(fullStackDev);
+
+    // Функція для оновлення логів завдань в DOM
+    function updateTaskLog(taskMessage) {
+        let taskLog = document.getElementById("taskLog");
+        let listItem = document.createElement("li");
+        listItem.textContent = taskMessage;
+        taskLog.appendChild(listItem);
+    }
+
+    // Додавання кнопок для кожного програміста
+    const programmersButtonsContainer = document.getElementById("programmersButtons");
+
+    for (let i = 0; i < ProgrammersMeeting.programmers.length; i++) {
+        let button = document.createElement("button");
+        button.textContent = ProgrammersMeeting.programmers[i].name;
+
+        button.onclick = function() {
+            ProgrammersMeeting.startTask(this.textContent, updateTaskLog);
+        };
+
+        programmersButtonsContainer.appendChild(button);
+    }
+</script>
+</body>
+</html>

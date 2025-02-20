@@ -5,14 +5,20 @@
     <title>this, callback</title>
   </head>
   <body>
+    <ul>
+      <li>item 1</li>
+      <li>item 2</li>
+      <li>item 3</li>
+    </ul>
     <script>
       // window
-      // function showMessage() {
-      //   console.log(this.message);
-      // }
-      // console.log(this);
+      /*       function showMessage() {
+        console.log(this.message);
+      }
+      console.log(this);
+      console.log(this.message);
 
-      // showMessage();
+      showMessage(); */
 
       // function getThis() {
       //   return this;
@@ -115,6 +121,96 @@
       // const anotherUser = { name: "Bob" };
       // anotherUser.sayHi = user.sayHi;
       // anotherUser.sayHi();
+
+      /*    const user = "Bob";
+      const text = ""+ user;
+      const text2 = `text ${user} text` */
+
+      /*    const numb = 123;
+      console.log("numb", numb.length);
+      console.log("numb", numb.toString().length);
+
+      let text = "this is text";
+      console.log("text", text.length);
+      text.length = 10;
+      console.log("text", text.length);
+
+      let array = [1, 2, 3, 4, 5];
+      console.log("array", array.length);
+
+      array.length = 2;
+      console.log("array", array, array.length);
+
+      array.length = 5;
+      console.log("array", array, array.length);
+
+      function callNames(a, b, c) {}
+      console.log("callNames.length", callNames.length);
+
+      function showLetters(a, b, c = "c") {}
+      console.log("showLetters.length", showLetters.length);
+
+      let user = {
+        a: 1,
+        b: 2,
+        c: 3,
+      };
+      console.log("user", user.length);
+      console.log("user keys", Object.keys(user));
+      console.log("user keys", Object.values(user));
+      console.log("user keys", Object.entries(user));
+      console.log("user keys length", Object.keys(user)?.length);
+
+      const lists = document.querySelectorAll("li");
+      console.log("lists", lists.length); */
+
+      /*       function sayHi(obj) {
+        console.log(`Привіт,  ${obj.name}`);
+      }
+
+      const user = { name: "Alice" };
+      const admin = { name: "Bob" };
+
+      sayHi(user);
+      sayHi(admin); */
+
+      /*      const person = {
+        name: "",
+        age: 18,
+        sayHi() {
+          // if we change this to sayHi2() it will not work
+          console.log("Привіт, " + this.name);
+        },
+        sayHiNew() {
+          // if we add new method we should add it to user, admin
+          console.log("Привіт, " + this.name + " new");
+        },
+        showAge() {
+          console.log("Age", this.age);
+        },
+      };
+
+      const user = { name: "Alice", sayHi: person.sayHi };
+      const admin = { name: "Bob", sayHi: person.sayHi };
+
+      user.sayHi();
+      admin.sayHi();
+
+      const user2 = Object.create(person);
+      user2.name = "User2";
+      user2.age = 25;
+      user2.sayHiNew();
+      user2.showAge();
+      console.log("user2", user2); */
+
+      function processData(a, b, callback) {
+        const result = a + b;
+        callback(result);
+      }
+
+      processData(2, 3, function (result) {
+        console.log("result", result);
+      });
     </script>
     <!-- ======================================================================================= -->
     <!-- ======================================================================================= -->

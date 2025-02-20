@@ -6,6 +6,131 @@
     <title>Callback function</title>
   </head>
   <body>
+  <script>
+    // Якщо створити глобальну функцію sayHi() і використовувати її в різних об'єктах,
+    // нам доведеться кожного разу передавати об'єкт у якості аргументу
+    function sayHi(obj) {
+      console.log("Привіт, " + obj.name);
+    }
+
+    const user = { name: "Alice" };
+    const admin = { name: "Bob" };
+
+    sayHi(user); // Привіт, Alice
+    sayHi(admin); // Привіт, Bob
+
+    // Це працює, але є проблеми:
+    // 1) Копіювання методів вручну – неефективно. Якщо у person з'явиться новий метод,
+    // його треба вручну додавати у user і admin.
+    // 2) Методи дублюються у кожному об'єкті. Якщо багато об'єктів наслідують person,
+    // у кожному з них буде копія sayHi, що неекономно.
+    // 3) Якщо метод зміниться, старі копії не оновляться.
+    const person = {
+      name: "",
+      sayHi() {
+        console.log("Привіт, " + this.name);
+      },
+    };
+
+    const user = { name: "Alice", sayHi: person.sayHi };
+    const admin = { name: "Bob", sayHi: person.sayHi };
+
+    user.sayHi(); // ✅ "Привіт, Alice"
+    admin.sayHi(); // ✅ "Привіт, Bob"
+
+
+    // Коли варто використовувати методи в об'єктах?
+    // Коли метод логічно належить об’єкту.
+    // Коли треба уникати зайвих .bind(), .call() чи .apply().
+    // Коли ми хочемо унеможливити дублювання коду через наслідування.
+    // Ми не дублюємо код у кожному об'єкті.
+    // Якщо метод зміниться, потрібно змінити його тільки в одному місці (userActions).
+
+    // Насправді об'єкт-шаблон (person у твоєму прикладі) – це простий варіант прототипного наслідування.
+    // Але зазвичай в реальному коді для цього використовують Object.create() або class:
+    // 1) Object.create(person) створює новий об'єкт, у якого person виступає прототипом.
+    // 2) user і admin не містять власної копії sayHi, вони просто беруть його з person.
+    // 3) Якщо ми змінимо sayHi у person, всі наслідники автоматично отримають оновлений метод.
+
+    const person = {
+      sayHi() {
+        console.log("Привіт, " + this.name);
+      }
+    };
+
+    const user = Object.create(person);
+    user.name = "Alice";
+
+    const admin = Object.create(person);
+    admin.name = "Bob";
+
+    user.sayHi(); // ✅ "Привіт, Alice"
+    admin.sayHi(); // ✅ "Привіт, Bob"
+
+  </script>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <script>
+      // Передача додаткових параметрів у колбек
+      // Якщо колбек приймає аргументи, може виникнути плутанина з кількістю і типом параметрів.
+      // Важливо точно знати, які параметри передаються в колбек і в якому порядку.
+      function processData(a, b, callback) {
+        const result = a + b;
+        callback(result);
+      }
+
+      processData(5, 10, function(result) {
+        console.log(result); // 15
+      });
+    </script>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <script>
+      // Callback Hell
+      // Одним із найкращих способів уникнути Callback Hell є розбивка коду на менші,
+      // самостійні функції, що роблять одне завдання,
+      // і замість вкладених колбеків використовувати лінійні виклики.
+      function fetchDataFromDB(callback) {
+        // Замість setTimeout можна просто уявити, що це реальний запит до бази даних
+        console.log('Fetching data from DB...');
+        callback(null, { data: 'some data' });
+      }
+
+      function processData(data, callback) {
+        console.log('Processing data:', data);
+        callback(null, { processed: 'processed data' });
+      }
+
+      function saveData(data, callback) {
+        console.log('Saving data:', data);
+        callback(null, 'Data saved');
+      }
+
+      function executeTasks() {
+        fetchDataFromDB((err, data) => {
+          if (err) {
+            console.log('Error fetching data');
+            return;
+          }
+          processData(data, (err, processedData) => {
+            if (err) {
+              console.log('Error processing data');
+              return;
+            }
+            saveData(processedData, (err, message) => {
+              if (err) {
+                console.log('Error saving data');
+                return;
+              }
+              console.log(message);
+            });
+          });
+        });
+      }
+
+      executeTasks();
+
+    </script>
     <!-- ======================================================================================= -->
     <!-- ======================================================================================= -->
     <!-- 1 Інтерактивність з подіями -->
@@ -61,10 +186,10 @@
       }
 
       // Логіка для сповіщення через email:
-      const sendEmail = (message) => console.log(`Email: ${message}`);
+      function sendEmail(message) { console.log(`Email: ${message}`); }
 
       // Логіка для сповіщення через SMS:
-      const sendSMS = (message) => console.log(`SMS: ${message}`);
+      function sendSMS(message) { console.log(`SMS: ${message}`); }
 
       // Тепер можна змінювати спосіб сповіщення, не змінюючи основну функцію:
       notifyUser("У вас нове повідомлення!", sendEmail); // Email: У вас нове повідомлення!

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button id="banner" class="banner">Banner</button>
+
+<script>
+  function greet() {
+    console.log("Привіт!");
+  }
+
+  console.log(typeof greet === "function");  // true, бо це функція
+  console.log(typeof greet === "object");    // false, бо це не об'єкт
+  console.log(greet instanceof Function);  // true
+  console.log(greet instanceof Object);    // true
+// ================================================================
+// ================================================================
+ const blueText = document.getElementsByTagName("button")
+ const content = document.getElementsByClassName("button")
+  console.log(blueText instanceof HTMLElement); // true
+  console.log(content instanceof HTMLCollection); // true
+</script>
+
+</body>
+</html>

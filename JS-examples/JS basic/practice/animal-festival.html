@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <title>Фестиваль Чарівних Тварин</title>
+</head>
+<body>
+
+<h1>🎪 Фестиваль Чарівних Тварин 🐾</h1>
+<h2>Кожна тварина має свій трюк!</h2>
+<div id="animalButtons"></div>
+<h2>Трюки:</h2>
+<ul id="trickLog"></ul>
+
+<!--Пояснення коду:-->
+<!--Об'єкт AnimalFestival містить масив animals, в якому зберігаються всі тварини. -->
+<!--Метод addAnimal() додає тварину в цей масив. Метод performShow() знаходить тварину за ім'ям -->
+<!--і виконує її трюк через колбек.-->
+
+<!--Тварини (як об'єкти) мають властивості name, specialty, energy -->
+<!--і метод performTrick(), який зменшує енергію тварини після виконання трюку -->
+<!--та передає результат через колбек у performShow().-->
+
+<!--Взаємодія через DOM:-->
+
+<!--Тварини відображаються як кнопки на екрані.-->
+<!--Коли користувач натискає на кнопку тварини, викликається метод performShow() -->
+<!--і результат з'являється в списку трюків на екрані.-->
+<!--Логіка трюків:-->
+
+<!--Кожен трюк має свій ефект (зменшення енергії).-->
+<!--Кожна тварина має своє унікальне заняття, що додається в список на сторінці.-->
+<script>
+  // Об'єкт фестивалю
+  const AnimalFestival = {
+    animals: [],
+
+    // Метод для додавання тварини (без push)
+    addAnimal: function(animal) {
+      // Додаємо тварину до масиву за допомогою індексації
+      this.animals[this.animals.length] = animal;
+    },
+
+    // Метод для виконання шоу з колбеком
+    performShow: function(animalName, callback) {
+      for (let i = 0; i < this.animals.length; i++) {
+        if (this.animals[i].name === animalName) {
+          this.animals[i].performTrick(callback);
+          return;
+        }
+      }
+      console.log("Такої тварини немає на фестивалі!");
+    }
+  };
+
+  // Створення тварин
+  const dragon = {
+    name: 'Дракон',
+    specialty: 'Показує фокус з вогнем',
+    energy: 100,
+    performTrick: function(callback) {
+      this.energy -= 20;
+      callback(`${this.name} виконує фокус з вогнем! 🔥 Енергія: ${this.energy}`);
+    }
+  };
+
+  const elephant = {
+    name: 'Слон',
+    specialty: 'Танцює на арені',
+    energy: 80,
+    performTrick: function(callback) {
+      this.energy -= 15;
+      callback(`${this.name} танцює на арені! 💃 Енергія: ${this.energy}`);
+    }
+  };
+
+  const tiger = {
+    name: 'Тигр',
+    specialty: 'Стрибає через обруч',
+    energy: 60,
+    performTrick: function(callback) {
+      this.energy -= 25;
+      callback(`${this.name} стрибає через обруч! 🐅 Енергія: ${this.energy}`);
+    }
+  };
+
+  // Додаємо тварин до фестивалю (без push)
+  AnimalFestival.addAnimal(dragon);
+  AnimalFestival.addAnimal(elephant);
+  AnimalFestival.addAnimal(tiger);
+
+  // Функція для оновлення логів трюків в DOM
+  function updateTrickLog(trickMessage) {
+    let trickLog = document.getElementById("trickLog");
+    let listItem = document.createElement("li");
+    listItem.textContent = trickMessage;
+    trickLog.appendChild(listItem);
+  }
+
+  // Додавання кнопок тварин для виконання трюків
+  const animalButtonsContainer = document.getElementById("animalButtons");
+
+  for (let i = 0; i < AnimalFestival.animals.length; i++) {
+    let button = document.createElement("button");
+    button.textContent = AnimalFestival.animals[i].name;
+
+    button.onclick = function() {
+      AnimalFestival.performShow(this.textContent, updateTrickLog);
+    };
+
+    animalButtonsContainer.appendChild(button);
+  }
+
+</script>
+</body>
+</html>
