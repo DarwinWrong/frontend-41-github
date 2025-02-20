@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #maskForm {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+      }
+      #maskForm input {
+        margin: 5px;
+        padding: 5px;
+      }
+      #maskForm button {
+        padding: 5px;
+        margin: 5px;
+      }
+      #container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .mask {
+        width: 200px;
+        height: 200px;
+        margin: 10px;
+        border-radius: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="maskForm">
+      <input type="text" id="name" placeholder="Введіть ім'я" />
+      <input type="color" id="color" placeholder="Введіть колір" />
+      <button id="btn-submit">Зберегти</button>
+    </form>
+    <div id="container"></div>
+    <script src="task2.js"></script>
+  </body>
+</html>
