@@ -1,10 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<pre>
+🚀 Завдання 1: Піцайоло та замовлення 🍕
+Що потрібно зробити?
+1.	Є об'єкт pizzaShop, який містить метод takeOrder().
+2.	Метод takeOrder() приймає назву піци та колбек-функцію.
+3.	Колбек повинен виводити повідомлення про готовність замовлення, використовуючи this.
+Очікуваний результат:
+Піцайоло Марко прийняв замовлення на піцу: Пепероні
+Піца Пепероні готова!
+</pre>
+<script>
+    // Створюємо об'єкт pizzaShop
+    const pizzaShop = {
+        name: "Марко",
+        takeOrder: function(pizzaName, callback) {
+            console.log(`Піцайоло ${this.name} прийняв замовлення на піцу: ${pizzaName}`);
+            callback(pizzaName);
+        },
+        preparePizza: function(pizzaName) {
+            console.log(`Піца ${pizzaName} готова!`);
+        }
+    };
+
+    // Викликаємо метод takeOrder та передаємо колбек
+    pizzaShop.takeOrder("Пепероні", pizzaShop.preparePizza);
+</script>
+<!-- ======================================================================================= -->
+<!-- ======================================================================================= -->
+<script>
+    const pizzaShop = {
+        name: "Марко",
+        takeOrder: function (pizzaName, callback) {
+            console.log(`Піцайоло ${this.name} прийняв замовлення на піцу: ${pizzaName}`);
+            callback(pizzaName);
+        },
+        preparePizza: (pizzaName) => {
+            console.log(`Піца ${pizzaName} готова!`);
+        }
+    };
+
+    // Викликаємо метод takeOrder, передаючи стрілкову функцію
+    pizzaShop.takeOrder("Пепероні", pizzaShop.preparePizza);
+</script>
+<!-- ======================================================================================= -->
+<!-- ======================================================================================= -->
+<script>
+    const pizzaShop = {
+        name: "Марко",
+        takeOrder: function (pizzaName, callback) {
+            console.log(`Піцайоло ${this.name} прийняв замовлення на піцу: ${pizzaName}`);
+            callback.call(this, pizzaName);
+        },
+        preparePizza: function (pizzaName) {
+            console.log(`Піца ${pizzaName} готова!`);
+        }
+    };
+
+    // Викликаємо метод takeOrder, передаючи функцію зі збереженим this
+    pizzaShop.takeOrder("Пепероні", pizzaShop.preparePizza);
+
+</script>
+<script></script>
 </body>
 </html>

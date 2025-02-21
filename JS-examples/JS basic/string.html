@@ -5,223 +5,7 @@
     <title>Object</title>
 </head>
 <body>
-<!-- ======================================================================================= -->
-<!--Cтвореня об'єкту з властивостями-->
-<!-- ======================================================================================= -->
-<script>
-    // створюємо порожній об'єкт
-    var student = new Object();
-    // Додаємо властивість в об'єкт використовуючи звичайний синтаксис масивів
-    student["name"] = "Vasya";
-    student['my age is'] = 23;
-    // замість подвійних лапок можна використовувати одинарні
-    console.log('student["name"]',student["name"]);
-    console.log('student["my age is"]',student["my age is"]);
 
-
-    // створюємо порожній об'єкт
-    var firm = {};
-    // створюємо властивість всередині об'єкта
-    firm.name = "Star Inc";
-    console.log('firm.name',firm.name);
-
-
-    // створили об'єкт студента
-    var women = {
-        name: "Daria",
-        lastName: "Kislicina",
-        age: 23,
-        address: {
-            street: "Tiraspolskaya 5",
-            city: "Odessa",
-            country: "Ukraine"
-        }
-    };
-    console.log('women.address.street',women.address.street);
-</script>
-<!-- ======================================================================================= -->
-<!--Видалення властивостей-->
-<!-- ======================================================================================= -->
-<script>
-    var user = {
-        name: "John Doe",
-        age: 30,
-        city: "New York"
-    }
-    delete user.name;
-    delete user["age"];
-    console.log(user.name, user.age) // undefined
-</script>
-<!-- ======================================================================================= -->
-<!--Перевірка існування властивості всередині об'єкта-->
-<!-- ======================================================================================= -->
-<script>
-    // створили об'єкт
-    var obj={};
-    obj.name = "Oleg";
-    // перевіряємо чи є властивість Age
-    // in поверне false, тому що цієї властивості немає
-    if("name" in obj){
-        console.log("Exists");
-    } else {
-        console.log("Not exists");
-    }
-</script>
-
-<!-- ======================================================================================= -->
-<!--Об'єкт Array-->
-<!-- ======================================================================================= -->
-<script>
-    // створили порожній масив
-    var arr = new Array();
-    // заповнили його значеннями
-    arr[0] = 34;
-    arr[1] = 99;
-    arr[2] = 100;
-
-
-    // створили масив із довжиною 3
-    var arr = new Array(3);
-    // заповнили його значеннями
-    arr[0] = 111;
-    arr[1] = 56;
-    // тепер довжина масиву збільшилася на 2 елементи
-    arr[3] = 333;
-    arr[4] = 999;
-
-
-    // створили масив і відразу записали в нього три значення
-    var arr = new Array("music", "guitar", "apple");
-    // додали ще один елемент
-    arr[3] = "lemon";
-
-
-    // двовимірний масив
-    var arr = [
-        [1, 3, 5],
-        [2, 7, 8]
-    ];
-    console.log('arr4',arr);
-    console.log('arr4[0][0]',arr[0][0]);
-</script>
-<script>
-    // Властивість length — це не кількість елементів масиву, а значення останнього індексу +1
-    console.log('arr.length',arr.length);
-</script>
-<script>
-    var arr = [11, 74, 35];
-    arr.length = 5; // збільшили масив на 2 елемента
-    console.log('arr5',arr);
-    arr.length = 2; // зменьшили масив до 2 елементів
-    console.log('arr5',arr);
-</script>
-<script>
-    // Звичайні змінні JavaScript передаються всередину функції за значенням.
-    // Це означає, що при передаванні змінної у функцію створюється копія змінної.
-    // Якщо ви зміните значення цієї копії, це ніяк не вплине на оригінальну змінну.
-    // Масиви передаються в функцію за посиланням. Так відбувається, тому що масив — це об'єкт, ' +
-    // 'а об'єкти завжди передаються всередину функцій за посиланням.
-    // Звідси можна дійти висновку, що зміни значень елементів масиву зберігаються під час виходу з функції.
-    // функція записує нове значення за вказаним індексом
-    function SetValue(arr, index, newValue){
-        arr[index] = newValue;
-    }
-    var arr = [88, 11, 3];
-    console.log(arr); // 88, 11, 3
-    SetValue(arr, 0, 999);
-    console.log(arr); // 999, 11, 3
-</script>
-<!--метод пошуку value. indexOf-->
-<script>
-    // name_of_array.indexOf(what_to_search[, fromIndex]) -> "fromIndex" default start from "0"
-    // Якщо шукане значення знайдено метод повертає індекс знайденого значення,
-    // якщо значення немає в масиві, то метод поверне -1.
-    var arr = [1, 45, -3, 78, 1];
-    var index = arr.indexOf(45);  // шукаємо значення 45
-    console.log('index',index); // на екрані індекс 1
-    index = arr.indexOf(99); // шукаємо значення, якого немає в масиві
-    console.log('index',index); // на екрані -1, тому що 99 немає в масиві
-
-
-    var arr = [12, 45, -3, 82, 12, 78, 12];
-    // лічильник для підрахунку кількості разів входження
-    // шуканого значення масив
-    // будемо шукати значення 12
-    var counter = 0;
-    var index = arr.indexOf(12);
-    while (index!= -1) {
-        counter++;
-        // рухаємося далі масивом за рахунок зміни індексу
-        // на значення індекс+1
-        index = arr.indexOf(12, index+1);
-    }
-    console.log('counter', counter); // на екрані 3
-</script>
-<!--метод пошуку value. lastIndexOf-->
-<script>
-    // Метод lastIndexOf працює за схожим індексом,
-    // але шукає справа наліво. Це означає, що пошук починається з останнього доступного індексу
-    var arr = [12, 45, -3, 82, 12, 78, 12];
-    var index = arr.lastIndexOf(12); // шукаємо 12 справа наліво
-    console.log(index); // на екрані 6
-    index = arr.lastIndexOf(77);
-    console.log(index); // на екрані -1
-</script>
-
-<!--При роботі з даними дуже важливо мати механізм сортуванн, метод sort()-->
-<script>
-    var arr = [10, 1, 3, 33, 6];
-    arr.sort();
-    console.log(arr); // 1 10 3 33 6
-
-
-    // сортування даних за зростанням ascending, за спаданням descending
-    // якщо name_of_var1 > name_of_var2, значення,
-    //     що повертається з функції пози­тивне (зазвичай використовують 1);
-    // якщо name_of_var1 < name_of_var2, значення,
-    //     що повертається з функції нега­тивне (зазвичай використовують -1);
-    // якщо рівні, зазвичай повертають 0.
-    function compareFunc(a, b){
-        if(a>b)
-            return 1;
-        else if(b>a)
-            return -1;
-        else
-            return 0;
-    }
-    var arr = [10, 1, 3, 33, 6];
-    // 1 3 6 10 33
-    arr.sort(compareFunc);
-    console.log(arr)
-
-    function compareFunc(a,b){
-        if(a>b)
-            return -1;
-        else if(b>a)
-            return 1;
-        else
-            return 0;
-    }
-    var arr = [10, 1, 3, 33, 6];
-    // 33 10 6 3 1
-    arr.sort(compareFunc);
-    console.log(arr)
-
-    function compareFunc(a, b, ascending = true){
-        let result = 0;
-        let sortAscending = (a>b) && ascending;
-        // let sortDescending = (a>b) && !ascending;
-
-        sortAscending ? result = 1 : result = -1;
-        return result;
-    }
-    var arr = [10, 1, 3, 33, 6];
-    
-    arr.sort(compareFunc);  // 1 3 6 10 33
-    console.log('arr', arr);
-    arr.sort(compareFunc); // 1 3 6 10 33
-    console.log('arr', arr);
-</script>
 <!--є рядок і нам потрібно його конвертувати в масив, розбивши на елементи масиву на основі якогось роздільника-->
 <script>
     var str = "apple, onion, strawberry";
@@ -233,16 +17,12 @@
 <!--Масив має зворотний метод join. Він використовується для конвертування масиву в рядок-->
 <script>
     var arr = ["bmw", "audi", "opel"];
-    // створюємо рядок
-    // як розділовий символ між елементами
-    // масиву вказуємо *
+    // створюємо рядок, як розділовий символ між елементами масиву вказуємо *
     var str = arr.join("*");
-    // bmw*audi*opel
-    console.log(str);
+    console.log(str); // bmw*audi*opel
     // якщо не вказати роздільник, то буде використано ,
     var str2 = arr.join();
-    // bmw, audi, opel
-    console.log(str2);
+    console.log(str2); // bmw, audi, opel
 </script>
 
 <!--Внутрішнім форматом зберігання рядків у JavaScript є Unicode. І при цьому абслютно неважливо, -->
@@ -288,9 +68,9 @@
 
     var str = "earth and sun";
     var index = str.indexOf("sun"); // значення індексу дорівнює 10
-    alert(index);
+    console.log(index);
     index = str.indexOf("moon"); // значення індексу дорівнює -1 тому що moon немає в рядку
-    alert(index);
+    console.log(index);
 
 
     var str = "test it is test sun test no";
@@ -301,25 +81,50 @@
         counter++;
         index = str.indexOf(wordTForFind, index+1);
     }
-    alert(counter); // 3
+    console.log(counter); // 3
 
 
     // Методи substr, substring використовуються для отримання рядка substring(start, [end])
     // end - необов'язковий параметр, який можна опустити
     // Якщо end не вказано, то повертаємо підрядок до кінця рядка
+    // не підтримує негативні індекси
     var str = "Some value";
     var newStr = str.substring(2);
-    alert(newStr); // me value
+    console.log(newStr); // me value
     newStr = str.substring(1,3);
-    alert(newStr); // om
+    console.log(newStr); // om
 
-    // повертає підрядок почи­наючи зі start, при цьому можна вказати довжину підрядка
-    // у другому параметрі. Якщо ж довжина не вказана, повертається підрядок до кінця оригінального рядка.
-    // length - необов'язковий параметр, який можна опустити
-    var newStr = str.substr(2);
-    alert(newStr); // me value
-    newStr = str.substr(1,3);
-    alert(newStr); // ome
+    // slice(start, end) – найкращий вибір, бо підтримує негативні індекси.
+    var str = "Hello, world!";
+    var newStr = str.slice(2); // Від другого індексу до кінця
+    console.log(newStr); // "llo, world!"
+
+
+    // Якщо потрібно отримати певну довжину
+    // починаємо з символу під індексом 2, беремо до індексу 7, не включаючи його.
+
+    // Особливості slice():
+    // Якщо end не вказано, бере всі символи до кінця рядка.
+    // Підтримує негативні індекси: slice(-5, -1) означає "візьми 5 символів від кінця, не включаючи останній".
+    let newStr2 = str.slice(2, 2 + 5); // Аналог str.substr(2, 5),
+    console.log(newStr2); // "llo, "
+
+    // Особливості substring():
+    // Не підтримує негативні індекси (їх автоматично перетворює на 0).
+    let newStr3 = str.substring(2, 7); // Аналогічно str.slice(2, 7)
+    console.log(newStr3); // "llo, "
+    // Якщо start більше за end, вони просто міняються місцями:
+    // У slice() такого не відбувається – якщо start > end, результат буде порожнім.
+    console.log("Hello".substring(3, 1)); // "el" (фактично substring(1, 3))
+
+</script>
+
+<script>
+    console.log(str.toUpperCase()); // "ПРИВІТ"
+    console.log(str.toLowerCase()); // "привіт"
+    console.log(str.indexOf("и")); // 2
+    console.log(str.includes("віт")); // true
+    console.log(str.slice(1, 4)); // "рив"
 </script>
 </body>
 </html>
