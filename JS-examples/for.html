@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>for...of, for...in</title>
+  </head>
+  <body>
+    <script>
+      // for...in
+      const user = {
+        name: "Alice",
+        age: 25,
+        email: "alice@gmail.com",
+      };
+
+      const fruits = ["apple", "banana", "orange"];
+
+      console.log("user:", user);
+      console.log("fruits:", fruits);
+
+      for (const key in user) {
+        // console.log("key:", key); // ключі
+        // console.log(`key: ${key}, value: ${user[key]}`);
+        // на кожній ітерації key змінюватись на ключ обєкта
+        // user[key] = user.name => user.age => user.email;
+      }
+
+      // for working with an array is not good practice
+      for (const key in fruits) {
+        /* console.log("key:", key);
+        console.log(`key: ${key}, value: ${fruits[key]}`); */
+      }
+
+      const numbers = [];
+      numbers[0] = "one";
+      numbers[2] = "two";
+      numbers[5] = "five";
+
+      console.log("numbers:", numbers);
+
+      for (let i = 0; i < numbers.length; i++) {
+        if (!(i in numbers)) {
+          numbers[i] = "unknown";
+        }
+      }
+
+      console.log("numbers:", numbers);
+
+      // for...of
+      for (const fruit of fruits) {
+        console.log("fruit:", fruit);
+      }
+
+      const str = "Hello";
+      for (const letter of str) {
+        console.log("letter:", letter);
+      }
+    </script>
+  </body>
+</html>
