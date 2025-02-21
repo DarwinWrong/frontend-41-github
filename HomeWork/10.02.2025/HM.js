@@ -1,35 +1,31 @@
 //!Завдання 1
-const pizaShop = {
-  name: "Василь",
-  takeOrder(pizzaName, callback) {
-    console.log(
-      `Піцейоло ${pizaShop.name} прийняв замовлення на піцу: ${pizzaName}`
-    );
-    callback.call(this, pizzaName);
-  },
-};
-pizaShop.takeOrder("Папероні", (pizzaName) => {
-  console.log(`Піца ${pizzaName} готова`);
-});
-//! Завдання 2
-
-// const theater = {
-//   names: ["Іван", "Марія", "Олег"],
-//   roles: ["Ромео", "Джульєтта", "Бенволіо"],
-//   assignRole(nameActor, callback) {
-//     if (this.names.includes(nameActor)) {
-//       callback.call(this, nameActor);
-//     } else {
-//       console.log("Такий актор не працює в нашому театрі");
-//     }
+// const pizaShop = {
+//   name: "Василь",
+//   takeOrder(pizzaName, callback) {
+//     console.log(
+//       `Піцейоло ${pizaShop.name} прийняв замовлення на піцу: ${pizzaName}`
+//     );
+//     callback.call(this, pizzaName);
 //   },
 // };
-// theater.names.forEach((actor) => {
-//   theater.assignRole(actor, function (name) {
-//     const i = this.names.indexOf(name);
-//     console.log(`Актор ${actor} виконує роль - ${this.roles[i]}`);
-//   });
+// pizaShop.takeOrder("Папероні", (pizzaName) => {
+//   console.log(`Піца ${pizzaName} готова`);
 // });
+//! Завдання 2
+
+const theater = {
+  names: ["Іван", "Марія", "Олег"],
+  roles: ["Ромео", "Джульєтта", "Бенволіо"],
+  assignRole(nameActor, callback) {
+    callback.call(this, nameActor);
+  },
+};
+theater.names.forEach((actor) => {
+  theater.assignRole(actor, function (name) {
+    const i = this.names.indexOf(name);
+    console.log(`Актор ${actor} виконує роль - ${this.roles[i]}`);
+  });
+});
 //! Завдання 3
 // const taxiDriver = {
 //   driverName: "Василь",
