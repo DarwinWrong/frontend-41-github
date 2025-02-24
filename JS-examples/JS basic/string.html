@@ -1,130 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Object</title>
-</head>
-<body>
+  </head>
+  <body>
+    <!--Внутрішнім форматом зберігання рядків у JavaScript є Unicode. І при цьому абслютно неважливо, -->
+    <!--яке у вас кодування вашої сторінки. Ви можете включати спеціальні символи у свій рядок-->
 
-<!--є рядок і нам потрібно його конвертувати в масив, розбивши на елементи масиву на основі якогось роздільника-->
-<script>
-    var str = "apple, onion, strawberry";
-    // розбиваємо на підставі,
-    // у масиві буде три елементи: apple, onion, strawberry
-    var arr = str.split(',');
-    console.log(arr[0]); // apple на екрані
-</script>
-<!--Масив має зворотний метод join. Він використовується для конвертування масиву в рядок-->
-<script>
-    var arr = ["bmw", "audi", "opel"];
-    // створюємо рядок, як розділовий символ між елементами масиву вказуємо *
-    var str = arr.join("*");
-    console.log(str); // bmw*audi*opel
-    // якщо не вказати роздільник, то буде використано ,
-    var str2 = arr.join();
-    console.log(str2); // bmw, audi, opel
-</script>
+    <script>
+      // КОДУВАННЯ РЯДКІВ
+      // \t - табуляція
+      var str = "Sun\t is going \\down";
+      console.log(str); // Sun is going \down\
+      // для вставки лапок у рядок треба використовувати \"
+      var str2 = 'Yes "" ';
+      console.log(str2); // на екрані Yes ""
+    </script>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <script>
+      // ДОСТУП ДО ЕЛЕМЕНТА
+      var str = "trees and fruits";
+      console.log(str[0]); // на екрані t
+      console.log(str[4]); // на екрані s
+    </script>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <script>
+      // Не можна змінити символ за індексом, або довжину length, але можна змінити весь рядок через присвоєння
+      var str = "Hello";
+      console.log(str.length); // 5
+      str[0] = "h"; // не працює
+      str = "hello"; // працює
+      console.log(str); // hello
+    </script>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <script>
+      // КОНКАТЕНАЦІЯ
+      var first = "boat",
+        second = "river";
+      var result = first + " and " + second;
+      console.log(result); // boat and river
+      var result = `${first} and ${second}`;
+      console.log(result); // boat and river
+    </script>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <script>
+      // 5. indexOf(str) – Повертає індекс першого входження підрядка str.
+      //   Метод шукає перше входження підрядка в рядок.
+      var str = "earth and sun";
+      var index = str.indexOf("sun"); // значення індексу дорівнює 10
+      console.log(index);
+      index = str.indexOf("moon"); // значення індексу дорівнює -1 тому що moon немає в рядку
+      console.log(index);
 
-<!--Внутрішнім форматом зберігання рядків у JavaScript є Unicode. І при цьому абслютно неважливо, -->
-<!--яке у вас кодування вашої сторінки. Ви можете включати спеціальні символи у свій рядок-->
-<!--Не можна змінити символ за індексом, або довжину length, але можна змінити весь рядок через присвоєння-->
-<script>
-// КОДУВАННЯ РЯДКІВ
-    // \t - табуляція
-    var str = "Sun\t is going \\down";
-    console.log(str); // Sun is going \down\
-    // для вставки лапок у рядок треба використовувати \"
-    var str2 = "Yes \"\" ";
-    console.log(str2); // на екрані Yes ""
-
-// ДОСТУП ДО ЕЛЕМЕНТА
-    var str="trees and fruits";
-    console.log(str[0]); // на екрані t
-    console.log(str[4]); // на екрані s
-
-// КОНКАТЕНАЦІЯ
-    var first = "boat", second = "river";
-    var result = first + " and " + second;
-    console.log(result); // boat and river
-    var result = `${first} and ${second}`;
-    console.log(result); // boat and river
-</script>
-
-<!--Властивості та методи String-->
-<script>
-    var str = "gold";
-    console.log(str.length); // 4
-
-    // при зверненні до неінуючого індексу charAt повертає порожній рядок, а [ ] значення undefined
-    console.log(str.charAt(0)); // g
-    console.log(str.charAt(15)); // порожній рядок
-    console.log(str[15]);// undefined
-
-
-    var lowerStr = str.toLowerCase();
-    var upperStr = str.toUpperCase();
-    console.log('lowerStr', lowerStr, 'upperStr', upperStr)
-
-
-    var str = "earth and sun";
-    var index = str.indexOf("sun"); // значення індексу дорівнює 10
-    console.log(index);
-    index = str.indexOf("moon"); // значення індексу дорівнює -1 тому що moon немає в рядку
-    console.log(index);
-
-
-    var str = "test it is test sun test no";
-    var counter = 0;
-    var wordTForFind = "test";
-    var index = str.indexOf(wordTForFind);
-    while (index != -1) {
+      var str = "test it is test sun test no";
+      var counter = 0;
+      var wordTForFind = "test";
+      var index = str.indexOf(wordTForFind);
+      while (index != -1) {
         counter++;
-        index = str.indexOf(wordTForFind, index+1);
-    }
-    console.log(counter); // 3
+        index = str.indexOf(wordTForFind, index + 1);
+      }
+      console.log(counter); // 3
+    </script>
+    <pre>
+        Завдання: Знайди індекс першого входження підрядка "Script" у рядку "JavaScript is awesome!".
 
+        Розв'язок:
 
-    // Методи substr, substring використовуються для отримання рядка substring(start, [end])
-    // end - необов'язковий параметр, який можна опустити
-    // Якщо end не вказано, то повертаємо підрядок до кінця рядка
-    // не підтримує негативні індекси
-    var str = "Some value";
-    var newStr = str.substring(2);
-    console.log(newStr); // me value
-    newStr = str.substring(1,3);
-    console.log(newStr); // om
+        let sentence = "JavaScript is awesome!";
+        let index = sentence.indexOf("Script");
+        console.log(index);  // 4
+    </pre>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <script>
+      // 6. lastIndexOf(str) – Повертає індекс останнього входження підрядка str.
+      //   Метод шукає останнє входження підрядка в рядок.
+      var str = "Hello, world!";
+      console.log(str.lastIndexOf("o")); // 8
+    </script>
+    <pre>
+        Завдання: Знайди індекс останнього входження слова "is" у рядку "JavaScript is great, and is fun!".
 
-    // slice(start, end) – найкращий вибір, бо підтримує негативні індекси.
-    var str = "Hello, world!";
-    var newStr = str.slice(2); // Від другого індексу до кінця
-    console.log(newStr); // "llo, world!"
+        Розв'язок:
 
+        let sentence = "JavaScript is great, and is fun!";
+        let lastIndex = sentence.lastIndexOf("is");
+        console.log(lastIndex);  // 26
+    </pre>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <script>
+      //   1. charAt(index) – Повертає символ за заданим індексом.
+      //   Метод повертає символ за індексом, де індекси починаються з 0.
+      // Якщо індекс виходить за межі рядка, повертається порожній рядок.
+      var str = "Hello";
+      console.log(str.charAt(1)); // "e"
 
-    // Якщо потрібно отримати певну довжину
-    // починаємо з символу під індексом 2, беремо до індексу 7, не включаючи його.
+      // при зверненні до неінуючого індексу charAt повертає порожній рядок, а [ ] значення undefined
+      console.log(str.charAt(0)); // H
+      console.log(str.charAt(15)); // порожній рядок
+      console.log(str[15]); // undefined
+    </script>
+    <pre>
+        Завдання: У тебе є слово "JavaScript". За допомогою методу charAt() знайди і виведи перший і останній символ цього слова.
 
-    // Особливості slice():
-    // Якщо end не вказано, бере всі символи до кінця рядка.
-    // Підтримує негативні індекси: slice(-5, -1) означає "візьми 5 символів від кінця, не включаючи останній".
-    let newStr2 = str.slice(2, 2 + 5); // Аналог str.substr(2, 5),
-    console.log(newStr2); // "llo, "
+        Розв'язок:
 
-    // Особливості substring():
-    // Не підтримує негативні індекси (їх автоматично перетворює на 0).
-    let newStr3 = str.substring(2, 7); // Аналогічно str.slice(2, 7)
-    console.log(newStr3); // "llo, "
-    // Якщо start більше за end, вони просто міняються місцями:
-    // У slice() такого не відбувається – якщо start > end, результат буде порожнім.
-    console.log("Hello".substring(3, 1)); // "el" (фактично substring(1, 3))
+        let word = "JavaScript";
+        let firstChar = word.charAt(0);
+        let lastChar = word.charAt(word.length - 1);
+        console.log("Перший символ:", firstChar);  // "J"
+        console.log("Останній символ:", lastChar);  // "t"
+    </pre>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <script>
+      //   2. slice(start, end) – Вирізає підрядок з рядка,
+      // починаючи з індексу start і до індексу end (не включаючи end).
+      // Якщо end не вказано, бере всі символи до кінця рядка
+      var str = "Hello, world!";
+      console.log(str.slice(0, 5)); // "Hello"
 
-</script>
+      var newStr2 = str.slice(2, 2 + 5); // починаємо з 2, беремо до індексу 7, не включаючи його.
+      console.log(newStr2); // "llo, "
 
-<script>
-    console.log(str.toUpperCase()); // "ПРИВІТ"
-    console.log(str.toLowerCase()); // "привіт"
-    console.log(str.indexOf("и")); // 2
-    console.log(str.includes("віт")); // true
-    console.log(str.slice(1, 4)); // "рив"
-</script>
-</body>
+      // Підтримує негативні індекси:
+      str.slice(-5, -1); // означає "візьми 5 символів від кінця, не включаючи останній".
+    </script>
+    <pre>
+        Завдання: Виріж з рядка "Hello, JavaScript!" тільки слово "JavaScript" за допомогою методу slice().
+
+        Розв'язок:
+
+        let str = "Hello, JavaScript!";
+        let sliced = str.slice(7, 18);
+        console.log(sliced);  // "JavaScript"
+    </pre>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <script>
+      //   3. substring(start, end) – Вирізає підрядок з рядка,
+      // починаючи з індексу start і до індексу end (не включаючи end).
+      // Якщо end не вказано, вирізає до кінця рядка.
+      var str = "Hello, world!";
+      console.log(str.substring(0, 5)); // "Hello"
+
+      // Не підтримує негативні індекси (їх автоматично перетворює на 0).
+      var newStr3 = str.substring(2, 7); // Аналогічно str.slice(2, 7)
+      console.log(newStr3); // "llo, "
+      // Якщо start більше за end, вони просто міняються місцями:
+      // У slice() такого не відбувається – якщо start > end, результат буде порожнім.
+      console.log("Hello".substring(3, 1)); // "el" (фактично substring(1, 3))
+    </script>
+    <pre>
+        Завдання: Використай substring(), щоб вивести підрядок "Java" з рядка "Hello, JavaScript!".
+
+        Розв'язок:
+
+        let str = "Hello, JavaScript!";
+        let substring = str.substring(7, 11);
+        console.log(substring);  // "Java"
+    </pre>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <script>
+      // 7. includes(str) – Перевіряє, чи містить рядок підрядок str.
+      //   Метод повертає true, якщо рядок містить підрядок, інакше – false.
+      var str = "Hello, world!";
+      console.log(str.includes("world")); // true
+      console.log(str.includes("JavaScript")); // false
+    </script>
+    <pre>
+        Завдання: Перевір, чи містить рядок "JavaScript is fun" підрядок "is".
+
+        Розв'язок:
+
+        let sentence = "JavaScript is fun";
+        let contains = sentence.includes("is");
+        console.log(contains);  // true
+    </pre>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <script>
+      // 8. startsWith(str) – Перевіряє, чи починається рядок з підрядка str.
+      //   Метод повертає true, якщо рядок починається з підрядка, інакше – false.
+      var str = "Hello, world!";
+      console.log(str.startsWith("Hello")); // true
+      console.log(str.startsWith("world")); // false
+    </script>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <script>
+      // 9. endsWith(str) – Перевіряє, чи закінчується рядок підрядком str.
+      //   Метод повертає true, якщо рядок закінчується підрядком, інакше – false.
+      var str = "Hello, world!";
+      console.log(str.endsWith("world!")); // true
+      console.log(str.endsWith("Hello")); // false
+    </script>
+    <pre>
+        Завдання: Перевір, чи закінчується рядок "JavaScript is awesome!" на "awesome!".
+
+        Розв'язок:
+
+        let sentence = "JavaScript is awesome!";
+        let ends = sentence.endsWith("awesome!");
+        console.log(ends);  // true
+    </pre>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <script>
+      // 11. toLowerCase() – Перетворює рядок в нижній регістр.
+      var str = "Hello, world!";
+      console.log(str.toLowerCase()); // "hello, world!"
+    </script>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <script>
+      // 12. toUpperCase() – Перетворює рядок в верхній регістр.
+      var str = "Hello, world!";
+      console.log(str.toUpperCase()); // "HELLO, WORLD!"
+    </script>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <script>
+      // 13. trim() – Видаляє пробіли з початку і кінця рядка.
+      var str = "  Hello, world!  ";
+      console.log(str.trim()); // "Hello, world!"
+    </script>
+    <pre>
+        Завдання: Видали зайві пробіли з рядка " JavaScript is great! ".
+
+        Розв'язок:
+
+        let str = "   JavaScript is great!   ";
+        let trimmed = str.trim();
+        console.log(trimmed);  // "JavaScript is great!"
+    </pre>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <script>
+      // 13. replace(str, newStr) – Замінює підрядок str на newStr.
+      //   Метод замінює перше входження підрядка str на newStr.
+      //   Для глобальної заміни можна використовувати регулярні вирази.
+      var str = "Hello, world!";
+      console.log(str.replace("world", "JavaScript")); // "Hello, JavaScript!"
+    </script>
+    <pre>
+        Завдання: Замінити перше входження "great" на "amazing" у рядку "JavaScript is great!".
+
+        Розв'язок:
+
+        let sentence = "JavaScript is great!";
+        let replaced = sentence.replace("great", "amazing");
+        console.log(replaced);  // "JavaScript is amazing!"
+    </pre>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <script>
+      // 14. split(separator) – Розбиває рядок на масив підрядків.
+      //   Метод розбиває рядок на масив підрядків за роздільником separator.
+      var str = "apple, banana, cherry";
+      console.log(str.split(", ")); // ["apple", "banana", "cherry"]
+      console.log(arr[0]); // apple на екрані
+    </script>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <script>
+      // Rонвертування масиву в рядок за вказаним роздільником
+      var arr = ["bmw", "audi", "opel"];
+
+      var str = arr.join("*"); // створюємо рядок, як розділовий символ між елементами масиву вказуємо *
+      console.log(str); // bmw*audi*opel
+
+      var str2 = arr.join(); // якщо не вказати роздільник, то буде використано ,
+      console.log(str2); // bmw, audi, opel
+    </script>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <script>
+      // 10. repeat(count) – Повторює рядок count разів.
+      //   Метод повертає новий рядок, який складається з count копій вихідного рядка.
+      var str = "Hello";
+      console.log(str.repeat(3)); // "HelloHelloHello"
+    </script>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+  </body>
 </html>

@@ -1,81 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Object</title>
-</head>
-<body>
-<!-- ======================================================================================= -->
-<!--Cтвореня об'єкту з властивостями-->
-<!-- ======================================================================================= -->
-<script>
-    // створюємо порожній об'єкт
-    var student = new Object();
-    // Додаємо властивість в об'єкт використовуючи звичайний синтаксис масивів
-    student["name"] = "Vasya";
-    student['my age is'] = 23;
-    // замість подвійних лапок можна використовувати одинарні
-    console.log('student["name"]',student["name"]);
-    console.log('student["my age is"]',student["my age is"]);
+  </head>
+  <body>
+    <!-- ======================================================================================= -->
+    <!--Cтвореня об'єкту з властивостями-->
+    <!-- ======================================================================================= -->
+    <script>
+      // створюємо порожній об'єкт
+      var student = new Object();
+      // Додаємо властивість в об'єкт використовуючи звичайний синтаксис масивів
+      student["name"] = "Vasya";
+      student["my age is"] = 23;
+      // замість подвійних лапок можна використовувати одинарні
+      console.log('student["name"]', student["name"]);
+      console.log('student["my age is"]', student["my age is"]);
 
+      // створюємо порожній об'єкт
+      var firm = {};
+      // створюємо властивість всередині об'єкта
+      firm.name = "Star Inc";
+      console.log("firm.name", firm.name);
 
-    // створюємо порожній об'єкт
-    var firm = {};
-    // створюємо властивість всередині об'єкта
-    firm.name = "Star Inc";
-    console.log('firm.name',firm.name);
-
-
-    // створили об'єкт студента
-    var women = {
+      // створили об'єкт студента
+      var women = {
         name: "Daria",
         lastName: "Kislicina",
         age: 23,
         address: {
-            street: "Tiraspolskaya 5",
-            city: "Odessa",
-            country: "Ukraine"
-        }
-    };
-    console.log('women.address.street',women.address.street);
-</script>
+          street: "Tiraspolskaya 5",
+          city: "Odessa",
+          country: "Ukraine",
+        },
+      };
+      console.log("women.address.street", women.address.street);
+    </script>
 
-<script>
-    let obj1 = { name: "Іван", age: 30 };
-    let obj2 = obj1; // obj2 посилається на той самий об'єкт
+    <script>
+      var obj1 = { name: "Іван", age: 30 };
+      var obj2 = obj1; // obj2 посилається на той самий об'єкт
 
-    obj2.age = 25; // Міняємо значення в obj2
-    console.log(obj1.age); // 25
-    console.log(obj2.age); // 25
-    // Те саме працює і з об'єктами – обидві змінні (obj1 і obj2) вказують на один і той самий об'єкт у пам'яті.
-</script>
-<!-- ======================================================================================= -->
-<!--Видалення властивостей-->
-<!-- ======================================================================================= -->
-<script>
-    var user = {
+      obj2.age = 25; // Міняємо значення в obj2
+      console.log(obj1.age); // 25
+      console.log(obj2.age); // 25
+      // Те саме працює і з об'єктами – обидві змінні (obj1 і obj2) вказують на один і той самий об'єкт у пам'яті.
+    </script>
+    <!-- ======================================================================================= -->
+    <!--Видалення властивостей-->
+    <!-- ======================================================================================= -->
+    <script>
+      var user = {
         name: "John Doe",
         age: 30,
-        city: "New York"
-    }
-    delete user.name;
-    delete user["age"];
-    console.log(user.name, user.age) // undefined
-</script>
-<!-- ======================================================================================= -->
-<!--Перевірка існування властивості всередині об'єкта-->
-<!-- ======================================================================================= -->
-<script>
-    // створили об'єкт
-    var obj={};
-    obj.name = "Oleg";
-    // перевіряємо чи є властивість Age
-    // in поверне false, тому що цієї властивості немає
-    if("name" in obj){
+        city: "New York",
+      };
+      delete user.name;
+      delete user["age"];
+      console.log(user.name, user.age); // undefined
+    </script>
+    <!-- ======================================================================================= -->
+    <!--Перевірка існування властивості всередині об'єкта-->
+    <!-- ======================================================================================= -->
+    <script>
+      // створили об'єкт
+      var obj = {};
+      obj.name = "Oleg";
+      // перевіряємо чи є властивість Age
+      // in поверне false, тому що цієї властивості немає
+      if ("name" in obj) {
         console.log("Exists");
-    } else {
+      } else {
         console.log("Not exists");
-    }
-</script>
-</body>
+      }
+    </script>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <script>
+      // 1. Object.keys(obj) – повертає масив ключів.
+      // Метод створює масив, що містить лише ключі (властивості) об'єкта.
+      var obj = { a: 1, b: 2, c: 3 };
+      console.log(Object.keys(obj)); // ["a", "b", "c"]
+    </script>
+    <pre>
+      Умова: У вас є об'єкт, що описує улюблений фільм. 
+      За допомогою методу Object.keys() вам потрібно вивести всі ключі цього об'єкта.
+
+
+      const favoriteMovie = {
+        title: "Inception",
+        director: "Christopher Nolan",
+        year: 2010,
+        genre: "Sci-Fi"
+      };
+
+      const keys = Object.keys(favoriteMovie);
+      console.log(keys); // Очікуємо: ["title", "director", "year", "genre"]
+    </pre>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <script>
+      // 2. Object.values(obj) – повертає масив значень.
+      // Метод створює масив, що містить лише значення властивостей об'єкта.
+      var obj = { a: 1, b: 2, c: 3 };
+      console.log(Object.values(obj)); // [1, 2, 3]
+    </script>
+    <pre>
+      Умова: Використовуйте Object.values(), щоб отримати всі значення з об'єкта про ваш улюблений фільм.
+
+
+      const favoriteMovie = {
+        title: "Inception",
+        director: "Christopher Nolan",
+        year: 2010,
+        genre: "Sci-Fi"
+      };
+
+      const values = Object.values(favoriteMovie);
+      console.log(values); // Очікуємо: ["Inception", "Christopher Nolan", 2010, "Sci-Fi"
+    </pre>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <script>
+      // 3. Object.entries(obj) – повертає масив пар ключ/значення.
+      // Метод створює масив, що містить масиви з двома елементами – ключем і значенням властивостей об'єкта.
+      var obj = { a: 1, b: 2, c: 3 };
+      console.log(Object.entries(obj)); // [["a", 1], ["b", 2], ["c", 3]]
+    </script>
+    <pre>
+      Умова: Використовуйте Object.entries(), щоб отримати всі пари [ключ, значення] 
+      і підрахувати кількість властивостей об'єкта.
+
+      const favoriteMovie = {
+        title: "Inception",
+        director: "Christopher Nolan",
+        year: 2010,
+        genre: "Sci-Fi"
+      };
+
+      const entries = Object.entries(favoriteMovie);
+      console.log(entries.length); // Очікуємо: 4
+    </pre>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <script>
+      // 4. Object.fromEntries(arr) – створює об'єкт з масиву пар ключ/значення.
+      var arr = [
+        ["a", 1],
+        ["b", 2],
+        ["c", 3],
+      ];
+      var obj = Object.fromEntries(arr);
+      console.log(obj); // { a: 1, b: 2, c: 3 }
+    </script>
+    <pre>
+      Умова: Ми маємо масив пар [ключ, значення], використовуючи Object.fromEntries(), створіть об'єкт.
+
+      const movieArray = [
+        ["title", "Inception"],
+        ["director", "Christopher Nolan"],
+        ["year", 2010],
+        ["genre", "Sci-Fi"]
+      ];
+
+      const movieObject = Object.fromEntries(movieArray);
+      console.log(movieObject);
+      // Очікуємо:
+      // {
+      //   title: "Inception",
+      //   director: "Christopher Nolan",
+      //   year: 2010,
+      //   genre: "Sci-Fi"
+      // }
+    </pre>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <script>
+      // 5. Object.assign(dest, [src1, src2, src3...]) – копіює властивості всередину одного або більше об'єктів.
+      // Якщо властивості збігаються, то останнє джерело перекриває попереднє.
+      var obj1 = { a: 1, b: 2 };
+      var obj2 = { b: 3, c: 4 };
+      var obj3 = { c: 5, d: 6 };
+      // obj1 є цільовим об'єктом, до якого будуть скопійовані властивості з obj2 і obj3.
+      var obj = Object.assign(obj1, obj2, obj3);
+      console.log(obj); // { a: 1, b: 3, c: 5, d: 6 }
+
+      var obj1 = { a: 1, b: 2 };
+      var obj2 = { c: 3, d: 4 };
+
+      // {} — це порожній об'єкт, який буде використаний як цільовий об'єкт,
+      // в який будуть скопійовані властивості з інших об'єктів.
+      // Це потрібно, щоб не змінювати самі об'єкти obj1 і obj2, а створити новий об'єкт,
+      // який міститиме їхні властивості.
+      var target = Object.assign({}, obj1, obj2);
+      console.log(target); // { a: 1, b: 2, c: 3, d: 4 }
+
+      // Якщо цільовий об'єкт вже існує, то властивості будуть скопійовані в нього,
+      // і оригінальний об'єкт буде змінений.
+      // Якщо цільовий об'єкт не переданий, то новий об'єкт буде створений,
+      // і оригінальний об'єкт не зміниться.
+      var person = {
+        name: "Alice",
+        age: 25,
+      };
+      // Копіюємо властивості в той самий об'єкт
+      Object.assign(person, { age: 26, city: "New York" });
+      console.log(person);
+      // Очікуємо:
+      // {
+      //   name: "Alice",
+      //   age: 26,
+      //   city: "New York"
+      // }
+    </script>
+    <pre>
+      Умова: У вас є два об'єкти. Використовуйте Object.assign(), щоб з'єднати їх в один об'єкт.
+
+      const movieDetails = {
+        title: "Inception",
+        director: "Christopher Nolan"
+      };
+
+      const movieYear = {
+        year: 2010,
+        genre: "Sci-Fi"
+      };
+
+      const fullMovie = Object.assign({}, movieDetails, movieYear);
+      console.log(fullMovie);
+      // Очікуємо:
+      // {
+      //   title: "Inception",
+      //   director: "Christopher Nolan",
+      //   year: 2010,
+      //   genre: "Sci-Fi"
+      // }
+    </pre>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <script>
+      // 6. Object.hasOwn(obj, key) – Перевіряє, чи є у об'єкта властивість key
+      var obj = { a: 1, b: 2 };
+      console.log(Object.hasOwn(obj, "a")); // true
+      console.log(Object.hasOwn(obj, "c")); // false
+    </script>
+    <pre>
+      Використайте метод Object.hasOwn(), щоб перевірити, чи є у вашому об'єкті властивість year.
+
+
+      const favoriteMovie = {
+        title: "Inception",
+        director: "Christopher Nolan",
+        year: 2010,
+        genre: "Sci-Fi"
+      };
+
+      const hasYear = Object.hasOwn(favoriteMovie, "year");
+      console.log(hasYear); // Очікуємо: true
+    </pre>
+  </body>
 </html>

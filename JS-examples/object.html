@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objects</title>
+  </head>
+  <body>
+    <script>
+      var student = new Object();
+      student.name = "John";
+      student["this is age"] = 25;
+      student.surname = "Ivanov";
+
+      console.log("student:", student);
+
+      var plant = {};
+      plant.name = "Roshen";
+      console.log("plant:", plant);
+
+      var car = {
+        model: "Tesla",
+        year: 2020,
+        color: "red",
+        price: 50000,
+      };
+
+      console.log("object == object", {} == {});
+      var sportCar = Object.create(car);
+      sportCar.maxSpeed = 300;
+
+      var sportCar2 = Object.create({});
+      var sportCar3 = Object.create(null);
+
+      console.log("Object.create:", sportCar2, sportCar3);
+
+      console.log("car:", car);
+      console.log("sportCar:", sportCar, sportCar.year);
+    </script>
+
+    <script>
+      var user = {
+        name: "Will",
+        age: 25,
+        isAdmin: false,
+        isVehicle: true,
+        isPlanet: true,
+      };
+
+      var admin = user;
+      console.log(admin.name);
+
+      admin.name = "Alice";
+
+      console.log("user.name", user.name);
+      console.log("admin.name", admin.name);
+
+      delete user.isVehicle;
+      delete user["isPlanet"];
+      console.log("user:", user);
+
+      if ("name" in user) {
+        console.log("user has name");
+      } else {
+        console.log("user has no name");
+      }
+    </script>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <script>
+      // ACCORDION
+      document.querySelectorAll(".accordion-button").forEach((button) => {
+        button.addEventListener("click", () => {
+          const content = button.nextElementSibling;
+          content.style.display =
+            content.style.display === "block" ? "none" : "block";
+        });
+      });
+    </script>
+  </body>
+</html>

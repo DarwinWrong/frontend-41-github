@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Methods</title>
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+      }
+      .accordion-content {
+        display: none;
+        padding: 10px;
+        background: #f9f9f9;
+      }
+      .accordion-button {
+        cursor: pointer;
+        background: none;
+        border: none;
+        color: blue;
+        text-decoration: underline;
+        padding: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>Методи, які працюють виключно з об'єктами (Object)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Метод</th>
+          <th>Опис</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>Object.keys(obj)</code></td>
+          <td>
+            Повертає масив з ключами об'єкта.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const obj = { a: 1, b: 2, c: 3 };
+  console.log(Object.keys(obj)); // ["a", "b", "c"]</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>Object.values(obj)</code></td>
+          <td>
+            Повертає масив значень об'єкта.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const obj = { a: 1, b: 2, c: 3 };
+  console.log(Object.values(obj)); // [1, 2, 3]</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>Object.entries(obj)</code></td>
+          <td>
+            Повертає масив пар [ключ, значення].
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const obj = { a: 1, b: 2 };
+  console.log(Object.entries(obj)); // [["a", 1], ["b", 2]]</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>Object.fromEntries(arr)</code></td>
+          <td>
+            Створює об'єкт із масиву пар [ключ, значення].
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const entries = [["a", 1], ["b", 2]];
+  console.log(Object.fromEntries(entries)); // { a: 1, b: 2 }</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>Object.assign(target, ...sources)</code></td>
+          <td>
+            Копіює властивості з одного або кількох об'єктів у target.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const target = { a: 1 };
+  const source = { b: 2 };
+  Object.assign(target, source);
+  console.log(target); // { a: 1, b: 2 }</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>Object.freeze(obj)</code></td>
+          <td>
+            Заморожує об'єкт (не можна змінювати значення).
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const obj = { a: 1 };
+  Object.freeze(obj);
+  obj.a = 2; // Не зміниться
+  console.log(obj.a); // 1</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>Object.seal(obj)</code></td>
+          <td>
+            Запобігає додаванню/видаленню властивостей (але змінювати існуючі
+            можна).
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const obj = { a: 1 };
+  Object.seal(obj);
+  obj.a = 2; // Дозволено
+  obj.b = 3; // Не додасться
+  console.log(obj); // { a: 2 }</code></pre>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <h2>Методи, які працюють виключно з масивами (Array)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Метод</th>
+          <th>Опис</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>push(el)</code></td>
+          <td>
+            Додає елемент у кінець масиву.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const arr = [1, 2, 3];
+      arr.push(4);
+      console.log(arr); // [1, 2, 3, 4]</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>pop()</code></td>
+          <td>
+            Видаляє останній елемент масиву.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const arr = [1, 2, 3];
+      arr.pop();
+      console.log(arr); // [1, 2]</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>shift()</code></td>
+          <td>
+            Видаляє перший елемент масиву.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const arr = [1, 2, 3];
+      arr.shift();
+      console.log(arr); // [2, 3]</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>unshift(el)</code></td>
+          <td>
+            Додає елемент на початок масиву.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const arr = [1, 2, 3];
+      arr.unshift(0);
+      console.log(arr); // [0, 1, 2, 3]</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>splice(start, deleteCount, ...items)</code></td>
+          <td>
+            Видаляє або додає елементи у масив.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const arr = [1, 2, 3, 4];
+      arr.splice(1, 2, 5, 6);
+      console.log(arr); // [1, 5, 6, 4]</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>slice(start, end)</code></td>
+          <td>
+            Повертає новий масив із частиною елементів.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const arr = [1, 2, 3, 4];
+      const newArr = arr.slice(1, 3);
+      console.log(newArr); // [2, 3]</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>concat(arr)</code></td>
+          <td>
+            Об'єднує масиви.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const arr1 = [1, 2];
+      const arr2 = [3, 4];
+      const newArr = arr1.concat(arr2);
+      console.log(newArr); // [1, 2, 3, 4]</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>indexOf(el)</code></td>
+          <td>
+            Знаходить індекс першого входження елемента.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const arr = [1, 2, 3];
+      console.log(arr.indexOf(2)); // 1</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>lastIndexOf(el)</code></td>
+          <td>
+            Знаходить індекс останнього входження елемента.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const arr = [1, 2, 3, 2];
+      console.log(arr.lastIndexOf(2)); // 3</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>includes(el)</code></td>
+          <td>
+            Перевіряє, чи є елемент у масиві.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const arr = [1, 2, 3];
+      console.log(arr.includes(2)); // true</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>find(fn)</code></td>
+          <td>
+            Повертає перший елемент, що відповідає умові.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const arr = [1, 2, 3, 4];
+      const found = arr.find(x => x > 2);
+      console.log(found); // 3</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>findIndex(fn)</code></td>
+          <td>
+            Повертає індекс першого елемента, що відповідає умові.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const arr = [1, 2, 3, 4];
+      const index = arr.findIndex(x => x > 2);
+      console.log(index); // 2</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>map(fn)</code></td>
+          <td>
+            Створює новий масив, перетворюючи кожен елемент.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const arr = [1, 2, 3];
+      const newArr = arr.map(x => x * 2);
+      console.log(newArr); // [2, 4, 6]</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>filter(fn)</code></td>
+          <td>
+            Повертає масив із елементами, що відповідають умові.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const arr = [1, 2, 3, 4];
+      const filtered = arr.filter(x => x % 2 === 0);
+      console.log(filtered); // [2, 4]</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>reduce(fn, init)</code></td>
+          <td>
+            Згортає масив до одного значення.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const arr = [1, 2, 3, 4];
+      const sum = arr.reduce((acc, curr) => acc + curr, 0);
+      console.log(sum); // 10</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>sort(fn)</code></td>
+          <td>
+            Сортує масив (за замовчуванням як рядки).
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const arr = [4, 1, 3, 2];
+      arr.sort();
+      console.log(arr); // [1, 2, 3, 4]</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>reverse()</code></td>
+          <td>
+            Перевертає масив.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const arr = [1, 2, 3];
+      arr.reverse();
+      console.log(arr); // [3, 2, 1]</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>forEach(fn)</code></td>
+          <td>
+            Виконує функцію для кожного елемента.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const arr = [1, 2, 3];
+      arr.forEach(x => console.log(x)); // 1, 2, 3</code></pre>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <h2>Методи, які працюють виключно з рядками (String)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Метод</th>
+          <th>Опис</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>charAt(index)</code></td>
+          <td>
+            Повертає символ за індексом.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const str = "Hello";
+      console.log(str.charAt(1)); // "e"</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>charCodeAt(index)</code></td>
+          <td>
+            Повертає Unicode код символу.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const str = "Hello";
+      console.log(str.charCodeAt(1)); // 101</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>slice(start, end)</code></td>
+          <td>
+            Вирізає підрядок.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const str = "Hello";
+      console.log(str.slice(1, 4)); // "ell"</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>substring(start, end)</code></td>
+          <td>
+            Альтернативний варіант slice().
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const str = "Hello";
+      console.log(str.substring(1, 4)); // "ell"</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>substr(start, length)</code></td>
+          <td>
+            Застарілий метод, використовуйте slice().
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const str = "Hello";
+      console.log(str.substr(1, 3)); // "ell"</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>indexOf(str)</code></td>
+          <td>
+            Знаходить індекс першого входження підрядка.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const str = "Hello";
+      console.log(str.indexOf("e")); // 1</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>lastIndexOf(str)</code></td>
+          <td>
+            Знаходить індекс останнього входження підрядка.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const str = "Hello";
+      console.log(str.lastIndexOf("l")); // 3</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>includes(str)</code></td>
+          <td>
+            Перевіряє, чи містить рядок підрядок.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const str = "Hello";
+      console.log(str.includes("e")); // true</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>startsWith(str)</code></td>
+          <td>
+            Перевіряє, чи починається рядок із підрядка.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const str = "Hello";
+      console.log(str.startsWith("He")); // true</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>endsWith(str)</code></td>
+          <td>
+            Перевіряє, чи закінчується рядок підрядком.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const str = "Hello";
+      console.log(str.endsWith("lo")); // true</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>toUpperCase()</code></td>
+          <td>
+            Перетворює у верхній регістр.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const str = "hello";
+      console.log(str.toUpperCase()); // "HELLO"</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>toLowerCase()</code></td>
+          <td>
+            Перетворює у нижній регістр.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const str = "HELLO";
+      console.log(str.toLowerCase()); // "hello"</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>trim()</code></td>
+          <td>
+            Видаляє пробіли на початку і в кінці.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const str = "  Hello  ";
+      console.log(str.trim()); // "Hello"</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>replace(str, newStr)</code></td>
+          <td>
+            Замінює підрядок.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const str = "Hello";
+      console.log(str.replace("e", "a")); // "Hallo"</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>split(delimiter)</code></td>
+          <td>
+            Розбиває рядок на масив за роздільником.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const str = "Hello World";
+      console.log(str.split(" ")); // ["Hello", "World"]</code></pre>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <h2>Методи, які можуть працювати з різними типами</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Метод</th>
+          <th>Типи</th>
+          <th>Опис</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>forEach(fn)</code></td>
+          <td>Масив, Map, Set</td>
+          <td>
+            Виконує функцію для кожного елемента.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const arr = [1, 2, 3];
+      arr.forEach(num => console.log(num)); // 1, 2, 3</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>map(fn)</code></td>
+          <td>Масив</td>
+          <td>
+            Створює новий масив, перетворюючи елементи.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const arr = [1, 2, 3];
+      console.log(arr.map(num => num * 2)); // [2, 4, 6]</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>filter(fn)</code></td>
+          <td>Масив</td>
+          <td>
+            Повертає масив з елементами, що відповідають умові.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const arr = [1, 2, 3, 4];
+      console.log(arr.filter(num => num > 2)); // [3, 4]</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>reduce(fn, init)</code></td>
+          <td>Масив</td>
+          <td>
+            Згортає масив до одного значення.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const arr = [1, 2, 3];
+      console.log(arr.reduce((acc, num) => acc + num, 0)); // 6</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>indexOf(el)</code></td>
+          <td>Масив, рядок</td>
+          <td>
+            Шукає елемент або підрядок і повертає індекс.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const arr = [1, 2, 3];
+      console.log(arr.indexOf(2)); // 1</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>lastIndexOf(el)</code></td>
+          <td>Масив, рядок</td>
+          <td>
+            Шукає останнє входження елемента або підрядка.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const arr = [1, 2, 3, 2];
+      console.log(arr.lastIndexOf(2)); // 3</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>includes(el)</code></td>
+          <td>Масив, рядок</td>
+          <td>
+            Перевіряє, чи міститься елемент або підрядок.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const arr = [1, 2, 3];
+      console.log(arr.includes(2)); // true</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>sort(fn)</code></td>
+          <td>Масив</td>
+          <td>
+            Сортує масив.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const arr = [3, 1, 2];
+      console.log(arr.sort()); // [1, 2, 3]</code></pre>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>reverse()</code></td>
+          <td>Масив</td>
+          <td>
+            Перевертає масив.
+            <button class="accordion-button">Приклад</button>
+            <div class="accordion-content">
+              <pre><code>const arr = [1, 2, 3];
+      console.log(arr.reverse()); // [3, 2, 1]</code></pre>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+
+    <script>
+      // ACCORDION
+      document.querySelectorAll(".accordion-button").forEach((button) => {
+        button.addEventListener("click", () => {
+          const content = button.nextElementSibling;
+          content.style.display =
+            content.style.display === "block" ? "none" : "block";
+        });
+      });
+    </script>
+  </body>
+</html>
