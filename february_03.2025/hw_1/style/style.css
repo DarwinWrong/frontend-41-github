@@ -1,0 +1,15 @@
+#hero-list div {
+    padding: 5px;
+    margin: 5px 0;
+    border: 1px solid black;
+    background-color: #f0f0f0;
+  }
+  
+  .mask {
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid black;
+    width: 200px;
+    text-align: center;
+  }
+  
