@@ -1,0 +1,19 @@
+
+ol {
+    padding-left: 20px;
+  }
+  
+  ol li {
+    margin: 5px 0;
+  }
+  
+  #command-input {
+    padding: 5px;
+    width: 200px;
+  }
+  
+  #assistant-response {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
