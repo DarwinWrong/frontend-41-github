@@ -41,14 +41,142 @@
       // console.log("arr.indexOf", arr.indexOf(3, 1)); // починає пошук з індексу 1
 
       var arr = [1, 2, 1, 4, 1];
-      var counter = 0;
-      var index = arr.indexOf(1);
+      // var counter = 0;
+      // var index = arr.indexOf(1);
 
-      while (index != -1) {
-        counter++;
-        index = arr.indexOf(1, index + 1);
-      }
-      console.log("counter:", counter);
+      // while (index != -1) {
+      //   counter++;
+      //   index = arr.indexOf(1, index + 1);
+      // }
+      // console.log("counter:", counter);
+
+      var index = arr.lastIndexOf(1);
+      console.log("index:", index);
+
+      // ===========================================
+      // push() - add element to the end of the array
+      // ===========================================
+      var arr = [1, 2, 3];
+      arr.push(4);
+      console.log("arr->push:", arr);
+
+      var names = ["John", "Doe", "Smith"];
+
+      // ===========================================
+      // pop() - remove element from the end of the array
+      // ===========================================
+      arr.pop();
+      console.log("arr->pop:", arr);
+      // ===========================================
+      // shift() - remove element from the beginning of the array
+      // ===========================================
+      arr.shift();
+      console.log("arr->shift:", arr);
+      // ===========================================
+      // unshift() - add element to the beginning of the array
+      // ===========================================
+      arr.unshift(1);
+      arr.unshift("aaa");
+      console.log("arr->unshift:", arr);
+      // ===========================================
+      // splice() - add or remove elements from the array
+      // ===========================================
+      var arr = [1, 2, 3, 4, 5];
+      arr.splice(1, 2); // remove 2 elements starting from index 1
+      arr.splice(0, 1, "b"); // remove 1 element starting from index 0 and add "b"
+      arr.splice(0, 3, "b"); // remove 3 elements starting from index 0 and add "b"
+      console.log("arr->splice:", arr);
+
+      var pets = ["cat", "dog", "parrot"];
+
+      // ===========================================
+      // slice() - copy part of the array
+      // ===========================================
+      var arr = [1, 2, 3, 4, 5];
+      var newArr = arr.slice(1, 3); // copy elements from index 1 to 3
+      var newArr = arr.slice(0, 2); // copy elements from index 0 to 2
+      console.log("newArr->slice:", newArr);
+      console.log("arr", arr);
+
+      var teams = [
+        "Barcelona",
+        "Real Madrid",
+        "Manchester United",
+        "Liverpool",
+      ];
+      console.log(teams.slice(2)); // copy elements starting from index 2 to the end
+
+      // ===========================================
+      // concat() - merge arrays
+      // ===========================================
+      var arr1 = [1, 2, 3];
+      var arr2 = [4, 5, 6];
+      var arr3 = [7, 8, 9];
+      var mergedArr = arr1.concat(arr2, arr3);
+      console.log("mergedArr->concat:", mergedArr);
+
+      var fruits = ["apple", "banana"];
+      var vegetables = ["cucumber", "potato"];
+
+      // ===========================================
+      // join() - convert an array into a string using a separator
+      // ===========================================
+      var cars = ["BMW", "Audi", "Mercedes"];
+      var carsStr = cars.join(" - ");
+      console.log("carsStr->join:", carsStr);
+
+      let words = ["Hello", "i like", "JavaScript"];
+
+      // ===========================================
+      // includes() - check if an array contains a specific element
+      // ===========================================
+      var arr = [1, 2, 3, 4, 5];
+
+      var vars; // "" null undefined
+      console.log("?.", vars?.includes(5)); // undefined, no error
+
+      console.log("arr.includes(5):", arr.includes(5)); // true
+      console.log("arr.includes(6):", arr.includes(6)); // false
+
+      // ===========================================
+      // foreach() - iterate over an array
+      // ===========================================
+      words.forEach(function (element, index) {
+        console.log("forEach->element:", element);
+        console.log("forEach->index:", index);
+      });
+
+      ["Superman", "Batman", "spiderman"].forEach(function (hero) {
+        console.log("hero:", hero);
+      });
+
+      // ===========================================
+      // map() - create a new array by performing a function on each array element
+      // ===========================================
+      var superHeroes = ["Superman", "Batman", "Spiderman"];
+      var dancingHeroes = superHeroes.map(function (hero) {
+        return `${hero} is dancing`;
+      });
+      console.log("map->dancingHeroes:", dancingHeroes);
+      console.log("superHeroes:", superHeroes);
+
+      // ===========================================
+      // find() - find the first element that matches a condition
+      // ===========================================
+      var arr = [1, 2, 3, 4, 5, 6, 7, 8];
+      var found = arr.find(function (number) {
+        return number > 3;
+      });
+      console.log("find->found:", found);
+      // % 2 !== 0;
+
+      // ===========================================
+      // filter() - create a new array with elements that match a condition
+      // ===========================================
+      var found = arr.filter(function (number) {
+        return number > 5;
+      });
+      console.log("filter->found:", found);
     </script>
   </body>
 </html>

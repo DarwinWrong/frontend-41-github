@@ -7,6 +7,8 @@
   </head>
   <body>
     <script>
+      // "use strict";
+
       var pizzaShop = {
         name: "Марко",
 
@@ -18,61 +20,76 @@
         },
 
         makePizza: function (pizzaName) {
-          console.log(`Піца ${pizzaName} готова!`);
+          console.log(`Піца ${this.pizzaName} готова!`);
+        },
+
+        showName: function () {
+          console.log(`Мене звати ${this.name}`);
         },
       };
 
-      pizzaShop.takeOrder("Маргарита", pizzaShop.makePizza);
+      // pizzaShop.takeOrder("Маргарита", pizzaShop.makePizza);
+
+      pizzaShop.showName();
+
+      let showMyName = pizzaShop.showName;
+      showMyName();
+
+      window.name = "Вася";
+      function showMyName2() {
+        console.log(`Мене звати ${this.name}`);
+      }
+      showMyName2();
     </script>
 
     <script>
-      var pizzaShop = {
-        name: "Марко",
+      // var pizzaShop = {
+      //   name: "Марко",
 
-        takeOrder: function (pizzaName, callback) {
-          console.log(
-            `Піцайоло ${this.name} прийняв замовлення на піцу: ${pizzaName}`
-          );
-          callback.call(this, pizzaName);
-        },
+      //   takeOrder: function (pizzaName, callback) {
+      //     console.log(
+      //       `Піцайоло ${this.name} прийняв замовлення на піцу: ${pizzaName}`
+      //     );
+      //     callback.call(this, pizzaName);
+      //   },
 
-        makePizza: function (pizzaName) {
-          console.log(`Піца ${pizzaName} готова!`);
-        },
-      };
+      //   makePizza: function (pizzaName) {
+      //     console.log(`Піца ${pizzaName} готова!`);
+      //   },
+      // };
 
-      pizzaShop.takeOrder("Пепероні", pizzaShop.makePizza);
+      // pizzaShop.takeOrder("Пепероні", pizzaShop.makePizza);
     </script>
 
     <script>
-      var pizzaShop = {
-        name: "Марко",
-        takeOrder: function (pizzaName, callback) {
-          console.log(
-            `Піцайоло ${this.name} прийняв замовлення на піцу: ${pizzaName}`
-          );
-          callback(pizzaName);
-        },
-        makePizza: (pizzaName) => {
-          console.log(`Піца ${pizzaName} готова!`);
-        },
-      };
-      pizzaShop.takeOrder("Diablo", pizzaShop.makePizza);
+      // var pizzaShop = {
+      //   name: "Марко",
+      //   takeOrder: function (pizzaName, callback) {
+      //     console.log(
+      //       `Піцайоло ${this.name} прийняв замовлення на піцу: ${pizzaName}`
+      //     );
+      //     callback(pizzaName);
+      //   },
+      //   makePizza: (pizzaName) => {
+      //     console.log(`Піца ${pizzaName} готова!`);
+      //   },
+      // };
+      // pizzaShop.takeOrder("Diablo", pizzaShop.makePizza);
 
-      var pizzaShop = {
-        name: "Тор",
-        takeOrder: function (callback) {
-          console.log(
-            `Піцайоло ${this.name} прийняв замовлення на піцу: ${pizzaName}`
-          );
-          const pizzaName = "Три сира";
-          callback(pizzaName);
-        },
-      };
-      const makePizza = (pizzaName) => {
-        console.log(`Піца ${this.pizzaName} готова!`);
-      };
-      pizzaShop.takeOrder(makePizza);
+      // var pizzaShop = {
+      //   name: "Тор",
+      //   takeOrder: function (callback) {
+      //     console.log(
+      //       `Піцайоло ${this.name} прийняв замовлення на піцу: ${pizzaName}`
+      //     );
+      //     const pizzaName = "Три сира";
+      //     callback(pizzaName);
+      //   },
+      // };
+      // const makePizza = (pizzaName) => {
+      //   console.log(`Піца ${this.pizzaName} готова!`);
+      // };
+      // pizzaShop.takeOrder(makePizza);
     </script>
   </body>
 </html>
