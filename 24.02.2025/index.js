@@ -35,4 +35,4 @@ console.log((potions.find(potion => potion.name == "Potion of mana")) ? true : f
 
 const more60 = potions.filter(potion => potion.price >= 60);
 
-const filtered = potions.filter(potion => potion.price >= 70).sort((p1, p2) => p2.price - p1.price).slice(0, 3);
+const filtered = potions.filter(potion => potion.price >= 70).sort((p1, p2) => p2.price - p1.price).slice(0, 3); 
