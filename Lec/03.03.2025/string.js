@@ -1,0 +1,10 @@
+let str = "Програміст зробив програму";
+// console.log(str.toLowerCase());
+// console.log(str.toUpperCase());
+console.log(str);
+console.log(str[3]);
+console.log(str.slice(2, 9));
+var str1 = "I, like JavaScript";
+console.log(str1.slice(11));
+console.log(str1.split(" "));
+console.log(str1.repeat(3));

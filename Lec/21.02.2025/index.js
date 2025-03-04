@@ -3,9 +3,20 @@
 // student.street = "dfhuhfhf";
 // student["age"] = 25;
 // console.log(student);
+/**
+ * Description placeholder
+ *
+ * @type {{ name: string; }}
+ */
 const developer = {
   name: "Вася",
 };
+/**
+ * Description placeholder
+ *
+ * @param {*} obj
+ * @param {*} key
+ */
 function find(obj, key) {
   if (key in obj) {
     console.log(
