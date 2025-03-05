@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body>
+    <div class="addSngBox">
+      <input
+        type="text"
+        class="nameSng"
+        id="nameSng"
+        placeholder="Введіть назву пісні"
+      />
+      <input
+        type="text"
+        class="timeSng"
+        id="timeSng"
+        placeholder="Введіть тривалість пісні у хвилинах"
+      />
+      <button class="addSong" id="addSNG">Додати пісню</button>
+      <input type="text" placeholder="Знайти пісню" id="intFind" />
+      <button id="findBtn">Знайти</button>
+    </div>
+
+    <button class="sortName invis" id="sortName">Сортувати за назвою</button>
+    <button class="sortTime invis" id="sortTime">Сортувати за триваістю</button>
+
+    <ul class="musikList" id="musikList"></ul>
+    <button id="resetList">Показати увесь список</button>
+    <br />
+    <button class="allTime invis" id="allTime">
+      Підрахувати всю тривалість
+    </button>
+    <div class="allTimeBox">
+      <p class="textBox" id="textBox"></p>
+    </div>
+    <button id="deleteAll invis">Видалити усі пісні</button>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
