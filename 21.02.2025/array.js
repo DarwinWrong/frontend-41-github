@@ -32,3 +32,4 @@ person.showName()
 const newPerson = Object.create(person)
 newPerson.surname = 'Antonov'
 console.log(newPerson);
+
