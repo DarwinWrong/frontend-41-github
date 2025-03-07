@@ -177,6 +177,80 @@
         return number > 5;
       });
       console.log("filter->found:", found);
+
+      var names = ["John", "Will", "Alice", "Bob"];
+
+      // ===========================================
+      // sort() - sort an array
+      // ===========================================
+      var arr = [3, 2, 4, 1, 0];
+      arr.sort(function (a, b) {
+        console.log("a:", a);
+        console.log("b:", b);
+        console.log("a - b:", a - b);
+        return a - b;
+      });
+      console.log("arr->sort -:", arr);
+
+      arr.sort(function (a, b) {
+        console.log("a:", a);
+        console.log("b:", b);
+        console.log("b - a:", b - a);
+        return b - a;
+      });
+
+      console.log("arr->sort +:", arr);
+
+      var names = ["John", "Will", "Alice", "Bob", "Bill", "Jack"];
+
+      // ===========================================
+      // reverse() - reverse the order of the elements in an array
+      // ===========================================
+      var arr = [1, 2, 3, 4, 5];
+      arr.reverse();
+      console.log("arr->reverse:", arr);
+
+      var wordNumbers = ["one", "two", "three", "four", "five"];
+
+      // ===========================================
+      // reduce(callback, initialValue) - reduce the values of an array to a single value
+      // ===========================================
+      var arr = [1, 2, 3, 4, 5];
+      var sum = arr.reduce(function (sum, num) {
+        console.log("num:", num);
+        console.log("sum:", sum);
+        return sum + num;
+      });
+      console.log("sum->reduce:", sum);
+
+      var peoples = [
+        { name: "John", age: 25 },
+        { name: "Will", age: 30 },
+        { name: "Alice", age: 27 },
+      ];
+      console.log("peoples->reduce:", peoples);
+
+      let i = 0;
+      let totalAge = peoples.reduce(function (total = [], person) {
+        console.log("person:", person);
+
+        // total[person.name] = person.age;
+        total[i] = person;
+        total[
+          i
+        ].greeting = `Hello, my name is ${person.name}, im ${person.age} years old`;
+        i++;
+        return total;
+      }, {});
+      console.log("totalAge:", totalAge);
+
+      var greeting = peoples.reduce(function (greeting, person) {
+        greeting.push(
+          `Hello, my name ${person.name}, im ${person.age} years old`
+        );
+        return greeting;
+      }, []);
+      console.log("GREETING:", greeting);
     </script>
   </body>
 </html>

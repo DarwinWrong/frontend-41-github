@@ -1,36 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Events</title>
-</head>
-<body>
+  </head>
+  <body>
+    <button type="button" id="show-message">Click me</button>
+    <button type="button" onclick="" id="showMessage">Click me 2</button>
 
-<button type="button" id="show-message" >Click me</button>
-<button type="button" onclick="" id="showMessage" >Click me 2</button>
-
-<ul class="list">
-    <li>1</li>
-    <li>
+    <ul class="list">
+      <li>1</li>
+      <li>
         <p>Lorem ipsum dolor sit.</p>
         <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
-    </li>
-    <li>3</li>
-</ul>
+      </li>
+      <li>3</li>
+    </ul>
 
-<script>
-    // use id from window
-    showMessage.onclick = function (){ alert("Clicked")}
+    <script>
+      // use id from window
+      showMessage.onclick = function () {
+        alert("Clicked");
+      };
 
-   const showBtn = document.getElementById("show-message");
+      const showBtn = document.getElementById("show-message");
 
-    showBtn.addEventListener("click", function ()  {
-        console.log("Document clicked")
-    })
+      showBtn.addEventListener("click", function () {
+        console.log("Document clicked");
+      });
 
-    showBtn.onresize = function (){ alert("Clicked")}
+      showBtn.onresize = function () {
+        alert("Clicked");
+      };
+    </script>
 
-</script>
-</body>
+    <table data-start="967" data-end="1220">
+      <thead data-start="967" data-end="1008">
+        <tr data-start="967" data-end="1008">
+          <th data-start="967" data-end="988">Тип функції</th>
+          <th data-start="988" data-end="1008">
+            Що буде в <code data-start="1000" data-end="1006">this</code>
+          </th>
+        </tr>
+      </thead>
+      <tbody data-start="1049" data-end="1220">
+        <tr data-start="1049" data-end="1090">
+          <td>function()</td>
+          <td>
+            Елемент
+            <code data-start="1078" data-end="1088">&lt;button&gt;</code>
+          </td>
+        </tr>
+        <tr data-start="1091" data-end="1220">
+          <td>() =&gt;</td>
+          <td>
+            Оточення, де функцію було створено (тобто глобальний контекст або
+            об'єкт, якщо функція оголошена в методі)
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      const button = document.querySelector("button");
+      // Це тому, що стрілочні функції не отримують this від об'єкта-обробника події.
+      // Вони беруть його з місця, де були створені — а це глобальний контекс
+      // Де створюється стрілочна функція? Вона створюється прямо всередині методу addEventListener().
+      // Лексичне оточення (Lexical Environment): Стрілочна функція завжди бере this із того місця,
+      // де вона була оголошена.
+      // Але! Вона оголошена у глобальному контексті (або у тому місці, де викликається код),
+      // а не у контексті кнопки.
+      // Що відбувається в момент натискання на кнопку:
+      // Звичайна функція (function()) отримала б this як кнопку (елемент, що викликав подію).
+      // Але стрілочна функція не переписує this, а просто бере його з зовнішнього оточення.
+
+      button.addEventListener("click", function () {
+        console.log(this); //button
+      });
+
+      button.addEventListener("click", () => {
+        console.log(this); //window
+      });
+    </script>
+  </body>
 </html>

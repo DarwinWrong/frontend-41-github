@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String</title>
+  </head>
+  <body>
+    <script>
+      // ===========================================
+      // toLowerCase, toUpperCase
+      // ===========================================
+      var str = "Hello";
+      console.log(str);
+      //   console.log("str.toLowerCase", str.toLowerCase());
+      //   console.log("str.toUpperCase", str.toUpperCase());
+      // ===========================================
+      // string encode
+      // ===========================================
+      // "Програміст\n зробив\tпрограму \"vs code\"" - екранування символів
+      var str = 'Програміст\n зробив\tпрограму "vs code"';
+      // ===========================================
+      // access to the element
+      // ===========================================
+      console.log(str[3]);
+      var str = "Hello";
+      var str2 = "World";
+      console.log(str + " " + str2, `${str} ${str2}`);
+      // ===========================================
+      // includes
+      // ===========================================
+      console.log(str.includes("lo"));
+      // ===========================================
+      // chartAt
+      // ===========================================
+      console.log(
+        "str.charAt(3)",
+        str.charAt(3),
+        "str.charAt(5)",
+        str.charAt(5)
+      );
+      // ===========================================
+      // slice
+      // ===========================================
+      str += " " + str2;
+      console.log("str.slice(0, 5)", str.slice(0, 5)); // Hello
+
+      for (let i = 0; i < str.length; i++) {
+        console.log(str.slice(0, i + 1));
+      }
+
+      var str = "I, like, javaScript";
+      // ===========================================
+      // trim
+      // ===========================================
+      console.log(str.trim());
+      // ===========================================
+      // split - string should has separators
+      // ===========================================
+      console.log(str.split(" "), str.split(","), str.split(", "));
+      // ===========================================
+      // repeat - repeat string count times
+      // ===========================================
+      console.log("str.repeat(3)", str.repeat(3));
+    </script>
+  </body>
+</html>

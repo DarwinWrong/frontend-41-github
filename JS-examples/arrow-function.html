@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrow function</title>
+  </head>
+  <body>
+    <script>
+      //   const numbers = [1, 2, 3];
+      //   var doubleNumbers = numbers.map(function (numb) {
+      //     return numb * 2;
+      //   });
+      //   console.log("doubleNumbers:", doubleNumbers);
+
+      //   var doubleNumbers = numbers.map((numb) => numb * 2);
+      //   console.log("doubleNumbers:", doubleNumbers);
+
+      //   var doubleNumbers = numbers.map((numb) => {
+      //     numb += 1;
+      //     return numb * 2;
+      //   });
+      //   console.log("doubleNumbers:", doubleNumbers);
+
+      user = {
+        name: "Oleh",
+        age: 20,
+        getName() {
+          console.log("user.name:", this.name); // Oleh
+          return () => console.log("arrow:", this.name, this.age);
+        },
+        getAge: () => console.log("user.age:", this.age), // undefined
+        logArrowFunc: () => console.log(this), // window
+        // getInfo: (function (self) {
+        //   return () => console.log(self);
+        // })(this),
+      };
+
+      var www = user.getName();
+      console.log(www);
+      www();
+
+      user.getAge();
+      user.logArrowFunc();
+      //   user.getInfo();
+
+      var array = [1, 2, 3];
+      array.map((el) => console.log(el));
+    </script>
+  </body>
+</html>

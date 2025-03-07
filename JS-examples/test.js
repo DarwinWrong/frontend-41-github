@@ -205,7 +205,19 @@
 // sum3(4, 5);
 // ==============================================
 
+function findWord(text, word) {
+    // const words = text.split(' ');
+    // let count = 0;
+    // for (let i = 0; i < words.length; i++) {
+    //     if (words[i] === word) {
+    //         count++;
+    //     }
+    // }
+    // return count;
+    return text.includes(word);
+}
 
+console.log(findWord(' +Hello$ world hello', 'hello')); // true
 
 // ===================================================================
 // ===================================================================

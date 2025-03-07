@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Нові фішки</title>
+  </head>
+  <body>
+    <!-- ======================================================================================= -->
+    <!--arr.splice() та delete arr[1]-->
+    <!-- ======================================================================================= -->
+    <script>
+      var arr = [1, 2, 3, 4, 5];
+      arr.splice(1, 2); // Видаляємо 2 елементи починаючи з індексу 1
+      console.log(arr); // [1, 4, 5]
+
+      delete arr[1]; // видаляє значення за ключем 1, але сам елемент залишається
+      console.log(arr);
+
+      var arr = ["I", "study", "JavaScript", "right", "now"];
+      // видалимо 2 перших елементи
+      var removed = arr.splice(0, 2);
+      console.log(removed, arr); // "I", "study" <-- масив видалених елементі
+    </script>
+
+    <!-- ======================================================================================= -->
+    <!--Доступ до властивостей обєкта-->
+    <!-- ======================================================================================= -->
+    <script>
+      var user = {
+        name: "John",
+        age: 30,
+        city: "New York",
+      };
+      if ("age" in user) {
+        console.log("age is exists");
+      }
+      for (var key in user) {
+        console.log(`user.${key}: ${user[key]}`);
+      }
+
+      console.log("name" in user); //true
+      console.log(user.city === undefined); // true
+
+      const isProp = function (propName, obj, debug = false) {
+        if (debug) console.log(`prop ${propName} is: `, propName in obj);
+        return propName in obj;
+      };
+      isProp("name", user, true);
+    </script>
+
+    <script>
+      var user = {
+        name: "Alice",
+        greet() {
+          const arrow = () => {
+            console.log(this.name); // Alice
+          };
+          arrow(); // Alice
+        },
+      };
+      // Стрілочна функція бере this із найближчого лексичного контексту — тобто з функції greet(),
+      // де this посилається на user.
+      user.greet(); //"Alice"
+
+      var car = {
+        brand: "Toyota",
+        showBrand: () => {
+          console.log(this.brand); // undefined
+        },
+      };
+      // У стрілкових функціях this не працює — воно посилається на зовнішній контекст.
+      car.showBrand(); // undefined
+    </script>
+
+    <!-- ======================================================================================= -->
+    <!--Доступ до властивостей обєкта та document.querySelector в обєктах-->
+    <!-- ======================================================================================= -->
+    <h5>hefuehgie</h5>
+    <script>
+      const actor = {
+        role: "Gamlet",
+        actorTagName: "h5",
+        // Проблема в тому, що на момент ініціалізації об'єкта значення this.actorTagName ще не задано,
+        //  тому this.actorTagName є undefined. Це призводить до того,
+        //  що document.querySelector намагається знайти елемент з невизначеним тегом,
+        //  що, ймовірно, не дасть жодного результату (повернеться null).
+        actorTag: document.querySelector(`${this.actorTagName}`), // undefined
+        // Покращення
+        actorTag: null, // Зазначаємо, що елемент поки що не існує
+        getinfo: () => console.log("arrow func => this", this), // window
+        init: function (tagName) {
+          this.actorTagName = tagName;
+          console.log("init->this", this); // actor
+          console.log("init->this.actorTagName", this.actorTagName);
+          console.log("init->tagName", tagName);
+          console.log("init->this.actorTag", this.actorTag);
+
+          // Тепер querySelector виконується після ініціалізації
+          this.actorTag = document.querySelector(this.actorTagName);
+          console.log("init->this.actorTag", this.actorTag);
+
+          // Можна також змінити вміст елемента:
+          if (this.actorTag) this.actorTag.textContent = this.role;
+        },
+        changeRole: function (newRole) {
+          this.role = newRole;
+        },
+      };
+      // const h3 = document.querySelector("h3");
+      actor.getinfo();
+      actor.init("h5");
+    </script>
+
+    <!-- ======================================================================================= -->
+    <!--Робота з addEventListener та DOM-->
+    <!-- ======================================================================================= -->
+    <button>Click</button>
+    <script>
+      var button = document.querySelector("button");
+      button.addEventListener("click", function () {
+        console.log(this); //button
+      });
+
+      // Це тому, що стрілочні функції не отримують this від об'єкта-обробника події.
+      // Вони беруть його з місця, де були створені — а це глобальний контекс
+      // Де створюється стрілочна функція? Вона створюється прямо всередині методу addEventListener().
+      // Лексичне оточення (Lexical Environment): Стрілочна функція завжди бере this із того місця,
+      // де вона була оголошена.
+      // Але! Вона оголошена у глобальному контексті (або у тому місці, де викликається код),
+      // а не у контексті кнопки.
+
+      // Що відбувається в момент натискання на кнопку:
+      // Звичайна функція (function()) отримала б this як кнопку (елемент, що викликав подію).
+      // Але стрілочна функція не переписує this, а просто бере його з зовнішнього оточення.
+      button.addEventListener("click", () => {
+        console.log(this); //window
+      });
+
+      button.addEventListener("click", () => console.log(this)); // window
+
+      button.addEventListener("click", (event) =>
+        console.log("event:", event, "event.target:", event.target)
+      ); // event
+
+      // ISSUE:
+      // addEventListener не спрацює тому що document.body.innerHTML += '' перезапише весь html З кнопкою
+      document.body.innerHTML += '<button class="btn">Нова кнопка</button>'; // Перезаписує весь body!
+
+      // 1) Використовуємо documentFragment для динамічного створення елементів
+      const newButton = document.createElement("button");
+      newButton.className = "btn";
+      newButton.textContent = "Нова кнопка";
+      document.body.appendChild(newButton); // Додає кнопку без перезапису
+
+      // 2) Делегування подій
+      document.body.addEventListener("click", function (event) {
+        if (event.target.tagName === "BUTTON") {
+          console.log(event.target); // Працює для всіх кнопок, навіть динамічно створених!//-
+          console.log(event.target); // Logs the clicked button element.//+
+        }
+      });
+    </script>
+  </body>
+</html>

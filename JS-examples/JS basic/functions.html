@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions</title>
+  </head>
+  <body>
+    <table data-start="1305" data-end="1878">
+      <thead data-start="1305" data-end="1414">
+        <tr data-start="1305" data-end="1414">
+          <th data-start="1305" data-end="1329">Тип функції</th>
+          <th data-start="1329" data-end="1340">Hoisting</th>
+          <th data-start="1340" data-end="1349">
+            <code data-start="1342" data-end="1348">this</code>
+          </th>
+          <th data-start="1349" data-end="1375">Синтаксис</th>
+          <th data-start="1375" data-end="1414">Використання</th>
+        </tr>
+      </thead>
+      <tbody data-start="1521" data-end="1878">
+        <tr data-start="1521" data-end="1643">
+          <td>Function Declaration</td>
+          <td>Так</td>
+          <td>Є</td>
+          <td>
+            <code data-start="1565" data-end="1585">function name() {}</code>
+          </td>
+          <td>Універсальний метод, особливо для загальних функцій</td>
+        </tr>
+        <tr data-start="1644" data-end="1763">
+          <td>Function Expression</td>
+          <td>Ні</td>
+          <td>Є</td>
+          <td>
+            <code data-start="1688" data-end="1716"
+              >const name = function() {}</code
+            >
+          </td>
+          <td>Коли функцію потрібно передати як аргумент</td>
+        </tr>
+        <tr data-start="1764" data-end="1878">
+          <td>Arrow Function</td>
+          <td>Ні</td>
+          <td>Ні</td>
+          <td>
+            <code data-start="1808" data-end="1831"
+              >const name = () =&gt; {}</code
+            >
+          </td>
+          <td>Для коротких функцій або роботи з масивами</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ======================================================================================= -->
+    <!-- Оголошення функції (Function Declaration)-->
+    <!-- ======================================================================================= -->
+    <script>
+      function testIfObject() {
+        return 3;
+      }
+      console.log(testIfObject instanceof Object); // true
+      testIfObject.name = "testIfObject";
+      console.log(testIfObject.name); // testIfObject
+      // ==============================
+
+      function greeting(hello = "Привіт, світ!", name = "Анонім") {
+        console.log(`${hello} Мене звати ${name}`);
+      }
+      greeting("Привіт всім"); // виклик функції
+
+      // Функція з параметрами
+      function add(a, b) {
+        return a + b; // повертає суму a і b
+      }
+      let result = add(3, 5); // викликаємо функцію з параметрами
+      log("result", result); // виведе 8
+
+      function multiply(a, b, c) {
+        return a * b * c;
+      }
+      let result2 = multiply(2, 3, 4); // викликаємо функцію з трьома параметрами
+      log("result2", result2); // виведе 24
+    </script>
+
+    <!-- ======================================================================================= -->
+    <!-- Функціональний вираз (Function Expression)-->
+    <!-- ======================================================================================= -->
+    <script>
+      // Анонімна функція з параметрами за замовчуванням
+      let greet = function (name) {
+        console.log("Привіт, " + name + "!");
+      };
+      greet("Олексій"); // викликає анонімну функцію
+
+      // =============================================
+      const sum3 = (a, b) => a + b;
+      const divide = (a, b) => a / b;
+      const multiply2 = (a, b) => a * b;
+      function sumAndLog(c, d) {
+        console.log(sum3(c, d));
+      }
+      sumAndLog(2, 3);
+
+      // Розширюваність, Локалізація залежностей
+      function sumAndLog2(operation, c, d) {
+        console.log(operation(c, d)); // логіка змінилась без зміни функції
+      }
+      sumAndLog2(sum, 3, 4); // 7
+      sumAndLog2(multiply2, 3, 4); // 12
+      sumAndLog2(divide, 10, 2); // 5
+
+      // =============================================
+      (function () {
+        console.log(
+          "Ця функція виконується на льоту і більше не буде використовуватись."
+        );
+      })();
+    </script>
+
+    <!-- ======================================================================================= -->
+    <!-- Стрілкові функції (Arrow Functions)-->
+    <!-- ======================================================================================= -->
+    <script>
+      // Використовуйте стрілкові функції для коротких колбеків або методів масивів:
+      const numbers = [1, 2, 3];
+      const doubled = numbers.map((n) => n * 2);
+      console.log(doubled);
+
+      const actor = {
+        name: "Gamlet",
+        logFunc: function () {
+          console.log("func => this", this);
+        },
+        logArrowFunc: () => console.log("arrow func => this", this),
+      };
+      actor.logFunc();
+      actor.logArrowFunc();
+    </script>
+    <!-- ======================================================================================= -->
+    <!--Замикання (Closures)-->
+    <!-- ======================================================================================= -->
+    <script>
+      // Замикання(Closures) — це функція, яка має доступ до змінних своєї зовнішньої функції
+      // навіть після завершення виконання зовнішньої функції.
+      function outerFunction(x) {
+        return function innerFunction(y) {
+          // innerFunction запам'ятовує значення змінної x навіть після завершення виконання outerFunction.
+          return x + y;
+        };
+      }
+      const add5 = outerFunction(5);
+      console.log(add5(3)); // 8
+
+      //   Використовуйте замикання для створення приватних змінних або функцій із налаштуванням:
+      function counter() {
+        let count = 0;
+        return function () {
+          count++;
+          console.log(count);
+        };
+      }
+      const increment = counter();
+      increment(); // 1
+      increment(); // 2
+    </script>
+
+    <!-- ======================================================================================= -->
+    <!--Обєкт arguments-->
+    <!-- ======================================================================================= -->
+    <script>
+      log("its working", "true");
+
+      function log(name = "name", value = "value") {
+        console.log(name, value);
+      }
+    </script>
+    <script>
+      function myFunction() {
+        log("arguments", arguments);
+      }
+      myFunction(1, 2, 3); // { 0: 1, 1: 2, 2: 3 }
+
+      function sum() {
+        let total = 0;
+        for (let i = 0; i < arguments.length; i++) {
+          total += arguments[i];
+        }
+        return total;
+      }
+      log("sum(1, 2, 3)", sum(1, 2, 3)); // 6
+      log("sum(10, 20, 30, 40)", sum(10, 20, 30, 40)); // 100
+
+      // ==============================
+      function argsLength(args) {
+        return args.length;
+      }
+      log('argsLength("Hello")', argsLength("Hello")); // 5
+
+      const dogs = ["Bulldog", "Beagle", "Labrador"];
+      log("argsLength(dogs[])", argsLength(dogs)); // 3
+    </script>
+  </body>
+</html>

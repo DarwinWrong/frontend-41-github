@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Playlist</title>
+    <style>
+      ul {
+        max-width: 300px;
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        width: fit-content;
+        margin: 5px;
+        padding: 5px;
+      }
+      .activeSong {
+        background-color: #f0f0f0;
+        border: 1px solid blue;
+        transform: scale(1.1);
+        transition: all 0.3s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="#">
+      <label for="song">song name</label>
+      <input type="text" id="song" name="song" />
+      <label for="duration">song duration</label>
+      <input type="text" id="duration" name="duration" />
+    </form>
+    <section id="playlist-info">
+      <div id="buttons">
+        <button id="add-song">Add song</button>
+        <button id="sort-by-name">Sort by name</button>
+        <button id="sort-by-duration">Sort by duration</button>
+        <button id="count-total-duration">Total duration</button>
+        <button id="clear-list">Clear list</button>
+      </div>
+      <h3>Songs:</h3>
+      <h4>name: duration:</h4>
+      <div class="search">
+        <input type="text" id="search" placeholder="write song name" />
+        <button id="search-btn">Search</button>
+      </div>
+      <ul id="playlist"></ul>
+      <p>Total duration: <span id="total-duration">0</span></p>
+    </section>
+
+    <script>
+      // const song = document.getElementById("song");
+      // const duration = document.getElementById("duration");
+      // const btnAddSong = document.getElementById("add-song");
+      // const playlist = document.getElementById("playlist");
+      // const totalDuration = document.getElementById("total-duration");
+      // const search = document.getElementById("search");
+      // const sortByDurationBtn = document.getElementById("sort-by-duration");
+      // const sortByNameBtn = document.getElementById("sort-by-name");
+      // const totalDurationBtn = document.getElementById("count-total-duration");
+      // const clearListBtn = document.getElementById("clear-list");
+      // const searchBtn = document.getElementById("search-btn");
+
+      //   let playlistArray = [];
+      //   let btnsDelArray = [];
+
+      //   const BaseSong = {
+      //     name: "",
+      //     duration: 0,
+      //     getInfo() {
+      //       return `${this.name} - ${this.duration}`;
+      //     },
+      //   };
+
+      //   function createSong(name, duration, debug = false) {
+      //     const song = Object.create(BaseSong);
+      //     song.name = name;
+      //     song.duration = duration;
+      //     if (debug) console.log("createSong->song:", song);
+      //     return song;
+      //   }
+
+      //   function addSongToList(song, playlist, debug = false) {
+      //     const li = document.createElement("li");
+      //     li.setAttribute("id", `li-${song.name}`);
+      //     li.textContent = song.getInfo();
+      //     playlist.appendChild(li);
+
+      //     if (debug) {
+      //       console.log("addSongToList->song:", song);
+      //       console.log("song.getInfo():", song.getInfo());
+      //       console.log("addSongToList->li:", li);
+      //     }
+      //   }
+
+      //   function delSong(songName, debug = false) {
+      //     const li = document.getElementById(`li-${songName}`);
+      //     if (debug) {
+      //       console.log("delSong->songName:", songName);
+      //       console.log("delSong->li:", li);
+      //     }
+      //     // remove song from ul menu playlist
+      //     li.remove();
+      //     // remove song from playlistArray
+      //     playlistArray = playlistArray.filter(function (song) {
+      //       return song.name !== songName;
+      //     });
+
+      //     if (debug) {
+      //       console.log("li was removed");
+      //       console.log("delSong->li:", li);
+      //     }
+      //   }
+
+      //   function addBtnDelSong(song, playlist, debug = false) {
+      //     const delButton = document.createElement("button");
+      //     const li = document.getElementById(`li-${song.name}`);
+      //     delButton.setAttribute("song", `${song.name}`);
+      //     delButton.textContent = "Delete";
+      //     li.appendChild(delButton);
+      //     btnsDelArray.push(delButton);
+      //     if (debug) {
+      //       console.log("addButtonDelSong->song:", song);
+      //       console.log("addButtonDelSong->delButton:", delButton);
+      //       console.log("addButtonDelSong->btnsDelArray:", btnsDelArray);
+      //     }
+      //   }
+
+      //   function updatePlaylist(debug = false) {
+      //     playlist.innerHTML = "";
+      //     if (debug) {
+      //       console.log("updatePlaylist->playlistArray:", playlistArray);
+      //     }
+
+      //     btnsDelArray = []; // clear array of delete buttons, for ensuring that we don't have duplicates
+      //     playlistArray.forEach(function (song) {
+      //       if (debug) {
+      //         console.log("updatePlaylist->forEach->song:", song);
+      //       }
+      //       addSongToList(song, playlist);
+      //       addBtnDelSong(song, playlist);
+      //     });
+      //     btnsDelArray.forEach(function (btnDel) {
+      //       btnDel.addEventListener("click", function () {
+      //         console.log("btnsDelArray->this:", this);
+      //         const songName = this.getAttribute("song");
+      //         delSong(songName);
+      //       });
+      //     });
+      //   }
+
+      //   function getSongInfo(debug = false) {
+      //     const songName = song.value;
+      //     const songDuration = duration.value;
+
+      //     if (debug)
+      //       console.log("songName:", songName, "songDuration:", songDuration);
+
+      //     return { songName, songDuration };
+      //   }
+
+      //   function checkSongData(songInfo, debug = false) {
+      //     if (songInfo.songName === "" || songInfo.songDuration === "") {
+      //       alert("Please fill in all fields");
+      //       return false;
+      //     }
+      //     const isDuplicateSong = playlistArray.find(function (song) {
+      //       return song.name === songInfo.songName;
+      //     });
+      //     if (debug) {
+      //       console.log(
+      //         "checkSongData->songInfo.songName:",
+      //         songInfo.songName,
+      //         "checkSongData->songInfo.songDuration:",
+      //         songInfo.songDuration
+      //       );
+      //       console.log("checkSongData->isDuplicateSong:", isDuplicateSong);
+      //     }
+      //     if (isDuplicateSong) {
+      //       alert("This song is already in the playlist");
+      //       return false;
+      //     }
+      //     return true;
+      //   }
+
+      //   btnAddSong.addEventListener("click", function () {
+      //     const songInfo = getSongInfo();
+      //     const isCorrectSongData = checkSongData(songInfo);
+      //     if (!isCorrectSongData) return;
+      //     const newSong = createSong(songInfo.songName, songInfo.songDuration);
+      //     playlistArray.push(newSong);
+      //     updatePlaylist(true);
+      //   });
+
+      //   sortByNameBtn.addEventListener("click", function () {
+      //     playlistArray.sort(function (a, b) {
+      //       return a.name.localeCompare(b.name);
+      //     });
+      //     updatePlaylist(true);
+      //   });
+
+      //   sortByDurationBtn.addEventListener("click", function () {
+      //     playlistArray.sort(function (a, b) {
+      //       return a.duration - b.duration;
+      //     });
+      //     updatePlaylist(true);
+      //   });
+
+      //   totalDurationBtn.addEventListener("click", function () {
+      //     const total = playlistArray.reduce(function (acc, song) {
+      //       return acc + parseInt(song.duration);
+      //     }, 0);
+      //     totalDuration.textContent = total;
+      //   });
+
+      //   clearListBtn.addEventListener("click", function () {
+      //     playlistArray = [];
+      //     updatePlaylist();
+      //     totalDuration.textContent = 0;
+      //   });
+
+      //   searchBtn.addEventListener("click", function () {
+      //     const searchValue = search.value;
+      //     const liArray = document.querySelectorAll("li");
+      //     liArray.forEach(function (li) {
+      //       li.classList.remove("activeSong");
+      //     });
+      //     playlistArray.sort(function (a, b) {
+      //       return a.name === searchValue ? -1 : 1;
+      //     });
+      //     if (playlistArray?.[0]?.name !== searchValue) {
+      //       alert("Song not found");
+      //       return;
+      //     }
+      //     updatePlaylist(); // 1 update list
+      //     const li = document.getElementById(`li-${searchValue}`); // 2 find li at the top of the list
+      //     li.classList.add("activeSong"); // 3 add class activeSong
+      //   });
+    </script>
+    <script>
+      /**
+       * Об'єкт для роботи з UI-елементами
+       * @property {HTMLElement} song - Поле введення назви пісні
+       * @property {HTMLElement} duration - Поле введення тривалості пісні
+       * @property {HTMLElement} btnAddSong - Кнопка для додавання пісні
+       * @property {HTMLElement} playlist - Список відображення пісень
+       * @property {HTMLElement} totalDuration - Поле загальної тривалості
+       * @property {HTMLElement} search - Поле для пошуку
+       * @property {HTMLElement} btnSortByDuration - Кнопка сортування за тривалістю
+       * @property {HTMLElement} btnSortByName - Кнопка сортування за назвою
+       * @property {HTMLElement} btnTotalDuration - Кнопка підрахунку загальної тривалості
+       * @property {HTMLElement} btnClearList - Кнопка очищення списку
+       * @property {HTMLElement} btnSearch - Кнопка пошуку пісні
+       */
+      const UI = {
+        song: document.getElementById("song"),
+        duration: document.getElementById("duration"),
+        btnAddSong: document.getElementById("add-song"),
+        playlist: document.getElementById("playlist"),
+        totalDuration: document.getElementById("total-duration"),
+        search: document.getElementById("search"),
+        btnSortByDuration: document.getElementById("sort-by-duration"),
+        btnSortByName: document.getElementById("sort-by-name"),
+        btnTotalDuration: document.getElementById("count-total-duration"),
+        btnClearList: document.getElementById("clear-list"),
+        btnSearch: document.getElementById("search-btn"),
+      };
+
+      let playlistArray = [];
+
+      /**
+       * Фабрика для створення об'єкта пісні
+       * @param {string} name - Назва пісні
+       * @param {number} duration - Тривалість пісні
+       * @returns {Object} Об'єкт пісні { name, duration }
+       */
+      const createSong = (name, duration) => ({ name, duration });
+
+      /**
+       * Оновлює відображення списку пісень
+       */
+      const updatePlaylist = () => {
+        UI.playlist.innerHTML = "";
+        playlistArray.forEach((song) => {
+          const li = document.createElement("li");
+          li.id = `li-${song.name}`;
+          li.setAttribute("name", song.name);
+          li.textContent = `${song.name} - ${song.duration}`;
+
+          const delButton = document.createElement("button");
+          delButton.setAttribute("song", song.name);
+          delButton.textContent = "Delete";
+          li.appendChild(delButton);
+
+          UI.playlist.appendChild(li);
+        });
+      };
+
+      /**
+       * Видаляє пісню зі списку
+       * @param {string} songName - Назва пісні для видалення
+       */
+      const delSong = (songName) => {
+        playlistArray = playlistArray.filter((song) => song.name !== songName);
+        updatePlaylist();
+      };
+
+      /**
+       * Отримує інформацію про пісню з полів введення
+       * @returns {Object} Об'єкт пісні { songName, songDuration }
+       */
+      const getSongInfo = () => ({
+        songName: UI.song.value.trim(),
+        songDuration: UI.duration.value.trim(),
+      });
+
+      /**
+       * Перевіряє правильність введених даних
+       * @param {Object} songInfo - Об'єкт пісні
+       * @returns {boolean} true якщо дані валідні, інакше false
+       */
+      const checkSongData = (songInfo) => {
+        if (!songInfo.songName || !songInfo.songDuration) {
+          alert("Please fill in all fields");
+          return false;
+        }
+        if (playlistArray.some((song) => song.name === songInfo.songName)) {
+          alert("This song is already in the playlist");
+          return false;
+        }
+        return true;
+      };
+
+      /**
+       * Обробляє подію додавання пісні
+       */
+      UI.btnAddSong.addEventListener("click", () => {
+        const songInfo = getSongInfo();
+        if (!checkSongData(songInfo)) return;
+
+        playlistArray.push(
+          createSong(songInfo.songName, songInfo.songDuration)
+        );
+        updatePlaylist();
+      });
+
+      /**
+       * Сортує список пісень за назвою
+       */
+      UI.btnSortByName.addEventListener("click", () => {
+        playlistArray.sort((a, b) => a.name.localeCompare(b.name));
+        updatePlaylist();
+      });
+
+      /**
+       * Сортує список пісень за тривалістю
+       */
+      UI.btnSortByDuration.addEventListener("click", () => {
+        playlistArray.sort((a, b) => a.duration - b.duration);
+        updatePlaylist();
+      });
+
+      /**
+       * Підраховує загальну тривалість пісень
+       */
+      UI.btnTotalDuration.addEventListener("click", () => {
+        const total = playlistArray.reduce(
+          (acc, song) => acc + parseInt(song.duration),
+          0
+        );
+        UI.totalDuration.textContent = total;
+      });
+
+      /**
+       * Очищає список пісень
+       */
+      UI.btnClearList.addEventListener("click", () => {
+        playlistArray = [];
+        updatePlaylist();
+        UI.totalDuration.textContent = "0";
+      });
+
+      /**
+       * Пошук пісні за назвою
+       */
+      UI.btnSearch.addEventListener("click", () => {
+        const searchValue = UI.search.value.trim();
+
+        document
+          .querySelectorAll("li")
+          .forEach((li) => li.classList.remove("activeSong"));
+
+        const song = playlistArray.find((s) => s.name === searchValue);
+        if (!song) {
+          alert("Song not found");
+          return;
+        }
+
+        // Виносим знайдену пісню на верх
+        playlistArray.sort(function (a, b) {
+          return a.name === searchValue ? -1 : 1;
+        });
+
+        // Оновлюємо список
+        updatePlaylist();
+
+        // Активуєм елемент
+        document
+          .getElementById(`li-${searchValue}`)
+          .classList.add("activeSong");
+      });
+
+      /**
+       * Делегування подій для видалення пісень
+       */
+      UI.playlist.addEventListener("click", (event) => {
+        if (event.target.tagName === "BUTTON") {
+          delSong(event.target.getAttribute("song"));
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -30,8 +30,8 @@ div.classList.add('new-class-2');
 div.style.backgroundColor = 'yellow';
 
 
-let button = document.getElementById('myButton');
-button.addEventListener('click', function() {
+var button = document.getElementById('myButton');
+button.addEventListener('click', function () {
     alert('Кнопка натиснута!');
 });
 
@@ -45,3 +45,27 @@ const secondEl = firstLi.nextSibling.nextSibling;
 console.log(secondEl.previousSibling)
 console.log(secondEl.parentNode)
 // ======================================
+
+// **************** ISSUES *****************
+var button = document.querySelector("button");
+button.addEventListener("click", function () {
+    console.log(this);
+});
+// addEventListener не спрацює тому що document.body.innerHTML += '' перезапише весь html З кнопкою
+document.body.innerHTML += '<button class="btn">Нова кнопка</button>'; // Перезаписує весь body!
+
+// 1) Використовуємо documentFragment для динамічного створення елементів
+const newButton = document.createElement("button");
+newButton.className = "btn";
+newButton.textContent = "Нова кнопка";
+document.body.appendChild(newButton); // Додає кнопку без перезапису
+
+// 2) Делегування подій
+document.body.addEventListener("click", function (event) {
+    if (event.target.tagName === "BUTTON") {
+        console.log(event.target); // Працює для всіх кнопок, навіть динамічно створених!//-
+        console.log(event.target); // Logs the clicked button element.//+
+    }
+});
+
+

@@ -77,5 +77,60 @@
         });
       });
     </script>
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <script>
+      if ("name" in user) {
+        console.log("user has name");
+      } else {
+        console.log("user has no name");
+      }
+      // ===========================================
+      // fromEntries() - create an object from an array
+      // ===========================================
+      var arr = [
+        ["name", "John"],
+        ["age", 25],
+        ["isAdmin", false],
+      ];
+      var obj = Object.fromEntries(arr);
+      console.log("obj->fromEntries:", obj);
+      // ===========================================
+      // assign() - copy the values of all enumerable own properties from one or more source objects to a target object
+      // ===========================================
+      var obj1 = { a: 1, b: 2 };
+      var obj2 = { c: 3, d: 4 };
+      var obj3 = { e: 5, f: 6 };
+      var unionObj = Object.assign({}, obj2, obj3);
+      console.log("unionObj->assign:", unionObj);
+
+      // ===========================================
+      // hasProperty - check if property exists
+      // ===========================================
+      var actor = {
+        name: "Will",
+        age: 25,
+      };
+      const hasName = actor?.hasOwnProperty("name");
+      console.log("hasProperty->actor:", hasName);
+
+      /**
+       * Checking if param is exist
+       *
+       * @param {string} propName - name of the param
+       * @param {objects} obj - object that include the param
+       * @param {bool} debug - Entry message about param
+       * @return {bool} - exist of param
+       *
+       */
+      function checkProp(propName = "", obj, debug = false) {
+        let result;
+        propName in obj ? (result = true) : (result = false);
+        if (debug)
+          console.log(`checkProp->propName: ${propName}, result: ${result}`);
+        return result;
+      }
+      checkProp("age", actor, true);
+    </script>
   </body>
 </html>

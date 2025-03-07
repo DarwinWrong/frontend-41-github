@@ -6,6 +6,47 @@
     <title>this</title>
   </head>
   <body>
+    <table data-start="1959" data-end="2264">
+      <thead data-start="1959" data-end="1999">
+        <tr data-start="1959" data-end="1999">
+          <th data-start="1959" data-end="1977">Де викликається</th>
+          <th data-start="1977" data-end="1990">function()</th>
+          <th data-start="1990" data-end="1999">() =&gt;</th>
+        </tr>
+      </thead>
+      <tbody data-start="2040" data-end="2264">
+        <tr data-start="2040" data-end="2101">
+          <td>Глобальний контекст</td>
+          <td>
+            <code data-start="2064" data-end="2072">window</code> або
+            <code data-start="2077" data-end="2088">undefined</code>
+          </td>
+          <td><code data-start="2091" data-end="2099">window</code></td>
+        </tr>
+        <tr data-start="2102" data-end="2141">
+          <td>Об'єкт як метод</td>
+          <td>Об'єкт</td>
+          <td><code data-start="2131" data-end="2139">window</code></td>
+        </tr>
+        <tr data-start="2142" data-end="2197">
+          <td>Вкладена функція</td>
+          <td><code data-start="2163" data-end="2174">undefined</code></td>
+          <td>
+            Успадковане <code data-start="2189" data-end="2195">this</code>
+          </td>
+        </tr>
+        <tr data-start="2198" data-end="2237">
+          <td>Обробник подій</td>
+          <td>Елемент</td>
+          <td><code data-start="2227" data-end="2235">window</code></td>
+        </tr>
+        <tr data-start="2238" data-end="2264">
+          <td>Клас</td>
+          <td>Об'єкт</td>
+          <td>Об'єкт</td>
+        </tr>
+      </tbody>
+    </table>
     <!-- ======================================================================================= -->
     <!-- ======================================================================================= -->
     <script>
@@ -16,7 +57,7 @@
       }
 
       function showThisStrict() {
-        const name = "Alice";
+        var name = "Alice";
         showThis();
       }
 
@@ -25,39 +66,40 @@
     <!-- ======================================================================================= -->
     <!-- ======================================================================================= -->
     <script>
-      const user = {
+      var user = {
         name: "Alice",
         sayHi() {
           console.log("Привіт, " + this.name);
-        }
+        },
       };
 
       user.sayHi();
 
-      const hi = user.sayHi;
+      var hi = user.sayHi;
       hi();
 
       window.name = "Global";
       hi();
-
-      // **********************
-      const button = document.querySelector("button");
-      button.addEventListener("click", function () {
-        console.log(this); // button
-      });
     </script>
 
     <!-- ======================================================================================= -->
     <!-- ======================================================================================= -->
     <!-- У подіях браузера this зазвичай вказує на елемент, який викликав подію. -->
-    <button>click</button>
+    <button>this button</button>
     <script>
-      const button = document.querySelector("button");
+      var button = document.querySelector("button");
+
       button.addEventListener("click", function () {
         console.log(this); // Сам button
       });
 
-      const button = document.querySelector("button");
+      button.addEventListener("click", () => console.log(this)); // window
+
+      button.addEventListener("click", (event) =>
+        console.log("event:", event, "event.target:", event.target)
+      ); // event
+
+      var button = document.querySelector("button");
       document.body.innerHTML += '<button class="btn">Нова кнопка</button>'; // Додаємо нову кнопку
       button.addEventListener("click", function () {
         console.log(button); // ❌ Завжди вказує на стару кнопку, нова не працює!
@@ -74,25 +116,25 @@
     <!-- ======================================================================================= -->
     <script>
       // *** 1 ***
-      const user = {
+      var user = {
         name: "Alice",
         sayHi() {
           console.log("Привіт, " + user.name);
         },
       };
-      const anotherUser = { name: "Bob" };
+      var anotherUser = { name: "Bob" };
       anotherUser.sayHi = user.sayHi;
       user.sayHi(); // ✅ "Привіт, Alice"
       anotherUser.sayHi(); // ❌ "Привіт, Alice" (а не Bob!)
 
       // *** 2 ***
-      const user = {
+      var user = {
         name: "Alice",
         sayHi() {
           console.log("Привіт, " + this.name);
         },
       };
-      const anotherUser = { name: "Bob" };
+      var anotherUser = { name: "Bob" };
       anotherUser.sayHi = user.sayHi;
 
       user.sayHi(); // ✅ "Привіт, Alice"
@@ -103,125 +145,284 @@
 
     <script>
       // Уяви, що є телефон із записаним номером людини (sayHi).
-      // Якщо ти запишеш номер у свій список контактів (const hi = user.sayHi),
+      // Якщо ти запишеш номер у свій список контактів (var hi = user.sayHi),
       // телефон не буде знати, звідки цей номер був узятий.
       // Він просто буде дзвонити за вказаним номером, але без інформації про початкового власника контакту.
-      const user = {
+      var user = {
         name: "Alice",
         sayHi() {
           console.log("Привіт, " + this.name);
         },
       };
 
-      const hi = user.sayHi; // Скопіювали посилання
+      var hi = user.sayHi; // Скопіювали посилання
       // hi() викликається сам по собі (без об’єкта перед крапкою).
       // hi – це просто функція. Вона НЕ знає, що раніше була методом user.
       // Коли ми викликаємо hi(), функція виконується сама по собі, без об'єкта, тому this тут не буде user
       // Якщо вона викликається без об'єкта (hi()), this НЕ знає, звідки вона взята (і в залежності від режиму JS може бути undefined або window).
       hi(); // ❌ "Привіт, undefined"
 
-      const anotherUser = {
+      var anotherUser = {
         name: "Bob",
       };
       anotherUser.sayHi = user.sayHi; // Копіюємо метод
       anotherUser.sayHi(); // ✅ "Привіт, Bob"
 
       // дублювання коду через привязування до обєкта
-      const user = {
+      var user = {
         name: "Alice",
         sayHi() {
           console.log("Привіт, " + user.name);
         },
       };
 
-      const admin = {
+      var admin = {
         name: "Bob",
         sayHi() {
           console.log("Привіт, " + admin.name);
         },
       };
 
-      const person = {
+      var person = {
         name: "",
         sayHi() {
           console.log("Привіт, " + this.name);
         },
       };
 
-      const user = { name: "Alice", sayHi: person.sayHi };
-      const admin = { name: "Bob", sayHi: person.sayHi };
+      var user = { name: "Alice", sayHi: person.sayHi };
+      var admin = { name: "Bob", sayHi: person.sayHi };
 
       user.sayHi(); // ✅ "Привіт, Alice"
       admin.sayHi(); // ✅ "Привіт, Bob"
 
       //   жорстка привязка до обєкта, метод sayHi() буде виводити лише ім'я Alice
-      const user = {
+      var user = {
         name: "Alice",
         sayHi() {
           console.log("Привіт, " + user.name); // ❌ Жорстко вказуємо `user`
         },
       };
-      const anotherUser = { name: "Bob" };
+      var anotherUser = { name: "Bob" };
       anotherUser.sayHi = user.sayHi; // Копіюємо метод
       anotherUser.sayHi(); // ❌ "Привіт, Alice" (а мало бути "Привіт, Bob")
     </script>
     <!-- ======================================================================================= -->
     <!-- ======================================================================================= -->
-  <script>
-// ======= 1 =======
+    <script>
+      // ======= 1 =======
       function sayHi(obj) {
-          console.log("Привіт, " + obj.name);
+        console.log("Привіт, " + obj.name);
       }
 
-      const user = { name: "Alice" };
-      const admin = { name: "Bob" };
+      var user = { name: "Alice" };
+      var admin = { name: "Bob" };
 
       sayHi(user); // Привіт, Alice
       sayHi(admin); // Привіт, Bob
 
-// ======= 2 =======
-      const person = {
-          sayHi() {
-              console.log("Привіт, " + this.name);
-          }
+      // ======= 2 =======
+      var person = {
+        sayHi() {
+          console.log("Привіт, " + this.name);
+        },
       };
 
       // Створюємо нові об'єкти, які наслідують person
-      const user = Object.create(person);
+      var user = Object.create(person);
       user.name = "Alice";
-      const admin = Object.create(person);
+      var admin = Object.create(person);
       admin.name = "Bob";
 
       user.sayHi(); // ✅ "Привіт, Alice"
       admin.sayHi(); // ✅ "Привіт, Bob"
-  </script>
+    </script>
     <!-- ======================================================================================= -->
     <!-- ======================================================================================= -->
     <script>
-        //   Але коли ми викликаємо actor() всередині castActor(), ми використовуємо звичайну функцію,
-        //   а не метод. Звичайна функція в JavaScript має свій власний контекст this,
-        //   який вказує на глобальний об'єкт (в браузері це window), а не на director
-        const director = {
-            movie: "Зоряні Війни",
-            castActor: function () {
-                function actor() {
-                    console.log(this.movie); // Ось тут ми отримаємо undefined
-                }
-                actor(); // викликається не в контексті об'єкта
-            },
-        };
-        director.castActor(); // Викликаємо метод
+      //   Але коли ми викликаємо actor() всередині castActor(), ми використовуємо звичайну функцію,
+      //   а не метод. Звичайна функція в JavaScript має свій власний контекст this,
+      //   який вказує на глобальний об'єкт (в браузері це window), а не на director
+      var director = {
+        movie: "Зоряні Війни",
+        castActor: function () {
+          function actor() {
+            console.log(this.movie); // Ось тут ми отримаємо undefined
+          }
+          actor(); // викликається не в контексті об'єкта
+        },
+      };
+      director.castActor(); // Викликаємо метод
 
-        const director = {
-            movie: "Зоряні Війни",
-            castActor: function () {
-                const actor = () => {
-                    console.log(this.movie); // "Зоряні Війни"
-                };
-                actor(); // Тепер працює правильно
-            },
+      var director = {
+        movie: "Зоряні Війни",
+        castActor: function () {
+          var actor = () => {
+            console.log(this.movie); // "Зоряні Війни"
+          };
+          actor(); // Тепер працює правильно
+        },
+      };
+      director.castActor(); // Викликаємо метод
+    </script>
+    <!-- ======================================================================================= -->
+    <!-- Arrow functions (e)=>{} -->
+    <!-- ======================================================================================= -->
+    <table data-start="967" data-end="1220">
+      <thead data-start="967" data-end="1008">
+        <tr data-start="967" data-end="1008">
+          <th data-start="967" data-end="988">Тип функції</th>
+          <th data-start="988" data-end="1008">
+            Що буде в <code data-start="1000" data-end="1006">this</code>
+          </th>
+        </tr>
+      </thead>
+      <tbody data-start="1049" data-end="1220">
+        <tr data-start="1049" data-end="1090">
+          <td>function()</td>
+          <td>
+            Елемент
+            <code data-start="1078" data-end="1088">&lt;button&gt;</code>
+          </td>
+        </tr>
+        <tr data-start="1091" data-end="1220">
+          <td>() =&gt;</td>
+          <td>
+            Оточення, де функцію було створено (тобто глобальний контекст або
+            об'єкт, якщо функція оголошена в методі)
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      /**
+       * ()=>{}
+       * Стрілочні функції НЕ мають власного this.
+       * Вони беруть значення this з того місця, де були створені (лексичний контекст).
+       */
+
+      //  =======================================================================================
+      //  У глобальному контексті
+      //  =======================================================================================
+      const arrow = () => {
+        console.log('arrow():',this); // window
+      };
+      arrow(); // window
+
+      var arr = [1, 2, 3];
+      arr.map((value) => console.log('arr.map->this', this));  // window
+
+      //  =======================================================================================
+      //  У методах об'єкта
+      //  =======================================================================================
+      const user = {
+        name: "user",
+        age: 35,
+        logFunc: function () {
+          console.log("func => this", this);
+        },
+        logArrowFunc: () => console.log("arrow func => this", this), // window
+        loginfo: (this) => console.log("arrow func => this", this), // window
+        info: () => {
+          console.log(this.name);
+          console.log(this.name + ":" + this.age);
+        },
+        values: [1, 2, 3],
+        printValues: function() {
+          this.values.map((value) => {
+            console.log('printValues->this.values.map:', this.name);  // this тут вказує на obj
+          });
+        },
+        // 1.Коли самовикликаюча функція виконується, вона отримує значення this як аргумент self.
+        // 2.Повертається стрілкова функція, яка успадковує це значення self замість this.
+        // 3.Коли викликається стрілкова функція, вона виводить значення self,
+        // яке є тим об'єктом, що був переданий як this
+        getinfo: (function (self) {
+          return () => console.log("arrow func => this", self); // this буде вказувати на self
+        })(this),
+        changeAge: function (newAge) {
+          this.age = newAge; // для оновлення age новим значенням
+          console.log("Inside changeAge:", this); // this вказує на user
+          const innerFunction = () => {
+            console.log("Inside innerFunction:", this); // стрілкова функція успадковує this з changeAge
+            console.log("Actor role:", this.role); // доступ до властивості age
+          };
+          innerFunction(); // виклик стрілкової функції всередині changeAge
+        },
+      };
+      actor.logFunc(); // user
+      actor.logArrowFunc(); // window
+      // Тут this не посилається на об'єкт user, а бере this з того місця,
+      // де було створено функцію — з глобального контексту.
+      user.info(); //undefined
+
+      //  =======================================================================================
+      //  Вкладені функції (callback)
+      //  =======================================================================================
+      const user = {
+        name: "Alice",
+        greet() {
+          const arrow = () => {
+            console.log(this.name);
+          };
+          arrow();
+        },
+      };
+      // Стрілочна функція бере this із найближчого лексичного контексту — тобто з функції greet(),
+      // де this посилається на user.
+      user.greet(); //"Alice"
+
+      const car = {
+        brand: "Toyota",
+        showBrand: () => {
+          console.log(this.brand);
+        },
+      };
+      // У стрілкових функціях this не працює — воно посилається на зовнішній контекст.
+      car.showBrand(); // undefined
+      //  =======================================================================================
+      //  В обробниках подій
+      //  =======================================================================================
+      const button = document.querySelector("button");
+      // Це тому, що стрілочні функції не отримують this від об'єкта-обробника події.
+      // Вони беруть його з місця, де були створені — а це глобальний контекс
+      // Де створюється стрілочна функція? Вона створюється прямо всередині методу addEventListener().
+      // Лексичне оточення (Lexical Environment): Стрілочна функція завжди бере this із того місця,
+      // де вона була оголошена.
+      // Але! Вона оголошена у глобальному контексті (або у тому місці, де викликається код),
+      // а не у контексті кнопки.
+      // Що відбувається в момент натискання на кнопку:
+      // Звичайна функція (function()) отримала б this як кнопку (елемент, що викликав подію).
+      // Але стрілочна функція не переписує this, а просто бере його з зовнішнього оточення.
+
+      button.addEventListener("click", function () {
+        console.log(this); //button
+      });
+
+      button.addEventListener("click", () => {
+        console.log(this); //window
+      });
+
+      //  =======================================================================================
+      //  У класах
+      //  =======================================================================================
+      class User {
+        constructor(name) {
+        constructor(name) {
+          this.name = name;
+        }
+
+        sayHi = () => {
+          console.log(this.name);
         };
-        director.castActor(); // Викликаємо метод
+      }
+      // У класах стрілочні функції найчастіше використовують,
+      // щоб автоматично прив'язати метод до екземпляра об'єкта.
+      const alice = new User("Alice");
+      alice.sayHi(); //"Alice"
+
+      //  =======================================================================================
+      //  =======================================================================================
     </script>
   </body>
 </html>
