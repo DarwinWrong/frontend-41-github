@@ -1,276 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <script>
-      // const c1 = {
-      //     name: 'John',
-      //     age: 25
-      // };
-      // c1.name = 'Tom';
-      // console.log(c1.name);
 
-      // const j1 = [1, 2, 3, 4, 5];
-      // j1[2] = 10;
-      // console.log(j1[2]);
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
 
-      // let a1 = 5;
-      // {
-      //     console.log(b1);
-      //     var b1 = 4;
-      //     console.log(a1);
-      // }
+<body>
+  <script>
+    // const c1 = {
+    //     name: 'John',
+    //     age: 25
+    // };
+    // c1.name = 'Tom';
+    // console.log(c1.name);
 
-      // console.log(a1);
+    // const j1 = [1, 2, 3, 4, 5];
+    // j1[2] = 10;
+    // console.log(j1[2]);
 
-      // let string = 'Hello';
-      // let number = 123;
-      // let boolean = true; // false
-      // let id1 = Symbol('id');
-      // let id2 = Symbol('id');
-      // console.log(id1 === id2); // false
+    // let a1 = 5;
+    // {
+    //     console.log(b1);
+    //     var b1 = 4;
+    //     console.log(a1);
+    // }
 
-      // console.log(typeof string); // string
-      // console.log(typeof number); // string
-      // console.log(typeof null); // string
-      // console.log(typeof NAN); // string
-      // console.log(typeof function () { });
+    // console.log(a1);
 
-      // let a = 1;
-      // let b = 2;
-      // let c = a + b;
-      // console.log('c', c);
-      // c = b - a;
-      // console.log('c', c);
-      // c = a * b * 2;
-      // console.log('c', c);
-      // c = a / b;
-      // console.log('c', c);
-      // c = 10 % 3;
-      // console.log('c', c);
-      // c = 2 ** b;
-      // console.log('c', c);
+    // let string = 'Hello';
+    // let number = 123;
+    // let boolean = true; // false
+    // let id1 = Symbol('id');
+    // let id2 = Symbol('id');
+    // console.log(id1 === id2); // false
 
-      // let d = a < b;
-      // console.log(a < b);
-      // console.log('d', d);
-      // d = a > b;
-      // console.log('d', d);
-      // b = 1;
-      // d = a <= b;
-      // console.log('d', d);
-      // a = 3;
-      // d = a >= b;
-      // console.log('d', d);
-      // d = a == b;
-      // console.log('d', d);
-      // b = '3';
-      // d = a == b;
-      // console.log('d', d);
-      // d = a === b;
-      // console.log('d', d);
-      // console.log(typeof a, typeof b, typeof a === typeof b);
-      // d = a != b;
-      // console.log('d', d);
-      // d = a !== b;
-      // console.log('d', d);
+    // console.log(typeof string); // string
+    // console.log(typeof number); // string
+    // console.log(typeof null); // string
+    // console.log(typeof NAN); // string
+    // console.log(typeof function () { });
 
-      // a = true;
-      // b = false;
-      // let c = a && b;
-      // console.log('c', c);
-      // b = true;
-      // c = a && b;
-      // console.log('c', c);
+    // let a = 1;
+    // let b = 2;
+    // let c = a + b;
+    // console.log('c', c);
+    // c = b - a;
+    // console.log('c', c);
+    // c = a * b * 2;
+    // console.log('c', c);
+    // c = a / b;
+    // console.log('c', c);
+    // c = 10 % 3;
+    // console.log('c', c);
+    // c = 2 ** b;
+    // console.log('c', c);
 
-      // c = a || b;
-      // console.log('c', c);
-      // a = false;
-      // b = false;
-      // c = a || b;
-      // console.log('c', c);
+    // let d = a < b;
+    // console.log(a < b);
+    // console.log('d', d);
+    // d = a > b;
+    // console.log('d', d);
+    // b = 1;
+    // d = a <= b;
+    // console.log('d', d);
+    // a = 3;
+    // d = a >= b;
+    // console.log('d', d);
+    // d = a == b;
+    // console.log('d', d);
+    // b = '3';
+    // d = a == b;
+    // console.log('d', d);
+    // d = a === b;
+    // console.log('d', d);
+    // console.log(typeof a, typeof b, typeof a === typeof b);
+    // d = a != b;
+    // console.log('d', d);
+    // d = a !== b;
+    // console.log('d', d);
 
-      // c = !a;
-      // console.log('c', c);
-      // c = a === b; //true
-      // console.log('c', c);
+    // a = true;
+    // b = false;
+    // let c = a && b;
+    // console.log('c', c);
+    // b = true;
+    // c = a && b;
+    // console.log('c', c);
 
-      // console.log(c = a !== b)
-      // console.log(!c)
+    // c = a || b;
+    // console.log('c', c);
+    // a = false;
+    // b = false;
+    // c = a || b;
+    // console.log('c', c);
 
-      // let e = a ?? b;
-      // console.log(e);
-      // a = null;
-      // b = undefined;
-      // console.log(a ?? b);
-      // console.log(b ?? a);
-      // a = undefined;
-      // b = 1;
-      // console.log(b ?? a);
-      // a = 2;
-      // console.log(b ?? a);
+    // c = !a;
+    // console.log('c', c);
+    // c = a === b; //true
+    // console.log('c', c);
 
-      // const animals = {
-      //     cat: {
-      //         call: 'Tom',
-      //         age: 3
-      //     },
-      //     bird: { //dog
-      //         name: undefined,
-      //         age: 5
-      //     }
-      // }
-      // console.log(animals.cat.name);
-      // // console.log(animals.dog.age); //error
-      // console.log(animals?.dog?.age); //error
+    // console.log(c = a !== b)
+    // console.log(!c)
 
-      // let c = 5;
-      // c += a; // c = c + a;
-      // console.log(c);
-      // c -= a; // c = c - a;
-      // console.log(c);
-      // c *= a; // c = c * a;
-      // console.log(c);
-      // c /= a; // c = c / a;
+    // let e = a ?? b;
+    // console.log(e);
+    // a = null;
+    // b = undefined;
+    // console.log(a ?? b);
+    // console.log(b ?? a);
+    // a = undefined;
+    // b = 1;
+    // console.log(b ?? a);
+    // a = 2;
+    // console.log(b ?? a);
 
-      // let a = 2, b = 10;
-      // let c = a + b;
+    // const animals = {
+    //     cat: {
+    //         call: 'Tom',
+    //         age: 3
+    //     },
+    //     bird: { //dog
+    //         name: undefined,
+    //         age: 5
+    //     }
+    // }
+    // console.log(animals.cat.name);
+    // // console.log(animals.dog.age); //error
+    // console.log(animals?.dog?.age); //error
 
-      // let max = c < 10;
+    // let c = 5;
+    // c += a; // c = c + a;
+    // console.log(c);
+    // c -= a; // c = c - a;
+    // console.log(c);
+    // c *= a; // c = c * a;
+    // console.log(c);
+    // c /= a; // c = c / a;
 
-      // if (max) {
-      //     console.log('less than 10');
+    // let a = 2, b = 10;
+    // let c = a + b;
+
+    // let max = c < 10;
+
+    // if (max) {
+    //     console.log('less than 10');
+    // } else {
+    //     console.log('more than 10');
+    // }
+
+    // let d = max ? 'less than 10' : 'more than 10';
+    // console.log(d);
+
+    // switch (true) {
+    //     case max === true:
+    //         console.log('less than 10');
+    //         break;
+    //     case max === false:
+    //         console.log('more than 10');
+    //         break;
+    //     default: console.log('error');
+    // }
+
+    // // ==============================
+    // // function log(name = 'name', value = 'value') {
+    // //     console.log(name, value);
+    // // }
+
+    // let number = 10;
+    // while (number > 0) {
+    //     console.log('number', number);
+    //     number--;
+    // }
+
+    // function numbers() {
+    //     console.log(typeof arguments);
+    //     console.log('arguments', arguments);
+    //     console.log('arguments.length', arguments.length);
+    //     console.log('arguments[2]', arguments[2]);
+    // }
+    // numbers(23, 33, 45, 55);
+
+    // const sum = (a, b) => a + b;
+    // const divide = (a, b) => a / b;
+    // const multiply = (a, b) => a * b;
+    //
+    // function sumAndLog(c, d) {
+    //     console.log(sum(c, d))
+    // }
+    // sumAndLog(2, 3)
+    //
+    // // Розширюваність, Локалізація залежностей
+    // function sumAndLog2(operation, c, d) { // логіка змінилась без зміни функції
+    //     console.log(operation(c, d))
+    // }
+    // sumAndLog2(sum, 3, 4); // 7
+    // sumAndLog2(multiply, 3, 4); // 12
+    // sumAndLog2(divide, 10, 2); // 5
+
+    // const sum2 = (a, b) => {
+    //     return a + b;
+    // }
+    // const sum3 = (a, b) => {
+    //     console.log('a', a);
+    //     a += 2;
+    //     console.log('a', a);
+    //     return a + b;
+    // }
+
+    // console.log(sum(2, 3));
+    // sum3(4, 5);
+    // ==============================================
+
+    function reverseText(text) {
+      return text.toLowerCase().split("").reverse().join("");
+    }
+    //   function findWord(text, word) {
+    function findWord(text, words = []) {
+      let isExist = false;
+      // const reversedText = reverseText(text);
+      // const reversedWord = reverseText(word);
+      // const hasReversedWord = text.includes(reversedWord);
+      // const isExist = text.includes(word) || hasReversedWord;
+      // const isInsideAnotherWord = text.indexOf(word) !== -1;
+
+      // if (text.includes(word)) {
+      //   console.log(1);
+      //   return true;
+      // } else if (hasReversedWord) {
+      //   console.log(2);
+      //   return true;
       // } else {
-      //     console.log('more than 10');
+      //   console.log(4);
+      //   return false;
       // }
 
-      // let d = max ? 'less than 10' : 'more than 10';
-      // console.log(d);
+      words?.forEach((word) => {
+        const lowText = text.toLowerCase();
+        const lowWord = word.toLowerCase();
+        const reversedWord = reverseText(lowWord.toLowerCase());
+        const hasReversedWord = lowText.includes(reversedWord);
+        const isInsideAnotherWord = lowText.indexOf(lowWord) !== -1;
+        if (lowText.includes(lowWord)) {
+          console.log(`${word} is exist`);
+          return lowWord;
+        } else if (hasReversedWord) {
+          console.log(`${word} is reversed`);
+          return hasReversedWord;
+        } else {
+          console.log(`${word} is absent`);
+          return "";
+        }
+      });
+      // return isExist;
+    }
 
-      // switch (true) {
-      //     case max === true:
-      //         console.log('less than 10');
-      //         break;
-      //     case max === false:
-      //         console.log('more than 10');
-      //         break;
-      //     default: console.log('error');
-      // }
+    //   console.log(findWord(" +Hello$ world hello", "hello")); // true
+    //   console.log(findWord(" +olleH$ dlrow olleh", "hello")); // true
+    //   console.log(findWord(" +Hellow$ world YouhelloW", "hello")); // true
+    findWord(" +Hello$ world hello", ["hello", "dlrow"]);
 
-      // // ==============================
-      // // function log(name = 'name', value = 'value') {
-      // //     console.log(name, value);
-      // // }
+    function findAndReplace(text = "", findArray = [], replaceArray = []) {
+      const words = text.split("");
+      const w = `${findArray[1]}`;
+      const word = text.toLowerCase().includes("dog");
+      console.log("w", word);
+      console.log(Array.from(text));
+      console.log(Array.of(text));
+      // console.log(new Map(text));
 
-      // let number = 10;
-      // while (number > 0) {
-      //     console.log('number', number);
-      //     number--;
-      // }
+      const lowText = text.toLowerCase();
 
-      // function numbers() {
-      //     console.log(typeof arguments);
-      //     console.log('arguments', arguments);
-      //     console.log('arguments.length', arguments.length);
-      //     console.log('arguments[2]', arguments[2]);
-      // }
-      // numbers(23, 33, 45, 55);
+      function convertWordCase(findWord, replaceWord) {
+        // console.log('findWord:', findWord);
+        // console.log('replaceWord:', replaceWord);
 
-      // const sum = (a, b) => a + b;
-      // const divide = (a, b) => a / b;
-      // const multiply = (a, b) => a * b;
-      //
-      // function sumAndLog(c, d) {
-      //     console.log(sum(c, d))
-      // }
-      // sumAndLog(2, 3)
-      //
-      // // Розширюваність, Локалізація залежностей
-      // function sumAndLog2(operation, c, d) { // логіка змінилась без зміни функції
-      //     console.log(operation(c, d))
-      // }
-      // sumAndLog2(sum, 3, 4); // 7
-      // sumAndLog2(multiply, 3, 4); // 12
-      // sumAndLog2(divide, 10, 2); // 5
-
-      // const sum2 = (a, b) => {
-      //     return a + b;
-      // }
-      // const sum3 = (a, b) => {
-      //     console.log('a', a);
-      //     a += 2;
-      //     console.log('a', a);
-      //     return a + b;
-      // }
-
-      // console.log(sum(2, 3));
-      // sum3(4, 5);
-      // ==============================================
-
-      function reverseText(text) {
-        return text.split("").reverse().join("");
-      }
-      //   function findWord(text, word) {
-      function findWord(text, words = []) {
-        let isExist = false;
-        // const reversedText = reverseText(text);
-        // const reversedWord = reverseText(word);
-        // const hasReversedWord = text.includes(reversedWord);
-        // const isExist = text.includes(word) || hasReversedWord;
-        // const isInsideAnotherWord = text.indexOf(word) !== -1;
-
-        // if (text.includes(word)) {
-        //   console.log(1);
-        //   return true;
-        // } else if (hasReversedWord) {
-        //   console.log(2);
-        //   return true;
-        // } else {
-        //   console.log(4);
-        //   return false;
-        // }
-
-        words?.forEach((word) => {
-          const reversedWord = reverseText(word);
-          const hasReversedWord = text.includes(reversedWord);
-          const isInsideAnotherWord = text.indexOf(word) !== -1;
-          if (text.includes(word)) {
-            console.log(`${word} is exist`);
-          } else if (hasReversedWord) {
-            console.log(`${word} is reversed`);
-          } else {
-            console.log(`${word} is absent`);
+        function makeLowOrUp(findWord, replaceWord) {
+          if (findWord === findWord.toLowerCase()) {
+            // console.log('toLowerCase');
+            return replaceWord.toLowerCase();
+          } else if (findWord === findWord.toUpperCase()) {
+            // console.log('toUpperCase');
+            return replaceWord.toUpperCase();
           }
-        });
-        // return isExist;
+        }
+        const firstFindLetter = findWord.charAt(0);
+        const firstReplaceLetter = replaceWord.charAt(0);
+        // const firstLetter = makeLowOrUp(firstFindLetter, firstReplaceLetter);
+        const restOfWord = findWord.slice(1);
+        const isFirstLetterUpperCase = firstFindLetter === firstFindLetter.toUpperCase();
+        const areRestLettersLowerCase = restOfWord === restOfWord.toLowerCase();
+        // console.log('firstFindLetter:', firstFindLetter);
+        // console.log('findWord.slice(1):', findWord.slice(1));
+        // console.log(firstFindLetter === findWord.slice(1));
+
+        const worldInOneCase = isFirstLetterUpperCase && areRestLettersLowerCase;
+        if (worldInOneCase) {
+          return makeLowOrUp(findWord, replaceWord);
+        } else {
+          return makeLowOrUp(firstFindLetter, firstReplaceLetter) + replaceWord.substring(1);
+        }
+        // console.log('replaceWord.substring(1);', replaceWord.substring(1));
       }
 
-      //   console.log(findWord(" +Hello$ world hello", "hello")); // true
-      //   console.log(findWord(" +olleH$ dlrow olleh", "hello")); // true
-      //   console.log(findWord(" +Hellow$ world YouhelloW", "hello")); // true
-      findWord(" +Hello$ world hello", ["hello", "dlrow"]);
+      let newText = text
+      findArray.forEach((word, index) => {
+        const lowWord = word.toLowerCase();
+        const wordLength = word.length;
+        const hasWord = lowText.includes(lowWord);
 
-      function findAndReplace(text = "", findArray = [], replaceArray = []) {
-        const words = text.split(" ");
-        findArray.forEach((word, index) => {
-          const regex = `/word/gi`;
-          text.replace(regex, replaceArray[index]);
-        });
-        console.log("text: ", text);
-        // const isLowerCase = text.toLowerCase() ===
-        // const isUpperCase = text.toUpperCase() ===
-      }
-      findAndReplace(
-        "Cat runs. Dog runs. Cat jumps.",
-        ["cat", "dog"],
-        ["bird", "fish"]
-      );
-      // ===================================================================
-      // ===================================================================
-    </script>
-  </body>
+        // const regex = `/word/gi`;
+        if (hasWord) {
+          const findStart = lowText.indexOf(word);
+          // console.log('hasWord->word', word);
+
+          // console.log('findStart', findStart);
+          // console.log('wordLength', wordLength);
+
+          const findedWord = text.substring(findStart, findStart + wordLength);
+          console.log('findedWord', findedWord);
+
+          const convertedWord = convertWordCase(findedWord, replaceArray[index])
+          console.log('convertedWord', convertedWord);
+
+          newText = newText.replace(findedWord, convertedWord);
+
+        }
+        console.log('newText:', newText);
+      });
+    }
+
+    findAndReplace(
+      "CAT runs. Dog runs. Cat jumps.",
+      ["cat", "dog"],
+      ["bird", "fish"]
+    );
+    // ===================================================================
+    // ===================================================================
+  </script>
+</body>
+
 </html>

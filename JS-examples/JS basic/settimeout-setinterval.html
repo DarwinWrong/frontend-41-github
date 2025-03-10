@@ -5,15 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+
   <body>
+    <!-- ======================================================================================= -->
+    <!-- setTimeout() -->
+    <!-- ======================================================================================= -->
+    <pre>
+    setTimeout() використовується для запуску функції через певний час (в мілісекундах).
+    setTimeout(function, delay, ...args);
+
+    Де краще використовувати?
+    Для відкладених операцій (наприклад, показ повідомлення через певний час).
+    Для симуляції асинхронних запитів.
+  </pre
+    >
     <script>
-      console.log("Task 1");
-
       setTimeout(() => {
-        console.log("Task 2");
-      }, 1000); // Виконується через 1 секунду
+        console.log('Hello after 2 seconds');
+      }, 2000);
 
-      console.log("Task 3");
+      console.log('Task 1');
+      setTimeout(() => {
+        console.log('Task 2');
+      }, 1000); // Виконується через 1 секунду
+      console.log('Task 3');
     </script>
+    <code>
+      Створи кнопку, при натисканні на яку через 2 секунди виводиться привітання
+      "Привіт, як справи?". Використовуємо setTimeout() для затримки.
+      <button id="greetBtn">Натисни, щоб привітати!</button>
+      <p id="greeting"></p>
+      <script>
+        document.getElementById('greetBtn').onclick = function () {
+          setTimeout(function () {
+            document.getElementById('greeting').textContent =
+              'Привіт, як справи?';
+          }, 2000);
+        };
+      </script>
+    </code>
+
+    <!-- ======================================================================================= -->
+    <!-- setInterval() -->
+    <!-- ======================================================================================= -->
+    <pre>
+    setInterval() виконує функцію з певним інтервалом часу.
+    setInterval(function, delay, ...args);
+
+    Де краще використовувати?
+    Для постійних оновлень (наприклад, таймер або анімації).
+    Для періодичних запитів на сервер.
+  </pre
+    >
+    <script></script>
+    <code>
+      Створи лічильник, який збільшується на 1 кожну секунду, і показує поточне
+      значення на сторінці. Для цього використовуй setInterval().
+      <p id="counter">0</p>
+      <script>
+        var counter = 0;
+
+        const timer = setInterval(function () {
+          // Якщо counter досягає 5, зупиняємо setInterval
+          if (counter === 5) {
+            clearInterval(timer); // Зупиняє виконання setInterval
+          }
+          counter++;
+          document.getElementById('counter').textContent = counter;
+        }, 1000);
+      </script>
+    </code>
   </body>
 </html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <!-- ======================================================================================= -->
+    <!-- new Set() -->
+    <!-- ======================================================================================= -->
+    <pre>
+        Методи об'єкта Set:
+        .add(value) — додає нове значення в Set. Якщо значення вже існує, то воно не буде додано.
+        .has(value) — перевіряє, чи є значення в Set.
+        .delete(value) — видаляє значення з Set.
+        .clear() — очищає всі елементи з Set.
+        .size — кількість елементів у Set.
+
+        Сучасні практики:
+        Використовуйте Set, коли потрібно гарантувати, що елементи колекції будуть унікальними.
+        Set є чудовим вибором для перевірки наявності елементів, 
+        оскільки операція .has() працює за час O(1), що робить її більш ефективною ніж пошук у масиві.
+     </pre
+    >
+    <script>
+      var numbers = new Set();
+      numbers.add(1);
+      numbers.add(2);
+      numbers.add(2); // Це значення не буде додано, оскільки воно вже є в Set
+      numbers.add(3);
+      console.log(numbers); // Set { 1, 2, 3 }
+
+      console.log(numbers.has(2)); // true
+      console.log(numbers.size); // 3
+
+      numbers.delete(2); // Видалити число 2
+      console.log(numbers.has(2)); // false
+
+      numbers.clear(); // Очистити Set
+      console.log(numbers.size); // 0
+    </script>
+    <code>
+      Створи систему, яка додає імена користувачів у колекцію, але не допускає
+      дублікатів. Виведи всіх користувачів у список на сторінці.
+      <ul id="userList"></ul>
+      <script>
+        const users = new Set();
+        const userList = document.getElementById('userList');
+
+        function addUser(name) {
+          users.add(name);
+          updateList();
+        }
+
+        function updateList() {
+          userList.innerHTML = '';
+          users.forEach((user) => {
+            let li = document.createElement('li');
+            li.textContent = user;
+            userList.appendChild(li);
+          });
+        }
+
+        addUser('Олег');
+        addUser('Марія');
+        addUser('Олег');
+        addUser('Іван');
+      </script>
+    </code>
+    <!-- ======================================================================================= -->
+    <!-- new Set() -->
+    <!-- ======================================================================================= -->
+    <pre>
+        Map — це колекція пар "ключ-значення", де ключі можуть бути будь-якого типу, 
+        включаючи об'єкти та функції. Map дозволяє зберігати асоціативні дані 
+        і має кращу продуктивність у порівнянні з об'єктами, 
+        особливо коли потрібно працювати з великими наборами даних.
+
+        Методи об'єкта Map:
+        .set(key, value) — додає пару "ключ-значення" в Map.
+        .get(key) — отримує значення за ключем.
+        .has(key) — перевіряє, чи існує пара з таким ключем.
+        .delete(key) — видаляє пару за ключем.
+        .clear() — очищає Map.
+        .size — кількість елементів у Map.
+
+        Сучасні практики:
+        Map — кращий вибір, ніж об'єкти, коли потрібно використовувати ключі, що не є рядками.
+        Використовуйте Map для зберігання асоціативних даних, особливо коли ключі не є простими рядками.
+        Map має кращу продуктивність у випадках, коли потрібно виконати велику кількість операцій додавання, 
+        видалення або пошуку елементів, порівняно з використанням звичайних об'єктів.
+     </pre
+    >
+    <script>
+      var map = new Map();
+      map.set('name', 'Alice');
+      map.set('age', 25);
+      map.set(1, 'One');
+
+      map.set([1, 2], 'Array as key');
+      console.log(map.get([1, 2])); // {} == {}
+      const arrMap = [1, 2];
+      map.set(arrMap, 'Array as key');
+      console.log(map.get(arrMap)); // Array as key
+
+      console.log(map.get('name')); // "Alice"
+      console.log(map.get(1)); // "One"
+      console.log(map.has('age')); // true
+      console.log(map.size); // 4
+
+      map.delete(1); // Видалити пару з ключем 1
+      console.log(map.get(1)); // undefined
+
+      map.clear(); // Очистити Map
+      console.log(map.size); // 0
+    </script>
+    <code>
+      Завдання: «Склад продуктів» Створи об'єкт Map, де ключ — назва продукту, а
+      значення — кількість. Реалізуй функцію, яка додає продукти та виводить їх
+      на сторінку.
+      <ul id="productList"></ul>
+      <script>
+        const products = new Map();
+        const productList = document.getElementById('productList');
+
+        function addProduct(name, quantity) {
+          products.set(name, quantity);
+          updateProducts();
+        }
+
+        function updateProducts() {
+          productList.innerHTML = '';
+          products.forEach((quantity, name) => {
+            let li = document.createElement('li');
+            li.textContent = `${name}: ${quantity}`;
+            productList.appendChild(li);
+          });
+        }
+
+        addProduct('Яблука', 10);
+        addProduct('Банани', 5);
+        addProduct('Яблука', 15);
+      </script>
+    </code>
+    <pre>
+            Коли використовувати:
+            Set: коли вам потрібно зберігати унікальні значення і перевіряти їх наявність без дублювання.
+            Map: коли ви працюєте з асоціативними парами даних, 
+            де ключі можуть бути різних типів (не лише рядки).
+    </pre>
+  </body>
+</html>

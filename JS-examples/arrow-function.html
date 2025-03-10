@@ -23,29 +23,39 @@
       //   console.log("doubleNumbers:", doubleNumbers);
 
       user = {
-        name: "Oleh",
+        name: 'Oleh',
         age: 20,
         getName() {
-          console.log("user.name:", this.name); // Oleh
-          return () => console.log("arrow:", this.name, this.age);
+          console.log('user.name:', this.name); // Oleh
+          const getThis = () => console.log('arrow:', this.name, this.age);
+          getThis();
+          // return () => console.log('arrow:', this.name, this.age); // return as function, need to call
         },
-        getAge: () => console.log("user.age:", this.age), // undefined
+        getAge: () => console.log('user.age:', this.age), // undefined
         logArrowFunc: () => console.log(this), // window
         // getInfo: (function (self) {
         //   return () => console.log(self);
         // })(this),
       };
 
+      function hello() {
+        console.log('Hello');
+      }
+      hello(); // Hello
+      hello = () => console.log('Hello world');
+      hello(); // hello world
+
+      // var getThis
       var www = user.getName();
-      console.log(www);
+      // console.log(www);
       www();
 
-      user.getAge();
-      user.logArrowFunc();
+      // user.getAge();
+      // user.logArrowFunc();
       //   user.getInfo();
 
-      var array = [1, 2, 3];
-      array.map((el) => console.log(el));
+      // var array = [1, 2, 3];
+      // array.map((el) => console.log(el));
     </script>
   </body>
 </html>

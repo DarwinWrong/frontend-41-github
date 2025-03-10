@@ -61,27 +61,27 @@
         return 3;
       }
       console.log(testIfObject instanceof Object); // true
-      testIfObject.name = "testIfObject";
+      testIfObject.name = 'testIfObject';
       console.log(testIfObject.name); // testIfObject
       // ==============================
 
-      function greeting(hello = "Привіт, світ!", name = "Анонім") {
+      function greeting(hello = 'Привіт, світ!', name = 'Анонім') {
         console.log(`${hello} Мене звати ${name}`);
       }
-      greeting("Привіт всім"); // виклик функції
+      greeting('Привіт всім'); // виклик функції
 
       // Функція з параметрами
       function add(a, b) {
         return a + b; // повертає суму a і b
       }
       let result = add(3, 5); // викликаємо функцію з параметрами
-      log("result", result); // виведе 8
+      log('result', result); // виведе 8
 
       function multiply(a, b, c) {
         return a * b * c;
       }
       let result2 = multiply(2, 3, 4); // викликаємо функцію з трьома параметрами
-      log("result2", result2); // виведе 24
+      log('result2', result2); // виведе 24
     </script>
 
     <!-- ======================================================================================= -->
@@ -90,9 +90,9 @@
     <script>
       // Анонімна функція з параметрами за замовчуванням
       let greet = function (name) {
-        console.log("Привіт, " + name + "!");
+        console.log('Привіт, ' + name + '!');
       };
-      greet("Олексій"); // викликає анонімну функцію
+      greet('Олексій'); // викликає анонімну функцію
 
       // =============================================
       const sum3 = (a, b) => a + b;
@@ -114,7 +114,7 @@
       // =============================================
       (function () {
         console.log(
-          "Ця функція виконується на льоту і більше не буде використовуватись."
+          'Ця функція виконується на льоту і більше не буде використовуватись.',
         );
       })();
     </script>
@@ -129,11 +129,11 @@
       console.log(doubled);
 
       const actor = {
-        name: "Gamlet",
+        name: 'Gamlet',
         logFunc: function () {
-          console.log("func => this", this);
+          console.log('func => this', this);
         },
-        logArrowFunc: () => console.log("arrow func => this", this),
+        logArrowFunc: () => console.log('arrow func => this', this),
       };
       actor.logFunc();
       actor.logArrowFunc();
@@ -170,15 +170,15 @@
     <!--Обєкт arguments-->
     <!-- ======================================================================================= -->
     <script>
-      log("its working", "true");
+      log('its working', 'true');
 
-      function log(name = "name", value = "value") {
+      function log(name = 'name', value = 'value') {
         console.log(name, value);
       }
     </script>
     <script>
       function myFunction() {
-        log("arguments", arguments);
+        log('arguments', arguments);
       }
       myFunction(1, 2, 3); // { 0: 1, 1: 2, 2: 3 }
 
@@ -189,17 +189,61 @@
         }
         return total;
       }
-      log("sum(1, 2, 3)", sum(1, 2, 3)); // 6
-      log("sum(10, 20, 30, 40)", sum(10, 20, 30, 40)); // 100
+      log('sum(1, 2, 3)', sum(1, 2, 3)); // 6
+      log('sum(10, 20, 30, 40)', sum(10, 20, 30, 40)); // 100
 
       // ==============================
       function argsLength(args) {
         return args.length;
       }
-      log('argsLength("Hello")', argsLength("Hello")); // 5
+      log('argsLength("Hello")', argsLength('Hello')); // 5
 
-      const dogs = ["Bulldog", "Beagle", "Labrador"];
-      log("argsLength(dogs[])", argsLength(dogs)); // 3
+      const dogs = ['Bulldog', 'Beagle', 'Labrador'];
+      log('argsLength(dogs[])', argsLength(dogs)); // 3
+    </script>
+
+    <!-- ======================================================================================= -->
+    <!--Створення функцій на основі динамічних даних-->
+    <!-- ======================================================================================= -->
+    <pre>
+Коли використовувати:
+
+Коли ви хочете створити функцію, котра виконуватиме певну операцію, 
+базуючись на даних, які визначаються під час виконання (наприклад, математичні операції).
+Якщо код функції генерується динамічно на основі вхідних даних.
+
+Проблеми та небезпеки:
+Безпека: Використання new Function() дає доступ до глобального контексту виконання,
+ що означає можливість виконання небезпечного коду, 
+ якщо вхідний код не перевірено належним чином. Це потенційно може призвести до атак, 
+ таких як XSS (межсайтове скриптування).
+Читабельність і відлагодження: Код, створений через new Function(), 
+ може бути важким для розуміння і відлагодження, оскільки він не є статичним 
+ і з'являється тільки під час виконання.
+     </pre
+    >
+    <script>
+      // Дані отримуємо з зовнішнього джерела або параметрів користувача
+      const operator = '+';
+      const expression = 'a ' + operator + ' b';
+      // Створюємо функцію на основі динамічно згенерованого коду
+      const dynamicFunction = new Function('a', 'b', `return a ${operator} b;`);
+      console.log(dynamicFunction(3, 4)); // 7 (для операції '+')
+
+      // Іноді потрібно виконувати JavaScript-код, який надається в вигляді рядка.
+      // Це може бути корисно при створенні парсерів або систем, що дозволяють динамічно виконувати код.
+      const code = 'console.log("Hello, dynamic world!");';
+      // Створюємо функцію з рядка і виконуємо її
+      const dynamicCode = new Function(code);
+      dynamicCode(); // Виведе "Hello, dynamic world!"
+
+      // Інші варіанти застосування можуть включати ситуації, коли ви працюєте з
+      // динамічними редакторами JavaScript або реалізуєте систему
+      // для виконання коду в рамках користувацького інтерфейсу.
+      const userInput = 'return a * b'; // Вхідний рядок від користувача
+      // Створюємо функцію на основі введеного коду
+      const userFunction = new Function('a', 'b', userInput);
+      console.log(userFunction(2, 3)); // 6
     </script>
   </body>
 </html>

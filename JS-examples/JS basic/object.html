@@ -8,38 +8,92 @@
     <!-- ======================================================================================= -->
     <!--Cтвореня об'єкту з властивостями-->
     <!-- ======================================================================================= -->
+    <pre>
+      Існує в основному для зворотної сумісності з більш ранніми версіями JavaScript. 
+      Для створення простих об'єктів він не є дуже корисним у сучасному коді, 
+      але його все ще можна зустріти у старому коді або в тих випадках,
+      коли необхідно створити порожній об'єкт за допомогою конструктора
+     </pre
+    >
     <script>
       // створюємо порожній об'єкт
       var student = new Object();
       // Додаємо властивість в об'єкт використовуючи звичайний синтаксис масивів
-      student["name"] = "Vasya";
-      student["my age is"] = 23;
+      student['name'] = 'Vasya';
+      student['my age is'] = 23;
       // замість подвійних лапок можна використовувати одинарні
-      console.log('student["name"]', student["name"]);
-      console.log('student["my age is"]', student["my age is"]);
+      console.log('student["name"]', student['name']);
+      console.log('student["my age is"]', student['my age is']);
 
       // створюємо порожній об'єкт
       var firm = {};
       // створюємо властивість всередині об'єкта
-      firm.name = "Star Inc";
-      console.log("firm.name", firm.name);
+      firm.name = 'Star Inc';
+      console.log('firm.name', firm.name);
 
       // створили об'єкт студента
       var women = {
-        name: "Daria",
-        lastName: "Kislicina",
+        name: 'Daria',
+        lastName: 'Kislicina',
         age: 23,
         address: {
-          street: "Tiraspolskaya 5",
-          city: "Odessa",
-          country: "Ukraine",
+          street: 'Tiraspolskaya 5',
+          city: 'Odessa',
+          country: 'Ukraine',
         },
       };
-      console.log("women.address.street", women.address.street);
+      console.log('women.address.street', women.address.street);
+
+      const parent = {
+        greet() {
+          console.log('Hello from parent!');
+        },
+      };
+      child.greet(); // "Hello from parent!"
+      console.log(child.name); // "John"
+      console.log(child.age); // 25
+    </script>
+
+    <pre>
+Це дуже потужний метод, коли потрібно створити об'єкт з конкретним прототипом. 
+Це не заміняє класи, але дає більше контролю над прототипним наслідуванням, 
+і є корисним у випадках, коли не хочеться використовувати класи.
+Використовують, якщо хочеш створити новий об'єкт, що має специфічні властивості або методи, 
+або коли хочеш контролювати саме наслідування через прототипи.
+
+Перший параметр (parent) — це прототип для нового об'єкта child.
+Другий параметр — це об'єкт, який містить дескриптори властивостей для нових властивостей name і age.
+
+Дескриптори властивостей дозволяють контролювати:
+value — значення властивості.
+writable — чи можна змінювати значення властивості.
+enumerable — чи буде властивість видима при перерахунку властивостей об'єкта (наприклад, через for...in або Object.keys()).
+configurable — чи можна змінювати дескриптор властивості або видалити властивість.
+
+Коли використовувати:
+Якщо потрібно не тільки вказати прототип для нового об'єкта, але й додати властивості з конкретними характеристиками.
+Якщо потрібна більша гнучкість і контроль над властивостями об'єкта.
+</pre
+    >
+    <script>
+      const child = Object.create(parent, {
+        name: {
+          value: 'John',
+          writable: true,
+          enumerable: true,
+          configurable: true,
+        },
+        age: {
+          value: 25,
+          writable: true,
+          enumerable: false,
+          configurable: false,
+        },
+      });
     </script>
 
     <script>
-      var obj1 = { name: "Іван", age: 30 };
+      var obj1 = { name: 'Іван', age: 30 };
       var obj2 = obj1; // obj2 посилається на той самий об'єкт
 
       obj2.age = 25; // Міняємо значення в obj2
@@ -52,12 +106,12 @@
     <!-- ======================================================================================= -->
     <script>
       var user = {
-        name: "John Doe",
+        name: 'John Doe',
         age: 30,
-        city: "New York",
+        city: 'New York',
       };
       delete user.name;
-      delete user["age"];
+      delete user['age'];
       console.log(user.name, user.age); // undefined
     </script>
     <!-- ======================================================================================= -->
@@ -66,13 +120,13 @@
     <script>
       // створили об'єкт
       var obj = {};
-      obj.name = "Oleg";
+      obj.name = 'Oleg';
       // перевіряємо чи є властивість Age
       // in поверне false, тому що цієї властивості немає
-      if ("name" in obj) {
-        console.log("Exists");
+      if ('name' in obj) {
+        console.log('Exists');
       } else {
-        console.log("Not exists");
+        console.log('Not exists');
       }
     </script>
     <!-- ======================================================================================= -->
@@ -147,9 +201,9 @@
     <script>
       // 4. Object.fromEntries(arr) – створює об'єкт з масиву пар ключ/значення.
       var arr = [
-        ["a", 1],
-        ["b", 2],
-        ["c", 3],
+        ['a', 1],
+        ['b', 2],
+        ['c', 3],
       ];
       var obj = Object.fromEntries(arr);
       console.log(obj); // { a: 1, b: 2, c: 3 }
@@ -201,11 +255,11 @@
       // Якщо цільовий об'єкт не переданий, то новий об'єкт буде створений,
       // і оригінальний об'єкт не зміниться.
       var person = {
-        name: "Alice",
+        name: 'Alice',
         age: 25,
       };
       // Копіюємо властивості в той самий об'єкт
-      Object.assign(person, { age: 26, city: "New York" });
+      Object.assign(person, { age: 26, city: 'New York' });
       console.log(person);
       // Очікуємо:
       // {
@@ -242,8 +296,8 @@
     <script>
       // 6. Object.hasOwn(obj, key) – Перевіряє, чи є у об'єкта властивість key
       var obj = { a: 1, b: 2 };
-      console.log(Object.hasOwn(obj, "a")); // true
-      console.log(Object.hasOwn(obj, "c")); // false
+      console.log(Object.hasOwn(obj, 'a')); // true
+      console.log(Object.hasOwn(obj, 'c')); // false
     </script>
     <pre>
       Використайте метод Object.hasOwn(), щоб перевірити, чи є у вашому об'єкті властивість year.

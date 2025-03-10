@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // ===========================================
+      // new Set()
+      // ===========================================
+      var numbers = new Set();
+      numbers.add(1);
+      numbers.add(2);
+      numbers.add(2); // -
+      numbers.add(3);
+      console.log('numbers', numbers);
+
+      console.log('numbers.has', numbers.has(3));
+
+      numbers.delete(2);
+      console.log('numbers', numbers);
+
+      numbers.clear();
+      console.log('numbers', numbers);
+
+      const arr = ['one', 'two', 'three', 'two'];
+      const uniqArr = new Set(arr);
+      console.log('uniqArr:', uniqArr);
+    </script>
+
+    <!-- створіть код який додає імена користувачів у колекцію без дублікатів
+    і виведіть всіх користувачів у список ul
+
+    треба створити метод що додає користувача до колекції і оновлює список елементів в ul -->
+    <ul id="userList"></ul>
+
+    <script>
+      const users = new Set();
+      const userList = document.getElementById('userList');
+
+      /**
+       * @description This function add a user to the list
+       *
+       * @param {string} user - The user name
+       * @method updateUser - Update the users html list
+       * @author Bohdan <b@gmail.com>
+       */
+      function addUser(name) {
+        users.add(name);
+        updateUser();
+      }
+
+      /**
+       *
+       */
+      function updateUser() {
+        userList.innerHTML = '';
+        users.forEach((name) => {
+          const li = document.createElement('li');
+          li.textContent = name;
+          userList.appendChild(li);
+        });
+      }
+
+      addUser('John Doe');
+      addUser('Alice Doe');
+      addUser('John Doe');
+      console.log('users: ', users);
+
+      // ===========================================
+      // new Map()
+      // ===========================================
+      const map = new Map();
+
+      map.set('name', 'Oleh');
+      map.set('age', 18);
+      map.set(1, 'one');
+
+      const arrMap = [1, 2];
+      map.set(arrMap, 'Array as key');
+      console.log(map.get(arrMap));
+      console.log({} == {});
+
+      // console.log('map:', map);
+
+      // console.log(map.get('name'));
+      // console.log(map.get('age'));
+      // console.log(map.size);
+
+      // map.delete(1);
+    </script>
+  </body>
+</html>
