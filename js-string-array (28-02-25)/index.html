@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Music Playlist</h1>
+    <div>
+      <input type="text" id="songTitle" placeholder="Enter song title" />
+      <input
+        type="number"
+        id="songDuration"
+        placeholder="Duration (minutes)"
+        min="0"
+        step="any"
+      />
+      <button id="addSongBtn">Add Song</button>
+    </div>
+    <ul id="playlist"></ul>
+    <div>
+      <button id="sortTitleBtn">Sort by Title</button>
+      <button id="sortDurationBtn">Sort by Duration</button>
+      <button id="calcTotalBtn">Calculate Total Duration</button>
+    </div>
+    <div>
+      <h2>Total Duration: <span id="totalTime">0</span> minutes</h2>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
