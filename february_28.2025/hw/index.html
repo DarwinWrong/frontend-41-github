@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Музичний плейлист</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+
+    <h1>🎵 Музичний плейлист 🎶</h1>
+
+    <input type="text" id="songName" placeholder="Назва пісні">
+    <input type="number" id="songDuration" placeholder="Тривалість (хв)">
+    <button id="addSong">Додати пісню</button>
+
+    <input type="text" id="searchSong" placeholder="🔍 Знайти пісню">
+
+    <ul id="playlist"></ul>
+
+    <button id="sortByName">Сортувати за назвою</button>
+    <button id="sortByDuration">Сортувати за тривалістю</button>
+    <button id="calculateTotal">Підрахувати загальну тривалість</button>
+    <button id="clearPlaylist">Очистити список</button>
+
+    <p>Загальна тривалість: <span id="totalTime">0</span> хв.</p>
+
+    <script src="script/script.js"></script>
+
+</body>
+</html>
