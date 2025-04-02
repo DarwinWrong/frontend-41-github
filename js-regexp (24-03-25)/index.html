@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Registration Form</h1>
+
+    <form id="registrationForm">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" />
+        <div id="usernameError" class="error"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" />
+        <div id="emailError" class="error"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" />
+        <div id="passwordError" class="error"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="+380441234567" />
+        <div id="phoneError" class="error"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="dob">Date of birth:</label>
+        <input type="date" id="dob" name="dob" />
+        <div id="dobError" class="error"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="website">Personal website URL (optional):</label>
+        <input
+          type="url"
+          id="website"
+          name="website"
+          placeholder="https://www.google.com/"
+        />
+        <div id="websiteError" class="error"></div>
+      </div>
+
+      <button type="submit">Register</button>
+    </form>
+
+    <script src="script.js"></script>
+  </body>
+</html>
