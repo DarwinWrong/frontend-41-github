@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма реєстрації</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { width: 300px; margin: auto; }
+        .error { color: red; font-size: 12px; }
+        input { width: 100%; padding: 5px; margin: 5px 0; }
+        .password-container { position: relative; }
+        .toggle-password { position: absolute; right: 10px; top: 35%; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Реєстрація</h2>
+        <form id="registrationForm">
+            <label>Ім'я користувача</label>
+            <input type="text" id="username" required>
+            <div class="error" id="usernameError"></div>
+
+            <label>Email</label>
+            <input type="email" id="email" required>
+            <div class="error" id="emailError"></div>
+
+            <label>Пароль</label>
+            <div class="password-container">
+                <input type="password" id="password" required>
+                <span class="toggle-password">👁️</span>
+            </div>
+            <div class="error" id="passwordError"></div>
+            <small id="passwordCounter">0/8</small>
+
+            <label>Номер телефону</label>
+            <input type="text" id="phone" required>
+            <div class="error" id="phoneError"></div>
+
+            <label>Дата народження</label>
+            <input type="date" id="dob" required>
+            <div class="error" id="dobError"></div>
+
+            <label>URL сайту</label>
+            <input type="url" id="website">
+            <div class="error" id="websiteError"></div>
+
+            <button type="submit">Зареєструватися</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let isValid = true;
+
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const phone = document.getElementById('phone').value;
+            const dob = document.getElementById('dob').value;
+            const website = document.getElementById('website').value;
+
+            // Валідація ім'я користувача
+            if (!/^[a-zA-Z0-9]{3,}$/.test(username)) {
+                document.getElementById('usernameError').innerText = "Ім'я має містити мінімум 3 символи (латинські літери та цифри).";
+                isValid = false;
+            } else {
+                document.getElementById('usernameError').innerText = "";
+            }
+
+            // Валідація email
+            if (!/^\S+@\S+\.\S+$/.test(email)) {
+                document.getElementById('emailError').innerText = "Некоректний email.";
+                isValid = false;
+            } else {
+                document.getElementById('emailError').innerText = "";
+            }
+
+            // Валідація пароля
+            if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}/.test(password)) {
+                document.getElementById('passwordError').innerText = "Пароль має містити мінімум 8 символів, 1 велику, 1 малу літеру та 1 цифру.";
+                isValid = false;
+            } else {
+                document.getElementById('passwordError').innerText = "";
+            }
+
+            // Валідація телефону
+            if (!/^\+380\d{9}$/.test(phone)) {
+                document.getElementById('phoneError').innerText = "Формат: +380xxxxxxxxx";
+                isValid = false;
+            } else {
+                document.getElementById('phoneError').innerText = "";
+            }
+
+            // Валідація дати народження
+            const birthDate = new Date(dob);
+            const age = new Date().getFullYear() - birthDate.getFullYear();
+            if (age < 18) {
+                document.getElementById('dobError').innerText = "Вам має бути 18 років або більше.";
+                isValid = false;
+            } else {
+                document.getElementById('dobError').innerText = "";
+            }
+
+            // Валідація URL
+            if (website && !/^https?:\/\/.+\..+$/.test(website)) {
+                document.getElementById('websiteError').innerText = "Некоректний URL.";
+                isValid = false;
+            } else {
+                document.getElementById('websiteError').innerText = "";
+            }
+
+            if (isValid) {
+                console.log({ username, email, password, phone, dob, website });
+                alert("Реєстрація успішна!");
+            }
+        });
+
+        // Показ/приховування пароля
+        document.querySelector('.toggle-password').addEventListener('click', function() {
+            const passwordField = document.getElementById('password');
+            passwordField.type = passwordField.type === 'password' ? 'text' : 'password';
+        });
+
+        // Лічильник символів у паролі
+        document.getElementById('password').addEventListener('input', function() {
+            document.getElementById('passwordCounter').innerText = `${this.value.length}/8`;
+        });
+    </script>
+</body>
+</html>
