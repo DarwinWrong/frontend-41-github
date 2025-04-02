@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Star Wars Characters</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Star Wars Characters</h1>
+      </div>
+
+      <div class="search-container">
+        <input
+          type="text"
+          id="searchInput"
+          class="search-input"
+          placeholder="Search for characters..."
+        />
+        <select id="searchParam" class="search-select">
+          <option value="name">Name</option>
+          <option value="species">Species</option>
+          <option value="homeworld">Homeworld</option>
+          <option value="gender">Gender</option>
+          <option value="height">Height</option>
+          <option value="mass">Mass</option>
+        </select>
+      </div>
+
+      <div id="charactersContainer" class="characters-grid">
+        <div class="loader">Loading characters...</div>
+      </div>
+    </div>
+
+    <div id="characterModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button" id="closeModal">&times;</span>
+        <div id="modalContent"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
