@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OOP</title>
+  </head>
+  <body>
+    <script>
+      // console.log(Object.prototype);
+      // var people = { name: 'John', age: 20 };
+      // console.log(people);
+
+      // function Animal(name) {
+      //   this.name = name;
+      // }
+      // console.log('Animal', Animal);
+      // console.log('Animal.prototype', Animal.prototype);
+
+      // Animal.prototype.greeting = function () {
+      //   console.log(`Hello, I'm ${this.name}`);
+      // };
+      // var dog = new Animal('Tom');
+      // dog.greeting();
+    </script>
+
+    <!-- ======================================================================================= -->
+    <!-- Функції конструктори -->
+    <!-- Наслідування через прототипи (застарілий метод) -->
+    <!-- Виглядає складніше та менш читабельно. -->
+    <!-- ES6 ввів класи, які є синтаксичним цукром над цим підходом -->
+    <!-- ======================================================================================= -->
+    <script>
+      // 1. Створимо функцію-конструктор
+      function Animal(name) {
+        this.name = name;
+      }
+      // прототип функції має властивість "constructor" за замовчуванням,
+      // тому нам не потрібно її створювати
+
+      // 2. Додамо метод до прототипу
+      Animal.prototype.speak = function () {
+        console.log(`${this.name} makes a noise`);
+      };
+
+      // Використання:
+      const dog = new Animal('Rex');
+      dog.speak(); // "Rex makes a noise"
+    </script>
+
+    <!-- ======================================================================================= -->
+    <!-- Class -->
+    <!-- ======================================================================================= -->
+    <script>
+      // Конструкція class Animal {...} в дійсності робить наступне:
+      // 1. Створює функцію, що називається Animal та стає результатом оголошення класу.
+      // Код цієї функції береться з методу constructor (вважається порожнім, якщо ми не написали такий метод).
+      // 2. Записує методи класу, такі як voice, до Animal.prototype.
+      class Animal {
+        // Весь код всередині конструкції класу use strict
+
+        // Важливою відмінністю полів класу є те, що вони задаються в окремих об’єктах, а не в User.prototype:
+        name = 'Tom'; // властивість класу
+
+        // Метод constructor() викликається автоматично за допомогою new, в ньому ми можемо ініціалізувати об’єкт
+        constructor(options) {
+          this.name = options.name;
+          this.age = options.age;
+        }
+
+        voice() {
+          console.log(`${this.name} makes a noise`);
+        }
+      }
+
+      // доказ: User -- це функція
+      console.log(typeof Animal); // function як це було з функціями конструкторами
+      // ...або, точніше, метод конструктора
+      console.log(Animal === Animal.prototype.constructor); // true
+      // Методи знаходяться в User.prototype, наприклад:
+      console.log(Animal.prototype.voice); // код voice методу
+      // у прототипі існує рівно два методи
+      console.log(Object.getOwnPropertyNames(Animal.prototype)); // constructor, voice
+      let animal = new Animal();
+      // Важливою відмінністю полів класу є те, що вони задаються в окремих об’єктах, а не в User.prototype:
+      console.log(animal.name); // Tom
+      console.log(Animal.prototype.name); // undefined
+    </script>
+
+    <!-- ======================================================================================= -->
+    <!-- Реалізація -->
+    <!-- ======================================================================================= -->
+    <script>
+      // Метод constructor() викликається автоматично за допомогою new, в ньому ми можемо ініціалізувати об’єкт
+      // 1.Створюється новий об’єкт.
+      // 2.constructor запускається з даним аргументом і присвоює його в this.name.
+      // 3.Після того, як new Animal створився, коли ми викликаємо його метод, він береться з прототипу,
+      // як описано в розділі F.prototype. Таким чином, об’єкт має доступ до методів класу.
+      const pet = new Animal({ name: 'Rex' });
+      console.log(pet.name); // "Rex"
+      console.log(pet.type); // "undefined" (статичні властивості не доступні через об'єкт)
+      console.log(Animal.type); // "animal" (статичні властивості доступні через клас)
+
+      // =================================
+      // Class Expression
+      let Planet = class {
+        sayHi() {
+          alert('Привіт');
+        }
+      };
+      new Planet().sayHi(); // працює, показує визначення MyClass
+
+      // =================================
+      // Ми можемо навіть зробити класи динамічними “на вимогу”, наприклад:
+      function makeClass(phrase) {
+        // оголошуємо клас і повертаємо його
+        return class {
+          sayHi() {
+            alert(phrase);
+          }
+        };
+      }
+      // Створюємо новий клас
+      let planet = makeClass('Привіт');
+      new Planet().sayHi(); // Привіт
+    </script>
+
+    <!-- ======================================================================================= -->
+    <!-- constructor{} -->
+    <!-- ======================================================================================= -->
+    <script>
+      class Button {
+        constructor(value) {
+          this.value = value;
+        }
+        click() {
+          alert(this.value);
+        }
+      }
+      // Потім використовуйте new MyClass(), щоб створити новий об’єкт з усіма перерахованими методами.
+      // Метод constructor() викликається автоматично за допомогою new, в ньому ми можемо ініціалізувати об’єкт.
+      // Коли new User("Іван") викликається:*
+      // 1. Створюється новий об’єкт.
+      // 2. constructor запускається з даним аргументом і присвоює його в this.name.
+      let button = new Button('привіт');
+
+      // =================================
+      // Перевизначення поля класу
+      // =================================
+      class Animal {
+        name = 'тварина';
+        constructor() {
+          alert(this.name); // (*)
+        }
+      }
+      class Rabbit extends Animal {
+        name = 'кролик';
+      }
+      // Тут клас Rabbit наслідує клас Animal і перевизначає поле name власним значенням.
+      // Немає власного конструктора в Rabbit, тому викликається конструктор Animal.
+      // Інакше кажучи, батьківський конструктор завжди використовує власне значення поля, а не перевизначене
+      new Animal(); // тварина
+      new Rabbit(); // тварина
+    </script>
+
+    <!-- ======================================================================================= -->
+    <!-- Статичні властивості та методи -->
+    <!-- Зазвичай статичні методи використовуються для реалізації функцій, які належать до класу, 
+    але не до будь-якого окремого його об’єкта.
+    Статичні властивості та методи наслідуються. -->
+    <!-- ======================================================================================= -->
+    <script>
+      // Ми також можемо присвоїти метод самій функції класу. Такі методи називаються статичними.
+      class User {
+        static name = 'Nick'; // недоступна для використання через об'єкт
+        static staticMethod() {
+          alert(this === User);
+        }
+      }
+      // Значенням this при виклику User.staticMethod() є сам конструктор класу User (правило «об’єкт перед крапкою»).
+      User.staticMethod(); // true
+      // Фактично це те ж саме, що й безпосередньо присвоїти метод як властивість функції:
+      class User {}
+      User.name = 'Nick';
+      console.log(User.name);
+      User.staticMethod = function () {
+        alert(this === User);
+      };
+      User.staticMethod(); // true
+
+      // ==============================
+      // Приклад використання
+      // ==============================
+      // Зазвичай статичні методи використовуються для реалізації функцій, які належать до класу, але не до будь-якого окремого його об’єкта
+      class Article {
+        constructor(title, order) {
+          this.title = title;
+          this.order = order;
+        }
+        static compare(articleA, articleB) {
+          return articleA.order - articleB.order;
+        }
+      }
+      // використання
+      let articles = [
+        new Article('HTML', 2),
+        new Article('CSS', 1),
+        new Article('JavaScript', 3),
+      ];
+      articles.sort(Article.compare);
+      console.log(articles[0].title); // CSS
+    </script>
+
+    <!-- ======================================================================================= -->
+    <!-- Інкапсуляція  -->
+    <!-- Інкапсуляція дозволяє приховати деякі дані об'єкта, щоб вони не змінювалися безконтрольно. -->
+    <!-- ======================================================================================= -->
+    <script>
+      class BankAccount {
+        #balance = 0; // Приватне поле
+
+        constructor(owner) {
+          this.owner = owner;
+        }
+
+        deposit(amount) {
+          if (amount > 0) {
+            this.#balance += amount;
+            console.log(`Deposited: $${amount}`);
+          } else {
+            console.log('Invalid deposit amount');
+          }
+        }
+
+        getBalance() {
+          return this.#balance;
+        }
+      }
+
+      const account = new BankAccount('John');
+      account.deposit(100);
+      console.log(account.getBalance()); // 100
+      console.log(account.#balance); // ❌ Помилка (приватне поле)
+    </script>
+
+    <!-- ======================================================================================= -->
+    <!-- Наслідування -->
+    <!-- ======================================================================================= -->
+    <script>
+      //
+      class Cat extends Animal {
+        static type = 'cat';
+      }
+      console.log(Cat.type); // "cat"
+      const cat = new Cat({ name: 'Rex' });
+    </script>
+
+    <!-- ======================================================================================= -->
+    <!-- super -->
+    <!-- super() – це міст між батьківським і дочірнім класами. -->
+    <!-- 📌 Використовується для виклику конструктора та методів батьківського класу. -->
+    <!-- 📌 Без super() у конструкторі дочірнього класу виникне помилка! -->
+    <!-- ✅ Дозволяє використовувати конструктор батьківського класу в дочірньому. -->
+    <!-- ✅ Допомагає розширювати методи без дублювання коду. -->
+    <!-- ✅ Гарантує правильну ініціалізацію об'єкта перед використанням this -->
+    <!-- Зазвичай ми не хочемо повністю замінити батьківський метод, але, радше побудувати метод на його основі, 
+    щоб налаштувати або розширити функціональність. Ми робимо щось у нашому методі, 
+    але викликаємо батьківський метод до/після нього або в процесі.
+    Для цього в класах використовують ключове слово "super" -->
+    <!-- ======================================================================================= -->
+    <script>
+      // Метод super() в JavaScript використовується для виклику конструктора
+      // або методів батьківського класу (суперкласу) в контексті наслідуванн
+      // щоб ініціалізувати властивості батьківського класу
+      // 1. super.method(...), щоб викликати батьківський метод.
+      // 2. super(...), щоб викликати батьківський конструктор (лише в нашому конструкторі).
+      // Не можна використовувати super() без конструктора
+      // Не можна використовувати super() поза методами класу
+      class Dog extends Animal {
+        constructor(options) {
+          super(options); // викликає конструктор Animal
+          this.breed = options.breed;
+        }
+      }
+
+      // ===========================================
+      // Перевизначення конструктора
+      // ===========================================
+      class Birds {
+        constructor(name) {
+          this.name = name;
+        }
+      }
+      // super(name) викликає конструктор Birds, зберігаючи name.
+      // this.age додає нову властивість.
+      class Bird extends Birds {
+        constructor(name) {
+          // 1. Викликає конструктор батьківського класу Animal
+          // 2. Ініціалізує властивіть this.name
+          super(name);
+          this.age = age;
+        }
+      }
+      const papuga = new Bird('Buddy', 5);
+      console.log(papuga.name); // 'Buddy'
+      console.log(papuga.age); // 5
+
+      // ===========================================
+      // Виклик методів батьківського класу для перевикористання без дублювання:
+      // ===========================================
+      class Animal {
+        constructor(name) {
+          this.speed = 0;
+          this.name = name;
+        }
+        speak() {
+          console.log(`${this.name} makes a sound`);
+        }
+        run(speed) {
+          this.speed = speed;
+          console.log(`${this.name} біжить зі швидкістю ${this.speed}.`);
+        }
+      }
+      // super.speak() викликає метод speak() батьківського класу Animal,
+      // перш ніж виконати додаткову логіку в методі speak() підкласу Dog
+      class Dog extends Animal {
+        hide() {
+          console.log(`${this.name} ховається!`);
+        }
+        speak() {
+          super.speak(); // Викликає метод speak() батьківського класу Animal перед власною логікою
+          console.log('Dog barks');
+          this.hide();
+        }
+        run(speed) {
+          console.log('dog run');
+          super.run(speed); // Викликає метод run() батьківського класу Animal після власної логіки
+        }
+        // Стрілкові функції не мають super
+        stop() {
+          // super у стрілкової функції такий самий, як у stop()
+          setTimeout(() => super.stop(), 1000); // викликає батьківський stop після 1 сек
+          // setTimeout(function() { super.stop() }, 1000); // помилка
+        }
+      }
+      const dog = new Dog('Rex');
+      dog.speak();
+      // Виведе:
+      // Rex makes a sound
+      // Dog barks
+      // Rex ховається!
+      dog.run(10);
+      // dog run
+      // Rex біжить зі швидкістю 10.
+
+      // ===========================================
+      // Поліморфізм через super()
+      // Використовується, коли дочірній клас викликає метод батьківського класу, доповнюючи його своєю логікою.
+      // ===========================================
+      class Employee {
+        constructor(name) {
+          this.name = name;
+        }
+
+        work() {
+          console.log(`${this.name} is doing some work.`);
+        }
+      }
+
+      class Developer extends Employee {
+        // ✅ Метод work() у Developer розширює логіку Employee.work(), а не просто перевизначає її.
+        work() {
+          super.work(); // Виклик методу work() з Employee
+          console.log(`${this.name} is writing code 💻`);
+        }
+      }
+
+      const dev = new Developer('Alice');
+      // ✅ Метод work() у Developer розширює логіку Employee.work(), а не просто перевизначає її.
+      dev.work();
+      // Alice is doing some work.
+      // Alice is writing code 💻
+    </script>
+
+    <!-- ======================================================================================= -->
+    <!-- Геттери (get) і сеттери (set) – це спеціальні методи, які дозволяють працювати з властивостями об'єкта 
+    як зі звичайними змінними, але з додатковою логікою. -->
+
+    <!-- Геттери (get) і сеттери (set) використовуються для контролю доступу до властивостей. -->
+    <!-- це спеціальні методи, які використовуються для отримання та зміни значень властивостей об'єкта. -->
+
+    <!-- Навіщо потрібні геттери та сеттери?
+    Інкапсуляція: контроль доступу до властивостей.
+    Перевірка значень: можна перевіряти вхідні дані перед їх записом.
+    Автоматичні обчислення: можна повертати обчислюване значення без збереження його в змінній.
+    Сховати внутрішню логіку: дозволяє приховати реалізацію та виставити лише потрібний інтерфейс. -->
+    <!-- ======================================================================================= -->
+    <script>
+      class User {
+        // #balance захищене від прямого доступу (account.#balance викличе помилку).
+        #balance = 0; // приватне поле
+        constructor(name) {
+          this._name = name; // підкреслення (_name) показує, що ця змінна не призначена для прямого доступу
+        }
+        // Геттери працюють як звичайні властивості, але насправді є функціями.
+        // get дозволяє обчислювати значення при зверненні до властивості.
+        // Методи-геттери дозволяють отримувати значення властивості об'єкта без прямого доступу до неї.
+        // user.name викликає метод get name(), а не властивість _name.
+        get name() {
+          return this._name.toUpperCase();
+        }
+        // Перевага: приватне поле #price доступне тільки всередині класу,
+        // а для взаємодії з ним ми використовуємо get і set.
+        get balance() {
+          return this.#balance;
+        }
+        // set дозволяє встановлювати значення з перевірками.
+        // Методи-сеттери дозволяють змінювати значення властивості об'єкта, додаючи додаткову логіку.
+        set name(newName) {
+          if (newName.length < 3) {
+            console.log('Name is too short!');
+          } else {
+            this._name = newName;
+          }
+        }
+        set balance(amount) {
+          if (amount < 0) {
+            console.log("Баланс не може бути від'ємним!");
+          } else {
+            this.#balance = amount;
+          }
+        }
+      }
+      // Сеттер дозволяє перевіряти значення перед записом.
+      const user = new User('Alice');
+      // user.name викликає метод get name(), а не властивість _name.
+      console.log(user.name); // "ALICE"
+      user.name = 'Jo'; // "Name is too short!"
+      user.name = 'John'; // ✅ Змінюється успішно
+      console.log(user.name); // "JOHN"
+      user.balance = 1000; // це setter()
+      console.log(user.balance); // 1000
+      user.balance = -500; // "Баланс не може бути від'ємним!"
+      console.log(user.balance); // 1000
+
+      class User {
+        constructor(name, age) {
+          this.name = name;
+          // Захищені властивості зазвичай починають з підкресленням _.
+          // Це не синтаксис на рівні мови, а лише відома домовленість між програмістами,
+          // що такі властивості та методи не повинні бути доступними ззовні
+          this._age = age;
+        }
+        get age() {
+          return this._age;
+        }
+        set age(newAge) {
+          if (newAge < 0) {
+            console.log("Вік не може бути від'ємним!");
+          } else {
+            this._age = newAge;
+          }
+        }
+      }
+      const user = new User('Іван', 25);
+      user.age = 30;
+      console.log(user.age); // 30
+      // Сеттер дозволяє перевіряти значення перед записом.
+      user.age = -5; // "Вік не може бути від'ємним!"
+      console.log(user.age); // 30 (не змінилося)
+    </script>
+
+    <!-- ======================================================================================= -->
+    <!-- obj instanceof Class -->
+    <!-- ======================================================================================= -->
+    <script>
+      class Animal {}
+      class Dog extends Animal {}
+
+      const dog = new Dog();
+      console.log(dog instanceof Dog); // true
+      // В класах extends не робить dog прямим нащадком Animal.prototype.
+      // Насправді dog наслідує Dog.prototype, а вже Dog.prototype наслідує Animal.prototype.
+      // dog → Dog.prototype → Animal.prototype → Object.prototype → null
+      console.log(Object.getPrototypeOf(dog) === Animal.prototype); // false
+      console.log(Object.getPrototypeOf(Dog.prototype) === Animal.prototype); // true
+
+      console.log(dog instanceof Animal); // true (бо Dog наслідується від Animal)
+      console.log(dog instanceof Object); // true (усі об'єкти в JS наслідуються від Object)
+    </script>
+  </body>
+</html>

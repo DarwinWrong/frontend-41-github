@@ -128,7 +128,6 @@
 // console.log(c);
 // c /= a; // c = c / a;
 
-
 // let a = 2, b = 10;
 // let c = a + b;
 
@@ -172,7 +171,6 @@
 // }
 // numbers(23, 33, 45, 55);
 
-
 // const sum = (a, b) => a + b;
 // const divide = (a, b) => a / b;
 // const multiply = (a, b) => a * b;
@@ -190,7 +188,6 @@
 // sumAndLog2(multiply, 3, 4); // 12
 // sumAndLog2(divide, 10, 2); // 5
 
-
 // const sum2 = (a, b) => {
 //     return a + b;
 // }
@@ -206,20 +203,23 @@
 // ==============================================
 
 function findWord(text, word) {
-    // const words = text.split(' ');
-    // let count = 0;
-    // for (let i = 0; i < words.length; i++) {
-    //     if (words[i] === word) {
-    //         count++;
-    //     }
-    // }
-    // return count;
-    return text.includes(word);
+  // const words = text.split(' ');
+  // let count = 0;
+  // for (let i = 0; i < words.length; i++) {
+  //     if (words[i] === word) {
+  //         count++;
+  //     }
+  // }
+  // return count;
+  return text.includes(word);
 }
 
 console.log(findWord(' +Hello$ world hello', 'hello')); // true
 
 // ===================================================================
 // ===================================================================
-
-
+const participants = [
+  { name: 'John', age: 25, score: 85 },
+  { name: 'Alice', age: 22, score: 92 },
+  { name: 'Bob', age: 30, score: 78 },
+];

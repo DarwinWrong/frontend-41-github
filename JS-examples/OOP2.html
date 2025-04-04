@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OOP</title>
+  </head>
+  <body>
+    <!-- ======================================================================================= -->
+    <!-- mutable і immutable типи -->
+    <!-- ======================================================================================= -->
+    <pre>
+      (mutable)
+      ✅ Об'єкти ({}), масиви ([]), функції
+      ✅ Map, Set, WeakMap, WeakSet (можна додавати/видаляти елементи)
+      ✅ Date (можна змінювати значення)
+
+      Object.freeze():
+
+      (immutable)
+      ❌ String
+      ❌ Number
+      ❌ Boolean
+      ❌ BigInt
+      ❌ Symbol
+      ❌ null
+      ❌ undefined
+      ❌ Об'єкти String, Number, Boolean (створені через new)
+    </pre>
+
+    <!-- ======================================================================================= -->
+    <!-- prototype -->
+    <!-- ======================================================================================= -->
+
+    <script>
+      console.log(Object.prototype.constructor);
+
+      const worker = { name: 'John', age: 30 };
+      console.log('worker', worker);
+
+      function Animal(name) {
+        this.name = name;
+      }
+      Animal.prototype.greet = function () {
+        console.log(`Hello, I'm ${this.name}`);
+      };
+      const dog = new Animal('Buddy');
+      dog.greet();
+
+      function Animal(name) {
+        this.name = name;
+      }
+      Animal.prototype.speak = function () {
+        console.log(`${this.name} makes a sound`);
+      };
+      const dog = new Animal('Dog');
+      dog.speak();
+    </script>
+
+    <!-- ======================================================================================= -->
+    <!-- _proto_ -->
+    <!-- ======================================================================================= -->
+    <script>
+      function Car(model) {
+        this.model = model;
+      }
+      Car.prototype.drive = function () {
+        console.log(`${this.model} is driving`);
+      };
+      const car1 = new Car('Toyota');
+      const car2 = new Car('Honda');
+
+      console.log(car1.__proto__);
+      console.log(car2.__proto__);
+      car1.drive();
+      car2.drive();
+
+      // Геттер get __proto__
+      // Сеттер set __proto__
+      const car = new Car('Toyota');
+      const prototypeOfCar = Object.getPrototypeOf(car);
+      console.log(prototypeOfCar);
+
+      const animal = { canEat: true };
+      const dog = { bark: true };
+      dog.__proto__ = animal;
+      console.log(dog.canEat);
+
+      const obj1 = { a: 1 };
+      const obj2 = { b: 2 };
+      const car = { model: 'Toyota' };
+      const newProto = { type: 'Sedan' };
+      Object.setPrototypeOf(obj1, obj2);
+      Object.setPrototypeOf(car, newProto);
+      console.log(car.type);
+      console.log(Object.getPrototypeOf(car));
+
+      console.log(obj1.b);
+    </script>
+
+    <!-- ======================================================================================= -->
+    <!-- Функції конструктори -->
+    <!-- ======================================================================================= -->
+    <script>
+      function Car(model) {
+        this.model = model;
+      }
+      const Car = function (model) {
+        this.model = model;
+      };
+      Car.prototype.startEngine = function () {
+        console.log(`${this.model} engine started`);
+      };
+      Car = function () {};
+
+      const myCar = new Car('Toyota');
+      console.log(myCar.model);
+
+      // =================================================
+      // Додавання властивості після створення об'єкта
+      Car.age = 25;
+      console.log(Car.age);
+
+      // Додавання методів у прототип динамічно
+      Car.prototype.honk = function () {
+        console.log(`${this.model} is honking!`);
+      };
+      const myCar = new Car('BMW');
+      myCar.honk();
+      const anotherCar = new Car('Audi');
+      anotherCar.honk();
+
+      // Динамічне додавання методів до всіх об'єктів
+      const cars = [new Car('BMW'), new Car('Audi'), new Car('Toyota')];
+      Car.prototype.drive = function () {
+        console.log(`${this.model} is driving`);
+      };
+      cars[0].drive();
+      cars[1].drive();
+      cars[2].drive();
+
+      // =================================================
+      // Зміна поведінки функцій через new
+      Car.prototype.startEngine = function () {
+        console.log(`${this.model} engine started`);
+      };
+      myCar.startEngine();
+
+      // заморозка
+      const person = Object.freeze({ name: 'John' });
+      person.name = 'Mike';
+      console.log(person.name);
+    </script>
+
+    <!-- ======================================================================================= -->
+    <!-- Class -->
+    <!-- ======================================================================================= -->
+    <script>
+      class Car {
+        constructor(model) {
+          this.model = model;
+          this.color = 'red';
+        }
+        startEngine() {
+          console.log(`${this.model} engine started`);
+        }
+      }
+      const myCar = new Car('Toyota');
+      myCar.startEngine();
+      myCar.model = 'Honda';
+      console.log(myCar.model);
+      console.log(myCar.color);
+      // ==================================================
+      // ==================================================
+      class Car {
+        // Немає конструктора
+        startEngine() {
+          console.log('Engine started');
+        }
+      }
+      const myCar = new Car();
+      myCar.model = 'Toyota';
+      console.log(myCar.model);
+      myCar.startEngine();
+
+      // Додавання властивостей у клас без конструктора
+      class Animal {}
+      Animal.prototype.legs = 4;
+      const dog = new Animal();
+      console.log(dog.legs);
+      // ==================================================
+      // ==================================================
+      class Car {
+        constructor(model) {
+          const name = 'BMW';
+          this.model = model;
+          // Захищаємо властивість name
+          Object.defineProperty(this, 'name', {
+            value: name,
+            writable: false,
+            configurable: false,
+          });
+        }
+      }
+      const myCar = new Car('Toyota');
+      console.log(myCar.name);
+      myCar.name = 'Audi';
+      console.log(myCar.name);
+
+      class Car {
+        constructor(model) {
+          this.model = model;
+          Object.freeze(this);
+        }
+      }
+      const myCar = new Car('Toyota');
+      myCar.model = 'Honda';
+      console.log(myCar.model);
+
+      // Наслідування
+      class Dog extends Animal {
+        speak() {
+          console.log('Собака каже: Гав!');
+        }
+      }
+      const dog = new Dog();
+      dog.speak();
+
+      //   class Bird extends Animal, AnotherClass {
+      //         fly() {
+      //             console.log("Я лечу!");
+      //         }
+      //     }
+    </script>
+
+    <!-- ======================================================================================= -->
+    <!-- EXAMPLES -->
+    <!-- ======================================================================================= -->
+    <script>
+      const people = {
+        name: 'name',
+        age: 20,
+      };
+
+      const developer = Object.create(people);
+      console.log('developer', developer);
+      console.log(Object.prototype.__proto__); // null
+
+      console.log(developer.name);
+      console.log(developer.age);
+      developer.name = 'Bob';
+      console.log(developer.name);
+      console.log(people.name);
+
+      const obj = { a: 1, b: 2 };
+      console.log(Object.getOwnPropertyNames(obj)); // ["a", "b"]
+      console.log(Object.getPrototypeOf(obj) === Object.prototype); // true
+      const obj = {};
+      console.log(Object.prototype.isPrototypeOf(obj)); // true
+      function Person() {}
+      const john = new Person();
+      console.log(Person.prototype.isPrototypeOf(john)); // true
+      console.log(Object.prototype.isPrototypeOf(john)); // true
+      // ======================================================================
+      const obj = {};
+      console.log(obj.constructor);
+      const obj2 = new obj.constructor();
+      console.log(obj2);
+
+      // ======================================================================
+      const boss = Object.create(
+        {},
+        {
+          name: {
+            value: 'Alice',
+            writable: true,
+            enumerable: true,
+            configurable: true,
+          },
+          age: { value: 30, writable: true },
+        },
+      );
+
+      const obj1 = new Object();
+      console.log(Object.getPrototypeOf(obj1) === Object.prototype); // true
+      const obj2 = Object.create({});
+      console.log(Object.getPrototypeOf(obj2) === Object.prototype); // false
+
+      // ======================================================================
+      const teacher0 = 'teacher';
+      var teacher = new Object(people);
+      var teacher2 = new Object('teacher');
+      console.log(teacher === people); // true
+      console.log(teacher2); // new String[t,e,a,c,h,e,r]
+      console.log(typeof teacher0); // "string"
+      console.log(typeof teacher2); // object
+      console.log(teacher2 instanceof String); // true
+      console.log(teacher === teacher2); // false
+      // ======================================================================
+      teacher2.valueOf = function () {
+        return 'modified';
+      };
+      console.log(teacher2.valueOf());
+      console.log(teacher2);
+      teacher2.valueOf = '222';
+      console.log(teacher2);
+      teacher2 = 'teacher2';
+      console.log(teacher2);
+    </script>
+
+    <script>
+      const str1 = 'teacher'; // Примітивний рядок
+      const str2 = new String('teacher'); // String
+      console.log(typeof str1); // "string"
+      console.log(typeof str2); // "object"
+      console.log(str1 === str2); // false
+      console.log(str1 == str2); // true
+
+      const director = people;
+    </script>
+  </body>
+</html>

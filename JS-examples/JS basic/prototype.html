@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prototype</title>
+  </head>
+  <body>
+    <script>
+      // =======================================================================
+      //   All is Object
+      // =======================================================================
+      var str = 'i am string'; // primitive string
+      console.log('str:', str);
+      console.log('str.length:', str.length);
+      console.log('str.bold():', str.bold());
+      //   How to know all methods of this string?
+      var str = new String('i am string'); // Objective string created from global class new String
+      console.log('str:', str);
+      str.sayHello();
+
+      // =======================================================================
+      //   Object.prototype наслідування
+      // =======================================================================
+      const person = {
+        name: 'John',
+        greet() {
+          console.log(`Hello, my name is ${this.name}!`);
+        },
+      };
+      console.log('person:', person);
+      console.log('person.name:', person.name);
+      console.log('person.greet():', person.greet());
+      //   console.log('person.sayHello():', person.sayHello()); // error
+      //   prototype Object has toString()
+      console.log('person.toString():', person.toString()); // "[Object Object]"
+      // метод toString() знаходиться в Object.prototype, звідки його наслідує person.
+      console.log(Object.getPrototypeOf(person) === Object.prototype); // true
+
+      const man = Object.create(person);
+      console.log(Object.getPrototypeOf(man) === person); // true
+      man.age = 23;
+
+      const Oleh = Object.create(person);
+      console.log('Oleh:', Oleh);
+      console.log('Oleh.name:', Oleh.name);
+      Oleh.sayHello();
+      Oleh.name = 'Oleh';
+      Oleh.greet();
+      person.greet();
+
+      // =======================================================================
+      // Chain of prototypes
+      // =======================================================================
+      const person2 = new Object({
+        name: 'Bobby',
+        greet2() {
+          console.log(`Hello, my name is ${this.name}!`);
+        },
+      });
+      console.log('person2:', person2);
+
+      Object.prototype.sayHello = function () {
+        console.log('Object.prototype.sayHello', 'Hello');
+        // return 'Hello';
+      };
+      person.sayHello(); // 'Object.prototype.sayHello', 'Hello'
+      person2.sayHello();
+      //   console.log('person.sayHello():', person.sayHello()); // 1. "Hello" 2. undefined
+      //   console.log('person2.sayHello():', person2.sayHello()); // 1. "Hello" 2. undefined
+    </script>
+
+    <!-- ======================================================================================= -->
+    <!-- отримання прототипу -->
+    <!-- ======================================================================================= -->
+    <script>
+      const parent = { role: 'admin' };
+      const child = Object.create(parent);
+      const daddy = { name: 'Daddy' };
+
+      console.log(Object.getPrototypeOf(child) === parent); // true ✅
+      console.log(child.__proto__ === parent); // true (але застарілий підхід)
+
+      // старий метод
+      // Не рекомендується, бо може спричиняти проблеми з продуктивністю
+      // __proto__ — це недокументована властивість і вона уповільнює виконання коду.
+      child.__proto__ === daddy;
+
+      const newProto = { role: 'user' };
+      const obj = {};
+      Object.setPrototypeOf(obj, newProto);
+      console.log(Object.getPrototypeOf(obj) === newProto); // true ✅
+
+      //  Кращий підхід — створювати об'єкт одразу з потрібним прототипом через Object.create().
+      const obj = Object.create(newProto); // Краще рішення!
+      console.log(Object.getPrototypeOf(obj) === newProto); // true ✅
+    </script>
+  </body>
+</html>

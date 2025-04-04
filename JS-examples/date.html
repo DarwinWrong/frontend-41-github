@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date</title>
+  </head>
+  <body>
+    <script>
+      const now = new Date();
+      console.log('now', now);
+
+      console.log(
+        now.getDate(),
+        now.getFullYear(),
+        now.getUTCMonth(),
+        now.getMinutes(),
+      );
+
+      //   now.setDate(now.getDate() - 1); // change origin now
+      //   console.log('now', now);
+
+      const newNow = new Date(now); // create copy of current date from now
+
+      const nextDayNumber = newNow.setDate(newNow.getDate() + 1); // timestamp 1741714648006
+      console.log('nextDayNumber:', nextDayNumber);
+      const nextDay = new Date(nextDayNumber);
+      console.log('nextDay:', nextDay);
+
+      const prevDay = new Date(newNow.setDate(newNow.getDate() - 1));
+      console.log('prevDay:', prevDay);
+
+      console.log(Date.prototype); // for looking date methods
+
+      var date = new Date();
+      date.setFullYear(2020);
+      date.setMonth(3);
+      console.log('date:', date);
+
+      const futureDate = new Date('2025-03-11'); // make next day from the string date
+      console.log('futureDate:', futureDate);
+
+      const futureTimeStamp = futureDate.getTime(); // get timestamp of futureDate
+      if (futureTimeStamp > now.getTime()) {
+        console.log('futureTimeStamp date in future');
+      } else {
+        console.log('futureTimeStamp date in past');
+      }
+
+      console.log('toISOString:', date.toISOString()); // ISO 2020-04-10T16:51:28.237Z
+      console.log('toLocaleDateString:', date.toLocaleDateString()); // date
+      console.log('toLocaleString:', date.toLocaleString()); // date, time
+      console.log('toLocaleTimeString:', date.toLocaleTimeString()); // time
+
+      console.log('en-US:', date.toLocaleDateString('en-US'));
+      console.log('uk:', date.toLocaleDateString('uk'));
+    </script>
+  </body>
+</html>

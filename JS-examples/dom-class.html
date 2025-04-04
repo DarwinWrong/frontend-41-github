@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li id="1">red</li>
+      <li id="2">blue</li>
+      <li id="3">yellow</li>
+    </ul>
+  </body>
+  <script>
+    class DomElement {
+      constructor(id) {
+        this.$element = document.getElementById(id);
+      }
+      setColor(color) {
+        if (this.$element) this.$element.style.color = color;
+      }
+      setFontSize(fontSize) {
+        if (this.$element) this.$element.style.fontSize = fontSize + 'px';
+      }
+    }
+
+    const li1 = new DomElement('1');
+    li1.setColor('red');
+    li1.setFontSize(24);
+  </script>
+</html>

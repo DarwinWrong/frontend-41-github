@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OOP</title>
+  </head>
+  <body>
+    <script>
+      //   var str = 'Hello';
+      //   console.log(str);
+      //   console.log(str.length);
+
+      //   var obj = new Object();
+      //   console.log('obj:', obj);
+
+      //   const person = {
+      //     name: 'John',
+      //     age: 25,
+      //     greet() {
+      //       console.log(`Hello, my name is ${this.name}!`);
+      //     },
+      //   };
+      //   console.log('person:', person);
+
+      //   console.log(Object.getPrototypeOf(person) === Object.prototype); // true
+
+      //   var Oleh = Object.create(person);
+      //   console.log('Oleh:', Oleh);
+      //   Oleh.greet();
+      //   Oleh.name = 'Oleh';
+      //   Oleh.greet();
+      //   person.greet();
+
+      //   Object.prototype.sayHi = function () {
+      //     console.log('Hi!');
+      //   };
+      //   person.sayHi();
+      //   console.log(person);
+
+      //   console.log(Object.getPrototypeOf(Oleh) === person); // true
+      //   const Anna = { name: 'Anna' };
+
+      //   Oleh.__proto__ = Anna;
+      //   console.log(Oleh);
+      //   console.log(Object.getPrototypeOf(Oleh) === person); // false
+      //   //   console.log(Object.getPrototypeOf(Oleh) === Anna); // true
+
+      //   Object.setPrototypeOf(Oleh, Anna);
+      //   console.log(Oleh);
+
+      //   // the best method for creating an object template
+      //   var Oleh = Object.create(Anna);
+      //   console.log('Oleh:', Oleh);
+    </script>
+
+    <script>
+      class Animal {
+        constructor(name, speed) {
+          this.name = name;
+          //   this.speed = 0;
+          this.speed = speed;
+        }
+
+        run(speed) {
+          //   console.log(speed);
+          //   console.log(this.speed);
+          // run(speed = 10) {
+          //   if (!speed) {
+          //     speed = 10;
+          //   }
+          this.speed += speed;
+          console.log(`${this.name} runs with speed ${this.speed}`);
+        }
+      }
+
+      // console.log('Animal typeof:', typeof Animal);
+
+      // const bird = new Animal('Tom', 10);
+      // console.log('bird:', bird);
+
+      // bird.run(2);
+
+      // class Car {
+      //   static type = 'vehicle';
+
+      //   constructor(options) {
+      //     this.name = options.name;
+      //     this.speed = options.speed;
+      //   }
+      //   carInfo() {
+      //     console.log(`Car name: ${this.name}, speed: ${this.speed}`);
+      //   }
+      // }
+      // const zaporozhets = new Car({ name: 'Zaporozhets', speed: '300 km/h' });
+      // zaporozhets.carInfo();
+
+      // function makeCLass(stringValue) {
+      //   return new (class {
+      //     outputStr() {
+      //       console.log(stringValue);
+      //     }
+      //   })();
+      // }
+      // const greatClass = makeCLass('Hello');
+      // const byeClass = makeCLass('Goodbye');
+      // greatClass.outputStr();
+      // byeClass.outputStr();
+
+      class Dog extends Animal {
+        constructor(name, speed) {
+          super(name, speed);
+        }
+      }
+
+      const dog = new Dog();
+      console.log(dog instanceof Dog);
+      console.log(dog instanceof Animal);
+      console.log(dog instanceof Object);
+    </script>
+
+    <!-- <script src="func-constructor.js"></script> -->
+    <!-- <script src="inheritance.js"></script> -->
+    <!-- <script src="polymorphizm.js"></script> -->
+    <!-- <script src="encapsulation.js"></script> -->
+    <!-- <script src="super.js"></script> -->
+    <!-- <script src="getter-setter.js"></script> -->
+  </body>
+</html>
