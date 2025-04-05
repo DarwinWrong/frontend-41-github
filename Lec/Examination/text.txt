@@ -1,0 +1,20 @@
+Завдання: Система управління замовленнями
+Теми: Об'єкти, масиви, методи масивів, функції, цикли
+Опис:
+Створіть функцію createOrderSystem(), яка дозволяє управляти списком замовлень.
+ 
+Функція повертає об'єкт із методами:
+addOrder(customer, totalAmount): додає нове замовлення.
+removeOrder(orderId): видаляє замовлення за orderId.
+getTotalRevenue(): повертає загальну суму всіх замовлень.
+listOrders(): повертає масив усіх замовлень.
+ 
+Кожне замовлення — це об'єкт із властивостями: id (унікальний номер), customer (ім'я замовника), totalAmount (сума замовлення).
+ 
+// Приклад використання
+const orderSystem = createOrderSystem();
+orderSystem.addOrder("Іван", 500);
+orderSystem.addOrder("Марія", 1200);
+orderSystem.removeOrder(1);
+console.log(orderSystem.getTotalRevenue()); // 1200
+console.log(orderSystem.listOrders());

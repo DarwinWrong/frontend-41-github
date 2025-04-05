@@ -1,26 +1,4 @@
-// [[Prototype]]
-//! 1 Method: __proto__
-let animal = {
-  eats: true,
-  walk() {
-    console.log(`The animal walks`);
-  },
-};
-// let rabbit = {
-//   jumps: true,
-// };
-// rabbit.__proto__ = animal;
-// console.log(rabbit.walk());
-//!Object.create
-// let rabbit = Object.create(animal);
-// rabbit.jumps = true;
-// console.log(rabbit.eats);
-// rabbit.walk();
-// let dog = {};
-// Object.setPrototypeOf(dog, animal) //! не рекомендується для використання
-// console.log(Object.getPrototypeOf(rabbit) === animal);
-// console.log(dog.eats);
-//1
+//! 1
 // const Button = {
 //   width: 100,
 //   heigth: 50,
@@ -42,7 +20,7 @@ let animal = {
 // console.log(Object.getPrototypeOf(BootstrapButton) === Button);
 
 // BootstrapButton.showInfo();
-//2
+//! 2
 // const Shape = {
 //   name: "",
 //   area: null,
@@ -126,12 +104,23 @@ let animal = {
 // console.log(Object.getPrototypeOf(Square) === Shape);
 // console.log(Object.getPrototypeOf(Tringle) === Shape);
 // console.log(Object.getPrototypeOf(Rectangle) === Shape);
-//3
-
+//! 3
 const ExtenderArray = Object.create(Array.prototype);
 ExtenderArray.getString = function (separator) {
-  if (separator === "|") {
+  return this.join(separator);
+};
+ExtenderArray.getHtml = function (tegName) {
+  const lowerTag = tegName.toLowerCase();
+  const items = this.map((item) => `<${lowerTag}>${item}</${lowerTag}>`).join(
+    ""
+  );
+  if (lowerTag === "li") {
+    return `<ul>${items}</ul>`;
+  } else {
+    return items;
   }
 };
-ExtenderArray.push(1);
-console.log(ExtenderArray);
+const myArray = Object.create(ExtenderArray);
+myArray.push("hi", "hello", "say");
+console.log(myArray.getHtml("div"));
+console.log(myArray.getString(";"));
