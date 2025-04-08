@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Система управління замовленнями</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Система управління замовленнями</h1>
+        
+        <div class="form">
+            <input type="text" id="customer" placeholder="Ім'я замовника" />
+            <input type="number" id="totalAmount" placeholder="Сума замовлення" />
+            <button id="addOrderBtn">Додати замовлення</button>
+        </div>
+
+        <div class="orders">
+            <h2>Список замовлень</h2>
+            <ul id="ordersList"></ul>
+            <h3>Загальний дохід: <span id="totalRevenue">0</span></h3>
+        </div>
+    </div>
+
+    <script src="script/scritp.js"></script>
+</body>
+</html>
