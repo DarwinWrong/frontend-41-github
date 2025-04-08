@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Реєстрація</title>
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+  <div class="form-container">
+    <h2>Форма реєстрації</h2>
+    <form id="registrationForm" novalidate>
+      <label>
+        Ім'я користувача:
+        <input type="text" id="username" required>
+        <small class="hint">Мін. 3 символи, тільки латиниця та цифри</small>
+        <div class="error" id="usernameError"></div>
+      </label>
+
+      <label>
+        Email:
+        <input type="email" id="email" required>
+        <div class="error" id="emailError"></div>
+      </label>
+
+      <label>
+        Пароль:
+        <input type="password" id="password" required>
+        <small class="hint" id="passwordLength">Символів: 0</small>
+        <small class="hint">Мін. 8 символів, 1 велика, 1 мала літера, 1 цифра</small>
+        <div class="error" id="passwordError"></div>
+      </label>
+
+      <label>
+        Показати пароль:
+        <input type="checkbox" id="showPassword">
+      </label>
+
+      <label>
+        Телефон:
+        <input type="tel" id="phone" required>
+        <small class="hint">Формат: +380XXXXXXXXX</small>
+        <div class="error" id="phoneError"></div>
+      </label>
+
+      <label>
+        Дата народження:
+        <input type="date" id="birthdate" required>
+        <div class="error" id="birthdateError"></div>
+      </label>
+
+      <label>
+        URL особистого сайту:
+        <input type="url" id="website">
+        <div class="error" id="websiteError"></div>
+      </label>
+
+      <button type="submit">Зареєструватися</button>
+    </form>
+  </div>
+
+  <script src="script/script.js"></script>
+</body>
+</html>
