@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <img
+      class="lazy-load"
+      src="images/photo.png"
+      alt="Image Description"
+      loading="lazy"
+    /> -->
+    <script>
+      class ImageOptimizerComponent {
+        /**
+         * Конструктор ініціалізує параметри компоненту.
+         * @param {Object} options - Об'єкт параметрів компонента.
+         * @param {string} options.src - Шлях до оригінального зображення.
+         * @param {string} [options.alt=''] - Альтернативний текст для зображення.
+         * @param {string[]} [options.formats=['webp', 'jpg', 'png']] - Масив підтримуваних форматів для зображень.
+         * @param {boolean} [options.lazy=true] - Вказує, чи використовувати lazy loading для зображень.
+         * @param {string} [options.savePath] - Шлях до папки для збереження перетворених зображень. Якщо порожній, зображення не зберігаються.
+         */
+        constructor({
+          src,
+          alt = '',
+          formats = ['webp', 'jpg', 'png'],
+          lazy = true,
+          savePath,
+        }) {
+          this.src = src;
+          this.alt = alt;
+          this.formats = formats;
+          this.lazy = lazy;
+          this.savePath = savePath; // Зберігаємо шлях для збереження
+          this.pictureElement = null;
+          this.imageElement = null;
+        }
+
+        /**
+         * Ініціалізація компонента: створення елемента Image і завантаження зображення.
+         * Після завантаження зображення викликається метод для створення адаптивного зображення.
+         */
+        init() {
+          const img = new Image();
+          img.src = this.src;
+
+          // Коли зображення завантажиться, викликаємо createResponsiveImage
+          img.onload = () => {
+            this.createResponsiveImage(img);
+          };
+        }
+
+        /**
+         * Створення адаптивного зображення за допомогою <picture> та <source>.
+         * @param {HTMLImageElement} img - Завантажене зображення.
+         */
+        createResponsiveImage(img) {
+          const sizes = [
+            { width: 320 },
+            { width: 480 },
+            { width: 800 },
+            { width: 1200 },
+          ];
+
+          // Створюємо елемент <picture>
+          this.pictureElement = document.createElement('picture');
+
+          // Для кожного розміру створюємо <source> з відповідним media-запитом
+          sizes.forEach((size) => {
+            const source = document.createElement('source');
+            source.media = `(max-width: ${size.width}px)`;
+            source.srcset = this.generateCombinedSrcset(size.width, img);
+            this.pictureElement.appendChild(source);
+          });
+
+          // Створюємо основний <img> елемент
+          this.imageElement = document.createElement('img');
+          this.imageElement.alt = this.alt;
+          this.imageElement.src = this.generateCombinedSrcset(
+            sizes[1].width,
+            img,
+          ); // Початкове джерело
+
+          // Додаємо lazy loading, якщо вказано
+          this.addLazyLoading(this.imageElement);
+
+          // Додаємо основне зображення до <picture>
+          this.pictureElement.appendChild(this.imageElement);
+
+          // Додаємо <picture> до тіла сторінки
+          document.body.appendChild(this.pictureElement);
+
+          // Оновлюємо зображення при зміні розміру вікна
+          this.updateResponsiveImages(img, sizes);
+          window.addEventListener('resize', () =>
+            this.updateResponsiveImages(img, sizes),
+          );
+        }
+
+        /**
+         * Додає lazy loading до зображення.
+         * @param {HTMLImageElement} img - Зображення, до якого буде застосовано lazy loading.
+         */
+        addLazyLoading(img) {
+          if (this.lazy) {
+            img.loading = 'lazy';
+            img.classList.add('lazy-load');
+            img.setAttribute('data-src', img.src);
+            img.src = ''; // Спочатку встановлюємо порожній src
+            this.lazyLoadImage(img); // Ініціалізація lazy loading
+          }
+        }
+
+        /**
+         * Ініціалізація механізму lazy loading за допомогою IntersectionObserver.
+         * Завантажує зображення, коли воно з'являється в області видимості.
+         * @param {HTMLImageElement} img - Зображення для lazy loading.
+         */
+        lazyLoadImage(img) {
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                // Коли зображення з'являється, завантажуємо його
+                img.src = img.getAttribute('data-src');
+                observer.unobserve(entry.target); // Зупиняємо спостереження
+              }
+            });
+          });
+
+          observer.observe(img); // Починаємо спостереження за зображенням
+        }
+
+        /**
+         * Генерація комбінованого srcset для зображення з різними форматами і розмірами.
+         * @param {number} width - Ширина зображення для цього розміру.
+         * @param {HTMLImageElement} img - Завантажене зображення.
+         * @returns {string} - srcset для цього зображення.
+         */
+        generateCombinedSrcset(width, img) {
+          const srcset = this.formats
+            .map((format) => {
+              const filePath = this.savePath
+                ? this.convertAndSaveImage(img, format, width) // Зберігаємо на сервері, якщо є savePath
+                : this.convertImageToFormat(img, format, width); // Інакше використовуємо клієнтську обробку
+              return `${filePath} ${width}w`;
+            })
+            .join(', '); // Об'єднуємо формати через кому
+
+          return srcset;
+        }
+
+        /**
+         * Перетворення зображення на різні формати та розміри за допомогою canvas,
+         * а потім збереження файлів на сервер.
+         * @param {HTMLImageElement} img - Завантажене зображення.
+         * @param {string} format - Формат, у який потрібно перетворити зображення ('webp', 'jpg', 'png').
+         * @param {number} width - Ширина нового зображення.
+         * @returns {string} - Шлях до збереженого файлу на сервері.
+         */
+        convertAndSaveImage(img, format, width) {
+          const canvas = document.createElement('canvas');
+          const ctx = canvas.getContext('2d');
+          canvas.width = width;
+          canvas.height = (img.height / img.width) * width;
+          ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+          const dataUrl = this.convertImageToFormat(img, format, width);
+
+          // Ось тут можна виконати API-запит на сервер для збереження зображення
+          // Наприклад, через fetch або XMLHttpRequest для надсилання зображення на сервер для збереження
+          // Реалізуємо шлях до файлу як результат
+          return `${this.savePath}/${format}_${width}.png`; // Повертаємо шлях до файлу
+        }
+
+        /**
+         * Перетворення зображення в форматі canvas на конкретний формат.
+         * @param {HTMLImageElement} img - Завантажене зображення.
+         * @param {string} format - Формат для збереження.
+         * @param {number} width - Ширина нового зображення.
+         * @returns {string} - Data URL для зображення.
+         */
+        convertImageToFormat(img, format, width) {
+          const canvas = document.createElement('canvas');
+          const ctx = canvas.getContext('2d');
+          canvas.width = width;
+          canvas.height = (img.height / img.width) * width;
+          ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+          switch (format) {
+            case 'webp':
+              return canvas.toDataURL('image/webp');
+            case 'jpg':
+              return canvas.toDataURL('image/jpeg');
+            case 'png':
+              return canvas.toDataURL('image/png');
+            default:
+              return canvas.toDataURL('image/webp');
+          }
+        }
+
+        /**
+         * Оновлення зображень при зміні розміру вікна браузера.
+         * @param {HTMLImageElement} img - Завантажене зображення.
+         * @param {Array} sizes - Масив об'єктів з розмірами.
+         */
+        updateResponsiveImages(img, sizes) {
+          const screenWidth = window.innerWidth;
+          const picture = this.pictureElement;
+
+          // Оновлюємо srcset для кожного source елемента в залежності від ширини екрану
+          picture.querySelectorAll('source').forEach((source) => {
+            const mediaQuery = source.media;
+            const width = parseInt(mediaQuery.match(/\d+/)[0], 10);
+            if (screenWidth <= width) {
+              const format = source.srcset.includes('webp') ? 'webp' : 'jpg';
+              source.srcset = this.generateCombinedSrcset(width, img);
+            }
+          });
+        }
+      }
+
+      // Приклад використання
+      const imageComponent = new ImageOptimizerComponent({
+        src: 'images/photo.png',
+        alt: 'Beautiful Image',
+        formats: ['webp', 'jpg', 'png'],
+        lazy: true, // Увімкнення lazy loading
+        savePath: '/images/optimized', // Зазначте шлях для збереження перетворених зображень
+      });
+
+      imageComponent.init();
+    </script>
+  </body>
+</html>
