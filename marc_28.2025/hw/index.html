@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Інтерактивні JS Завдання</title>
+  <link rel="stylesheet" href="style/style.css" />
+</head>
+<body>
+  <h1>Інтерактивні JavaScript Завдання</h1>
+
+  <section>
+    <h2>Завдання 1: Менеджер користувачів</h2>
+    <input type="text" id="userName" placeholder="Ім’я користувача" />
+    <button onclick="addUser()">Додати</button>
+    <button onclick="removeUser()">Видалити</button>
+    <button onclick="listUsers()">Показати всіх</button>
+    <pre id="userOutput"></pre>
+  </section>
+
+  <section>
+    <h2>Завдання 3: Замінити слова у тексті</h2>
+    <textarea id="textInput" rows="3" placeholder="Введи текст..."></textarea><br/>
+    <input type="text" id="searchWords" placeholder="Слова для пошуку (через кому)" />
+    <input type="text" id="replaceWords" placeholder="Слова для заміни (через кому)" />
+    <button onclick="replaceText()">Замінити</button>
+    <pre id="replaceOutput"></pre>
+  </section>
+
+  <section>
+    <h2>Завдання 4: Операції з масивами</h2>
+    <input type="text" id="arr1" placeholder="Масив 1 (1,2,3...)" />
+    <input type="text" id="arr2" placeholder="Масив 2" />
+    <input type="text" id="arr3" placeholder="Масив 3" />
+    <input type="text" id="arr4" placeholder="Масив 4" />
+    <button onclick="processArrays()">Обробити</button>
+    <pre id="arrayOutput"></pre>
+  </section>
+
+  <script src="script/script.js"></script>
+</body>
+</html>
