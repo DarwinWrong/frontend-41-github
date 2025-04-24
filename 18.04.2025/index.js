@@ -93,10 +93,7 @@ options.forEach(item =>
         else
         {
             event.target.style.background = "rgb(255, 138, 138)"; //red
-            console.log(answerTracker.children);
             wrongAnswers++;
-            console.log(wrongAnswers);
-            
             colorTracker(wrongAnswers);
             checkTracker();
         }
