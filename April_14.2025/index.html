@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+  <h1>Завдання 1: Введення імені (без цифр)</h1>
+  <div class="task">
+    <input type="text" id="username" placeholder="Введіть ім’я">
+  </div>
+
+  <h1>Завдання 2: Модальне вікно</h1>
+  <div class="task">
+    <button id="openModal">Відкрити</button>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <p>Це модальне вікно</p>
+        <button id="closeModal">Закрити</button>
+      </div>
+    </div>
+  </div>
+
+  <h1>Завдання 3: Футбольне поле</h1>
+  <div class="task">
+    <div id="field">
+      <img src="ball.png" alt="Ball" id="ball">
+    </div>
+  </div>
+
+  <h1>Завдання 4: Світлофор</h1>
+  <div class="task">
+    <div id="traffic-light">
+      <div class="light red"></div>
+      <div class="light yellow"></div>
+      <div class="light green"></div>
+    </div>
+    <button id="switchLight">Перемкнути</button>
+  </div>
+
+  <h1>Завдання 5: Список книг</h1>
+  <div class="task">
+    <ul id="bookList">
+      <li>Книга 1</li>
+      <li>Книга 2</li>
+      <li>Книга 3</li>
+    </ul>
+  </div>
+
+  <h1>Завдання 6: Підказки</h1>
+  <div class="task">
+    <button class="tooltip-btn" data-tooltip="Підказка 1">Кнопка 1</button>
+    <button class="tooltip-btn" data-tooltip="Підказка 2">Кнопка 2</button>
+    <button class="tooltip-btn" data-tooltip="Підказка 3">Кнопка 3</button>
+  </div>
+
+  <script src="script/main.js"></script>
+</body>
+</html>
