@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Реєстрація</title>
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+  <form id="registrationForm">
+    <h2>Форма реєстрації</h2>
+
+    <label for="fullName">ПІБ:</label>
+    <input type="text" id="fullName" name="fullName" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Телефон:</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="birthdate">Дата народження:</label>
+    <input type="date" id="birthdate" name="birthdate" required>
+
+    <label for="position">Посада/Роль:</label>
+    <input type="text" id="position" name="position" required>
+
+    <fieldset>
+      <legend>Чи відвідували ви раніше наші заходи?</legend>
+      <label>
+        <input type="radio" name="visitedBefore" value="yes" id="visitedYes">
+        Так
+      </label>
+      <label>
+        <input type="radio" name="visitedBefore" value="no" id="visitedNo" checked>
+        Ні
+      </label>
+    </fieldset>
+
+    <div id="previousEventContainer" class="hidden">
+      <label for="previousEvent">Назва попереднього заходу:</label>
+      <input type="text" id="previousEvent" name="previousEvent">
+    </div>
+
+    <div id="errorContainer" class="error"></div>
+
+    <button type="submit">Надіслати</button>
+  </form>
+
+  <script src="script/main.js"></script>
+</body>
+</html>
