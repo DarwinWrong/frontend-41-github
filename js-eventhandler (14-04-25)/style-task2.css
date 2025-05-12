@@ -1,0 +1,44 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+  background: #eee;
+}
+
+#open-btn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+#modal {
+  background: #e0ffff;
+  padding: 2rem;
+  width: 80%;
+  max-width: 400px;
+  margin: 10% auto;
+  border-radius: 4px;
+  text-align: center;
+  position: relative;
+}
+
+#modal h2 {
+  margin-top: 0;
+}
+
+#close-btn {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}

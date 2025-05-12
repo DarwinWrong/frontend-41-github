@@ -1,0 +1,28 @@
+body {
+  font-family: sans-serif;
+  padding: 40px;
+  background: #fafafa;
+}
+
+ol#books {
+  max-width: 600px;
+  margin: 0 auto;
+  padding-left: 20px;
+}
+
+ol#books li {
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+ol#books li.active {
+  background: orange;
+  color: white;
+}
+
+ol#books li:hover {
+  background: #eee;
+}
