@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #bookList {
+        list-style-type: none;
+        padding: 0;
+      }
+      #bookList li {
+        margin: 5px 0;
+        padding: 10px;
+        border-radius: 5px;
+        font-family: Arial, sans-serif;
+        font-size: 18px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="bookList">
+      <li>Кобзар — Тарас Шевченко</li>
+      <li>Тіні забутих предків — Михайло Коцюбинський</li>
+      <li>Захар Беркут — Іван Франко</li>
+      <li>Місто — Валер'ян Підмогильний</li>
+      <li>Чорна рада — Пантелеймон Куліш</li>
+    </ul>
+
+    <script>
+      const bookList = document.getElementById("bookList");
+      let selected = null;
+
+      bookList.addEventListener("click", function (event) {
+        if (event.target.tagName === "LI") {
+          if (selected) {
+            selected.style.backgroundColor = "";
+          }
+          event.target.style.backgroundColor = "orange";
+          selected = event.target;
+        }
+      });
+    </script>
+  </body>
+</html>
