@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Форма реєстрації</title>
+  <link rel="stylesheet" href="style/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1 id="title" data-i18n="title">Форма реєстрації</h1>
+
+    <div class="section">
+      <label for="language" data-i18n="languageLabel">Мова сайту:</label>
+      <select id="language">
+        <option value="ua">Українська</option>
+        <option value="en">English</option>
+      </select>
+    </div>
+
+    <div class="section">
+      <h2 data-i18n="regTitle">Реєстрація</h2>
+      <input type="text" id="login" data-i18n-placeholder="loginPlaceholder" placeholder="Введіть логін" />
+      <button onclick="saveLogin()" id="saveBtn" data-i18n="saveBtn">Зберегти логін</button>
+    </div>
+
+    <div class="section">
+      <button onclick="clearAll()" id="clearBtn" data-i18n="clearBtn">Очистити всі дані</button>
+    </div>
+
+    <hr>
+
+    <h2 data-i18n="practiceTitle">Практична вправа</h2>
+
+    <div class="section">
+      <button id="cameraBtn" data-i18n="cameraBtn">Увімкнути камеру</button>
+      <video id="video" autoplay playsinline></video>
+    </div>
+
+    <div class="section">
+      <audio id="audio" controls>
+        <source src="#" type="audio/mpeg" />
+        Ваш браузер не підтримує аудіо.
+      </audio>
+    </div>
+
+    <div class="section">
+      <button id="recordBtn" data-i18n="recordBtn">Почати запис</button>
+    </div>
+  </div>
+
+  <script src="script/main.js"></script>
+</body>
+</html>

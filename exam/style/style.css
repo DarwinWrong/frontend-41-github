@@ -1,212 +1,223 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #000000;
-    color: #f5f5f5;
-    margin: 0;
-    padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #000000;
+  color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.text-muted {
+  color: #d3d3d3 !important;
+}
+
+.navbar {
+  background-color: #1a1a1a;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #ffc107;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  color: #1a1a1a;
+  border: none;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+}
+
+header {
+  background-color: #1a1a1a;
+  padding: 4rem 1rem;
+}
+
+header h1,
+header h2,
+header p {
+  text-align: left;
+}
+
+header .d-flex {
+  justify-content: start;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+header img {
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #ffc107;
+  margin-top: 2rem;
+}
+
+header .position-relative {
+  margin-top: 2rem;
+}
+
+#services {
+  padding: 4rem 1rem;
+}
+
+#services .card {
+  transition: transform 0.3s ease;
+}
+
+#services .card:hover {
+  transform: translateY(-10px);
+}
+
+#services .card .bi {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+#about {
+  padding: 4rem 1rem;
+}
+
+#about img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+#about .btn {
+  margin-top: 1rem;
+}
+
+#portfolio {
+  padding: 4rem 1rem;
+}
+
+#portfolio .btn {
+  margin: 0.5rem;
+}
+
+#portfolio .card {
+  overflow: hidden;
+}
+
+#portfolio .card-img {
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+#portfolio .card-img:hover {
+  transform: scale(1.1);
+}
+
+#contact {
+  padding: 4rem 1rem;
+}
+
+#contact .form-control {
+  background-color: #2c2c2c;
+  border: 1px solid #444;
+  color: #f5f5f5;
+}
+
+#contact .form-control:invalid {
+  border-color: #dc3545;
+}
+
+#contact .form-control:focus {
+  background-color: #2c2c2c;
+  border-color: #ffc107;
+  color: #f5f5f5;
+  box-shadow: none;
+}
+
+#contact .form-control::placeholder {
+  color: #ffffff;
+  opacity: 1;
+}
+
+#contact button {
+  background-color: #ffc107;
+  border: none;
+  color: #1a1a1a;
+}
+
+#contact button:hover {
+  background-color: #e0a800;
+}
+
+footer {
+  background-color: #1a1a1a;
+  color: #f8f9fa;
+}
+
+footer h5 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+footer p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+footer a {
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #ffc107;
+}
+
+footer .social-icons a {
+  text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+  transform: scale(1.1);
+  color: #ffc107;
+}
+
+footer .border-top {
+  border-color: #333;
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
-    font-weight: bold;
-  }
-  
-  p {
-    line-height: 1.6;
-  }
-  
-  .text-muted {
-    color: #d3d3d3 !important; 
-  }
-  
-  .navbar {
-    background-color: #1a1a1a;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .navbar-brand {
+
+  header h2 {
     font-size: 1.5rem;
   }
-  
-  .navbar-nav .nav-link {
-    font-size: 1rem;
-    transition: color 0.3s ease;
-  }
-  
-  .navbar-nav .nav-link:hover,
-  .navbar-nav .nav-link.active {
-    color: #ffc107;
-  }
-  
-  .btn-warning {
-    background-color: #ffc107;
-    color: #1a1a1a;
-    border: none;
-  }
-  
-  .btn-warning:hover {
-    background-color: #e0a800;
-  }
-  
-  header {
-    background-color: #1a1a1a;
-    padding: 4rem 1rem;
-  }
-  
-  header h1, header h2, header p {
-    text-align: left;
-  }
-  
-  header .d-flex {
-    justify-content: start; 
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-  
-  header img {
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid #ffc107;
-    margin-top: 2rem;
-  }
-  
-  header .position-relative {
-    margin-top: 2rem;
-  }
-  
-  #services {
-    padding: 4rem 1rem;
-  }
-  
-  #services .card {
-    transition: transform 0.3s ease;
-  }
-  
-  #services .card:hover {
-    transform: translateY(-10px);
-  }
-  
-  #services .card .bi {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-  
-  #about {
-    padding: 4rem 1rem;
-  }
-  
-  #about img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-  }
-  
-  #about .btn {
-    margin-top: 1rem;
-  }
-  
-  #portfolio {
-    padding: 4rem 1rem;
-  }
-  
-  #portfolio .btn {
-    margin: 0.5rem;
-  }
-  
-  #portfolio .card {
-    overflow: hidden;
-  }
-  
+
   #portfolio .card-img {
-    height: 200px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+    height: 150px;
   }
-  
-  #portfolio .card-img:hover {
-    transform: scale(1.1);
+
+  #about img {
+    width: 150px;
+    height: 150px;
   }
-  
-  #contact {
-    padding: 4rem 1rem;
-  }
-  
-  #contact .form-control {
-    background-color: #2c2c2c;
-    border: 1px solid #444;
-    color: #f5f5f5;
-  }
-  
-  #contact .form-control:focus {
-    background-color: #2c2c2c;
-    border-color: #ffc107;
-    color: #f5f5f5;
-    box-shadow: none;
-  }
-  
-  #contact button {
-    background-color: #ffc107;
-    border: none;
-    color: #1a1a1a;
-  }
-  
-  #contact button:hover {
-    background-color: #e0a800;
-  }
-  
-  footer {
-    background-color: #1a1a1a;
-    color: #f8f9fa;
-  }
-  
-  footer h5 {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-  }
-  
-  footer p {
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-  
-  footer a {
-    transition: color 0.3s ease;
-  }
-  
-  footer a:hover {
-    color: #ffc107;
-  }
-  
-  footer .social-icons a {
-    text-decoration: none;
-    transition: transform 0.3s ease, color 0.3s ease;
-  }
-  
-  footer .social-icons a:hover {
-    transform: scale(1.1);
-    color: #ffc107;
-  }
-  
-  footer .border-top {
-    border-color: #333;
-  }
-  
-  @media (max-width: 768px) {
-    header h1 {
-      font-size: 2rem;
-    }
-  
-    header h2 {
-      font-size: 1.5rem;
-    }
-  
-    #portfolio .card-img {
-      height: 150px;
-    }
-  
-    #about img {
-      width: 150px;
-      height: 150px;
-    }
-  }
+}
