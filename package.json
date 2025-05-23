@@ -1,9 +1,22 @@
 {
   "scripts": {
+    "type": "module",
     "build-css": "sass style/scss:style/css",
-    "watch-css": "sass --watch style/scss:style/css"
+    "watch-css": "sass --watch style/scss:style/css",
+    "test": "mocha \"js-testing (16-05-25)/*.test.mjs\""
   },
   "dependencies": {
     "sass": "^1.83.0"
-  }
+  },
+  "name": "frontend-41-github",
+  "version": "1.0.0",
+  "description": "Hello World!",
+  "main": "script.js",
+  "devDependencies": {
+    "chai": "^5.2.0",
+    "mocha": "^11.4.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
