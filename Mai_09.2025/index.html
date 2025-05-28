@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+  <h1>Менеджер постів</h1>
+
+  <form id="postForm">
+    <input type="text" id="title" placeholder="Заголовок" required>
+    <textarea id="body" placeholder="Опис" required></textarea>
+    <button type="submit">Створити пост</button>
+  </form>
+
+  <div id="loading" class="hidden">Завантаження...</div>
+  <ul id="postsContainer"></ul>
+
+  <script src="script/main.js"></script>
+</body>
+</html>
