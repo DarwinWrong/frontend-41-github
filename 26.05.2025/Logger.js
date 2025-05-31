@@ -9,4 +9,4 @@ class Logger{
         console.log(`[LOG]: ${msg}`)
     }
 }
-export const Logger = new Logger()
+export const logger = new Logger()
