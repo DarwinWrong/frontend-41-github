@@ -1,21 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Library</title>
-  <style>
-    .book-item {
-      padding: 10px;
-      margin: 10px;
-      background-color: #f5f5f5;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Бібліотека</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="bookList"></div>
+  <div class="container">
+    <h1>📚 Бібліотека</h1>
+
+    <input type="text" id="searchInput" placeholder="🔍 Пошук за назвою або автором..." />
+
+    <div id="bookList" class="book-list"></div>
+
+    <div class="pagination">
+      <button id="prevBtn">⬅️ Назад</button>
+      <span id="pageInfo">1</span>
+      <button id="nextBtn">➡️ Вперед</button>
+    </div>
+  </div>
+
   <script src="main.js"></script>
 </body>
 </html>
