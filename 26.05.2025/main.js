@@ -17,8 +17,17 @@ const notifier = new EventNotifier;
 notifier.subscribe(event => alert(`New event ***${event.title}***`))
 
 function renderEvents(eventList) {
-    const container = document.getElementById('event-container');
-    container.innerHTML = ``;
+    let container = document.querySelector('#event-container');
+    if (!container) {
+        const div = document.createElement('div');
+        div.id = 'event-container';
+        document.body.appendChild(div);
+        container = document.querySelector('#event-container');
+    }
+    else
+    {
+        container.innerHTML = '';
+    } 
 
     eventList.forEach(e =>
     {
@@ -36,6 +45,8 @@ function renderEvents(eventList) {
     }
     )
 }
+
+export let renderer = renderEvents;
 
 function renderEventsSortedByPrice() {
     const sorted = applySort(events, sortByPrice);
@@ -75,8 +86,20 @@ function sortEvents(str) {
     }
 }
 
-document.getElementById('byPrice').addEventListener('click', () => {sortEvents('price');});
-document.getElementById('byTitle').addEventListener('click', () => {sortEvents('title')});
-document.getElementById('byDate').addEventListener('click', () => {sortEvents('date')});
-document.getElementById('byType').addEventListener('click', () => {sortEvents('type')});
-document.getElementById('createEvent').addEventListener('click', () => {events.push(TicketFacade.createAndLogEvent('concert', 'tt concert', `2025-05-20`, 550)); renderEvents(events);});
+// document.getElementById('byPrice').addEventListener('click', () => {sortEvents('price');});
+// document.getElementById('byTitle').addEventListener('click', () => {sortEvents('title')});
+// document.getElementById('byDate').addEventListener('click', () => {sortEvents('date')});
+// document.getElementById('byType').addEventListener('click', () => {sortEvents('type')});
+// document.getElementById('createEvent').addEventListener('click', () => {events.push(TicketFacade.createAndLogEvent('concert', 'tt concert', `2025-05-20`, 550)); renderEvents(events);});
+
+function initEventListeners() {
+    document.getElementById('byPrice')?.addEventListener('click', () => { sortEvents('price'); });
+    document.getElementById('byTitle')?.addEventListener('click', () => { sortEvents('title'); });
+    document.getElementById('byDate')?.addEventListener('click', () => { sortEvents('date'); });
+    document.getElementById('byType')?.addEventListener('click', () => { sortEvents('type'); });
+    document.getElementById('createEvent')?.addEventListener('click', () => {
+        events.push(TicketFacade.createAndLogEvent('concert', 'tt concert', `2025-05-20`, 550));
+        renderEvents(events);
+    });
+}
+initEventListeners()

@@ -41,6 +41,7 @@ export class EventFactory{
     }
     static deleteEvent(event)
     {
-        return event = null;
+        event = null
+        return;
     }
 }

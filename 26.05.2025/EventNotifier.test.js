@@ -1,4 +1,6 @@
 import { EventNotifier } from "./EventNotifier.js";
+import {jest} from '@jest/globals';
+
 
 describe(`EventNotifier`, ()=>
 {
