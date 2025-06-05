@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Реєстрація на подію</h1>
+
+      <form id="registrationForm">
+        <div class="form-group">
+          <label for="fullname">ПІБ*</label>
+          <input type="text" id="fullname" name="fullname" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email*</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">tel*</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            required
+            placeholder="+380XXXXXXXXX"
+          />
+        </div>
+        <div class="form-group">
+          <label for="date">Дата народження</label>
+          <input type="date" name="date" id="date" required />
+        </div>
+        <div class="form-group">
+          <label for="position">Посада/Роль</label>
+          <input type="text" name="position" id="position" required />
+        </div>
+        <div class="form-group">
+          <label for="date">Чи відвідували ви раніше наші заходи?</label>
+          <input type="radio" name="visited" id="yes" value="yes" />
+          <label for="yes">Так</label>
+          <input type="radio" name="visited" id="no" value="no" />
+          <label for="no">Ні</label>
+        </div>
+        <div id="event-name-group"></div>
+        <div class="form-group">
+          <label for="event">Оберіть подію</label>
+          <select name="event" id="event" required>
+            <option value="">--Оберіть подію--</option>
+            <option value="workshop">Майстер клас по JS</option>
+            <option value="conference">Конференція Front-end</option>
+            <option value="hackathon">Хакатон Weekend</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Які теми вас цікавлять?</label>
+          <div class="checkbox-group">
+            <div class="checkbox">
+              <input
+                type="checkbox"
+                id="frontend"
+                name="topics"
+                value="frontend"
+              />
+              <label for="frontend">Front-end</label>
+            </div>
+
+            <div class="checkbox">
+              <input
+                type="checkbox"
+                id="backend"
+                name="topics"
+                value="backend"
+              />
+              <label for="backend">Backend</label>
+            </div>
+
+            <div class="checkbox">
+              <input type="checkbox" id="design" name="topics" value="design" />
+              <label for="design">Design</label>
+            </div>
+
+            <div class="checkbox">
+              <input type="checkbox" id="pm" name="topics" value="pm" />
+              <label for="pm">Project management</label>
+            </div>
+
+            <div class="checkbox">
+              <input type="checkbox" id="other" name="topics" value="other" />
+              <label for="other">Other</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="isAgree">
+            <input type="checkbox" id="agreement" required />
+            <label for="agreement">Я погоджуюсь з правилами участі</label>
+          </div>
+        </div>
+        <button type="submit">Надіслати заявку</button>
+
+        <div id="message"></div>
+      </form>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
