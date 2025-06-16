@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завдання з подіями та модальними вікнами</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <button id="openTask1">Відкрити Завдання 1</button>
+    <button id="openTask2">Відкрити Завдання 2</button>
+
+    <!--Завдання 1-->
+    <div id="modalTask1" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeTask1">×</span>
+            <h2>Завдання 1</h2>
+            <p>↓ Натисніть ↓</p>
+            <hr>
+            <p class="clickable">ляляля траляля</p>
+            <p class="clickable">бібібі бубубу</p>
+            <hr>
+            <p>↑ Натисніть ↑</p>
+        </div>
+    </div>
+
+    <!--Завдання 2-->
+    <div id="modalTask2" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeTask2">×</span>
+            <h2>Завдання 2</h2>
+            <button id="openInnerModal">Відкрити ЩЕ ОДНЕ модальне вікно</button>
+
+            <div id="innerModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" id="closeInnerModal">&times;</span>
+                    <h3>Це ще одне вікно...</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
