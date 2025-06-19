@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+  <style>
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f7f9;
+  margin: 0;
+  padding: 2rem;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+form {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 2rem;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: #34495e;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 0.25rem;
+  font-size: 1rem;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 4px rgba(52, 152, 219, 0.4);
+}
+
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+#error-container {
+  max-width: 500px;
+  margin: 1rem auto 0 auto;
+}
+
+#error-container div {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 0.75rem 1rem;
+  border-left: 4px solid #f44336;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+#result {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #ecf0f1;
+  border-radius: 8px;
+  border-left: 5px solid #2ecc71;
+}
+
+#result ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#result li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+  </style>
+<body>
+ <h1>Анкета користувача</h1>
+
+  <form id="userForm">
+    <label>
+      Ім’я:
+      <input type="text" name="username" placeholder="Напр. Andrii" required />
+    </label>
+
+    <label>
+      Рік народження:
+      <input type="number" name="birthYear" min="1900" max="2025" placeholder="Напр. 2000" required />
+    </label>
+
+    <label>
+      Колір очей:
+      <select name="eyeColor" required>
+        <option value="">Оберіть</option>
+        <option value="brown">Карі</option>
+        <option value="green">Зелені</option>
+        <option value="gray">Сірі</option>
+        <option value="blue">Блакитні</option>
+      </select>
+    </label>
+
+    <label>
+      Колір волосся:
+      <select name="hairColor" required>
+        <option value="">Оберіть</option>
+        <option value="black">Чорне</option>
+        <option value="brown">Каштанове</option>
+        <option value="white">Сиве</option>
+        <option value="red">Руде</option>
+        <option value="other">Інше</option>
+      </select>
+    </label>
+
+    <label>
+      Зріст (м):
+      <input type="number" name="height" min="0" max="2.6" step="0.01" placeholder="Напр. 1.75" required />
+    </label>
+
+    <label>
+      Вага (кг):
+      <input type="number" name="weight" min="0" max="300" step="0.1" placeholder="Напр. 70" required />
+    </label>
+
+    <button type="submit">Надіслати</button>
+  </form>
+
+  <div id="error-container"></div>
+
+  <div id="result"></div>
+
+    
+    <script type="module" src="script/main.js"></script>
+</body>
+</html>
