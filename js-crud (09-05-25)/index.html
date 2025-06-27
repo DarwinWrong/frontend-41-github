@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Posts CRUD</h1>
+
+    <div id="alert"></div>
+
+    <form id="postForm">
+      <label for="title">Title</label>
+      <input id="title" name="title" required />
+
+      <label for="body">Description</label>
+      <textarea id="body" name="body" rows="4" required></textarea>
+
+      <button id="submitBtn">Create post</button>
+    </form>
+
+    <div id="list"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
