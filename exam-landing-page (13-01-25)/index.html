@@ -1,186 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/adaptive_styles.css">
-    <title>Enver</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Enver Studio is your go-to digital studio for premium services, including UI/UX design, development, graphic design, motion graphics, photography, and videography. Explore our projects, discover why we're the best choice, and build your awesome platform with us. Contact us today!"
+    />
+    <title>Enver Landing Page</title>
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      href="https://fonts.cdnfonts.com/css/graphik-trial"
+      rel="stylesheet"
+    />
+    <script src="js/script.js" defer></script>
+  </head>
 
-    <img src="assets/images/bg-1.png" alt="background gradient" class="background">
-    <img src="assets/images/bg-2.png" alt="background gradient" class="background">
-    <img src="assets/images/bg-3.png" alt="background gradient" class="background">
-    <img src="assets/images/bg-4.png" alt="background gradient" class="background">
+  <body>
+    <div class="cursor-effect"></div>
 
     <div class="container">
-        <div class="navbar">
-            <img src="assets/images/logo.png" alt="logo" class="navbar-logo">
-            <ul class="navbar-list">
-                <li class="navbar-item">
-                    <a href="#">Home</a>
-                </li>
-                <li class="navbar-item">
-                    <a href="#">Services</a>
-                </li>
-                <li class="navbar-item">
-                    <a href="#">Our Project</a>
-                </li>
-                <li class="navbar-item">
-                    <a href="#">About Us</a>
-                </li>
+      <!-- Header -->
+      <header>
+        <div class="container">
+          <a class="logo-holder" href="index.html">
+            <img src="assets/logo icon.svg" alt="logo icon" />
+            <span>Enver</span>
+          </a>
+
+          <nav>
+            <ul>
+              <li><a class="active" href="#hero">Home</a></li>
+              <li><a href="#why-us">About us</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#templates">Our Project</a></li>
             </ul>
-            <button class="navbar-button">Contact us</button>
-            <img src="assets/images/navbar-burger.png" alt="burger icon" class="navbar-burger">
+          </nav>
+
+          <button class="contact-button" type="button">Contact us</button>
+
+          <div class="mobile-nav">
+            <button class="mobile-nav-button" type="button">
+              <img src="assets/mobile-nav-icon.svg" alt="mobile nav icon" />
+            </button>
+          </div>
+        </div>
+      </header>
+      <!-- Header -->
+
+      <!-- Hero -->
+      <section class="hero-section" id="hero">
+        <div class="left-light"></div>
+        <div class="right-light"></div>
+        <div class="introduction-container">
+          <h1>Build Your Awesome Platform</h1>
+
+          <p>
+            Enver studio is a digital studio that offers several services such
+            as UI/UX Design to developers, we will provide the best service for
+            those of you who use our services.
+          </p>
+
+          <button type="button">
+            <span>Our Services</span>
+            <img src="assets/arrow-right-up.svg" alt="arrow right up" />
+          </button>
         </div>
 
-        <header>
-            <div class="header-left">
-                <h2 class="header-title">
-                    Build Your Awesome Platform
-                </h2>
-                <p class="header-description">
-                    Enver studio is a digital studio that offers several services such as UI/UX Design to developers, we will provide the best service for those of you who use our services.
-                </p>
-                <button class="header-button">
-                    Our Services
-                    <img src="assets/images/button-icon.png" alt="arrow icon" class="button-icon">
-                </button>
-            </div>
-            <div class="header-right">
-                <img src="assets/images/header-img.png" alt="header image" class="header-img">
-                <img src="assets/images/vector-1.png" alt="vector icon" class="vector" id="vector-1">
-                <img src="assets/images/vector-2.png" alt="vector icon" class="vector" id="vector-2">
-                <img src="assets/images/vector-3.png" alt="vector icon" class="vector" id="vector-3">
-                <img src="assets/images/vector-4.png" alt="vector icon" class="vector" id="vector-4">
-            </div>
-        </header>
+        <div class="guy-image-container">
+          <img
+            class="shape vector"
+            src="assets/vector-icon.svg"
+            alt="vector shape"
+          />
+          <img
+            class="shape circles"
+            src="assets/group-icon.svg"
+            alt="circles shape"
+          />
+          <img
+            class="shape triangle"
+            src="assets/group-icon2.svg"
+            alt="triangle shape"
+          />
+          <img
+            class="shape plus-sign"
+            src="assets/plus-sign-icon.svg"
+            alt="plus sign shape"
+          />
 
-        <div class="video">
-            <h2 class="video-title">
-                Why Enver Is The Best Choice?
-            </h2>
+          <div class="background-square-frame"></div>
+          <div class="invisible-holder">
+            <div class="square-frame">
+              <img src="assets/young-guy.webp" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Hero -->
 
-            <p class="video-description">
-                Watch this one minute video so you understand why you should use our services!
-            </p>
+      <!-- Why us -->
+      <section class="why-us-section" id="why-us">
+        <div class="content">
+          <h2>Why Enver Is The Best Choice?</h2>
+          <p>
+            Watch this one minute video so you understand why you should use our
+            services!
+          </p>
         </div>
 
-        <div class="video-img">
-            <img src="assets/images/video.png" alt="video">
+        <div class="video-wrapper loading">
+          <video
+            id="whyUsVideo"
+            poster="assets/why-us-picture.webp"
+            preload="metadata"
+            controlsList="nodownload"
+            oncontextmenu="return false;"
+          >
+            <source src="assets/why-us-video.mp4" type="video/mp4" />
+            Your browser does not support HTML5 video.
+          </video>
+
+          <button
+            id="whyUsPlay"
+            class="play-overlay"
+            aria-label="Play video"
+          ></button>
+        </div>
+      </section>
+      <!-- Why us -->
+
+      <!-- Services -->
+      <section class="services-section" id="services">
+        <div class="left-light"></div>
+        <div class="right-light"></div>
+
+        <div class="title">
+          <img
+            class="shape triangle"
+            src="assets/group-icon2.svg"
+            alt="triangle shape"
+            loading="lazy"
+          />
+          <h2>The Service We Provide For You</h2>
+          <img
+            class="shape plus-sign"
+            src="assets/plus-sign-icon.svg"
+            alt="plus sign shape"
+            loading="lazy"
+          />
         </div>
 
         <div class="services">
-            <h2 class="services-title">
-                The Service We Provide For You
-            </h2>
-            <ul class="services-list">
-                <li class="services-item">
-                    <svg width="70" height="70" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M23.7604 46.5235C36.4062 46.5235 46.6577 36.272 46.6577 23.6262C46.6577 10.9804 36.4062 0.728882 23.7604 0.728882C11.1146 0.728882 0.863075 10.9804 0.863075 23.6262C0.863075 36.272 11.1146 46.5235 23.7604 46.5235Z" fill="#5454D4" fill-opacity="0.1"/>
-                        <path d="M21.4375 24.1792C20.8534 24.4712 20.3667 24.9048 20.0039 25.4446C19.8004 25.7544 19.8004 26.1437 20.0039 26.4534C20.3667 26.9932 20.8534 27.4269 21.4375 27.7189" stroke="#5454D4" stroke-width="1.32738" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M26.9328 24.1792C27.5169 24.4712 28.0036 24.9048 28.3664 25.4446C28.5699 25.7544 28.5699 26.1437 28.3664 26.4534C28.0036 26.9932 27.5169 27.4269 26.9328 27.7189" stroke="#5454D4" stroke-width="1.32738" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M21.4375 32.1436H26.747C31.1716 32.1436 32.9414 30.3738 32.9414 25.9492V20.6396C32.9414 16.215 31.1716 14.4452 26.747 14.4452H21.4375C17.0129 14.4452 15.243 16.215 15.243 20.6396V25.9492C15.243 30.3738 17.0129 32.1436 21.4375 32.1436Z" stroke="#5454D4" stroke-width="1.32738" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M15.4466 19.7635L32.4547 19.7546" stroke="#5454D4" stroke-width="1.32738" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <h4 class="services-item-title">Development</h4>
-                    <p class="services-description">Create a platform with the best and coolest quality from us.</p>
-                </li>
-                <li class="services-item">
-                    <svg width="70" height="70" viewBox="0 0 46 47" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M22.9747 46.5235C35.6205 46.5235 45.872 36.272 45.872 23.6262C45.872 10.9804 35.6205 0.728882 22.9747 0.728882C10.3288 0.728882 0.0773621 10.9804 0.0773621 23.6262C0.0773621 36.272 10.3288 46.5235 22.9747 46.5235Z" fill="#F04037" fill-opacity="0.1"/>
-                        <path d="M24.2003 15.2593L29.4213 17.5778C30.9257 18.2415 30.9257 19.3388 29.4213 20.0025L24.2003 22.321C23.6074 22.5864 22.634 22.5864 22.0411 22.321L16.8201 20.0025C15.3157 19.3388 15.3157 18.2415 16.8201 17.5778L22.0411 15.2593C22.634 14.9938 23.6074 14.9938 24.2003 15.2593Z" stroke="#F04037" stroke-width="1.32738" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M15.3422 22.4094C15.3422 23.1528 15.8997 24.0111 16.5811 24.312L22.5897 26.9845C23.0499 27.188 23.572 27.188 24.0233 26.9845L30.0319 24.312C30.7133 24.0111 31.2708 23.1528 31.2708 22.4094" stroke="#F04037" stroke-width="1.32738" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M15.3422 26.834C15.3422 27.657 15.8289 28.4003 16.5811 28.7366L22.5897 31.409C23.0499 31.6126 23.572 31.6126 24.0233 31.409L30.0319 28.7366C30.7841 28.4003 31.2708 27.657 31.2708 26.834" stroke="#F04037" stroke-width="1.32738" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <h4 class="services-item-title">UI/UX Designer</h4>
-                    <p class="services-description">We provide UI/UX Design services, and of course with the best quality</p>
-                </li>
-                <li class="services-item">
-                    <svg width="70" height="70" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M23.189 46.5235C35.8348 46.5235 46.0863 36.272 46.0863 23.6262C46.0863 10.9804 35.8348 0.728882 23.189 0.728882C10.5432 0.728882 0.291687 10.9804 0.291687 23.6262C0.291687 36.272 10.5432 46.5235 23.189 46.5235Z" fill="#FEDC5A" fill-opacity="0.1"/>
-                        <path d="M20.8661 24.1792C20.282 24.4712 19.7953 24.9048 19.4325 25.4446C19.229 25.7544 19.229 26.1437 19.4325 26.4534C19.7953 26.9932 20.282 27.4269 20.8661 27.7189" stroke="#FEDC5A" stroke-width="1.32738" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M26.3614 24.1792C26.9455 24.4712 27.4322 24.9048 27.795 25.4446C27.9985 25.7544 27.9985 26.1437 27.795 26.4534C27.4322 26.9932 26.9455 27.4269 26.3614 27.7189" stroke="#FEDC5A" stroke-width="1.32738" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M20.8661 32.1436H26.1756C30.6002 32.1436 32.37 30.3738 32.37 25.9492V20.6396C32.37 16.215 30.6002 14.4452 26.1756 14.4452H20.8661C16.4415 14.4452 14.6716 16.215 14.6716 20.6396V25.9492C14.6716 30.3738 16.4415 32.1436 20.8661 32.1436Z" stroke="#FEDC5A" stroke-width="1.32738" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M14.8752 19.7635L31.8833 19.7546" stroke="#FEDC5A" stroke-width="1.32738" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>                        
-                    <h4 class="services-item-title">Graphik Designer</h4>
-                    <p class="services-description">We provide Graphic Design services, with the best designers</p>
-                </li>
-                <li class="services-item">
-                    <svg width="70" height="70" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M23.7604 46.5592C36.4063 46.5592 46.6577 36.3077 46.6577 23.6618C46.6577 11.016 36.4063 0.764526 23.7604 0.764526C11.1146 0.764526 0.863098 11.016 0.863098 23.6618C0.863098 36.3077 11.1146 46.5592 23.7604 46.5592Z" fill="#FEDC5A" fill-opacity="0.1"/>
-                        <path d="M28.8708 29.7456H19.3137C17.9863 29.7456 17.4554 29.1793 17.4554 27.7722V26.8519C17.4554 25.4449 17.9863 24.8785 19.3137 24.8785H28.8708C30.1982 24.8785 30.7292 25.4449 30.7292 26.8519V27.7722C30.7292 29.1793 30.1982 29.7456 28.8708 29.7456Z" stroke="#FEDC5A" stroke-width="1.32738" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M27.101 22.2239H21.0835C19.7561 22.2239 19.2252 21.6575 19.2252 20.2505V19.3302C19.2252 17.9232 19.7561 17.3568 21.0835 17.3568H27.101C28.4284 17.3568 28.9593 17.9232 28.9593 19.3302V20.2505C28.9593 21.6575 28.4284 22.2239 27.101 22.2239Z" stroke="#FEDC5A" stroke-width="1.32738" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M24.0923 32.1794V30.0555" stroke="#FEDC5A" stroke-width="1.32738" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M24.0923 24.2149V22.4451" stroke="#FEDC5A" stroke-width="1.32738" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M24.0923 14.4808V16.8613" stroke="#292D32" stroke-width="1.32738" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <h4 class="services-item-title">Motion Graphik</h4>
-                    <p class="services-description">Create a platform with the best and coolest quality from us.</p>
-                </li>
-                <li class="services-item">
-                    <svg width="70" height="70" viewBox="0 0 46 47" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M22.9747 46.5592C35.6205 46.5592 45.872 36.3077 45.872 23.6618C45.872 11.016 35.6205 0.764526 22.9747 0.764526C10.3288 0.764526 0.0773621 11.016 0.0773621 23.6618C0.0773621 36.3077 10.3288 46.5592 22.9747 46.5592Z" fill="#5454D4" fill-opacity="0.1"/>
-                        <path d="M18.6695 32.1792H27.9435C30.3859 32.1792 31.3593 30.6837 31.4743 28.8608L31.9345 21.5513C32.0584 19.6399 30.5363 18.0205 28.616 18.0205C28.0762 18.0205 27.5807 17.7108 27.3329 17.2329L26.6958 15.9498C26.2887 15.1445 25.2268 14.4808 24.3242 14.4808H22.2977C21.3862 14.4808 20.3243 15.1445 19.9173 15.9498L19.2801 17.2329C19.0323 17.7108 18.5368 18.0205 17.997 18.0205C16.0767 18.0205 14.5547 19.6399 14.6785 21.5513L15.1387 28.8608C15.2449 30.6837 16.2272 32.1792 18.6695 32.1792Z" stroke="#5454D4" stroke-width="1.32738" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M21.9791 19.7904H24.6339" stroke="#5454D4" stroke-width="1.32738" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M23.3065 28.6394C24.8905 28.6394 26.1825 27.3475 26.1825 25.7634C26.1825 24.1794 24.8905 22.8875 23.3065 22.8875C21.7225 22.8875 20.4305 24.1794 20.4305 25.7634C20.4305 27.3475 21.7225 28.6394 23.3065 28.6394Z" stroke="#5454D4" stroke-width="1.32738" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <h4 class="services-item-title">Photography</h4>
-                    <p class="services-description">We provide Photography services, and of course with the best quality</p>
-                </li>
-                <li class="services-item">
-                    <svg width="70" height="70" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M23.189 46.5592C35.8348 46.5592 46.0863 36.3077 46.0863 23.6618C46.0863 11.016 35.8348 0.764526 23.189 0.764526C10.5432 0.764526 0.291687 11.016 0.291687 23.6618C0.291687 36.3077 10.5432 46.5592 23.189 46.5592Z" fill="#F04037" fill-opacity="0.1"/>
-                        <path d="M32.37 25.9848V20.6753C32.37 16.2507 30.6002 14.4808 26.1756 14.4808H20.8661C16.4415 14.4808 14.6716 16.2507 14.6716 20.6753V25.9848C14.6716 30.4094 16.4415 32.1792 20.8661 32.1792H26.1756C30.6002 32.1792 32.37 30.4094 32.37 25.9848Z" stroke="#F04037" stroke-width="1.32738" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M15.1318 19.0028H31.9099" stroke="#F04037" stroke-width="1.32738" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M20.4413 14.5782V18.879" stroke="#F04037" stroke-width="1.32738" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M26.6003 14.5782V18.4807" stroke="#F04037" stroke-width="1.32738" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M21.5298 25.4982V24.4363C21.5298 23.0735 22.4943 22.516 23.6713 23.1974L24.5916 23.7284L25.5119 24.2593C26.6888 24.9407 26.6888 26.0557 25.5119 26.7371L24.5916 27.2681L23.6713 27.799C22.4943 28.4804 21.5298 27.9229 21.5298 26.5601V25.4982V25.4982Z" stroke="#F04037" stroke-width="1.32738" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <h4 class="services-item-title">Videography</h4>
-                    <p class="services-description">Create a platform with the best and coolest quality from us.</p>
-                </li>
-            </ul>
+          <div class="service">
+            <div class="img-holder">
+              <img
+                src="assets/slider-purple-icon.svg"
+                alt="purple colored slider icon"
+                loading="lazy"
+              />
+              <div class="background-color"></div>
+            </div>
+            <h3>Development</h3>
+            <p>Create a platform with the best and coolest quality from us.</p>
+          </div>
+
+          <div class="service">
+            <div class="img-holder">
+              <img
+                src="assets/layer-icon.svg"
+                alt="red colored layers icon"
+                loading="lazy"
+              />
+              <div class="background-color"></div>
+            </div>
+            <h3>UI/UX Designer</h3>
+            <p>
+              We provide UI/UX Design services, and of course with the best
+              quality
+            </p>
+          </div>
+
+          <div class="service">
+            <div class="img-holder">
+              <img
+                src="assets/slider-yellow-icon.svg"
+                alt="yellow colored slider icon"
+                loading="lazy"
+              />
+              <div class="background-color"></div>
+            </div>
+            <h3>Graphic Designer</h3>
+            <p>We provide Graphic Design services, with the best designers</p>
+          </div>
+
+          <div class="service">
+            <div class="img-holder">
+              <img
+                src="assets/align-vertically-icon.svg"
+                alt="yellow colored align vertically icon"
+                loading="lazy"
+              />
+              <div class="background-color"></div>
+            </div>
+            <h3>Motion Graphik</h3>
+            <p>Create a platform with the best and coolest quality from us.</p>
+          </div>
+
+          <div class="service">
+            <div class="img-holder">
+              <img
+                src="assets/camera-icon.svg"
+                alt="purple colored camera icon"
+                loading="lazy"
+              />
+              <div class="background-color"></div>
+            </div>
+            <h3>Photography</h3>
+            <p>
+              We provide Photography services, and of course with the best
+              quality
+            </p>
+          </div>
+
+          <div class="service">
+            <div class="img-holder">
+              <img
+                src="assets/video-play-icon.svg"
+                alt="red colored video player icon"
+                loading="lazy"
+              />
+              <div class="background-color"></div>
+            </div>
+            <h3>Videography</h3>
+            <p>Create a platform with the best and coolest quality from us.</p>
+          </div>
+        </div>
+      </section>
+      <!-- Services -->
+
+      <!-- Templates -->
+      <section class="templates-section" id="templates">
+        <div class="heading">
+          <p>Our Awesome Portofolio</p>
+          <img src="assets/group-icon.svg" alt="" loading="lazy" />
         </div>
 
-        <div class="portfolio">
-            <h2 class="portfolio-title">Our Awesome Portofolio</h2>
-            <ul class="portfolio-list">
-                <li class="portfolio-item">
-                    <img src="assets/images/portfolio-img-1.png" alt="portfolio image">
-                </li>
-                <li class="portfolio-item">
-                    <img src="assets/images/portfolio-img-2.png" alt="portfolio image">
-                </li>
-                <li class="portfolio-item">
-                    <img src="assets/images/portfolio-img-3.png" alt="portfolio image">
-                </li>
-            </ul>
-            <img src="assets/images/portfolio-carousel-icon.png" alt="selector" class="portfolio-icon">
-            <img src="assets/images/portfolio-icon-second.png" alt="selector mobile" class="portfolio-icon-second">
+        <div class="slider">
+          <div class="templates">
+            <img src="assets/template1.webp" alt="img" loading="lazy" />
+            <img src="assets/template2.webp" alt="img" loading="lazy" />
+            <img src="assets/template3.webp" alt="img" loading="lazy" />
+          </div>
         </div>
 
-        <div class="info">
-            <h4 class="info-title">
-                Contact us for the service you want to use
-            </h4>
-            <button class="info-button">Contact us</button>
+        <img
+          src="assets/vector-icon.svg"
+          alt="shape"
+          class="shape"
+          loading="lazy"
+        />
+        <i class="dot"></i>
+
+        <div class="switchers">
+          <button type="button" aria-label="Previous slide">
+            <i class="left">
+              <img
+                src="assets/arrow-right-up.svg"
+                alt="arrow left"
+                loading="lazy"
+              />
+            </i>
+          </button>
+
+          <button type="button" aria-label="Next slide">
+            <i class="right">
+              <img
+                src="assets/arrow-right-up.svg"
+                alt="arrow right"
+                loading="lazy"
+              />
+            </i>
+          </button>
         </div>
 
-        <footer>
-            <img src="assets/images/logo.png" alt="logo" class="footer-logo">
-            <ul class="footer-list">
-                <li class="footer-item">Support</li>
-                <li class="footer-item">Privacy Policy</li>
-                <li class="footer-item">Terms and Conditions</li>
-            </ul>
-            <p class="footer-info">© 2020 Enver, All Rights Reserved</p>
-        </footer>
+        <div class="right-light"></div>
+      </section>
+      <!-- Templates -->
+
+      <!-- Contact -->
+      <section class="contact-section">
+        <img
+          src="assets/plus-sign-icon.svg"
+          alt="plus sign icon"
+          class="add"
+          loading="lazy"
+        />
+
+        <div class="text">
+          <p>Contact us for the service you want to use</p>
+          <button type="button">Contact us</button>
+        </div>
+
+        <img
+          src="assets/group-icon.svg"
+          alt="double circle icon"
+          class="double-circle-icon"
+          loading="lazy"
+        />
+      </section>
+      <!-- Contact-->
+
+      <!-- Footer -->
+      <footer>
+        <a class="logo-holder" href="index.html">
+          <img src="assets/logo icon.svg" alt="logo icon" loading="lazy" />
+          <span>Enver</span>
+        </a>
+
+        <nav class="other">
+          <ul>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms and Conditions</a></li>
+          </ul>
+        </nav>
+
+        <p class="copy-rights">© 2020 Enver, All Rights Reserved</p>
+      </footer>
+      <!-- Footer -->
     </div>
-</body>
+  </body>
 </html>

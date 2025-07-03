@@ -1,8 +1,8 @@
 {
   "scripts": {
     "type": "module",
-    "build-css": "sass style/scss:style/css",
-    "watch-css": "sass --watch style/scss:style/css",
+    "build-css": "sass \"exam-landing-page (13-01-25)/css/styles.scss\" \"exam-landing-page (13-01-25)/css/styles.css\"",
+    "watch-css": "sass --watch \"exam-landing-page (13-01-25)/css/styles.scss\":\"exam-landing-page (13-01-25)/css/styles.css\"",
     "test": "mocha \"js-testing (16-05-25)/*.test.mjs\""
   },
   "dependencies": {
