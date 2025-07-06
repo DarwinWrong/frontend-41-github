@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style/style.css"/>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+</head>
+<body>
+
+  <header class="header">
+    <a href="#" class="logo">Oleh Lobach</a>
+
+    <i class="bx bx-menu" id="menu-icon"></i>
+
+    <nav class="navbar" id="nav-menu">
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#aboutMe" class="nav-link">About me</a>
+      <a href="#project" class="nav-link">Project</a>
+      <a href="#testimonials" class="nav-link">Testimonials</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+  </header>
+
+  <section class="home" id="home">
+    <div class="home-content">
+      <h1>Hi, it's <span>Oleh</span></h1>
+      <h3 class="text-animation">I'm a <span id="typing-text"></span></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam quisquam a ex corrupti minus tenetur illum porro tempora dolor incidunt?</p>
+      
+      <div class="social-icons">
+        <a href="#"><i class='bx bxl-linkedin'></i></a>
+        <a href="#"><i class='bx bxl-github'></i></a>
+        <a href="#"><i class='bx bxl-instagram'></i></a>
+        <a href="#"><i class='bx bxl-facebook-circle'></i></a>
+      </div>
+
+      <div class="btn-group">
+        <a href="document/CV-Oleh_Lobach.pdf" id="viewBtn">
+          <span>View CV</span>
+        </a>
+        <a href="document/CV-Oleh_Lobach.pdf" id="downloadBtn">
+          <button>Download CV</button>
+        </a>
+      </div>
+    </div>
+    
+    <div class="my-img">
+      <img src="/img/my-photo.jpg" alt="My Photo"/>
+    </div>
+  </section>
+
+  <section class="aboutMe" id="aboutMe">
+     <h2 class="heading">About Me</h2>
+
+     <div class="factsline-items">
+     <div class="factsline-item">
+        <div class="factsline-dot"></div>
+            <div class="factsline-number">Web Designer</div>
+            <div class="factsline-content">
+                <h3>I create a design.</h3>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Perferendis vero, laboriosam fuga odit tempora labore et hic quisquam dolorum qui?
+            </div>
+        
+     </div>
+
+    <div class="factsline-item">
+        <div class="factsline-dot"></div>
+            <div class="factsline-number">UI / UX Designer</div>
+            <div class="factsline-content">
+                <h3>I create a  UI / UX design</h3>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Perferendis vero, laboriosam fuga odit tempora labore et hic quisquam dolorum qui?
+            </div>
+        
+    </div>
+
+    <div class="factsline-item">
+        <div class="factsline-dot"></div>
+            <div class="factsline-number">Web Developer</div>
+            <div class="factsline-content">
+                <h3>I create websites.</h3>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Perferendis vero, laboriosam fuga odit tempora labore et hic quisquam dolorum qui?
+            </div>
+        
+    </div>
+
+      <div class="factsline-item">
+        <div class="factsline-dot"></div>
+            <div class="factsline-number">Software Tester</div>
+            <div class="factsline-content">
+                <h3>I am testing</h3>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Perferendis vero, laboriosam fuga odit tempora labore et hic quisquam dolorum qui?
+            </div>
+      </div>
+
+    </div>
+  </section>
+
+ <section class="project" id="project">
+  <h2 class="heading">Project</h2>
+  <div class="project-container">
+    <div class="project-box">
+      <div class="project-image">
+        <img src="img/project-one.jpg" alt="#" />
+      </div>
+    </div>
+    <div class="project-box">
+      <div class="project-image">
+        <img src="img/project-two.jpg" alt="#" />
+      </div>
+    </div>
+    <div class="project-box">
+      <div class="project-image">
+        <img src="img/project-three.jpg" alt="#" />
+      </div>
+    </div>
+    <div class="project-box">
+      <div class="project-image">
+        <img src="img/project-four.jpg" alt="#" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials" id="testimonials">
+  <h2>Testimonials</h2>
+
+  <div class="slider-container">
+    <div id="reviews" class="reviews-wrapper">
+      <div class="review">
+        <img src="https://randomuser.me/api/portraits/men/34.jpg" alt="Scott">
+        <p><strong>Scott:</strong> Clean code, responsive design, and great attention to detail. Definitely a professional front-end developer!</p>
+        <p>⭐⭐⭐⭐⭐</p>
+      </div>
+
+      <div class="review">
+        <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Alice">
+        <p><strong>Alice:</strong> Delivered the project on time and everything worked smoothly on both desktop and mobile. Highly recommended!</p>
+        <p>⭐⭐⭐⭐</p>
+      </div>
+
+      <div class="review">
+        <img src="https://randomuser.me/api/portraits/women/17.jpg" alt="Kate">
+        <p><strong>Kate:</strong> Creative UI and solid performance. The animations were smooth and added a nice touch. Great job!</p>
+        <p>⭐⭐⭐⭐⭐</p>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" class="arrow left">←</button>
+  <button type="button" class="arrow right" >→</button>
+
+  <button id="openReviewBtn" class="add-review-btn">add testimonials</button>
+
+  <div id="reviewModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h3>Залиште свій відгук</h3>
+      <input type="text" placeholder="Ваше ім'я" id="reviewAuthor">
+      <textarea id="reviewText" placeholder="Напишіть ваш відгук — це дуже важливо для нас"></textarea>
+      <select id="reviewRating">
+        <option value="5">5⭐</option>
+        <option value="4">4⭐</option>
+        <option value="3">3⭐</option>
+        <option value="2">2⭐</option>
+        <option value="1">1⭐</option>
+      </select>
+      <button >Надіслати</button>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-container">
+    <h2>Contact Me</h2>
+    <p class="contact-subtitle">Маєте питання або пропозицію? Надішліть повідомлення — я обов’язково відповім!</p>
+
+    <form id="contact-form">
+      <input type="text" name="name" placeholder="Ваше ім’я" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <textarea name="message" placeholder="Ваше повідомлення..." required></textarea>
+      <button type="submit">Надіслати</button>
+    </form>
+  </div>
+
+  <div id="custom-alert" class="custom-alert hidden">
+    <div class="custom-alert-content">
+      <p id="custom-alert-message"></p>
+      <button onclick="closeCustomAlert()">OK</button>
+    </div>
+  </div>
+</section>
+
+<footer class="clean-footer">
+  <div class="footer-top">
+    <div class="footer-left">
+      <h2>Oleh Lobach</h2>
+      <p>Front-End Developer</p>
+    </div>
+    <div class="footer-right">
+      <a href="#" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+      <a href="#" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+      <a href="#" aria-label="Instagram"><i class="bx bxl-instagram"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2025 Oleh Lobach. Made with ❤️ and JavaScript.</span>
+  </div>
+</footer>
+
+
+  <script src="/script/main.js"></script>
+</body>
+</html>
+
+
