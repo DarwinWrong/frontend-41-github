@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="assets/css/adaptability.css">
 </head>
 <body>
+    <div style="position: fixed; top: 1rem; right: 1rem; z-index: 1000;">
+        <button class="trans-button" onclick="setLanguage('en')">EN</button>
+        <button class="trans-button" onclick="setLanguage('ua')">UA</button>
+    </div>
     <!-- Header Section -->
     <header class="header">
         <div class="container d-flex justify-content-between align-items-center">
@@ -17,56 +21,56 @@
             </div>
             <nav class="nav">
                 <ul class="d-flex list-unstyled mb-0">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">About Me</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contact me</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact me</a></li>
                 </ul>
             </nav>
-            <a href="#" class="btn btn-primary">Hire Me</a>
+            <a href="#contact" class="btn btn-primary">Hire Me</a>
         </div>
     </header>
 
     <!-- Hero  -->
     <section class="hero">
-  <div class="container">
-    <div class="text-container">
-      <h1>Hi, I am <span>Mahmood Fazile</span></h1>
-      <div class="image-background"><img src="assets/images/Vector1.png" alt=""></div>
-      <h2 class="text-UI">UI/UX Designer</h2>
-      <div class="social-icons d-flex">
-        <a href="#"><img src="assets/images/containericons.png" alt=""></a>
-      </div>
-      <div class="buttons">
-        <a href="#" class="btn btn-warning">Hire Me</a>
-        <a href="#" class="btn btn-outline-light">Download CV</a>
-      </div>
-      <div class="stats d-flex">
-        <div class="stat-item text-center">
-          <h3>5+</h3>
-          <p>Experiences</p>
+        <div class="container">
+            <div class="text-container">
+                <h1>Hi, I am <span>Mahmood Fazile</span></h1>
+                <div class="image-background"><img src="assets/images/Vector1.png" alt=""></div>
+                <h2 class="text-UI" text-to-translate>UI/UX Designer</h2>
+                <div class="social-icons d-flex">
+                    <a href="#"><img src="assets/images/containericons.png" alt=""></a>
+                </div>
+                <div class="buttons">
+                    <a href="#contact" class="btn btn-warning" text-to-translate>Hire Me</a>
+                    <a href="assets/images/Resume.pdf" class="btn btn-outline-light" download text-to-translate>Download CV</a>
+                    <a href="assets/images/Resume.pdf" class="btn btn-outline-light" target="_blank" text-to-translate>Show CV</a>
+                </div>
+                <div class="stats d-flex">
+                    <div class="stat-item text-center">
+                        <h3>5+</h3>
+                        <p text-to-translate>Experiences</p>
+                    </div>
+                    <div class="stat-item text-center">
+                        <h3>20+</h3>
+                        <p text-to-translate>Projects Done</p>
+                    </div>
+                    <div class="stat-item text-center">
+                        <h3>80+</h3>
+                        <p text-to-translate>Happy Clients</p>
+                    </div>
+                </div>
+            </div>
+            <div class="image-man">
+                <img src="assets/images/Man.png" alt="">
+            </div>
         </div>
-        <div class="stat-item text-center">
-          <h3>20+</h3>
-          <p>Projects Done</p>
-        </div>
-        <div class="stat-item text-center">
-          <h3>80+</h3>
-          <p>Happy Clients</p>
-        </div>
-      </div>
-    </div>
-    <div class="image-man">
-      <img src="assets/images/Man.png" alt="">
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- Services -->
     <section class="services text-center py-5">
         <div class="container">
-            <h2 class="mb-5">Services</h2>
+            <h2 class="mb-5" id="services">Services</h2>
             <p class="gray-text">Lorem ipsum dolor sit amet consectetur. Imperdiet convallis blandit felis ligula aliquam</p>
             <div class="row">
                 <div class="col-md-4 mb-4">
@@ -111,7 +115,7 @@
     <!-- About me -->
     <section class="about-me text-center py-5">
         <div class="about-me-textcontainer">
-            <h2 class="mb-5">About Me</h2>
+            <h2 class="mb-5" id="about">About Me</h2>
             <p class="gray-text">User Interface and User Experience and Also video editing </p>
         </div>
         <div class="about-me-container">
@@ -120,7 +124,7 @@
             </div>
             <div class="about-me-rightside">
                 <p>A software engineer, the modern-day architect of digital realms, navigates the ethereal landscapes of code, sculpting intangible structures that shape our technological world. With fingers poised over keyboards like virtuoso pianists, they compose symphonies of logic, their minds a labyrinth of algorithms and solutions.Their canvas is a screen, a vast expanse where lines of code dance in intricate patterns, weaving the fabric of programs and applications. Each keystroke is a brushstroke, crafting intricate architectures and breathing life into innovative designs.In this digital atelier, they don the mantle of problem solvers, confronting bugs and glitches like valiant knights in an ever-evolving quest for perfection. Debugging becomes a noble pursuit, unraveling the mysteries hidden within the tangled webs of code. designs.In this digital atelier.</p>
-                <a href="#" class="btn btn-outline-light"><img src="assets/images/CV.png" alt="">Download CV</a>
+                <a href="assets/images/Resume.pdf" class="btn btn-outline-light" download>Download CV</a>
             </div>
         </div>
     </section>
@@ -129,49 +133,79 @@
     <!-- Portfolio -->
     <section class="portfolio py-5">
         <div class="container">
-            <h2 class="mb-5">Portfolio</h2>
-            <div class="portfolio-buttons">
-                <button class="btn portfolio-button">All</button>
-                <button class="btn portfolio-button">Website Design</button>
-                <button class="btn portfolio-button">App Mobile Design</button>
-                <button class="btn portfolio-button">App Desktop</button>
-                <button class="btn portfolio-button">Braiding</button>
+            <h2 class="mb-5" id="portfolio">Portfolio</h2>
+            <div class="portfolio-controls d-flex align-items-center justify-content-center mb-3" style="gap: 10px;">
+    <div class="portfolio-buttons">
+        <button class="btn portfolio-button active" data-filter="all">All</button>
+        <button class="btn portfolio-button" data-filter="website">Website Design</button>
+        <button class="btn portfolio-button" data-filter="mobile">App Mobile Design</button>
+        <button class="btn portfolio-button" data-filter="desktop">App Desktop</button>
+        <button class="btn portfolio-button" data-filter="braiding">Braiding</button>
+    </div>
+    </div>
+            <div class="portfolio-slider-wrapper">
+            <div class="portfolio-row row flex-nowrap">
+            <div class="col-md-4 mb-4 portfolio-item" data-category="website">
+                <div class="portfolio-card">
+                    <img src="assets/images/project1.png" alt="Project 1" class="img-fluid">
+                    <div class="portfolio-panel">
+                        <h4 class="mt-2">Project Title 1</h4>
+                        <p>Website Design</p>
+                    </div>
+                </div>
             </div>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="portfolio-item">
-                        <img src="assets/images/project1.png" alt="Project 1" class="img-fluid">
-                        <div class="portfolio-panel">
-                            <h4 class="mt-2">Project Title 1</h4>
-                            <p>Categories</p>
-                        </div>
+            <div class="col-md-4 mb-4 portfolio-item" data-category="mobile">
+                <div class="portfolio-card">
+                    <img src="assets/images/project2.png" alt="Project 2" class="img-fluid">
+                    <div class="portfolio-panel">
+                        <h4 class="mt-2">Project Title 2</h4>
+                        <p>App Mobile Design</p>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="portfolio-item">
-                        <img src="assets/images/project2.png" alt="Project 2" class="img-fluid">
-                        <div class="portfolio-panel">
-                            <h4 class="mt-2">Project Title 2</h4>
-                            <p>Categories</p>
-                        </div>
+            </div>
+            <div class="col-md-4 mb-4 portfolio-item" data-category="desktop">
+                <div class="portfolio-card">
+                    <img src="assets/images/project3.png" alt="Project 3" class="img-fluid">
+                    <div class="portfolio-panel">
+                        <h4 class="mt-2">Project Title 3</h4>
+                        <p>App Desktop</p>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="portfolio-item">
-                        <img src="assets/images/project3.png" alt="Project 3" class="img-fluid">
-                        <div class="portfolio-panel">
-                            <h4 class="mt-2">Project Title 3</h4>
-                            <p>Categories</p>
-                        </div>
+            </div>
+            <div class="col-md-4 mb-4 portfolio-item" data-category="website">
+                <div class="portfolio-card">
+                    <img src="assets/images/project1.png" alt="Project 4" class="img-fluid">
+                    <div class="portfolio-panel">
+                        <h4 class="mt-2">Project Title 4</h4>
+                        <p>Website Design</p>
                     </div>
                 </div>
+            </div>
+            <div class="col-md-4 mb-4 portfolio-item" data-category="braiding">
+                <div class="portfolio-card">
+                    <img src="assets/images/project2.png" alt="Project 5" class="img-fluid">
+                    <div class="portfolio-panel">
+                        <h4 class="mt-2">Project Title 5</h4>
+                        <p>Braiding</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 portfolio-item" data-category="desktop">
+                <div class="portfolio-card">
+                    <img src="assets/images/project3.png" alt="Project 6" class="img-fluid">
+                    <div class="portfolio-panel">
+                        <h4 class="mt-2">Project Title 6</h4>
+                        <p>App Desktop</p>
+                    </div>
+                </div>
+            </div>
                 
             </div>
         </div>
     </section>
 
     <!-- Contact -->
-    <section class="contact-me text-center py-5">
+    <section class="contact-me text-center py-5" id="contact">
         <h1>Contact me</h1>
         <p>Cultivating Connections: Reach Out and Connect with Me</p>
     
@@ -219,11 +253,11 @@
             </div>
             <nav class="nav">
                 <ul class="d-flex list-unstyled mb-0">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">About Me</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contact me</a></li>
+                    <li><a href="">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact"">Contact me</a></li>
                 </ul>
             </nav>
             <div class="social-icons d-flex">
@@ -238,5 +272,8 @@
     </footer>
 
     <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/form-handler.js"></script>
+    <script src="script/translation.js"></script>
+    <script src="script/slider.js"></script>
 </body>
 </html>

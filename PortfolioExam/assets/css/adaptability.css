@@ -68,6 +68,19 @@
     .portfolio-item img {
         width: 100%;
     }
+
+    .trans-button {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1000;
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        background-color: hsl(22, 90%, 53%);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
 }
 
 @media (max-width: 768px) {
@@ -112,5 +125,20 @@
         margin-left: 5% !important;
         width: 90%;
     }
+
+    .trans-button{
+        position: fixed;
+        top: 1rem;
+        right: 5rem;
+        z-index: 1000;
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        background-color: hsl(22, 90%, 53%);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
 }
 
+}
