@@ -13,14 +13,23 @@
   <body>
     <header>
       <div class="container">
-        <img src="images/logo.png" alt="logo" class="logo" />
+        <h1 class="logo">My Portfolio</h1>
         <div class="navigation">
-          <a href="">About</a><a href="">Work</a><a href="">Testimonials</a
-          ><a href="">Contact</a>
-          <img src="images/Icon.png" alt="icon" />
-          <button>Download CV</button>
+          <a href="#" id="aboutLink">About</a><a href="#" id="workLink">Work</a
+          ><a href="#" id="testimonialsLink">Testimonials</a
+          ><a href="#" id="contactLink">Contact</a>
+          <img
+            src="images/Icon.png"
+            alt="icon"
+            id="ThemeToggle"
+            style="cursor: pointer"
+          />
+          <button id="languageToggle" >EN</button>
+
+          <a id="downloadLink" style="display: none;"></a>
+          <button onclick="downloadCV()"id="downloadBtn">Download CV</button>
         </div>
-        <div class="burger"><img src="images/burger.png" alt="burger" /></div>
+        <div class="burger" id="burger"><img src="images/burger.png" alt="burger" /></div>
       </div>
     </header>
     <main>
@@ -29,8 +38,8 @@
           <img src="images/photo.png" alt="Profile Photo" />
         </div>
         <div class="text-wrapper">
-          <h1>Hi, I’m Sagar 👋</h1>
-          <p>
+          <h1 id="greeting">Hi, I’m Sagar 👋</h1>
+          <p id="intro">
             I'm a full stack developer (React.js & Node.js) with a focus on
             creating (and occasionally designing) exceptional digital
             experiences that are fast, accessible, visually appealing, and
@@ -40,25 +49,29 @@
           <div class="info">
             <div class="location">
               <img src="images/location.png" alt="location" />
-              <p>Ahmedabad, India</p>
+              <p id="location">Ahmedabad, India</p>
             </div>
             <div class="hire">
               <img src="images/icon-dot.png" alt="" />
-              <p>Available for new projects</p>
+              <p id="available">Available for new projects</p>
             </div>
           </div>
-
           <div class="links">
-            <img src="images/git.png" alt="git" /><img
-              src="images/twitter.png"
-              alt="twitter"
-            /><img src="images/figma.png" alt="figma" />
+            <a href="https://x.com/" >
+              <img src="images/git.png" alt="GitHub" />
+            </a>
+            <a href="https://twitter.com/" >
+              <img src="images/twitter.png" alt="Twitter" />
+            </a>
+            <a href="https://www.figma.com/" >
+              <img src="images/figma.png" alt="Figma" />
+            </a>
           </div>
         </div>
       </div>
       <div class="container-skills">
-        <button>Skills</button>
-        <p>The skills, tools and technologies I am really good at:</p>
+        <button id="skillsBtn">Skills</button>
+        <p id="skillsText">The skills, tools and technologies I am really good at:</id=>
         <div class="skills">
           <div class="row">
             <img src="images/skills/icon-javscript.png" alt="icon-javascript" />
@@ -137,8 +150,8 @@
       </div>
       <div class="container-work">
         <div class="main-text">
-          <button>Work</button>
-          <p>Some of the noteworthy projects I have built:</p>
+          <button id="workBtn">Work</button>
+          <p id="workText">Some of the noteworthy projects I have built:</p>
         </div>
         <div class="cards">
           <div class="container-picture">
@@ -215,68 +228,102 @@
       </div>
       <div class="container-testimonials">
         <div class="main-text">
-          <button>Testimonials</button>
-          <p>Nice things people have said about me:</p>
+          <button id="testimonialsBtn">Testimonials</button>
+          <p id="testimonialsText">Nice things people have said about me:</p>
         </div>
         <div class="cards-inline">
           <div class="cards">
             <img src="images/icon-avatar.png" alt="avatar" />
-            <p>
+            <p id="testimonial1_text">
               “Job well done! I am really impressed. He is very very good at
               what he does. I would recommend Sagar and will rehire in the
               future for Frontend development.”
             </p>
-            <h3>John Doe</h3>
-            <p>Founder - xyz.com</p>
+            <h3 id="testimonial1_author">John Doe</h3>
+            <p id="testimonial1_company">Founder - xyz.com</p>
           </div>
           <div class="cards">
             <img src="images/icon-avatar.png" alt="avatar" />
-            <p>
+            <p id="testimonial2_text">
               “Great guy, highly recommended for any COMPLEX front-end
               development job! His skills are top-notch and he will be an
               amazing addition to any team.”
             </p>
-            <h3>John Doe</h3>
-            <p>Founder - abc.com</p>
+            <h3 id="testimonial2_author">John Doe</h3>
+            <p id="testimonial2_company">Founder - abc.com</p>
           </div>
           <div class="cards">
             <img src="images/icon-avatar.png" alt="avatar" />
-            <p>
+            <p id="testimonial3_text">
               “Sagar was extremely easy and pleasant to work with and he truly
               cares about the project being a success. Sagar has a high level of
               knowledge and was able to work on my MERN stack application
               without any issues.”
             </p>
-            <h3>John Doe</h3>
-            <p>Freelancer</p>
+            <h3 id="testimonial3_author">John Doe</h3>
+            <p id="testimonial3_company">Freelancer</p>
           </div>
         </div>
       </div>
+      <section
+        id="timeLine"
+        style="max-width: 600px; margin: auto; padding: 20px"
+      >
+        <h2 id="experience">My Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item" data-year="2015">
+            <h3 id="exp_2015_title">2015 - Graduated University</h3>
+            <p id="exp_2015_desc">Received a Bachelor's degree in Computer Science</p>
+          </div>
+          <div class="timeline-item" data-year="2017">
+            <h3 id="exp_2017_title">2017 - Frontend Developer Certificate</h3>
+            <p id="exp_2017_desc">Completed React and Javascript course</p>
+          </div>
+          <div class="timeline-item" data-year="2019">
+            <h3 id="exp_2019_title">2019 - Worked at EX Company</h3>
+            <p id="exp_2019_desc">Worked as a Frontend developer building web apps</p>
+          </div>
+          <div class="timeline-item" data-year="2022">
+            <h3 id="exp_2022_title">2022 - Freelancer</h3>
+            <p id="exp_2022_desc">Working on freelance projects, building web services</p>
+          </div>
+        </div>
+      </section>
       <div class="container-contacts">
         <div class="main-text">
-          <button>Get in touch</button>
-          <p>
+          <button id="contactBtn">Get in touch</button>
+          <p id="contactText">
             What’s next? Feel free to reach out to me if you're looking for a
             developer, have a query, or simply want to connect.
           </p>
         </div>
         <div class="contacts">
           <div class="email">
-            <img src="images/email.png" alt="email" />
-            <a href="#">reachsagarshah@gmail.com</a>
-            <img src="images/copy.png" alt="copy" />
+            <a href="mailto:reachsagarshah@gmail.com">
+              <img src="images/email.png" alt="email" />
+            </a>
+            <span class="text">reachsagarshah@gmail.com</span>
+            <img src="images/copy.png" alt="copy" class="copy" />
           </div>
           <div class="phone">
-            <img src="images/phone.png" alt="phone" />
-            <a href="#">+91 8980500565</a>
-            <img src="images/copy.png" alt="copy" />
+            <a href="tel:+918980500565">
+              <img src="images/phone.png" alt="phone" />
+            </a>
+            <span class="text">+91 8980500565</span>
+            <img src="images/copy.png" alt="copy" class="copy" />
           </div>
         </div>
         <div class="icons">
-          <p>You may also find me on these platforms!</p>
-          <img src="images/git.png" alt="twitter" />
-          <img src="images/twitter.png" alt="twitter" />
-          <img src="images/figma.png" alt="figma" />
+          <p id="socialPrompt">You may also find me on these platforms!</p>
+          <a href="https://x.com/" >
+            <img src="images/git.png" alt="GitHub" />
+          </a>
+          <a href="https://twitter.com/" >
+            <img src="images/twitter.png" alt="Twitter" />
+          </a>
+          <a href="https://www.figma.com/" >
+            <img src="images/figma.png" alt="Figma" />
+          </a>
         </div>
       </div>
     </main>
@@ -287,5 +334,6 @@
         with ❤️️ by Sagar Shah
       </p>
     </footer>
+    <script src="main.js"></script>
   </body>
 </html>
