@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="user-form">
+      <label>Ім'я користувача: <input type="text" name="username" /></label
+      ><br />
+      <label>Рік народження: <input type="number" name="birthyear" /></label
+      ><br />
+      <label
+        >Колір очей:
+        <select name="eyeColor">
+          <option value="">Оберіть</option>
+          <option>brown</option>
+          <option>green</option>
+          <option>gray</option>
+          <option>blue</option>
+        </select> </label
+      ><br />
+      <label
+        >Колір волосся:
+        <select name="hairColor">
+          <option value="">Оберіть</option>
+          <option>black</option>
+          <option>brown</option>
+          <option>white</option>
+          <option>red</option>
+          <option>other</option>
+        </select> </label
+      ><br />
+      <label>Зріст (м): <input type="number" step="0.01" name="height" /></label
+      ><br />
+      <label>Вага (кг): <input type="number" name="weight" /></label><br />
+      <button type="submit">Надіслати</button>
+    </form>
+    <div id="errors"></div>
+    <div id="result"></div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
