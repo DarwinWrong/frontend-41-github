@@ -1,9 +1,13 @@
 {
+  "type": "module",
   "devDependencies": {
     "chai": "^5.2.0",
     "mocha": "^11.5.0"
   },
   "scripts": {
-  "test": "mocha"
-}
+    "test": "jest"
+  },
+  "dependencies": {
+    "jest": "^30.0.4"
+  }
 }
