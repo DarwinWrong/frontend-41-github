@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLID Shop - Демонстрація принципів SOLID</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SOLID Магазин</h1>
+            <p>Демонстрація принципів SOLID у дії</p>
+        </header>
+
+        <div class="product-form">
+            <h2>Додати новий товар</h2>
+            <form id="addProductForm">
+                <div class="form-group">
+                    <label for="productName">Назва товару:</label>
+                    <input type="text" id="productName" required placeholder="Наприклад: Ноутбук">
+                </div>
+                <div class="form-group">
+                    <label for="productPrice">Ціна (грн):</label>
+                    <input type="number" id="productPrice" min="0.01" step="0.01" required placeholder="Наприклад: 9999.99">
+                </div>
+                <div class="form-group">
+                    <label for="productCategory">Категорія:</label>
+                    <select id="productCategory">
+                        <option value="Електроніка">Електроніка</option>
+                        <option value="Книги">Книги</option>
+                        <option value="Одяг">Одяг</option>
+                        <option value="Інше">Інше</option>
+                    </select>
+                </div>
+                <button type="submit">Додати товар</button>
+            </form>
+        </div>
+
+        <div class="actions">
+            <h2>Дії з товаром</h2>
+            <div class="action-buttons">
+                <button id="validateBtn">Перевірити валідність</button>
+                <button id="saveToMySQLBtn">Зберегти в MySQL</button>
+                <button id="saveToMongoBtn">Зберегти в MongoDB</button>
+                <button id="payWithAppleBtn">Оплатити через ApplePay</button>
+                <button id="payWithGoogleBtn">Оплатити через GooglePay</button>
+                <button id="fetchProductsBtn">Отримати товари з API</button>
+                <button id="clearConsoleBtn">Очистити консоль</button>
+            </div>
+        </div>
+
+
+    <script type="module" src="./script/main.js" ></script>
+</body>
+</html>
