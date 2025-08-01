@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Книгарня</title>
+</head>
+<body>
+  <h1>Книгарня</h1>
+
+  <form id="book-form">
+    <input type="text" id="title-input" placeholder="Назва книги" required>
+    <input type="text" id="author-input" placeholder="Автор книги" required>
+    <button type="submit">Додати книгу</button>
+  </form>
+
+  <input type="text" id="filter-input" placeholder="Фільтр по автору">
+  <button id="clear-btn">Очистити список</button>
+
+  <ul id="book-list"></ul>
+
+  <p id="count">Кількість книг: 0</p>
+
+  <script type="module" src="./script/main.js"></script>
+</body>
+</html>
