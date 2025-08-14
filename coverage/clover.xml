@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1747070855506" clover="3.2.0">
+  <project timestamp="1747070855506" name="All files">
+    <metrics statements="11" coveredstatements="10" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="3" elements="19" coveredelements="17" complexity="0" loc="11" ncloc="11" packages="1" files="3" classes="3"/>
+    <file name="db.js" path="D:\JS2.0\frontend-41-github\Lec\12.05.2025\db.js">
+      <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <line num="2" count="0" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+    </file>
+    <file name="testUnik.js" path="D:\JS2.0\frontend-41-github\Lec\12.05.2025\testUnik.js">
+      <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <line num="2" count="2" type="stmt"/>
+      <line num="5" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="8" count="1" type="stmt"/>
+    </file>
+    <file name="userService.js" path="D:\JS2.0\frontend-41-github\Lec\12.05.2025\userService.js">
+      <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="3" count="2" type="stmt"/>
+      <line num="4" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="7" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
