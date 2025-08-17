@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        padding: 6px 12px;
+      }
+      .event {
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        margin: 10px 0;
+        padding: 10px;
+      }
+      .event-title {
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Онлайн магазин квитків</h1>
+    <div class="controls">
+      <label>Сортувати</label>
+      <button onclick="sortEvents('price')">За ціною</button>
+      <button onclick="sortEvents('title')">За назвою</button>
+      <button onclick="sortEvents('date')">За датою</button>
+      <button onclick="sortEvents('type')">За типом</button>
+      <button onclick="addNewEvent()">Додати подію</button>
+    </div>
+    <div id="event-container"></div>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

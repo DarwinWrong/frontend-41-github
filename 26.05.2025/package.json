@@ -1,0 +1,26 @@
+{
+  "scripts": {
+    "build-css": "sass --style=compressed 16.12.2024/scss:16.12.2024/css",
+    "watch-css": "sass --watch 16.12.2024.HW2/scss:16.12.2024.HW2/css",
+    "test": "jest"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
+    "sass": "^1.83.0"
+  },
+  "name": "frontend-41-git",
+  "version": "1.0.0",
+  "description": "Frontend-41",
+  "main": "index.js",
+  "type": "module",
+  "directories": {
+    "example": "examples"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
