@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Книгарня</h1>
+    <form id="book-form">
+      <input type="text" id="title-input" placeholder="Назва книги" required />
+      <input type="text" id="author-input" placeholder="Автор книги" required />
+      <button type="submit">Додати книгy</button>
+    </form>
+    <input type="text" id="filter-input" placeholder="Фільтр за автором" />
+    <ul id="book-list"></ul>
+    <button id="clear-btn">Очистити список</button>
+    <script src="model.js"></script>
+    <script src="view.js"></script>
+    <script src="controller.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
