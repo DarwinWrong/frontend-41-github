@@ -1,0 +1,39 @@
+/* 1 */
+.inputBox {
+  padding: 5px 20px 10px 20px;
+  border: 3px solid gray;
+  width: fit-content;
+  background-color: blanchedalmond;
+  margin-bottom: 100px;
+}
+.inputBox p {
+  margin: 0;
+  margin-bottom: 5px;
+}
+.inputBox input {
+  width: 100%;
+}
+/* 2 */
+.modal_window {
+  border: 3px solid rgb(183, 183, 183);
+  background-color: rgb(105, 105, 105);
+  padding: 10px 20px 20px 20px;
+  width: 300px;
+}
+.open_btn {
+  margin: 10px 0;
+}
+.modal {
+  background-color: aqua;
+  text-align: center;
+  padding: 10px;
+}
+.modal p {
+  font-size: 20px;
+}
+.close_btn {
+  width: 100%;
+}
+.unvisible {
+  display: none;
+}

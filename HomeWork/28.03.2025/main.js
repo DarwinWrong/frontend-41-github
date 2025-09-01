@@ -20,43 +20,59 @@
 // users.addUser({ name: "Микола" });
 // users.removeUser("Василь");
 // users.listUsers();
-//! 2
-let text = "Cat runs. Dog runs. Cat jumps.";
-let searchWords = ["cat", "dog"];
-let replaceWords = ["bird", "fish"];
+//! 3
+// let text = "Cat runs. Dog runs. Cat jumps.";
+// let searchWords = ["cat", "dog"];
+// let replaceWords = ["bird", "fish"];
 
-function replaceAnimal(str, searchWords, replaceWords) {
-  let words = str.split(" ");
-  //   words = words.forEach((word) => {
-  //     if (word === searchWords[0]) {
-  //       word = replaceWords[0];
-  //       console.log(word);
-  //     }
-  //     if (word === searchWords[1]) {
-  //       word = replaceWords[1];
-  //     }
-  //   }).join(' ');
-  words = words.map((word) => {
-    let lowerWord = word.toLowerCase();
-    let index = searchWords.indexOf(lowerWord);
+// function replaceAnimal(str, searchWords, replaceWords) {
+//   let words = str.split(" ");
 
-    if (index !== -1) {
-      // Порівнюємо з урахуванням регістру
-      if (word === word.toUpperCase()) {
-        return replaceWords[index].toUpperCase(); // Зберігаємо великий регістр
-      } else if (word === word[0].toUpperCase() + word.slice(1).toLowerCase()) {
-        return (
-          replaceWords[index][0].toUpperCase() +
-          replaceWords[index].slice(1).toLowerCase()
-        ); // Зберігаємо першу літеру великою
-      } else {
-        return replaceWords[index]; // Малий регістр
-      }
-    } else {
-      return word;
-    }
-  });
+//   words = words.map((word) => {
+//     let lowerWord = word.toLowerCase();
+//     let index = searchWords.indexOf(lowerWord);
 
-  return console.log(words.join(" "));
+//     if (index !== -1) {
+//       if (word === word.toUpperCase()) {
+//         return replaceWords[index].toUpperCase();
+//       } else if (word === word[0].toUpperCase() + word.slice(1).toLowerCase()) {
+//         return (
+//           replaceWords[index][0].toUpperCase() +
+//           replaceWords[index].slice(1).toLowerCase()
+//         );
+//       } else {
+//         return replaceWords[index];
+//       }
+//     } else {
+//       return word;
+//     }
+//   });
+
+//   return console.log(words.join(" "));
+// }
+// replaceAnimal(text, searchWords, replaceWords);
+//! 4
+let arr1 = [1, 2, 3, 4, 5];
+let arr2 = [3, 4, 5, 6, 7];
+let arr3 = [5, 6, 7, 8, 9];
+let arr4 = [7, 8, 9, 10, 11];
+const megaArr = arr1.concat(arr2, arr3, arr4).sort((a, b) => a - b); //1
+const uniqueNumbers = [...new Set(megaArr)]; //2
+// 3
+function dublicat(arr) {
+  return [...new Set(arr.filter((elem, index) => arr.indexOf(elem) !== index))];
 }
-replaceAnimal(text, searchWords, replaceWords);
+const dublicated = dublicat(megaArr);
+//! 4 недороблено
+// const simplNumbers = megaArr.forEach(num=>{
+//   let arr = []
+//   if(num > 1 && num % num === 0){
+//     arr.push(num)
+//   }
+// })
+// const si
+// console.log(dublicated);
+
+// console.log(uniqueNumbers);
+
+// console.log(megaArr);

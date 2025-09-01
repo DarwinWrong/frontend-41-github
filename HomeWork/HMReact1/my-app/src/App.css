@@ -1,0 +1,12 @@
+.user_cards {
+  display: flex;
+
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.card {
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 200px;
+}
