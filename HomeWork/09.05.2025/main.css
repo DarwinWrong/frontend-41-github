@@ -1,0 +1,44 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.make_post_container {
+  margin-bottom: 20px;
+}
+
+input,
+textarea {
+  display: block;
+  margin: 10px 0;
+  width: 300px;
+  padding: 8px;
+}
+
+button {
+  margin: 5px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.post {
+  border: 1px solid #ccc;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  background: #f9f9f9;
+}
+
+.error {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 8px;
+  margin: 10px 0;
+}
+
+.success {
+  background: #d4edda;
+  color: #155724;
+  padding: 8px;
+  margin: 10px 0;
+}
