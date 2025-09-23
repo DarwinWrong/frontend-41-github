@@ -6,6 +6,7 @@ import React from 'react';
 // import UserList from "./homeWork/July_25_2025/UserList";
 import TextInput from './homeWork/August_18_2025/TextInput';
 import useLocalStorage from './homeWork/August_18_2025/useLocalStorage'
+import DreamShop from './homeWork/August_25_2025/DreamShop';
 
 function App() {
   //  const users = [
@@ -14,8 +15,9 @@ function App() {
   //   { id: 3, name: "Іван" }
   // ];
 
-  const [name, setName] = useLocalStorage("username", "");
-  const [email, setEmail] = useLocalStorage("useremail", "");
+  // const [name, setName] = useLocalStorage("username", "");
+  // const [email, setEmail] = useLocalStorage("useremail", "");
+
   // const [mood, setMood] = React.useState("😊");
   // const [comment, setComment] = React.useState("");
   return (
@@ -32,7 +34,7 @@ function App() {
 
 
       {/* --------------------- 18.08.2025 */}
-            <h2>LocalStorage Input Example</h2>
+            {/* <h2>LocalStorage Input Example</h2>
        <h2>LocalStorage Form Example</h2>
 
       <TextInput
@@ -54,7 +56,15 @@ function App() {
       </p>
       <p>
         <strong>Saved Email:</strong> {email || "—"}
-      </p>
+      </p> */}
+
+
+
+      {/* 25.08.2025 */}
+
+
+              <DreamShop/>
+
     </div>
   );
 }
