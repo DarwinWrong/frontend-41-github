@@ -4,9 +4,10 @@ import React from 'react';
 // import Timer from './homeWork/July_18_2025/Timer';
 // import UserSurveyForm from './homeWork/July_21_2025/UserSurveyForm';
 // import UserList from "./homeWork/July_25_2025/UserList";
-import TextInput from './homeWork/August_18_2025/TextInput';
-import useLocalStorage from './homeWork/August_18_2025/useLocalStorage'
-import DreamShop from './homeWork/August_25_2025/DreamShop';
+// import TextInput from './homeWork/August_18_2025/TextInput';
+// import useLocalStorage from './homeWork/August_18_2025/useLocalStorage'
+// import DreamShop from './homeWork/August_25_2025/DreamShop';
+import Cart from './homeWork/August_22_2025/Cart';
 
 function App() {
   //  const users = [
@@ -62,9 +63,12 @@ function App() {
 
       {/* 25.08.2025 */}
 
+{/* 
+              <DreamShop/> */}
 
-              <DreamShop/>
 
+              {/* 22.08.2025 */}
+      <Cart/>
     </div>
   );
 }
